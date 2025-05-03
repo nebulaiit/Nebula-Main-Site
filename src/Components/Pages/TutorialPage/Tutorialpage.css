@@ -1,0 +1,12 @@
+.tutorial-page-wrapper{
+    
+    display: flex;
+    justify-content:space-around ;
+}
+
+.tutorial-page-wrapper .content-container{
+    width: 1000px;
+    height: 100px;
+    background-color: #f687bd;
+    margin-top: 7%;
+  }

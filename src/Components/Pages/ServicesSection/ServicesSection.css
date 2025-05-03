@@ -1,0 +1,114 @@
+.services-section {
+    background: #f3faff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .subtitle {
+    color: #f52887;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .title {
+    font-size: 36px;
+    color: #0b0c3f;
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+  
+  .services-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  
+  .service-card {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    width: 260px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+    border: 3px solid #fd8ec5;
+  }
+  
+  .service-card img {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+  
+  .service-card h3 {
+    font-size: 18px;
+    color: #0b0c3f;
+    margin-bottom: 15px;
+  }
+  
+  .service-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  /* 👇 Yahan fix: sabhi links same style follow karein */
+  .service-card a,
+  .service-card .learn-more-link {
+    color: #555;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  /* 👇 Hover effect fix for all links */
+  .service-card a:hover,
+  .service-card .learn-more-link:hover,
+  .service-card a:active,
+  .service-card .learn-more-link:active {
+    color: #ff007f;
+  }
+  
+  .cta-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .cta-section p {
+    font-size: 20px;
+    color: #0b0c3f;
+  }
+  
+  .cta-section .bold {
+    font-weight: bold;
+  }
+  
+  .cta-button {
+    padding: 12px 30px;
+    background: linear-gradient(to right, #f52887, #b041ff);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    transform: scale(1.05);
+  }
+  
+   .service-card:hover, .service-card:active {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff0f7;
+    color: #e24aa0;
+    border-color: #e24aa0;
+  }
+  
+  
+  

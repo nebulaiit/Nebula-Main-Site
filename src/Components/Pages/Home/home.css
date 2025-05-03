@@ -1,0 +1,163 @@
+.homepage {
+  background: linear-gradient(to right, #daeef5 0%, #fbe8f3 100%);
+  min-height: 100vh;
+  padding: 80px 0;
+  overflow-x: hidden;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 80px;
+  min-height: 100vh;
+  background-image: url('../../Images/Background/banner-shap-2.png');
+  background-size: contain, cover;
+  background-position: left, center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+/* LEFT: Content Box */
+.content-box-home {
+  width: 500px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  background: none;
+  padding: 0;
+  box-shadow: none;
+  border-color: none;
+}
+
+.content-box-home h1 {
+  font-size: 60px;
+  line-height: 72px;
+  font-weight: 700;
+  color: #0e0e49;
+  margin-bottom: 20px;
+}
+
+.content-box-home p {
+  font-size: 20px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.content-box-home button {
+  padding: 12px 25px;
+  background: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
+  color: white !important;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.content-box-home button .circle {
+  background: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: -10%;
+  right: -130px;
+  width: 200px;
+  height: 110px;
+  border-radius: 50%;
+}
+
+/* Extra Try Now Box */
+.try-now-box {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.try-now-btn {
+  background: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
+  padding: 20px 40px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+
+.try-now-btn:hover {
+  background: linear-gradient(to right, #ff6b6b 0%, #ff1f8e 100%);
+}
+
+/* ----------------------------- */
+/* Responsive styles */
+/* ----------------------------- */
+
+/* Tablets (width between 768px and 1024px) */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+  }
+
+  .content-box-home {
+    width: 100%;
+    align-items: center;
+  }
+
+  .content-box-home h1 {
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  .content-box-home p {
+    font-size: 18px;
+  }
+
+  .content-box-home button {
+    justify-content: center;
+  }
+}
+
+/* Mobile Devices (width less than 768px) */
+@media (max-width: 767px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .content-box-home {
+    width: 100%;
+    align-items: center;
+  }
+
+  .content-box-home h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .content-box-home p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .content-box-home button {
+    font-size: 14px;
+    padding: 10px 20px;
+    justify-content: center;
+  }
+
+  .try-now-btn {
+    font-size: 16px;
+    padding: 15px 30px;
+  }
+}

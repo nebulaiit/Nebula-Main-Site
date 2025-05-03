@@ -1,0 +1,140 @@
+.about-agency-container {
+
+    background-color:#f3faff;
+    padding: 0; /* Remove container padding */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding-top: 7%;
+  }
+  
+  @media (min-width: 768px) {
+    .about-agency-container {
+      padding: 0; /* Remove padding for larger screens too */
+    }
+  }
+  
+  .about-agency-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem; /* Add spacing *inside* the grid instead */
+  }
+  
+  @media (min-width: 768px) {
+    .about-agency-grid {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 2.5rem 5rem; /* Responsive spacing */
+    }
+  }
+  
+  .about-agency-image {
+    background-color: #e0f0ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    width: 100%;
+    height: 420px;
+    margin: 0; /* Remove extra margin just in case */
+    padding: 0; /* Remove extra padding too */
+  }
+  
+  .image-text {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #2d3748;
+  }
+  
+  .agency-subtitle {
+    color: #ec4899;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  
+  .agency-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1rem;
+  }
+  
+  .agency-description {
+    color: #4a5568;
+    margin-bottom: 1rem;
+  }
+  
+  .agency-card {
+    background-color: #f7fafc;
+    border-left: 4px solid #ec4899;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .agency-card-content {
+    padding: 0;
+    color: #2d3748;
+    font-weight: 600;
+  }
+  
+  .agency-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .agency-avatar {
+    width: 5rem;
+    height: 5rem;
+    background-color: #e2e8f0;
+    color: #4a5568;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+  }
+  
+  .author-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1a202c;
+  }
+  
+  .author-role {
+    font-size: 0.875rem;
+    color: #718096;
+  }
+  
+  .author-company {
+    font-weight: 600;
+    color: #2d3748;
+  }
+  
+   .about-agency-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  
+  @media (min-width: 768px) {
+    .about-agency-flex {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+  
+  .about-agency-content {
+    flex: 1;
+  }
+  

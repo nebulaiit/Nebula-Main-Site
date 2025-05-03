@@ -1,0 +1,54 @@
+.why-programiz-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color:  #f3faff;
+    color: #1a202c;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #1a202c;
+  }
+  
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .card {
+    flex: 1 1 280px;
+    max-width: 320px;
+    text-align: left;
+    padding: 20px;
+    border: 2px solid #e24aa0;
+  
+  }
+  .card:hover,
+  .card:active {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff0f7;
+    color: #e24aa0;
+    border-color: #e24aa0;
+  }
+  .icon {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #1a1a4c;
+  }
+  
+  .card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+  }

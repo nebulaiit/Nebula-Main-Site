@@ -1,0 +1,69 @@
+.online-compilers-container {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f8f9ff;
+    padding-top: 7%;
+
+  }
+  
+  .online-compilers-container h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #2d2d2d;
+  }
+  
+  .online-compilers-container p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 40px;
+  }
+  
+  .compiler-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  /* All buttons same style */
+  .compiler-card {
+    padding: 16px 20px;
+    background: white;
+    border: 2px solid #e24aa0;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #e24aa0;
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .compiler-card:hover,
+  .compiler-card:active {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff0f7;
+    color: #e24aa0;
+    border-color: #e24aa0;
+  }
+  
+  .arrow {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  /* Center Rust Compiler */
+  .center-highlight {
+    grid-column: 1 / -1;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  
+ 

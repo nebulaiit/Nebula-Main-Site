@@ -1,0 +1,142 @@
+/* Wrapper */
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e8f3f9;
+    min-height: 100vh;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Main container */
+  .contact-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+  }
+  
+  /* Left info panel */
+  .contact-info {
+    flex: 1;
+    background: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .contact-info img {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  .contact-info h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ffffff;
+  }
+  
+  .contact-details p {
+    font-size: 14px;
+    color: #880e4f;
+    margin: 8px 0;
+  }
+  
+  .contact-details button {
+    background: transparent;
+    border: 1px solid #ec407a;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #ec407a;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 8px;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .social-icons a {
+    color: white;
+    background-color: #ec407a;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 14px;
+    transition: background 0.3s;
+  }
+  
+  .social-icons a:hover {
+    background-color: #c2185b;
+  }
+  
+  /* Right form panel */
+  .contact-form {
+    flex: 1;
+    background: white;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .contact-form h2 {
+    font-size: 28px;
+    color: #ec407a;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+  
+  .contact-form h2 span {
+    color: #ad1457;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #f8bbd0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    background: #fffafc;
+  }
+  
+  .input-group input,
+  .input-group textarea {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding-left: 10px;
+    font-size: 14px;
+    background: transparent;
+    color: #333;
+    resize: none;
+    padding: 0 0;
+  }
+  
+  .submit-btn {
+    background: #ec407a;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #d81b60;
+  }

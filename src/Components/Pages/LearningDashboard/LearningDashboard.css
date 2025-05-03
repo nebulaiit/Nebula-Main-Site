@@ -1,0 +1,84 @@
+.learning-dashboard {
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background-color: #fff;
+    padding-top: 7%;
+  }
+  
+  .dashboard-header {
+    background-color:  #ffe1f0;
+    color: rgb(215, 47, 131);
+    padding: 20px 40px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  
+  .nav-tabs {
+    display: flex;
+    gap: 28px;
+    border-bottom: none;
+    padding-bottom: 8px;
+  }
+  
+  .tab-btn {
+    background: none;
+    border: none;
+    outline: none;
+    color: #35a5e6;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 0;
+    transition: color 0.3s;
+    position: relative;
+  }
+  
+  .tab-btn:hover {
+    color:  rgb(215, 47, 131);
+  }
+  
+  /* .tab-btn.active {
+    color: rgb(222, 75, 168);
+    font-weight: 600;
+  } */
+  
+  .tab-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgb(180, 29, 89);
+    margin: auto;
+    width: 100%;
+  }
+  
+  .dashboard-main {
+    padding: 30px 40px;
+  }
+  
+  .content-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.05);
+  }
+  
+  .tab-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1c1c26;
+    margin-bottom: 10px;
+  }
+  
+  .tab-desc {
+    color: #555;
+    font-size: 15px;
+  }
+  

@@ -1,0 +1,51 @@
+.course-card {
+  background-color: #ffe5cc;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  margin: 40px auto;
+  width: 80%;
+  border-radius: 12px;
+}
+
+.course-left {
+  flex: 1;
+}
+
+.course-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.course-logo {
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.recommended {
+  color: #ff5c00;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.try-btn {
+  background-color: #006aff;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  margin-top: 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.try-btn:hover {
+  background-color: #0050cc;
+}
+
+ 

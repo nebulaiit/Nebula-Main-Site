@@ -1,0 +1,86 @@
+ /* Job Notification Page Styling */
+ .job-notification-page {
+    padding: 40px 20px;
+    background: #f3faff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    min-height: 100vh;
+    padding-top: 7%;
+  }
+  
+  .job-notification-header {
+    text-align: center;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    border: 3px solid #e24aa0;
+  }
+  
+  .job-notification-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #e24aa0;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 4px 6px rgba(226, 74, 160, 0.25);
+  }
+  
+  .job-notification-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+  }
+  
+  .job-notification-tabs button {
+    padding: 16px 20px;
+    background: white;
+    border: 2px solid #e24aa0;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #e24aa0;
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+  }
+  
+  .job-notification-tabs button:hover,
+  .job-notification-tabs button:active {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff0f7;
+    color: #e24aa0;
+    border-color: #e24aa0;
+  }
+  
+  .job-notification-tabs .active-tab {
+    background-color: #fff0f7;
+    color: #e24aa0;
+    border-color: #e24aa0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .job-notification-tabs button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(226, 74, 160, 0.6);
+  }
+  
+  .job-content {
+    text-align: center;
+    padding: 30px;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
