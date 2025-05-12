@@ -1,7 +1,6 @@
 .homepage {
   background: linear-gradient(to right, #daeef5 0%, #fbe8f3 100%);
   min-height: 100vh;
-  padding: 80px 0;
   overflow-x: hidden;
 }
 
@@ -14,7 +13,7 @@
   min-height: 100vh;
   background-image: url('../../Images/Background/banner-shap-2.png');
   background-size: contain, cover;
-  background-position: left, center;
+  background-position:16%;
   background-repeat: no-repeat, no-repeat;
 }
 

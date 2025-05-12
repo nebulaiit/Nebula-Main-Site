@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faPython, faJs, faJava, faHtml5, faCss3, faSwift, faRust , faReact  } from '@fortawesome/free-brands-svg-icons';
-import {  faDatabase, faCode, faHashtag} from '@fortawesome/free-solid-svg-icons';
+import {library } from '@fortawesome/fontawesome-svg-core';
+import { faPython, faJs, faJava, faHtml5, faCss3, faReact  } from '@fortawesome/free-brands-svg-icons';
+import {  faDatabase} from '@fortawesome/free-solid-svg-icons';
 
 import './CourseList.css';
 import { getAllTutorial } from '../../APIService/apiservice';
 
 // Add icons to the library
-library.add(faPython, faJs, faJava, faHtml5, faCss3, faSwift, faRust, faDatabase, faCode, faHashtag, faReact);
+library.add(faPython, faJs, faJava, faHtml5, faCss3, faDatabase, faReact);
 
 export default function CourseList() {
   const navigate = useNavigate();
@@ -24,9 +23,11 @@ export default function CourseList() {
 
   const iconMap = {
     "Python": { icon: "python", type: "fab" },
-    "Mysql": { icon: "database", type: "fas" },
+    "MySql": { icon: "database", type: "fas" },
     "Java": { icon: "java", type: "fab" },
     "React.js": { icon: "react", type: "fab" },
+    "HTML":{ icon: "html5", type: "fab"},
+    "CSS":{ icon: "css3", type: "fab"}
     // Add more as needed
   };
 

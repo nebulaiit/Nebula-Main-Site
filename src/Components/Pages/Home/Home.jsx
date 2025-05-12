@@ -4,14 +4,12 @@ import { Button } from '@mui/material';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import ServicesSection from '../ServicesSection/ServicesSection';
 import InteractiveLearningSection from '../InteractiveLearningSection/InteractiveLearningSection';
-import { Link } from 'react-router-dom';
+
 import OnlineCompilers from '../OnlineCompilers/OnlineCompilers';
 import CourseList from '../LearnProgramiz/CourseList';
 import CurvedSection from '../CurvedSection/CurvedSection';
 import WhyNebula from '../WhyNebula/WhyNebula';
 import AboutAgencyPage from '../AboutPage/AboutPage';
-import LearnOnTheGo from '../LearnOnTheGo/LearnOnTheGo';
-import Examples from '../TutorialHome/Examples';
 
 export default function Home() {
   return (
@@ -33,6 +31,7 @@ export default function Home() {
             <span className="circle"></span>
           </Button>
         </div>
+        
       </div>
 
       {/* ✅ Course List */}
@@ -47,8 +46,6 @@ export default function Home() {
       {/* ✅ Practice with Compilers */}
       <OnlineCompilers />
 
-      {/* ✅ Examples */}
-      {/* <Examples /> */}
 
       {/* ✅ Why Nebula */}
       <WhyNebula />

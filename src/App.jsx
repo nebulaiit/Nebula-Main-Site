@@ -45,6 +45,7 @@ import DSAExamples from './Components/Pages/TutorialHome/DSA/DSAExamples';
 import LearningDashboard from "./Components/Pages/LearningDashboard/LearningDashboard";
 import ContactPage from './Components/Pages/ContactPage/ContactPage';
 import TutorialPage from './Components/Pages/TutorialPage/TutorialPage';
+import Premium from './Components/Pages/Premium/Premium';
 
 
 function App() {
@@ -60,6 +61,8 @@ function App() {
         <Route path="/try-now" element={<Enrollment />} />
         <Route path="/progamming/:courseName" element={<TutorialPage/>} />
         <Route path="/job-notification" element={<JobNotificationPage />} />
+        <Route path="/course-premium" element={<Premium/>} />
+
 
         {/* Online Compilers */}
         <Route path="/compiler/Python" element={<PythonCompiler />} />

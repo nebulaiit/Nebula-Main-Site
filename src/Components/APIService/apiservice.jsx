@@ -60,3 +60,16 @@ export const getTopics = async (id) =>{
         throw error;
     }
 }
+export const contactUs = async (body) =>{
+
+    const url = `${API_BASE_URL}${API_URLs.CONTACT}`
+  
+    try {
+        const response = await axios.get(url,body)
+        return response.data;
+        
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}

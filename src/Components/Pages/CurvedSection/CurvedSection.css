@@ -1,17 +1,11 @@
 .curved-section {
   background-color: #f3faff;
   text-align: center;
-  padding: 4rem 1rem;
   position: relative;
-  overflow: hidden;
-  padding-top: 7%;
-
-  /* Center content */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-height: 400px;
 }
 
 .curved-section-content {

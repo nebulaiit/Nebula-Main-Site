@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 const Enrollment = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [enrolled, setEnrolled] = useState(false);
+  const [isWishlisted, setIsWishlisted] = useState(false);
+  const [isInCart, setIsInCart] = useState(false);
+
   const navigate = useNavigate();
 
   const handleEnrollClick = () => {
@@ -51,26 +54,30 @@ const Enrollment = () => {
     }
   ];
 
+
+  
+
+  const handleBuyCourse = () => {
+    navigate("/course-premium");  
+  };
+
   return (
     <div className="enrollment-page">
       {/* === Sticky Right Sidebar === */}
       <aside className="sticky-enroll">
         <div className="course-right">
-          <button onClick={handleEnrollClick} className="enroll-btn" aria-label="Enroll Button">
-            Enroll to Get Started
-          </button>
-
-          {enrolled && <p style={{ color: "#28a745", fontWeight: "bold" }}>✅ Enrollment Started!</p>}
-
           <div className="course-benefits">
+       
+            <button className=" mb-3 buy-course" onClick={handleBuyCourse}> Buy Course </button>
+
             <p>✅ Learn Python step-by-step from start to finish.</p>
             <p>✅ Solve 100+ practice problems in real-time.</p>
             <p>✅ Get certified and prepare for your first Python interview.</p>
-          </div>
+        </div>
           <p className="salary">💰 Average Salary (IN): ₹5,80,000</p>
           <p>📦 Prerequisites: None</p>
           <hr className="border-t-2 border- darkgray-300 mb-4" />
-          {/* === Job Notification Section (Moved here) === */}
+ 
           <div className="job-notification-box">
             <h2>Stay Updated with Job Notifications</h2>
             <p>Get the latest job opportunities in the tech industry tailored to your skills.</p>
@@ -81,7 +88,6 @@ const Enrollment = () => {
         </div>
       </aside>
 
-      {/* === Main Content === */}
       <main className="main-content">
         {/* === Course Intro === */}
         <section className="course-container">

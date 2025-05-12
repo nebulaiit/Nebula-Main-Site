@@ -13,7 +13,9 @@ function Sidebar({ heading, selectedUrlSlug}) {
   return (
     <div className="siderbar-wrapper">
       <div className="sidebar">
-        {heading.map((heading) => (
+        {heading
+        .sort((a, b) => a.orderIndex - b.orderIndex)
+        .map((heading) => (
           <div  key={heading.id}  className={`menu-card ${expanded === heading.id ? 'expanded' : ''}`}  onClick={() => toggleMenu(heading.id)}>
             <div className="menu-title">
               {heading.headingName}

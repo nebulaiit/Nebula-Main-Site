@@ -31,22 +31,6 @@ body {
   height: fit-content;
 }
 
-.course-right .enroll-btn {
-  background: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
-  color: white;
-  font-weight: bold;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  font-size: 16px;
-  transition: 0.3s;
-}
-
-.course-right .enroll-btn:hover {
-  background-color: linear-gradient(to right, #ff1f8e  0%, #ffbd84 100%);
-}
 
 .course-benefits {
   margin-top: 15px;
@@ -57,6 +41,15 @@ body {
   font-size: 14px;
 }
 
+
+.enrollment-page .sticky-enroll .course-right .course-benefits .buy-course{
+  width: 45%;
+  height: 50px;
+  padding: 0;
+  text-transform: capitalize;
+  border-radius: 15px;
+  background: linear-gradient(to right, #f28246 0%, #ff1f8e 100%);
+}
 .salary {
   margin-top: 12px;
   font-weight: bold;

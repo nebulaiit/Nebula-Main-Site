@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Sidebar from '../SideBar/SideBar'
 import './Tutorialpage.css'
 import { getContentList, getHeadingList } from '../../APIService/apiservice'
-import { useNavigate, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 
 
 export default function TutorialPage() {
@@ -33,7 +33,7 @@ export default function TutorialPage() {
           const fetchContent = async () => {
             try {
               const response = await getContentList(selectedUrlSlug); // Fetch content based on the current slug
-             
+             console.log(response)
               setSelectedTopicContent(response);
              
             } catch (error) {
@@ -44,21 +44,57 @@ export default function TutorialPage() {
           fetchContent();
         }
       }, [selectedUrlSlug])
+
+
+      const renderBlock = (block) => {
+        switch (block.type) {
+          case 'heading':
+            return <h2 className='content-heading' key={block.id}>{block.value}</h2>;
+          case 'paragraph':
+            return <p className='content-para' key={block.id}>{block.value}</p>;
+          case 'image':
+            return (
+              <img
+                key={block.id}
+                src={block.value}
+                alt={block.extra?.alt || 'Image'}
+                className='content-image'
+             
+              />
+            );
+          case 'code':
+            return (
+              <pre key={block.id} style={{ background: '#f4f4f4', padding: '1rem' }}>
+                <code>{block.value}</code>
+              </pre>
+            );
+          case 'video':
+            return (
+              <iframe
+                key={block.id}
+                src={block.value}
+                title="Video"
+                className='content-video'
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              >
+                
+              </iframe>
+            );
+          default:
+            return null;
+        }
+      };
   
   
   return (
     <>
-        <div className="tutorial-page-wrapper">
+        <div className="tutorial-page-wrapper py-4">
 
             <Sidebar heading={headings} selectedUrlSlug={setSelectedUrlSlug} />
 
             <div className="content-container">
-              {selectedTopicContent.map((content)=>(
-                <div key={content.id}>
-                   <h5>{content.contentHeading}</h5>
-                   <p>{content.content}</p>
-                </div>
-              ))}
+             {selectedTopicContent.map((block) => renderBlock(block))}
             </div>
         </div>
 
