@@ -1,0 +1,131 @@
+ .about-agency-container {
+
+    background-color:#f3faff;
+    padding: 0;  
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding-top: 7%;
+  }
+  
+  @media (min-width: 768px) {
+  .about-agency-container {
+      padding: 0;  
+    }
+  }
+  
+ .about-agency-container .about-agency-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;  
+  }
+  
+  @media (min-width: 768px) {
+    .about-agency-container .about-agency-grid {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 2.5rem 5rem; 
+    }
+  }
+  
+  .about-agency-image {
+    background-color: #e0f0ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    width: 100%;
+    height: 420px;
+    margin: 0;  
+    padding: 0; 
+  }
+  
+  .image-text {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #2d3748;
+  }
+  
+  .about-agency-container .about-agency-grid .about-right-content 
+  .agency-subtitle {
+    color: #ec4899;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  
+  .about-agency-container .about-agency-grid .about-right-content 
+  .agency-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1rem;
+  }
+  
+  .about-agency-container .about-agency-grid .about-right-content 
+  .agency-description {
+    color: #4a5568;
+    margin-bottom: 1rem;
+  }
+  
+  .about-agency-container .about-agency-grid .about-right-content 
+  .agency-card {
+    background-color: #f7fafc;
+    border-left: 4px solid #ec4899;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-agency-container .about-agency-grid .about-right-content 
+  .agency-card .agency-card-content {
+    padding: 0;
+    color: #2d3748;
+    font-weight: 600;
+  }
+  
+  .about-agency-container .about-agency-grid .about-right-content 
+  .agency-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .about-agency-container .about-agency-grid .about-right-content 
+  .agency-author .agency-avatar {
+    width: 5rem;
+    height: 5rem;
+    background-color: #e2e8f0;
+    color: #4a5568;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+  }
+  
+  .about-agency-container .about-agency-grid .about-right-content
+  .agency-author .author-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1a202c;
+  }
+  
+  .about-agency-container .about-agency-grid .about-right-content
+  .agency-author .author-role {
+    font-size: 0.875rem;
+    color: #718096;
+  }
+  
+  .about-agency-container .about-agency-grid .about-right-content 
+  .agency-author .author-role .author-company {
+    font-weight: 600;
+    color: #2d3748;
+  }
+  

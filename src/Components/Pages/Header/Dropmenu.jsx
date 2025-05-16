@@ -1,0 +1,114 @@
+ import React, { useEffect, useState } from 'react';
+import './Dropmenu.css';  
+import CloseIcon from '@mui/icons-material/Close';
+import { getAllTutorial, getTopics } from '../../APIService/apiservice';
+
+export default function Dropmenu({ closeDropdown, activeMenu }) {
+  const [tutorial, setTutorial] = useState([]);
+  const [topics, setTopics] = useState([]);
+
+  useEffect(() => {
+    const fetchTutorialList = async () => {
+      try {
+        const response = await getAllTutorial();
+        setTutorial(response);
+
+         
+        if (activeMenu === "tutorial") {
+          const javaTutorial = response.find(item => item.tutorialName.toLowerCase() === "java");
+          if (javaTutorial) {
+            fetchTopicList(javaTutorial.id);
+          } else {
+            setTopics([]);  
+          }
+        } else {
+          setTopics([]);  
+        }
+      } catch (error) {
+        console.error("Error fetching tutorials:", error);
+      }
+    };
+
+    fetchTutorialList();
+  }, [activeMenu]);
+
+  const fetchTopicList = async (id) => {
+    try {
+      const response = await getTopics(id);
+      setTopics(response);
+    } catch (error) {
+      console.error("Error fetching topics:", error);
+    }
+  };
+
+  const renderListItems = () => {
+    switch (activeMenu) {
+      case "tutorial":
+        return tutorial.map(item => (
+          <li key={item.id}>
+            <button className='tutorial-btn' onClick={() => fetchTopicList(item.id)}>
+              {item.tutorialName}
+            </button>
+          </li>
+        ));
+      case "examples":
+        return ["If-Else", "Loops", "CRUD", "Form Validation"].map((ex, i) => (
+          <li key={i}>
+            <button className='tutorial-btn'>{ex}</button>
+          </li>
+        ));
+      case "courses":
+        return tutorial.map(item => (
+          <li key={item.id}>
+            <button className='tutorial-btn'>{item.tutorialName}</button>
+          </li>
+        ));
+      case "career":
+        return ["Interview Prep", "Resume Building", "Tech Stacks"].map((career, i) => (
+          <li key={i}>
+            <button className='tutorial-btn'>{career}</button>
+          </li>
+        ));
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="dropdown_menu d-flex">
+      <span className="close-btn" onClick={closeDropdown}>
+        <CloseIcon />
+      </span>
+
+      <div className="left-box">
+        <ul className='p-0'>{renderListItems()}</ul>
+      </div>
+
+      <div className="right-box">
+        <div className="pro-box d-flex align-items-center justify-content-center">
+          <h5>Unlock PRO Content</h5>
+        </div>
+
+        <div className="course-detail-box">
+          <div className="topic-list">
+            <p>Popular Topics</p>
+            <ul className='p-0'>
+              {topics.map(topic => (
+                <li key={topic.id}>{topic.topicName}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="material-list">
+            <p>Learning Paths</p>
+            <ul>
+              <li>Web Development</li>
+              <li>Data Science</li>
+              <li>Machine Learning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
