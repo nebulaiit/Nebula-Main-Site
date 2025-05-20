@@ -20,18 +20,19 @@
 /* ---------- Close Button ---------- */
 .dropdown_menu .close-btn {
   position: absolute;
-  top: 15px;
-  right: 20px;
+  top: 1px; 
+  right: 10px;
   cursor: pointer;
   color: #2f0d73;
   font-size: 24px;
   transition: color 0.3s;
-}
+ }
 
 .dropdown_menu .close-btn:hover {
-  color: #f44336;
-}
-
+  color: #f44336;  
+  cursor: pointer; 
+  transition: color 0.3s ease;  
+} 
 /* ========== LEFT BOX ========== */
 .dropdown_menu .left-box {
   width: 30%;

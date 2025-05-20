@@ -50,6 +50,8 @@ import LearningDashboard from "./Components/Pages/LearningDashboard/LearningDash
 import ContactPage from './Components/Pages/ContactPage/ContactPage';
 import TutorialPage from './Components/Pages/TutorialPage/TutorialPage';
 import Premium from './Components/Pages/Premium/Premium';
+import PaymentPage from './Components/Pages/PaymentPage/PaymentPage';
+import ThankYou from './Components/Pages/thankyou/thankyou';
 
 
 function App() {
@@ -103,6 +105,9 @@ function App() {
         <Route path="/tutorial/Rust/RustExamples" element={<RustExamples />} />
         <Route path="/tutorial/DSA/DSAExamples" element={<DSAExamples />} />
         <Route path="/learning-dashboard" element={<LearningDashboard />} />
+        <Route path="/paymentPage" element={<PaymentPage />} />
+        <Route path="/thankyou" element={<ThankYou />} />
+ 
 
       </Routes>
       <WebsiteFooter />

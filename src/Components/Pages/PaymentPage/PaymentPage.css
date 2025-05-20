@@ -1,0 +1,240 @@
+/* ========== Container ========== */
+.checkout-container {
+  display: flex;
+  max-width: 1100px;
+  margin: 80px auto 40px;
+  gap: 30px;
+  padding: 0 20px;
+  padding-top: 7%;
+}
+
+/* ========== Left Section ========== */
+.checkout-left {
+  flex: 2;
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.checkout-left h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+/* ========== Section Wrapper ========== */
+.section {
+  margin-bottom: 32px;
+}
+
+.section h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+/* ========== Form Rows ========== */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* ========== Billing Address ========== */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d7dc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+/* ========== Payment Methods ========== */
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.payment-option-box {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 12px 16px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.payment-option-box.selected {
+  border-color: #2c3e50;
+}
+
+.payment-option-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  color: #333;
+}
+
+.payment-option-label input[type="radio"] {
+  margin: 0;
+}
+
+.payment-icon {
+  font-size: 20px;
+}
+
+/* ========== Payment Details ========== */
+.payment-details {
+  margin-top: 16px;
+  margin-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.payment-details input,
+.payment-details select {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.card-row {
+  display: flex;
+  gap: 12px;
+}
+
+.card-row input {
+  flex: 1;
+}
+
+.save-card {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+/* ========== Course Summary ========== */
+.course-summary {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.course-summary img {
+  width: 100px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.course-summary p {
+  margin: 4px 0;
+}
+
+.course-summary .price {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.course-summary .strike {
+  text-decoration: line-through;
+  color: #6a6f73;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+/* ========== Right Section ========== */
+.checkout-right {
+  flex: 1;
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  height: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.checkout-right h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.summary-line.total {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #d1d7dc;
+  margin: 16px 0;
+}
+
+/* ========== Pay Button ========== */
+.pay-btn {
+  background-color: #a435f0;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 20px 0;
+  transition: background 0.2s;
+}
+
+.pay-btn:hover {
+  background-color: #8710d8;
+}
+
+/* ========== Note & Success Box ========== */
+.note {
+  font-size: 13px;
+  color: #6a6f73;
+  margin-bottom: 20px;
+}
+
+.success-box {
+  background-color: #fef5ea;
+  border-left: 4px solid #e59819;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+ 
