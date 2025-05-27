@@ -191,12 +191,17 @@
   transform: translateX(20%);
 }
 
+.login-container .overlay-container p{
+color: #ffffff;
+}
+
 /* === Error Message === */
 .login-container .error {
   color: red;
   font-size: 14px;
   margin-top: 8px;
 }
+
 
 /* === Animation === */
 @keyframes show {

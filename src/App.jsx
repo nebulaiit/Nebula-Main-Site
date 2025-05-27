@@ -52,6 +52,7 @@ import TutorialPage from './Components/Pages/TutorialPage/TutorialPage';
 import Premium from './Components/Pages/Premium/Premium';
 import PaymentPage from './Components/Pages/PaymentPage/PaymentPage';
 import ThankYou from './Components/Pages/thankyou/thankyou';
+import Courses from './Components/Pages/LearningDashboard/Courses';
 
 
 function App() {
@@ -107,6 +108,7 @@ function App() {
         <Route path="/learning-dashboard" element={<LearningDashboard />} />
         <Route path="/paymentPage" element={<PaymentPage />} />
         <Route path="/thankyou" element={<ThankYou />} />
+        <Route path="/courses" element={<Courses />} />
  
 
       </Routes>
