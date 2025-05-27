@@ -49,7 +49,6 @@ const Login = () => {
   return (
     <div className={`container login-container ${isSignUpActive ? 'right-panel-active' : ''}`} id="container">
       <div className="form-container sign-up-container">
-        <form>
         <form onSubmit={handleSignUp}>
 
           <h1>Create Account</h1>

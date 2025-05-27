@@ -1,29 +1,8 @@
 import React from 'react';
 import { BrowserRouter , Routes, Route } from "react-router-dom";
 
-
 import Header from './Components/Pages/Header/Header';
 import Home from './Components/Pages/Home/Home';
-
-import PythonCompiler from './CompilerPages/PythonCompiler';
-import RCompiler from './CompilerPages/RCompiler';
-import SQLEditor from './CompilerPages/SQLEditor';
-import HTMLCSSEditor from './CompilerPages/HTMLCSSEditor';
-import JavaScriptCompiler from './CompilerPages/JavaScriptCompiler';
-import JavaCompiler from './CompilerPages/JavaCompiler';
-import CCompiler from './CompilerPages/CCompiler';
-import CppCompiler from './CompilerPages/CppCompiler';
-import CSharpCompiler from './CompilerPages/CSharpCompiler';
-import GoCompiler from './CompilerPages/GoCompiler';
-import PHPCompiler from './CompilerPages/PHPCompiler';
-import SwiftCompiler from './CompilerPages/SwiftCompiler';
-import RustCompiler from './CompilerPages/RustCompiler';
-import Login from './Components/Login/Login';
-import CreateProject from './LearningPathPytho/CreateProject';
-import Enrollment from './LearningPathPytho/Enrollment';
-import PythonCourse from './Components/Pages/LearnProgramiz/PythonCourse';
-import CourseList from './Components/Pages/LearnProgramiz/CourseList';
-
 
 //compiler pages
 import PythonCompiler from "./Components/CompilerPages/PythonCompiler";
@@ -70,7 +49,6 @@ import LearningDashboard from "./Components/Pages/LearningDashboard/LearningDash
 import ContactPage from './Components/Pages/ContactPage/ContactPage';
 import TutorialPage from './Components/Pages/TutorialPage/TutorialPage';
 import Premium from './Components/Pages/Premium/Premium';
-
 import PaymentPage from './Components/Pages/PaymentPage/PaymentPage';
 import ThankYou from './Components/Pages/thankyou/thankyou';
 import Courses from './Components/Pages/LearningDashboard/Courses';
