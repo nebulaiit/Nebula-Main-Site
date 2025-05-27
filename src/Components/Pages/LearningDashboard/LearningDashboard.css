@@ -21,6 +21,7 @@
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 12px;
+  height: 40px !important;
 }
 
 .dashboard-header .nav-tabs {
@@ -525,8 +526,9 @@ background: linear-gradient(to right, #ff1f8e  0%, #ffbd84 100%);
   flex-shrink: 0;
 }
 
-.course-card .course-info {
+.tab-title .course-list .course-card .course-info-wishlist {
   flex: 1;
+  display: block;
 }
 
 .course-card .course-info h3 {

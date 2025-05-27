@@ -57,7 +57,7 @@ export default function CourseList() {
   }, [])
 
   return (
-    <div className="course-section">
+    <div className="course-section  ">
       <h2 className="title">
       👩🏻‍💻 Learn Nebula <span className="highlight">for Free</span>
       </h2>

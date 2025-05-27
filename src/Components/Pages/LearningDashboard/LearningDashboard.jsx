@@ -294,7 +294,7 @@ const LearningDashboard = () => {
               {wishlistCourses.map((course) => (
                 <div className="course-card" key={course.id}>
                   <img src={course.image} alt={course.title} className="course-image" />
-                  <div className="course-info">
+                  <div className="course-info-wishlist">
                     <h3>{course.title}</h3>
                     <p>{course.description}</p>
                     <p><strong>Instructor:</strong> {course.instructor}</p>
@@ -404,10 +404,7 @@ const LearningDashboard = () => {
                     </div>
                     <div className="progress-wrapper">
                       <div className="progress-bar">
-                        <div
-                          className="progress"
-                          style={`{ width: ${course.progress}% }`}
-                        ></div>
+                       
                       </div>
                       <span>{course.progress}% completed</span>
                     </div>

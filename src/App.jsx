@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter , Routes, Route } from "react-router-dom";
 
+
 import Header from './Components/Pages/Header/Header';
 import Home from './Components/Pages/Home/Home';
 
@@ -52,7 +53,6 @@ import Premium from './Components/Pages/Premium/Premium';
 import PaymentPage from './Components/Pages/PaymentPage/PaymentPage';
 import ThankYou from './Components/Pages/thankyou/thankyou';
 import Courses from './Components/Pages/LearningDashboard/Courses';
-
 
 
 function App() {
@@ -109,7 +109,7 @@ function App() {
         <Route path="/paymentPage" element={<PaymentPage />} />
         <Route path="/thankyou" element={<ThankYou />} />
         <Route path="/courses" element={<Courses />} />
-
+ 
 
       </Routes>
       <WebsiteFooter />
@@ -118,5 +118,3 @@ function App() {
 }
 
 export default App;
-
-

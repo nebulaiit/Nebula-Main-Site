@@ -2,10 +2,8 @@
  .curved-section {
   background-color: #f3faff;
   text-align: center;
-  padding: 4rem 1rem;
   position: relative;
   overflow: hidden;
-  padding-top: 7%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +35,7 @@
   margin: 0 auto;
 }
 
-.logo {
+.curved-section .curved-section-content .logo {
   height: 75px;
   object-fit: contain;
   margin-bottom: 1rem;

@@ -50,7 +50,6 @@ const Login = () => {
     <div className={`container login-container ${isSignUpActive ? 'right-panel-active' : ''}`} id="container">
       <div className="form-container sign-up-container">
         <form onSubmit={handleSignUp}>
-
           <h1>Create Account</h1>
           <div className="social-container">
             <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
@@ -58,16 +57,6 @@ const Login = () => {
             <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
           </div>
           <span>or use your email for registration</span>
-
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button>Sign Up</button>
-        </form>
-      </div>
-      <div className="form-container sign-in-container">
-        <form>
-
 
           <div className="input-group">
             <label>Username</label>
@@ -90,7 +79,6 @@ const Login = () => {
 
       <div className="form-container sign-in-container">
         <form onSubmit={handleLogin}>
-
           <h1>Sign in</h1>
           <div className="social-container">
             <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
@@ -98,12 +86,6 @@ const Login = () => {
             <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
           </div>
           <span>or use your account</span>
-
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <a href="#">Forgot your password?</a>
-          <button>Sign In</button>
-
           <div className="input-group">
             <label>Username</label>
             <input type="text" placeholder="username" name="userName" value={values.userName} onChange={handleChange} required />
@@ -115,7 +97,6 @@ const Login = () => {
           {/* {loginError && <p className="error">{loginError}</p>} */}
           <a href="#">Forgot your password?</a>
           <button type="submit"  className="sign-in-btn">Sign In</button>
-
         </form>
       </div>
       <div className="overlay-container">
