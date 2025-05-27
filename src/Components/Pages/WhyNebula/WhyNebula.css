@@ -1,54 +1,140 @@
-.why-programiz-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color:  #f3faff;
-    color: #1a202c;
+
+ .why-nebula {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f3faff;
+  color: #1a202c;
+}
+
+.why-nebula .why-nebula__title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #1a202c;
+}
+
+.why-nebula .why-nebula__cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.why-nebula .why-nebula__cards .why-nebula__card {
+  flex: 1 1 280px;
+  max-width: 320px;
+  text-align: left;
+  padding: 20px;
+  border: 3px solid #ed59ad;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.why-nebula .why-nebula__cards .why-nebula__card:hover,
+.why-nebula .why-nebula__cards .why-nebula__card:active {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff0f7;
+  color: #e24aa0;
+  border-color: #e24aa0;
+  border-radius: 10px;
+}
+
+.why-nebula .why-nebula__cards .why-nebula__card 
+.why-nebula__icon {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #1a1a4c;
+}
+
+.why-nebula .why-nebula__cards .why-nebula__card 
+.why-nebula__card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.why-nebula .why-nebula__cards .why-nebula__card 
+.why-nebula__card-text {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+  .why-nebula {
+    padding: 40px 15px;
   }
-  
-  .section-title {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 40px;
-    color: #1a202c;
+
+  .why-nebula .why-nebula__title {
+    font-size: 24px;
+    margin-bottom: 20px;
   }
-  
-  .cards-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
+
+  .why-nebula .why-nebula__cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
   }
-  
-  .card {
-    flex: 1 1 280px;
-    max-width: 320px;
-    text-align: left;
-    padding: 20px;
-    border: 2px solid #e24aa0;
-  
+
+  .why-nebula .why-nebula__cards .why-nebula__card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 15px;
   }
-  .card:hover,
-  .card:active {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    background-color: #fff0f7;
-    color: #e24aa0;
-    border-color: #e24aa0;
+
+  .why-nebula .why-nebula__cards .why-nebula__card 
+  .why-nebula__icon {
+    font-size: 24px;
   }
-  .icon {
+
+  .why-nebula .why-nebula__cards .why-nebula__card 
+  .why-nebula__card-title {
+    font-size: 16px;
+  }
+
+  .why-nebula .why-nebula__cards .why-nebula__card 
+  .why-nebula__card-text {
+    font-size: 14px;
+  }
+}
+
+/* Responsive: Tablet */
+@media (max-width: 1024px) {
+  .why-nebula {
+    padding: 50px 20px;
+  }
+
+  .why-nebula .why-nebula__title {
     font-size: 28px;
-    margin-bottom: 15px;
-    color: #1a1a4c;
+    margin-bottom: 30px;
   }
-  
-  .card h4 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
+
+  .why-nebula .why-nebula__cards {
+    flex-direction: row;
+    justify-content: space-around;
   }
-  
-  .card p {
+
+  .why-nebula .why-nebula__cards .why-nebula__card {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+
+  .why-nebula .why-nebula__cards .why-nebula__card 
+  .why-nebula__icon {
+    font-size: 26px;
+  }
+
+  .why-nebula .why-nebula__cards .why-nebula__card 
+  .why-nebula__card-title {
+    font-size: 17px;
+  }
+
+  .why-nebula .why-nebula__cards .why-nebula__card 
+  .why-nebula__card-text {
     font-size: 15px;
-    color: #555;
-    line-height: 1.6;
   }
+}
+

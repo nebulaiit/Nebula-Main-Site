@@ -1,24 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
 
+
 * {
   box-sizing: border-box;
 }
 
+
+
 .login-container {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25),
-              0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+              0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
   overflow: hidden;
-  width: 768px;
+  width: 900px;
   max-width: 100%;
-  min-height: 480px;
-  margin: 60px auto; /* Added spacing above and below */
+  min-height: 550px;
+  margin: 60px auto;
 }
 
-.form-container {
+.login-container .form-container {
   position: absolute;
   top: 0;
   height: 100%;
@@ -38,16 +41,27 @@
 .sign-up-container {
   left: 0;
   width: 50%;
+}
+
+.login-container .sign-in-container {
+  left: 0;
+  z-index: 2;
+}
+
+.login-container .sign-up-container {
+  left: 0;
   opacity: 0;
   z-index: 1;
 }
 
-.container.right-panel-active .sign-up-container {
+
+.login-container.right-panel-active .sign-up-container {
   transform: translateX(100%);
   opacity: 1;
   z-index: 5;
   animation: show 0.6s;
 }
+
 
 @keyframes show {
   0% {
@@ -104,7 +118,42 @@ button.ghost {
   margin: 20px 0;
 }
 
-.social-container a {
+.login-container form {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+.login-container .input-group {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.login-container .input-group label {
+  display: block;
+  text-align: left;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.login-container .input-group input {
+  background: #eee;
+  border: none;
+  padding: 12px 15px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.login-container .social-container {
+  margin: 20px 0;
+}
+
+.login-container .social-container a {
   border: 1px solid #ddd;
   border-radius: 50%;
   display: inline-flex;
@@ -113,9 +162,51 @@ button.ghost {
   margin: 0 5px;
   height: 40px;
   width: 40px;
+
 }
 
 .overlay-container {
+  color: #333;
+}
+
+.login-container .sign-in-btn,
+.login-container .sign-up-btn {
+  border: none;
+  padding: 12px 45px;
+  margin-top: 10px;
+  background-color: #ff416c;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 50%;
+}
+
+.login-container .sign-in-btn:active,
+.login-container .sign-up-btn:active {
+  transform: scale(0.95);
+}
+
+.login-container .ghost {
+  background-color: transparent;
+  border: 2px solid #fff;
+  padding: 12px 45px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+/* === Overlay === */
+.login-container .overlay-container {
   position: absolute;
   top: 0;
   left: 50%;
@@ -126,12 +217,17 @@ button.ghost {
   z-index: 100;
 }
 
+
 .container.right-panel-active .overlay-container {
   transform: translateX(-100%);
 }
 
-.overlay {
-  background: linear-gradient(to right,#64a7b7, #ff416c);
+.login-container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.login-container .overlay {
+  background: linear-gradient(to right, #64a7b7, #ff416c);
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -162,20 +258,157 @@ button.ghost {
   transition: transform 0.6s ease-in-out;
 }
 
-.overlay-left {
-  transform: translateX(-20%);
-  left: 0;
-}
 
 .container.right-panel-active .overlay-left {
   transform: translateX(0);
 }
 
-.overlay-right {
+
+.login-container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.login-container .overlay-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  text-align: center;
+  height: 100%;
+  width: 50%;
+  top: 0;
+}
+
+.login-container .overlay-left {
+  left: 0;
+  transform: translateX(-20%);
+}
+
+.login-container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.login-container .overlay-right {
   right: 0;
   transform: translateX(0);
 }
 
+
 .container.right-panel-active .overlay-right {
   transform: translateX(20%);
 }
+
+.login-container.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+.login-container .overlay-container p{
+color: #ffffff;
+}
+
+/* === Error Message === */
+.login-container .error {
+  color: red;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+
+/* === Animation === */
+@keyframes show {
+  0%, 49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%, 100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+ /* === Tablets and Below === */
+@media screen and (max-width: 1024px) {
+  .login-container {
+    width: 95%;
+    min-height: 600px;
+  }
+
+  .form {
+    padding: 0 30px;
+  }
+
+  .login-container__overlay-panel {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 600px;
+  }
+
+  .login-container__form-container,
+  .login-container__overlay-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transform: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  .login-container__overlay {
+    background: linear-gradient(to bottom, #64a7b7, #ff416c);
+    transform: none !important;
+    left: 0 !important;
+    width: 100% !important;
+  }
+
+  .login-container__overlay-panel {
+    width: 100%;
+    position: relative;
+    transform: none !important;
+    padding: 20px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login-container {
+    padding: 10px;
+    margin: 20px auto;
+    min-height: 700px;
+  }
+
+  .form {
+    padding: 0 15px;
+  }
+
+  .form__input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .form__button {
+    padding: 10px 30px;
+    font-size: 13px;
+  }
+
+  .login-container__overlay-panel h1 {
+    font-size: 20px;
+  }
+
+  .login-container__overlay-panel p {
+    font-size: 14px;
+  }
+
+  .social-container__icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+

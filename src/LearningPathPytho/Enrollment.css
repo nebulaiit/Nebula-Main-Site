@@ -11,16 +11,18 @@ body {
   color: #222;
 }
 
-/* === Enrollment Page Layout === */
-.enrollment-page {
+
+ .enrollment-page {
+
   display: flex;
   padding: 20px;
   gap: 30px;
   padding-top: 7%;
 }
 
-/* === Sticky Enroll Box === */
-.sticky-enroll {
+
+ .sticky-enroll {
+
   position: sticky;
   top: 20px;
   width: 320px;
@@ -61,8 +63,8 @@ body {
   flex: 1;
 }
 
-/* === Course Intro === */
-.course-container {
+ .course-container {
+
   background-color:  #fff0f7;
   border-radius: 12px;
   padding: 25px;

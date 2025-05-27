@@ -8,32 +8,39 @@
 }
 
 /* === TOP BANNER === */
-.top-banner {
+
+
+.contact-page .top-banner {
+
   text-align: left;
   margin-bottom: 40px;
 }
 
-.top-banner h1 {
+.contact-page .top-banner h1 {
   font-size: 26px;
   color: #ff4d88;
   font-weight: 700;
   margin-bottom: 8px;
 }
 
-.top-banner h2 {
+
+.contact-page .top-banner h2 {
+
   font-size: 32px;
   color: #e60073;
   font-weight: 700;
 }
 
-.top-banner p {
+
+.contact-page .top-banner p {
   font-size: 15px;
   color: #555;
   margin-top: 12px;
 }
 
 /* === INFO CARDS === */
-.info-cards {
+
+.contact-page .info-cards {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -41,7 +48,9 @@
   flex-wrap: wrap;
 }
 
-.card {
+
+.contact-page .info-cards .card {
+
   background: #ffffff;
   padding: 20px;
   border-radius: 12px;
@@ -52,35 +61,47 @@
   cursor: pointer;
 }
 
-.card:hover {
+
+.contact-page .info-cards .card:hover {
+
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(230, 0, 115, 0.2);
 }
 
-.card i {
+
+.contact-page .info-cards .card i {
+
   font-size: 26px;
   margin-bottom: 10px;
   color: #ff4d88;
 }
 
-.card h3 {
+
+.contact-page .info-cards .card h3 {
+
   font-size: 18px;
   color: #ff4d88;
   margin-bottom: 6px;
 }
 
-.card p {
+
+.contact-page .info-cards .card p {
+
   margin: 4px 0;
   font-weight: normal;
   color: #666;
 }
 
-.card small {
+
+.contact-page .info-cards .card small {
+
   color: #999;
 }
 
 /* === FORM AND MAP SECTION === */
-.form-map-section {
+
+.contact-page .form-map-section {
+
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
@@ -89,7 +110,9 @@
 }
 
 /* === CONTACT FORM === */
-.contact-form {
+
+.contact-page .form-map-section .contact-form {
+
   flex: 1;
   max-width: 500px;
   background: #ffffff;
@@ -98,7 +121,9 @@
   box-shadow: 0 4px 12px rgba(230, 0, 115, 0.15);
 }
 
-.contact-form h2 {
+
+.contact-page .form-map-section .contact-form h2 {
+
   text-align: center;
   color: #e60073;
   margin-bottom: 20px;
@@ -106,6 +131,7 @@
 }
 
 /* Inputs */
+
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
@@ -119,8 +145,10 @@
   transition: border-color 0.3s;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+
+.contact-page .form-map-section .contact-form input:focus,
+.contact-page .form-map-section .contact-form textarea:focus {
+
   border-color: #e60073;
   outline: none;
   background: #fff;
@@ -141,19 +169,22 @@
   margin-top: 7px;
 }
 
-.phone-input select,
-.phone-input input {
+
+.contact-page .form-map-section .contact-form .phone-input select,
+.contact-page .form-map-section .contact-form .phone-input input {
+
   padding: 12px;
   border-radius: 8px;
   font-size: 15px;
   background: #fafafa;
 }
 
-.phone-input select {
+.contact-page .form-map-section .contact-form .phone-input select {
   flex: 0.4;
 }
 
-.phone-input input {
+.contact-page .form-map-section .contact-form .phone-input input {
+
   flex: 1;
 }
 
@@ -165,7 +196,8 @@
 
 
 /* PRIVACY POLICY */
-.privacy-policy {
+
+.contact-page .privacy-policy {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -173,13 +205,15 @@
   margin: 12px 0 20px;
 }
 
-.privacy-policy label a {
+
+.contact-page .privacy-policy label a {
   color: #e60073;
   text-decoration: underline;
-}
+} 
 
 /* SUBMIT BUTTON */
-.submit-btn {
+.contact-page .form-map-section .submit-btn {
+
   background: #e60073;
   color: #ffffff;
   padding: 12px;
@@ -191,12 +225,16 @@
   width: 100%;
 }
 
-.submit-btn:hover {
+
+.contact-page .form-map-section .submit-btn:hover {
+
   background: #cc0066;
 }
 
 /* === MAP CONTAINER === */
-.map-container {
+
+.contact-page .form-map-section .map-container {
+
   flex: 1;
   max-width: 500px;
   background: #ffffff;
@@ -207,7 +245,9 @@
 
 }
 
-.map-container iframe {
+
+.contact-page .form-map-section .map-container iframe {
+
   width: 100%;
   height: 100%;
   min-height: 400px;

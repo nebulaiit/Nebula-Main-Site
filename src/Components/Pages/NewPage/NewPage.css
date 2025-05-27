@@ -1,4 +1,6 @@
-.course-card {
+
+ .course-card {
+
   background-color: #ffe5cc;
   display: flex;
   justify-content: space-between;
@@ -8,11 +10,17 @@
   border-radius: 12px;
 }
 
+
 .course-left {
   flex: 1;
 }
 
-.course-right {
+.course-card .course-left {
+  flex: 1;
+}
+
+.course-card .course-right {
+
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -27,13 +35,16 @@
   margin-bottom: 10px;
 }
 
-.recommended {
+
+.course-card .course-left .recommended {
+
   color: #ff5c00;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-.try-btn {
+.course-card .course-left .try-btn {
+
   background-color: #006aff;
   color: white;
   border: none;
@@ -44,7 +55,9 @@
   cursor: pointer;
 }
 
-.try-btn:hover {
+
+.course-card .course-left .try-btn:hover {
+
   background-color: #0050cc;
 }
 

@@ -1,7 +1,8 @@
+
 .about-agency-container {
 
     background-color:#f3faff;
-    padding: 0; /* Remove container padding */
+    padding: 0;  
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -9,12 +10,16 @@
   }
   
   @media (min-width: 768px) {
+
     .about-agency-container {
       padding: 0; /* Remove padding for larger screens too */
     }
   }
   
-  .about-agency-grid {
+
+  
+ .about-agency-container .about-agency-grid {
+
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -29,6 +34,14 @@
     .about-agency-grid {
       grid-template-columns: repeat(2, 1fr);
       padding: 2.5rem 5rem; /* Responsive spacing */
+
+  }
+  
+  @media (min-width: 768px) {
+    .about-agency-container .about-agency-grid {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 2.5rem 5rem; 
+
     }
   }
   
@@ -42,6 +55,7 @@
     height: 420px;
     margin: 0; /* Remove extra margin just in case */
     padding: 0; /* Remove extra padding too */
+
   }
   
   .image-text {
@@ -50,6 +64,8 @@
     color: #2d3748;
   }
   
+  .about-agency-container .about-agency-grid .about-right-content 
+
   .agency-subtitle {
     color: #ec4899;
     font-weight: 600;
@@ -59,7 +75,7 @@
     margin-bottom: 0.5rem;
   }
   
-  
+
   .agency-title {
     font-size: 2.25rem;
     font-weight: 700;
@@ -79,7 +95,7 @@
     margin-bottom: 1.5rem;
   }
   
-  .agency-card-content {
+  .agency-card .agency-card-content {
     padding: 0;
     color: #2d3748;
     font-weight: 600;
@@ -91,7 +107,9 @@
     gap: 1rem;
   }
   
-  .agency-avatar {
+
+  .agency-author .agency-avatar {
+
     width: 5rem;
     height: 5rem;
     background-color: #e2e8f0;
@@ -103,22 +121,27 @@
     border-radius: 9999px;
   }
   
-  .author-name {
+
+  .agency-author .author-name {
     font-size: 1.125rem;
     font-weight: 700;
     color: #1a202c;
   }
   
-  .author-role {
+  .agency-author .author-role {
+
     font-size: 0.875rem;
     color: #718096;
   }
   
-  .author-company {
+
+  .agency-author .author-role .author-company {
+
     font-weight: 600;
     color: #2d3748;
   }
   
+
    .about-agency-flex {
     display: flex;
     flex-direction: column;
@@ -137,4 +160,3 @@
   .about-agency-content {
     flex: 1;
   }
-  

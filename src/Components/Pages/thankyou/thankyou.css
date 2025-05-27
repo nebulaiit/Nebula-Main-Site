@@ -1,0 +1,182 @@
+/* 
+.thankyou-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0f7fa, #f0f4f8);
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.thankyou-card {
+  background: #ffffff;
+  padding: 50px 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  max-width: 480px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.thankyou-card:hover {
+  transform: translateY(-5px);
+}
+
+.checkmark {
+  font-size: 64px;
+  color: #28a745;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+p {
+  font-size: 17px;
+  color: #666;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.home-button {
+  margin-top: 24px;
+  background-color: #28a745;
+  color: white;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 14px rgba(40, 167, 69, 0.2);
+}
+
+.home-button:hover {
+  background-color: #218838;
+  box-shadow: 0 6px 18px rgba(40, 167, 69, 0.25);
+} */
+
+/* thankyou.css */
+
+.thankyou-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0f7fa, #f0f4f8);
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.thankyou-card {
+  background: #ffffff;
+  padding: 50px 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  max-width: 480px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.thankyou-card:hover {
+  transform: translateY(-5px);
+}
+
+.checkmark {
+  font-size: 64px;
+  color: #28a745;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+p {
+  font-size: 17px;
+  color: #666;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.home-button,
+.dashboard-button {
+  padding: 14px 36px;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Home button */
+.home-button {
+  background-color: #28a745;
+  color: white;
+  box-shadow: 0 4px 14px rgba(40, 167, 69, 0.2);
+}
+
+.home-button:hover {
+  background-color: #218838;
+  box-shadow: 0 6px 18px rgba(40, 167, 69, 0.25);
+}
+
+/* Dashboard button */
+.dashboard-button {
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 4px 14px rgba(0, 123, 255, 0.2);
+}
+
+.dashboard-button:hover {
+  background-color: #0069d9;
+  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.25);
+}
+
+.dashboard-button:disabled {
+  background-color: #b0c4de;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .thankyou-card {
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .checkmark {
+    font-size: 48px;
+  }
+
+  .home-button,
+  .dashboard-button {
+    font-size: 15px;
+    padding: 12px 24px;
+  }
+}

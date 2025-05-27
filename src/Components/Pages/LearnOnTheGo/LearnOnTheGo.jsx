@@ -7,7 +7,9 @@ const LearnOnTheGo = () => {
   return (
     <div className="app-download-container">
       <div className="app-download-left">
-        <h2>Learn on the Go: Programiz for iOS & Android</h2>
+
+        <h2>Learn on the Go: Nebula for iOS & Android</h2>
+
         <p>
           Take your learning on the go with our highly rated iOS and Android apps—
           perfect for practicing during your commute or coffee break.
@@ -26,7 +28,11 @@ const LearnOnTheGo = () => {
         </div>
         <div className="app-card">
           <FaCuttlefish className="card-icon" />
+
           <h4>Learn C Programming App</h4>
+
+          <h4>Learn C Nebula App</h4>
+
           <a href="#">Learn more →</a>
         </div>
         <div className="app-card">

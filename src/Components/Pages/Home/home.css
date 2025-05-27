@@ -1,10 +1,13 @@
-.homepage {
-  background: linear-gradient(to right, #daeef5 0%, #fbe8f3 100%);
+
+  .homepage {
+  background: linear-gradient(to right, #daeef5 0%, #f9d5ea 100%);
   min-height: 100vh;
+  padding: 80px 0;
   overflow-x: hidden;
 }
 
-.hero-section {
+ .hero-section {
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,6 +22,13 @@
 
 /* LEFT: Content Box */
 .content-box-home {
+
+  background-position: left, center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+ .hero-section .content-box-home {
+
   width: 500px;
   height: auto;
   display: flex;
@@ -31,6 +41,7 @@
   border-color: none;
 }
 
+
 .content-box-home h1 {
   font-size: 60px;
   line-height: 72px;
@@ -39,14 +50,27 @@
   margin-bottom: 20px;
 }
 
-.content-box-home p {
+
+
+.hero-section .content-box-home h1 {
+  font-size: 60px;
+  line-height: 72px;
+  font-weight: 700;
+  color:  #0e0e49;
+  margin-bottom: 20px;
+}
+
+.hero-section .content-box-home p {
+
   font-size: 20px;
   color: #444;
   line-height: 1.6;
   margin-bottom: 30px;
 }
 
-.content-box-home button {
+ 
+.hero-section .content-box-home button {
+
   padding: 12px 25px;
   background: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
   color: white !important;
@@ -62,7 +86,9 @@
   gap: 8px;
 }
 
-.content-box-home button .circle {
+
+.hero-section .content-box-home button .circle {
+
   background: rgba(255, 255, 255, 0.2);
   position: absolute;
   top: -10%;
@@ -71,6 +97,7 @@
   height: 110px;
   border-radius: 50%;
 }
+
 
 /* Extra Try Now Box */
 .try-now-box {
@@ -110,19 +137,45 @@
     align-items: center;
   }
 
-  .content-box-home h1 {
+}
+
+ 
+@media (max-width: 1024px) {
+  .hero-section {
+    padding: 0 40px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-section .content-box-home {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-section .content-box-home h1 {
+
     font-size: 48px;
     line-height: 58px;
   }
+
 
   .content-box-home p {
     font-size: 18px;
   }
 
-  .content-box-home button {
+
+  .hero-section .content-box-home p {
+    font-size: 18px;
+  }
+
+  .hero-section .content-box-home button {
+
     justify-content: center;
   }
 }
+
 
 /* Mobile Devices (width less than 768px) */
 @media (max-width: 767px) {
@@ -158,5 +211,43 @@
   .try-now-btn {
     font-size: 16px;
     padding: 15px 30px;
+  }
+}
+/* For Mobile Phones (Tablets and Below) */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 0 20px;
+  }
+
+  .hero-section .content-box-home h1 {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .hero-section .content-box-home p {
+    font-size: 16px;
+  }
+
+  .hero-section .content-box-home button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+/* For Small Mobile Devices */
+@media (max-width: 480px) {
+  .hero-section .content-box-home h1 {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .hero-section .content-box-home p {
+    font-size: 15px;
+  }
+
+  .hero-section .content-box-home button {
+    font-size: 14px;
+    padding: 10px 20px;
+
   }
 }

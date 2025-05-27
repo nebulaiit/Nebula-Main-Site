@@ -6,7 +6,7 @@ import ServicesSection from '../ServicesSection/ServicesSection';
 import InteractiveLearningSection from '../InteractiveLearningSection/InteractiveLearningSection';
 
 import OnlineCompilers from '../OnlineCompilers/OnlineCompilers';
-import CourseList from '../LearnProgramiz/CourseList';
+import CourseList from '../LearnNebula/CourseList';
 import CurvedSection from '../CurvedSection/CurvedSection';
 import WhyNebula from '../WhyNebula/WhyNebula';
 import AboutAgencyPage from '../AboutPage/AboutPage';

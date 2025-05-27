@@ -12,6 +12,9 @@ export default function AboutAgencyPage() {
 
         {/* Right Content */}
         <div>
+
+        <div className="about-right-content">
+
           <h4 className="agency-subtitle">We Are Creative Agency</h4>
           <h2 className="agency-title">About Agency</h2>
 
@@ -37,6 +40,7 @@ export default function AboutAgencyPage() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

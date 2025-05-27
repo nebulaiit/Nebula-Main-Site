@@ -10,13 +10,18 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import profile from "../../Images/profile-icon.jpg";
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
-import Dropmenu from './Dropmenu'
+
+import Dropmenu from './Dropmenu';
 import { getAllTutorial } from '../../APIService/apiservice';
 
 export default function Header({ variant = "default" }) {
-    const [openDropdown, setOpenDropdown] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userInfo, setUserInfo] = useState(null);
+    const [openDropdown, setOpenDropdown] = useState(null);
     const [menuOpen, setMenuOpen] = useState(false);
-    const [courses ,setCourses]  = useState([]);
+    const [courses, setCourses] = useState([]);
+    const [drawerOpen, setDrawerOpen] = useState(false); // FIXED
+
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -24,6 +29,7 @@ export default function Header({ variant = "default" }) {
 
     const toggleDropdown = (menu) => {
         setOpenDropdown(prev => (prev === menu ? null : menu));
+
       };
       
       const closeDropdown = () => {
@@ -37,6 +43,7 @@ export default function Header({ variant = "default" }) {
     const employee = {
         name: "Shubham Musale",
         email: "shubhammusale111@gmail.com",
+
     };
 
     const handleDashboardClick = (section) => {
@@ -47,6 +54,7 @@ export default function Header({ variant = "default" }) {
     const handleLogoClick = () => {
         navigate("/");
     };
+
 
 
     useEffect(()=>{
@@ -150,5 +158,6 @@ export default function Header({ variant = "default" }) {
             </div>
         )}
     </div>
-    );
+
+    )
 }
