@@ -5,17 +5,16 @@ import { API_BASE_URL, API_URLs } from './constant';
 //login api
  export const loginUser = async (body) => {
   const url = `${API_BASE_URL}${API_URLs.GET_LOGIN}`;  
-console.log(body)
-console.log(url)
-//    try {
-//         const response = await axios.post(url, body)
-//         console.log(response);
-//         return response.data;
+
+   try {
+        const response = await axios.post(url, body)
+        console.log(response);
+        return response.data;
         
-//     } catch (error) {
-//         console.error('Error:', error.response || error.message);
-//         throw error;
-//     }
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
 };
 
  export const  signUpUser = async (body) => {

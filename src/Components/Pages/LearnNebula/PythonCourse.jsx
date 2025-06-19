@@ -23,15 +23,15 @@ const PythonCourse = () => {
     navigate("/try-now");
   };
 
-  useEffect(()=>{
+  useEffect(() => {
 
-    const fetchHeadingList = async () =>{
+    const fetchHeadingList = async () => {
       try {
 
         const response = await getHeadingList(courseName);
         // console.log(response);
         setHeadings(response);
-        
+
       } catch (error) {
         console.error("Error fetching documents:", error);
       }
@@ -54,7 +54,7 @@ const PythonCourse = () => {
               <h2 className="fw-bold my-2">Master {courseName} Programming</h2>
               <p className="mb-1 text-muted">Perfect for beginners serious about building a career in {courseName}.</p>
               <p className="mb-4 text-muted">Created by the Programiz team with over a decade of experience.</p>
-      
+
               <button className="btn btn-primary px-4" onClick={handleEnrollmentClick}>
                 Try Now <i className="fas fa-arrow-right ms-2"></i>
               </button>
@@ -89,30 +89,32 @@ const PythonCourse = () => {
           <p className="text-center">These tutorials will provide you with a solid foundation in {courseName} and prepare you for your career goals.</p>
         </div>
         <div className="container my-5 pink-feature-container">
-          {headings.map((heading) => (
-            <div key={heading.id} className="modern-dropdown-card mb-4">
-              <div
-                className={`dropdown-header ${activeIndex === heading.id ? "active" : ""}`}
-                onClick={() => handleCardClick(heading.id)}
-              >
-                <h5 className="mb-0">{heading.headingName}</h5>
-                <i className={`fas fa-chevron-${activeIndex === heading.id ? "up" : "down"}`}></i>
+          {headings
+            .sort((a, b) => a.orderIndex - b.orderIndex)
+            .map((heading) => (
+              <div key={heading.id} className="modern-dropdown-card mb-4">
+                <div
+                  className={`dropdown-header ${activeIndex === heading.id ? "active" : ""}`}
+                  onClick={() => handleCardClick(heading.id)}
+                >
+                  <h5 className="mb-0">{heading.headingName}</h5>
+                  <i className={`fas fa-chevron-${activeIndex === heading.id ? "up" : "down"}`}></i>
+                </div>
+                <div className={`dropdown-body ${activeIndex === heading.id ? "open" : ""}`}>
+                  {heading.topics.length > 0 ? (
+                    <ul>
+                      {heading.topics.map((topic, idx) => (
+                        <li key={idx}>
+                          <a href={`/topics/${topic.urlSlug}`}>{topic.topicName}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p>No topics available.</p>
+                  )}
+                </div>
               </div>
-              <div className={`dropdown-body ${activeIndex === heading.id ? "open" : ""}`}>
-                {heading.topics.length > 0 ? (
-                  <ul>
-                    {heading.topics.map((topic, idx) => (
-                      <li key={idx}>
-                        <a href={`/topics/${topic.urlSlug}`}>{topic.topicName}</a>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>No topics available.</p>
-                )}
-              </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </>

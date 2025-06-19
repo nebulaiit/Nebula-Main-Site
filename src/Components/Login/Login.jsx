@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { loginUser, signUpUser } from '../APIService/apiservice';
 import './Login.css';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [isSignUpActive, setIsSignUpActive] = useState(false);
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     userName: '',
     email: '',
@@ -23,11 +25,13 @@ const Login = () => {
       const data = await loginUser(values);
       console.log('Login successful:', data);
       localStorage.setItem('token', data.token);
+      localStorage.setItem('userId', data.userId);
 
       alert('Login successful!');
+      navigate('/'); // Redirect to home page after successful login
     }
     catch (error) {
-      setLoginError(error.message);
+      alert(error.message);
     }
   };
 

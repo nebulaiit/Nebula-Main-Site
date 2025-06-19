@@ -22,12 +22,12 @@ const handleCourseClick = (courseName , path) => {
   return (
     <div className="language-header">
       <h2>Learn {courseName} programming</h2>
-      <div className="language-tabs">
+      <div className="language-header-tabs">
         {tabs.map((tab) => (
           <button
             key={tab.label}
-            className={location.pathname === tab.path ? 'active-tab' : ''}
-            onClick={() => handleCourseClick(courseName, tab.path)}          >
+            className={`tab-button ${location.pathname.includes(tab.path) ? 'active' : ''}`}
+            onClick={() => handleCourseClick(courseName, tab.path)}>
             {tab.label}
           </button>
         ))}
