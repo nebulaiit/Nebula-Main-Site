@@ -1,5 +1,5 @@
 import React from 'react';
-import './SelectedTopicContent.css'; // Optional: if you want to isolate styles
+import './selectedTopicContent.css'; // Optional: if you want to isolate styles
 
 export default function SelectedTopicContent({ contentBlocks }) {
     
