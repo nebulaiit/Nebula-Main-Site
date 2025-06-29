@@ -1,5 +1,5 @@
 import React from 'react'
-import './blog.css';
+import './Blog.css';
 import blogImg from '../../Images/blog/blog-img.png';   
 import { useNavigate } from 'react-router-dom';
 import profileImg from '../../Images/profile-icon.jpg';
