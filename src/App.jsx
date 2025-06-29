@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter , Routes, Route } from "react-router-dom";
 
 
@@ -53,9 +53,37 @@ import Premium from './Components/Pages/Premium/Premium';
 import PaymentPage from './Components/Pages/PaymentPage/PaymentPage';
 import ThankYou from './Components/Pages/thankyou/thankyou';
 import Courses from './Components/Pages/LearningDashboard/Courses';
+import Blog from './Components/Pages/Blogs/Blog';
+import BlogDetails from './Components/Pages/Blogs/BlogDetails';
 
 
 function App() {
+
+  // useEffect(() => {
+  //   // Disable right-click
+  //   const handleContextMenu = (e) => e.preventDefault();
+  //   document.addEventListener('contextmenu', handleContextMenu);
+
+  //   // Disable F12, Ctrl+Shift+I/J/C, Ctrl+U
+  //   const handleKeyDown = (e) => {
+  //     if (
+  //       e.keyCode === 123 || // F12
+  //       (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) ||
+  //       (e.ctrlKey && e.key.toUpperCase() === 'U')
+  //     ) {
+  //       e.preventDefault();
+  //       return false;
+  //     }
+  //   };
+  //   document.addEventListener('keydown', handleKeyDown);
+
+  //   // Cleanup listeners on unmount
+  //   return () => {
+  //     document.removeEventListener('contextmenu', handleContextMenu);
+  //     document.removeEventListener('keydown', handleKeyDown);
+  //   };
+  // }, []);
+  
   return (
     <BrowserRouter>
       <Header variant="default" />
@@ -65,10 +93,12 @@ function App() {
         <Route path="/course/:courseName" element={<PythonCourse />} />
         <Route path="/login" element={<Login />} />
         <Route path="/create-project" element={<CreateProject />} />
-        <Route path="/try-now" element={<Enrollment />} />
+        <Route path="/learning-path/:courseName" element={<Enrollment />} />
         <Route path="/progamming/:courseName" element={<TutorialPage/>} />
         <Route path="/job-notification" element={<JobNotificationPage />} />
         <Route path="/course-premium" element={<Premium/>} />
+        <Route path='/blog' element={<Blog/>}/>
+        <Route path='/blog-details/:title' element={<BlogDetails/>}/>
 
 
         {/* Online Compilers */}

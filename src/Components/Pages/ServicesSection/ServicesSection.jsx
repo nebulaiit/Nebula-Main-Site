@@ -9,7 +9,7 @@ import app from '../../Images/app.svg';
 const services = [
   {
     icon: branding,
-    title: 'Branding Service',
+    title: 'Graphic Service',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     link: 'Learn More',
   },

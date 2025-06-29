@@ -1,5 +1,4 @@
-
- /* ========== DROPDOWN MENU STYLES ========== */
+/* ========== DROPDOWN MENU STYLES ========== */
 .dropdown_menu {
   position: fixed;
   top: 100px;
@@ -8,33 +7,40 @@
   width: 90%;
   height: auto !important;
   max-width: 1000px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.15) !important;
   z-index: 9999;
-  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 16px 8px rgba(255, 255, 255, 0.8);
   border-radius: 16px;
   display: flex;
   padding: 30px;
   transition: all 0.3s ease-in-out;
   gap: 30px;
   box-sizing: border-box;
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 /* ---------- Close Button ---------- */
 .dropdown_menu .close-btn {
   position: absolute;
-  top: 1px; 
+  top: 1px;
   right: 10px;
   cursor: pointer;
   color: #2f0d73;
   font-size: 24px;
   transition: color 0.3s;
- }
+}
 
 .dropdown_menu .close-btn:hover {
-  color: #f44336;  
-  cursor: pointer; 
-  transition: color 0.3s ease;  
-} 
+  color: #f44336;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
 /* ========== LEFT BOX ========== */
 .dropdown_menu .left-box {
   width: 30%;
@@ -54,28 +60,26 @@
 }
 
 /* ---------- Tutorial Button ---------- */
-.dropdown_menu .left-box .tutorial-btn {
-  background: #f9d5ea;
+.dropdown_menu .left-box ul li .tutorial-btn {
+  
   color: #0b053c;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 12px;
+  padding: 12px 10px;
+  text-align: start;
   font-size: 16px;
   width: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  /* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); */
 }
 
-.dropdown_menu .left-box .tutorial-btn:hover {
-  background: #f8a1c4;
-  transform: translateY(-3px);
+.dropdown_menu .left-box ul li .tutorial-btn:hover {
+ 
+  border-radius: 15px;
+  transform: translateY(-5px);
+  
 }
 
-.dropdown_menu .left-box .tutorial-btn:focus {
-  outline: none;
-  border: 2px solid #f48ec3;
-}
 
 /* ========== RIGHT BOX ========== */
 .dropdown_menu .right-box {
@@ -95,11 +99,12 @@
   font-size: 18px;
   font-weight: 600;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 /* ---------- Course Details Box ---------- */
 .dropdown_menu .right-box .course-detail-box {
-  background: #fdfdfd;
+  background: #fdfdfda3;
   width: 100%;
   border-radius: 12px;
   padding: 20px;
@@ -174,4 +179,3 @@
     width: 100%;
   }
 }
-

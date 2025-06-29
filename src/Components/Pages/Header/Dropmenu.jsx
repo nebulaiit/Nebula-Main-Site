@@ -90,7 +90,7 @@ export default function Dropmenu({ closeDropdown, activeMenu }) {
       </div>
 
       <div className="right-box">
-        <div className="pro-box d-flex align-items-center justify-content-center">
+        <div className="pro-box ">
           <h5>Unlock PRO Content</h5>
         </div>
 

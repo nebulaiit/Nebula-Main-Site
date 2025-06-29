@@ -1,4 +1,4 @@
- // src/Components/PaymentPage.jsx
+// src/Components/PaymentPage.jsx
 import React, { useState } from "react";
 import "./PaymentPage.css";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -51,28 +51,62 @@ const PaymentPage = () => {
 
     const total = baseTotal - discountAmount;
 
- const handlePay = () => {
-  if (!agreed) return alert("Please accept terms and conditions.");
-  setLoading(true);
-  setTimeout(() => {
-    setLoading(false);
-    alert("✅ Payment Successful 🎉");
+    useEffect(() => {
+        const script = document.createElement("script");
+        script.src = "https://checkout.razorpay.com/v1/checkout.js";
+        script.async = true;
+        document.body.appendChild(script);
+    }, []);
 
-    // Get existing purchased courses from localStorage
-    const existingCourses = JSON.parse(localStorage.getItem("purchasedCourses")) || [];
+ const handlePayment = async () => {
+    if (!agreed) return alert("Please accept terms and conditions.");
+    setLoading(true);
 
-    // Add the current course
-    const updatedCourses = [...existingCourses, course];
+    try {
+        // Step 1: Create Razorpay order via backend
+        const res = await fetch('http://localhost:8080/api/payments/create-order?amount=1000&currency=INR', {
+            method: 'POST'
+        });
+        const order = await res.json();
 
-    // Save back to localStorage
-    localStorage.setItem("purchasedCourses", JSON.stringify(updatedCourses));
+        // Step 2: Razorpay options
+        const options = {
+            key: "rzp_test_E1VHn4r8R09Rak", // Replace with your Razorpay key
+            amount: order.amount,
+            currency: order.currency,
+            name: "Your Company",
+            description: "Course Purchase",
+            order_id: order.id,
+            handler: function (response) {
+                setLoading(false);
+                alert("✅ Payment Successful! Payment ID: " + response.razorpay_payment_id);
 
-    const next = window.confirm("Do you want to start your course now?");
-    if (next) {
-      navigate("/thankyou", { state: { course: course } });
+                // Step 3: Save course to localStorage
+                const existingCourses = JSON.parse(localStorage.getItem("purchasedCourses")) || [];
+                const updatedCourses = [...existingCourses, course];
+                localStorage.setItem("purchasedCourses", JSON.stringify(updatedCourses));
+
+                // Step 4: Ask to continue
+                const next = window.confirm("Do you want to start your course now?");
+                if (next) {
+                    navigate("/thankyou", { state: { course: course } });
+                }
+            },
+            theme: {
+                color: "#3399cc"
+            }
+        };
+
+        const rzp = new window.Razorpay(options);
+        rzp.open();
+
+    } catch (err) {
+        setLoading(false);
+        console.error("Payment initiation failed:", err);
+        alert("❌ Payment failed. Please try again.");
     }
-  }, 2000);
 };
+
 
 
 
@@ -117,9 +151,8 @@ const PaymentPage = () => {
                             { value: "wallet", label: "Mobile Wallets", icon: "💼" },
                         ].map((method) => (
                             <div
-                                className={`payment-option-box ${
-                                    paymentMethod === method.value ? "selected" : ""
-                                }`}
+                                className={`payment-option-box ${paymentMethod === method.value ? "selected" : ""
+                                    }`}
                                 key={method.value}
                             >
                                 <label className="payment-option-label">
@@ -235,7 +268,7 @@ const PaymentPage = () => {
                     I agree to the Terms & Conditions.
                 </label>
 
-                <button className="pay-btn" onClick={handlePay} disabled={loading}>
+                <button className="pay-btn" onClick={handlePayment} disabled={loading}>
                     {loading ? "Processing..." : `🔒 Pay ₹${total.toFixed(0)}`}
                 </button>
 

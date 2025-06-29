@@ -19,7 +19,7 @@ export default function AboutAgencyPage() {
           <h2 className="agency-title">About Agency</h2>
 
           <p className="agency-description">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. is simply dummy text of the printing and typesetting industry.
+          Nebula Education and IT Services is a leading educational institution and IT service provider dedicated to empowering individuals in the world of technology. With a team of experienced and passionate instructors, we offer a wide range of courses designed to keep up with the latest industry trends. Our innovative learning approach emphasizes interactivity and hands-on experience to ensure our students gain practical skills. Beyond education, we provide comprehensive IT services to businesses and organizations, from software development to cybersecurity solutions. We take pride in our student-centered approach, fostering an inclusive and supportive environment. Join Nebula Education and IT Services to unlock your potential and shape a successful future in the ever-changing IT landscape.
           </p>
 
           <div className="agency-card">
@@ -32,9 +32,9 @@ export default function AboutAgencyPage() {
           <div className="agency-author">
             <div className="agency-avatar">80 x 80</div>
             <div>
-              <h4 className="author-name">Moana Smile</h4>
+              <h4 className="author-name">Prince Jha</h4>
               <p className="author-role">
-                Founder of <span className="author-company">Niwax</span>
+                Founder of <span className="author-company">Nebula IIT</span>
               </p>
             </div>
           </div>

@@ -22,6 +22,15 @@ a {
   align-items: center;
 }
 
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255,255,255,0.7);
+  transition: background 0.3s ease, border 0.3s ease;
+  
+}
+
 /*LOGO*/
 
 .header .images-wrapper img {
@@ -32,10 +41,10 @@ a {
 }
 
 
-.search-box {
+
+.header .search-box {
   position: relative;
-  width: 100%;
-  max-width: 430px;
+  width: 330px;
 }
 
 .search-box span {
@@ -49,7 +58,8 @@ a {
 .search-box input {
   width: 100%;
   padding: 8px 40px;
-  border-radius: 10px;
+  background-color: white !important;
+  border-radius: 50px;
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
 

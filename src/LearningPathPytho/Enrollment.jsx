@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./Enrollment.css";
 import certificateImg from "./images/certificate.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Enrollment = () => {
+  const { courseName } = useParams();
   const [showPopup, setShowPopup] = useState(false);
   const [enrolled, setEnrolled] = useState(false);
   const [isWishlisted, setIsWishlisted] = useState(false);
@@ -32,11 +33,11 @@ const Enrollment = () => {
   };
 
   const courseTitles = [
-    "Learn Python Basics",
-    "Practice: Python Basics",
-    "Learn Python Intermediate",
-    "Practice: Python Intermediate",
-    "Build Final Project"
+    `Learn ${courseName} Basics`,
+    `Practice: ${courseName} Basics`,
+    `Learn ${courseName} Intermediate`,
+    `Practice: ${courseName} Intermediate`,
+    'Build Final Project'
   ];
 
   const projects = [
@@ -64,29 +65,7 @@ const Enrollment = () => {
   return (
     <div className="enrollment-page">
       {/* === Sticky Right Sidebar === */}
-      <aside className="sticky-enroll">
-        <div className="course-right">
-          <div className="course-benefits">
-       
-            <button className=" mb-3 buy-course" onClick={handleBuyCourse}> Buy Course </button>
-
-            <p>✅ Learn Python step-by-step from start to finish.</p>
-            <p>✅ Solve 100+ practice problems in real-time.</p>
-            <p>✅ Get certified and prepare for your first Python interview.</p>
-        </div>
-          <p className="salary">💰 Average Salary (IN): ₹5,80,000</p>
-          <p>📦 Prerequisites: None</p>
-          <hr className="border-t-2 border- darkgray-300 mb-4" />
- 
-          <div className="job-notification-box">
-            <h2>Stay Updated with Job Notifications</h2>
-            <p>Get the latest job opportunities in the tech industry tailored to your skills.</p>
-            <button className="job-notification-btn" onClick={handleJobNotificationClick}>
-              View Job Notifications
-            </button>
-          </div>
-        </div>
-      </aside>
+     
 
       <main className="main-content">
         {/* === Course Intro === */}
@@ -98,7 +77,7 @@ const Enrollment = () => {
               className="course-image"
             />
             <h4 className="course-tag">LEARNING PATH</h4>
-            <h1 className="course-title">Learn Python</h1>
+            <h1 className="course-title">Learn {courseName}</h1>
             <p className="course-description">
               Learn to code in Python—a beginner-friendly programming language
               used in data analysis, web development, task automation, and more.
@@ -178,6 +157,30 @@ const Enrollment = () => {
           </div>
         )}
       </main>
+
+       <aside className="sticky-enroll">
+        <div className="course-right">
+          <div className="course-benefits">
+       
+            <button className=" mb-3 buy-course" onClick={handleBuyCourse}> Buy Course </button>
+
+            <p>✅ Learn Python step-by-step from start to finish.</p>
+            <p>✅ Solve 100+ practice problems in real-time.</p>
+            <p>✅ Get certified and prepare for your first Python interview.</p>
+        </div>
+          <p className="salary">💰 Average Salary (IN): ₹5,80,000</p>
+          <p>📦 Prerequisites: None</p>
+          <hr className="border-t-2 border- darkgray-300 mb-4" />
+ 
+          <div className="job-notification-box">
+            <h2>Stay Updated with Job Notifications</h2>
+            <p>Get the latest job opportunities in the tech industry tailored to your skills.</p>
+            <button className="job-notification-btn" onClick={handleJobNotificationClick}>
+              View Job Notifications
+            </button>
+          </div>
+        </div>
+      </aside>
     </div>
   );
 };

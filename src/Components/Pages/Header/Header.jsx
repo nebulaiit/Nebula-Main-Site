@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './header.css';
-import logo from "../../Images/Logo/neblogow.png";
+import logo from "../../Images/Logo/Logo.svg";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -64,6 +64,19 @@ export default function Header({ variant = "default" }) {
             setUserInfo(storedUser);
         }
     }, []);
+    useEffect(() => {
+        const handleScroll = () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 0) {
+                header.classList.add('glassmorphism');
+            } else {
+                header.classList.remove('glassmorphism');
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
         <div>
@@ -95,6 +108,7 @@ export default function Header({ variant = "default" }) {
                                     )}
                                 </li>
                             ))}
+                            <li><Button onClick={()=>navigate("/blog")}>Blog</Button></li>
                         </ul>
                     </nav>
 
@@ -153,6 +167,7 @@ export default function Header({ variant = "default" }) {
                                 </div>
                             </ClickAwayListener>
                         </li>
+                        
                     </ul>
 
                     {/* Hamburger for Mobile */}

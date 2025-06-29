@@ -19,8 +19,10 @@ const PythonCourse = () => {
     setActiveIndex(prevIndex => (prevIndex === index ? null : index));
   };
 
-  const handleEnrollmentClick = () => {
-    navigate("/try-now");
+
+
+  const handleEnrollmentClick = (courseName) => {
+    navigate(`/learning-path/${courseName}`);
   };
 
   useEffect(() => {
@@ -29,7 +31,6 @@ const PythonCourse = () => {
       try {
 
         const response = await getHeadingList(courseName);
-        // console.log(response);
         setHeadings(response);
 
       } catch (error) {
@@ -55,7 +56,7 @@ const PythonCourse = () => {
               <p className="mb-1 text-muted">Perfect for beginners serious about building a career in {courseName}.</p>
               <p className="mb-4 text-muted">Created by the Programiz team with over a decade of experience.</p>
 
-              <button className="btn btn-primary px-4" onClick={handleEnrollmentClick}>
+              <button className="btn btn-primary px-4" onClick={()=>handleEnrollmentClick(courseName)}>
                 Try Now <i className="fas fa-arrow-right ms-2"></i>
               </button>
             </div>

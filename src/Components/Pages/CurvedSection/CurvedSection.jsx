@@ -1,6 +1,6 @@
 import React from "react";
 import "./CurvedSection.css";
-import logo from "../../Images/Logo/neblogo.png";
+import logo from "../../Images/Logo/Logo.svg";
 
 const CurvedSection = () => {
   return (
