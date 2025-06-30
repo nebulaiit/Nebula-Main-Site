@@ -51,7 +51,7 @@ const courses = [
 
 const Premium = () => {
   return (
-    <div className="premium-container">
+    <div className="course-list-container">
       <div className="card-row">
         {courses.map((course, index) => (
           <div className="course-card" key={index}>

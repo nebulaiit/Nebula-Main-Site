@@ -12,6 +12,8 @@ import WhyNebula from '../WhyNebula/WhyNebula';
 import AboutAgencyPage from '../AboutPage/AboutPage';
 
 export default function Home() {
+
+  const images = 'https://drive.google.com/uc?export=view&id=1azJwJHfp5ubvWf1m_lk1NntoMLkpZyoj'
   return (
     <div className="container-fluid homepage">
       {/* ✅ Hero Section */}
@@ -30,6 +32,9 @@ export default function Home() {
             Get A Free Quote <KeyboardArrowRightIcon />
             <span className="circle"></span>
           </Button>
+        </div>
+        <div className="image-box-home">
+<img src={images} alt="My Image" />
         </div>
         
       </div>

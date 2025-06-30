@@ -8,8 +8,8 @@ export default function LanguageHeader() {
 
   const tabs = [
     { label: 'TUTORIALS', path: '/progamming' },
-    { label: 'COURSES', path: '/course' },
-    { label: 'EXAMPLES', path: '/examples' }, 
+    { label: 'COURSES', path: '/course-List' },
+    { label: 'ASSESSMENT', path: '/examples' }, 
     { label: 'REFERENCES', path: '/course-list' },
     { label: 'ONLINE COMPILER', path: '/compiler' },
   ];

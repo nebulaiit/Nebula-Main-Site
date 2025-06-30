@@ -55,6 +55,8 @@ import ThankYou from './Components/Pages/thankyou/thankyou';
 import Courses from './Components/Pages/LearningDashboard/Courses';
 import Blog from './Components/Pages/Blogs/Blog';
 import BlogDetails from './Components/Pages/Blogs/BlogDetails';
+import CreateBlog from './Components/Pages/Blogs/CreateBlog';
+import Community from './Components/Pages/CommunityPage/Community';
 
 
 function App() {
@@ -96,9 +98,11 @@ function App() {
         <Route path="/learning-path/:courseName" element={<Enrollment />} />
         <Route path="/progamming/:courseName" element={<TutorialPage/>} />
         <Route path="/job-notification" element={<JobNotificationPage />} />
-        <Route path="/course-premium" element={<Premium/>} />
+        <Route path="/course-List/:courseName" element={<Premium/>} />
         <Route path='/blog' element={<Blog/>}/>
-        <Route path='/blog-details/:title' element={<BlogDetails/>}/>
+        <Route path='/blog-details/:slug' element={<BlogDetails/>}/>
+        <Route path='/write-blog' element={<CreateBlog/>}/>
+        <Route path='/community' element={<Community/>}/>
 
 
         {/* Online Compilers */}
@@ -116,11 +120,6 @@ function App() {
         <Route path="/compiler/:courseName" element={<SwiftCompiler />} />
         <Route path="/compiler/:courseName" element={<RustCompiler />} />
 
-        {/* LanguageHeader Tabs */}
-        <Route path="/examples" element={<Examples />} />
-        <Route path="/course-list" element={<CourseList />} />
-
-
         {/* Examples Pages Routing */}
         <Route path="/tutorial/Ruby/RubyExamples" element={<RubyExamples />} />
         <Route path="/examples/:courseName" element={<PythonExamples />} />
@@ -135,6 +134,9 @@ function App() {
         <Route path="/tutorial/Swift/SwiftExamples" element={<SwiftExamples />} />
         <Route path="/tutorial/Rust/RustExamples" element={<RustExamples />} />
         <Route path="/tutorial/DSA/DSAExamples" element={<DSAExamples />} />
+
+
+
         <Route path="/learning-dashboard" element={<LearningDashboard />} />
         <Route path="/paymentPage" element={<PaymentPage />} />
         <Route path="/thankyou" element={<ThankYou />} />

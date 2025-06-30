@@ -1,16 +1,16 @@
-.premium-container {
+.course-list-container {
     padding: 20px;
     padding-top: 7%;
   }
   
-  .card-row {
+ .course-list-container .card-row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap; /* This allows wrapping on small screens */
     gap: 20px;
   }
   
-  .course-card {
+ .course-list-container .card-row  .course-card {
     width: 22%; /* Fits 4 in one row with spacing */
     background: #fff;
     border-radius: 12px;
@@ -21,7 +21,7 @@
     flex-direction: column;
   }
   
-  .course-image {
+  .course-list-container .card-row  .course-card  .course-image {
     width: 100%;
     height: 160px;
     object-fit: cover;
@@ -29,38 +29,38 @@
     margin-bottom: 10px;
   }
   
-  .course-details h3 {
+ .course-list-container .card-row  .course-card .course-details h3 {
     margin: 0 0 8px;
     font-size: 16px;
     font-weight: bold;
   }
   
-  .course-details p {
+ .course-list-container .card-row  .course-card .course-details p {
     margin: 4px 0;
     color: #444;
     font-size: 14px;
   }
   
-  .price {
+ .course-list-container .card-row  .course-card .course-details p  .price {
     font-weight: bold;
     color: #000;
   }
   
-  .original-price {
+ .course-list-container .card-row  .course-card .course-details p .original-price {
     text-decoration: line-through;
     color: #999;
     margin-left: 8px;
   }
   
-  .card-actions {
+ .course-list-container .card-row  .course-card .course-details .card-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 12px;
   }
   
-  .add-to-cart {
-    background-color: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
+ .course-list-container .card-row  .course-card .course-details .card-actions  .add-to-cart {
+    background: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
     color: white;
     border: none;
     padding: 8px 12px;
@@ -71,7 +71,7 @@
     margin-right: 8px;
   }
   
-  .wishlist-btn {
+  .course-list-container .card-row  .course-card .course-details .card-actions .wishlist-btn {
     background-color: white;
     border: 2px solid #ff1f8e;
     color: #ff1f8e;

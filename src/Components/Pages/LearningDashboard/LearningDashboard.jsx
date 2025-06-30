@@ -3,8 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./LearningDashboard.css";
 import pythonImg from './python.jpeg';
 import reactImg from './react.jpg';
-import paymentVideo from './paymentpage.mp4';
-import contentVideo from './contentpage.mp4';
+
 
 
 const tabs = [
@@ -370,8 +369,11 @@ const LearningDashboard = () => {
                           <div className="progress-bar">
                             <div
                               className="progress"
-                              style={`{ width: ${course.progress}% }`}
-                            ></div>
+                              style={{ width: `${course.progress}%` }}
+
+                            >
+
+                            </div>
                           </div>
                           <span>{course.progress}% completed</span>
                         </div>
@@ -467,6 +469,8 @@ const LearningDashboard = () => {
     <div className="learning-dashboard">
       <header className="dashboard-header">
         <div className="logo">
+
+          
           <h1>📚 My Learning</h1>
         </div>
         <nav className="nav-tabs">

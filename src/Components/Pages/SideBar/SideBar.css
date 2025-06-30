@@ -22,10 +22,6 @@
   box-shadow: 0 4px 10px rgba(255, 182, 193, 0.2);
 }
 
-/* .siderbar-wrapper .sidebar .menu-card:hover {
-  background-color: #ffc1cc;
-  transform: translateY(-2px);
-} */
 
 .siderbar-wrapper .sidebar .menu-card  .menu-title {
   padding: 18px 24px;
@@ -63,6 +59,8 @@
   border-radius: 10px;
   transition: all 0.3s ease;
   cursor: pointer;
+  border: none;
+  font-weight: 600;
 }
 
 /* .siderbar-wrapper .sidebar  .menu-card  .submenu ul li .topic-btn:hover {

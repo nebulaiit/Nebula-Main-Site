@@ -1,28 +1,45 @@
 
- /* ========== ROOT CONTAINER ========== */
+:root {
+  --primary-color: #ff1f8e;
+  --secondary-color: #ffbd84;
+  --hover-gradient: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  --base-radius: 12px;
+  --base-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  --hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --font-primary: 'Segoe UI', sans-serif;
+}
+
+/* ========== ROOT CONTAINER ========== */
 .learning-dashboard {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: var(--font-primary);
+  background: linear-gradient(to bottom, #fdfbfb, #ebedee);
   min-height: 100vh;
-  background-color: #f5f5f5;
-  margin: 0;
   padding-top: 6%;
   box-sizing: border-box;
 }
 
 /* ========== HEADER SECTION ========== */
 .learning-dashboard .dashboard-header {
-  background-color: #ffe1f0;
+  background: linear-gradient(to right, #fff0f6, #e0f2ff);
   color: rgb(215, 47, 131);
   padding: 20px 40px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(11, 11, 11, 0.1);
+  height: 200px;
 }
 
 .dashboard-header .logo {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 12px;
+
+  margin: 22px 0 0 5px;
   height: 40px !important;
+
 }
+
+.dashboard-header .logo h1{
+  font-size: 35px;
+  font-weight: 600;
+}
+
+
 
 .dashboard-header .nav-tabs {
   display: flex;
@@ -32,18 +49,21 @@
 
 .nav-tabs .tab-btn {
   background: none;
+  margin: 25px 10px;
   border: none;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
-  color: #35a5e6;
+  color: #000000;
   padding: 8px 0;
   cursor: pointer;
   position: relative;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .tab-btn:hover {
-  color: rgb(215, 47, 131);
+  transform: translateY(-5px);
+  color: rgb(219, 36, 158);
+
 }
 
 .tab-btn.active::after {

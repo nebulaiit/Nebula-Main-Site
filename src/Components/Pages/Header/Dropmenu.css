@@ -1,28 +1,20 @@
 /* ========== DROPDOWN MENU STYLES ========== */
 .dropdown_menu {
   position: fixed;
-  top: 100px;
+  top: 100px; /* adjust based on header height */
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
-  height: auto !important;
-  max-width: 1000px;
-  background: rgba(255, 255, 255, 0.15) !important;
-  z-index: 9999;
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 0 16px 8px rgba(255, 255, 255, 0.8);
-  border-radius: 16px;
-  display: flex;
+  width: 70%;
   padding: 30px;
-  transition: all 0.3s ease-in-out;
+  display: flex;
   gap: 30px;
-  box-sizing: border-box;
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(20px);
+  border-radius: 0 0 16px 16px ;
+  background: rgba(255, 255, 255);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  isolation: isolate;
 }
+
 
 /* ---------- Close Button ---------- */
 .dropdown_menu .close-btn {
@@ -71,6 +63,8 @@
   transition: all 0.3s ease;
   margin: 0;
   /* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); */
+  border: none;
+  background-color: transparent;
 }
 
 .dropdown_menu .left-box ul li .tutorial-btn:hover {
@@ -83,7 +77,7 @@
 
 /* ========== RIGHT BOX ========== */
 .dropdown_menu .right-box {
-  width: 70%;
+  width: 65%;
   padding-left: 10px;
   box-sizing: border-box;
 }
@@ -100,6 +94,7 @@
   font-weight: 600;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
+  height: 100px;
 }
 
 /* ---------- Course Details Box ---------- */
@@ -109,12 +104,15 @@
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+  justify-content: space-between;
 }
 
 /* ---------- Topic and Material Lists ---------- */
 .dropdown_menu .right-box .topic-list,
 .dropdown_menu .right-box .material-list {
   margin-bottom: 25px;
+  width: 40%;
 }
 
 .dropdown_menu .right-box .topic-list p,

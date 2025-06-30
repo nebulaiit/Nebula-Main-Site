@@ -91,7 +91,7 @@ input {
   width: 100%;
 }
 
-button {
+.sign-up-container form button {
   border: none;
   padding: 12px 45px;
   margin-top: 10px;
@@ -105,11 +105,11 @@ button {
   cursor: pointer;
 }
 
-button:active {
+.sign-up-container form button:active {
   transform: scale(0.95);
 }
 
-button.ghost {
+.sign-up-container form button.ghost {
   background-color: transparent;
   border: 2px solid #fff;
 }

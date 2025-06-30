@@ -53,12 +53,6 @@ export default function Dropmenu({ closeDropdown, activeMenu }) {
             </button>
           </li>
         ));
-      case "examples":
-        return ["If-Else", "Loops", "CRUD", "Form Validation"].map((ex, i) => (
-          <li key={i}>
-            <button className='tutorial-btn'>{ex}</button>
-          </li>
-        ));
       case "courses":
         return tutorial.map(item => (
           <li key={item.id}>
@@ -78,7 +72,7 @@ export default function Dropmenu({ closeDropdown, activeMenu }) {
 
 
   return (
-    <div className="dropdown_menu d-flex">
+    <div className="dropdown_menu">
       <span className="close-btn" onClick={closeDropdown}>
         <CloseIcon />
       </span>

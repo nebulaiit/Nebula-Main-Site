@@ -19,8 +19,7 @@ import { API_BASE_URL, API_URLs } from './constant';
 
  export const  signUpUser = async (body) => {
   const url = `${API_BASE_URL}${API_URLs.GET_SIGNUP}`;  
-console.log(body)
-console.log(url)
+
    try {
         const response = await axios.post(url, body)
         console.log(response);
@@ -97,6 +96,36 @@ export const contactUs = async (body) =>{
   
     try {
         const response = await axios.get(url,body)
+        return response.data;
+        
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
+
+export const getBlogList = async () =>{
+
+    const url = `${API_BASE_URL}${API_URLs.Blog_List}`
+  
+    try {
+        const response = await axios.get(url)
+        return response.data;
+        
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
+
+export const getBlogDetails = async (slug) =>{
+
+    const url = `${API_BASE_URL}${API_URLs.Blog_Details}/${slug}`
+
+    console.log(url)
+  
+    try {
+        const response = await axios.get(url)
         return response.data;
         
     } catch (error) {
