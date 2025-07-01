@@ -151,7 +151,7 @@
   background: #e0e7ff;
 }
 
-.tag.active {
+.community-wrapper .main-section .post-box .tag-bar .tag.active {
   background: #2563eb;
   color: #ffffff;
 }
@@ -161,7 +161,7 @@
   color: #f9fafb;
 }
 
-.community-wrapper.dark .tag.active {
+.community-wrapper.dark .main-section .post-box .tag-bar .tag.active {
   background: #2563eb;
 }
 
