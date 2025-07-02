@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { loginUser, signUpUser } from '../APIService/apiservice';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setAuthData } from '../../redux/authSlice';
+import { fetchUserDetails } from '../../redux/userSlice';
 
 const Login = () => {
   const [isSignUpActive, setIsSignUpActive] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [values, setValues] = useState({
     userName: '',
     email: '',
@@ -27,6 +31,10 @@ const Login = () => {
       localStorage.setItem('token', data.token);
       localStorage.setItem('userId', data.userId);
 
+      dispatch(setAuthData({ token: data.token, userId: data.userId }));
+      dispatch(fetchUserDetails(data.userId));
+
+
       alert('Login successful!');
       navigate('/'); // Redirect to home page after successful login
     }
@@ -36,18 +44,18 @@ const Login = () => {
   };
 
   const handleSignUp = async (e) => {
-  e.preventDefault();
-  try {
-    const data = await signUpUser(values);  
-    console.log('Signup successful:', data);
-    // localStorage.setItem('token', data.token);
-    
-    alert('Signup successful!');
-  } catch (error) {
+    e.preventDefault();
+    try {
+      const data = await signUpUser(values);
+      console.log('Signup successful:', data);
+      // localStorage.setItem('token', data.token);
+
+      alert('Signup successful!');
+    } catch (error) {
       setSignUpError(error.message);
-     
-  }
-};
+
+    }
+  };
 
 
   return (
@@ -77,7 +85,7 @@ const Login = () => {
             <input type="password" placeholder="password" name="password" value={values.password} onChange={handleChange} required />
           </div>
 
-          <button type="submit"  className="sign-up-btn" >Sign Up</button>
+          <button type="submit" className="sign-up-btn" >Sign Up</button>
         </form>
       </div>
 
@@ -100,7 +108,7 @@ const Login = () => {
           </div>
           {/* {loginError && <p className="error">{loginError}</p>} */}
           <a href="#">Forgot your password?</a>
-          <button type="submit"  className="sign-in-btn">Sign In</button>
+          <button type="submit" className="sign-in-btn">Sign In</button>
         </form>
       </div>
       <div className="overlay-container">

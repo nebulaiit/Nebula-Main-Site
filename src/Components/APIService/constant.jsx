@@ -5,9 +5,12 @@ export const API_URLs = {
     GET_CONTENT_BY_SLUG:"/api/content",
     GET_TOPICS : "/api/tutorial/heading",
     GET_SIGNUP: "/auth/tutorial/signup",
+    Get_User_Details: "/auth/tutorial/user-details",
     CONTACT:"/api/contact",
     Blog_List:"/api/blogs/blog-list",
     Blog_Details:"/api/blogs/details",
+    Get_All_posts:"/api/community/all-posts",
+    Create_Post:"/api/community/post",
 }
 
 export const API_BASE_URL = "http://localhost:8080";

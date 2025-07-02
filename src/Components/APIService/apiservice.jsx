@@ -31,6 +31,20 @@ import { API_BASE_URL, API_URLs } from './constant';
     }
 };
 
+export const getUserDetails = async (id) =>{
+
+    const url = `${API_BASE_URL}${API_URLs.Get_User_Details}/${id}`
+  
+    try {
+        const response = await axios.get(url)
+        return response.data;
+        
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
+
 
 export const getAllTutorial = async () =>{
 
@@ -123,6 +137,19 @@ export const getBlogDetails = async (slug) =>{
     const url = `${API_BASE_URL}${API_URLs.Blog_Details}/${slug}`
 
     console.log(url)
+  
+    try {
+        const response = await axios.get(url)
+        return response.data;
+        
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
+export const getAllPosts = async () =>{
+
+    const url = `${API_BASE_URL}${API_URLs.Get_All_posts}`
   
     try {
         const response = await axios.get(url)
