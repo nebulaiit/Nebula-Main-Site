@@ -1,151 +1,73 @@
-
-  /* Job Notification Page Styling */
-.job-notification-page {
-  padding: 40px 20px;
-  background: #f3faff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+/* JobNotification.css */
+.job-notification-wrapper {
+  padding: 40px;
+  background-color: #f0f6ff;
   min-height: 100vh;
   padding-top: 7%;
 }
 
-.job-notification-header {
-  text-align: center;
+.job-header {
+  background: #fff;
   padding: 30px;
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
-  border: 3px solid #e24aa0;
+  border: 2px solid #e83e8c;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
 }
 
-.job-notification-header h2 {
-  font-size: 2.5rem;
+.job-header h1 {
+  font-size: 2rem;
+  color: #e83e8c;
   font-weight: 700;
-  color: #e24aa0;
-  margin-bottom: 15px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-shadow: 0 4px 6px rgba(226, 74, 160, 0.25);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
-.job-notification-tabs {
+.job-tabs {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
-  margin-top: 20px;
+  gap: 20px;
 }
 
-.job-notification-tabs button {
-  padding: 16px 20px;
-  background: white;
-  border: 2px solid #e24aa0;
+.tab-button {
+  border: 2px solid #e83e8c;
+  background: #fff;
+  padding: 10px 24px;
   border-radius: 10px;
-  text-decoration: none;
-  color: #e24aa0;
-  font-weight: 500;
   font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 180px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  color: #e83e8c;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.job-notification-tabs button:hover,
-.job-notification-tabs button:active {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  background-color: #fff0f7;
-  color: #e24aa0;
-  border-color: #e24aa0;
+.tab-button.active,
+.tab-button:hover {
+  background: linear-gradient(to right, #ff5b8a, #ff1f8e);
+  color: #fff;
+  border: none;
 }
 
-.job-notification-tabs .active-tab {
-  background-color: #fff0f7;
-  color: #e24aa0;
-  border-color: #e24aa0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.tab-content{
+  width: 98%;
+
 }
 
-.job-notification-tabs button:focus {
-  outline: none;
-  box-shadow: 0 0 8px rgba(226, 74, 160, 0.6);
-}
-
-.job-content {
-  text-align: center;
-  padding: 30px;
-  font-size: 1.1rem;
+.tab-content h3 {
+  margin-top: 20px;
   color: #333;
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto;
+  font-weight: 500;
+  text-align: center;
 }
 
-/* Add responsiveness */
-@media (max-width: 1024px) {
-  .job-notification-header h2 {
-    font-size: 2rem;
-  }
+.job-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: start;
+  margin-top: 25px;
 
-  .job-notification-tabs {
-    gap: 20px;
-  }
 
-  .job-notification-tabs button {
-    min-width: 150px;
-    padding: 14px 18px;
-    font-size: 0.95rem;
-  }
-
-  .job-content {
-    padding: 20px;
-    font-size: 1rem;
-  }
 }
-
-@media (max-width: 768px) {
-  .job-notification-header h2 {
-    font-size: 1.8rem;
-  }
-
-  .job-notification-tabs {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .job-notification-tabs button {
-    width: 100%;
-    font-size: 1rem;
-    padding: 14px 20px;
-  }
-
-  .job-content {
-    padding: 20px;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .job-notification-page {
-    padding: 30px 15px;
-  }
-
-  .job-notification-header h2 {
-    font-size: 1.6rem;
-  }
-
-  .job-notification-tabs button {
-    font-size: 0.9rem;
-    padding: 12px 16px;
-  }
-
-  .job-content {
-    padding: 15px;
-    font-size: 0.95rem;
-  }
-}
-

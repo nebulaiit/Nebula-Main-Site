@@ -57,6 +57,7 @@ import Blog from './Components/Pages/Blogs/Blog';
 import BlogDetails from './Components/Pages/Blogs/BlogDetails';
 import CreateBlog from './Components/Pages/Blogs/CreateBlog';
 import Community from './Components/Pages/CommunityPage/Community';
+import JobDetails from './Components/Pages/JobNotificationPage/JobDetailsPage/JobDetails';
 
 
 function App() {
@@ -95,7 +96,7 @@ function App() {
         <Route path="/course/:courseName" element={<PythonCourse />} />
         <Route path="/login" element={<Login />} />
         <Route path="/create-project" element={<CreateProject />} />
-        <Route path="/learning-path/:courseName" element={<Enrollment />} />
+        <Route path="/learning-path/:index" element={<Enrollment />} />
         <Route path="/progamming/:courseName" element={<TutorialPage/>} />
         <Route path="/job-notification" element={<JobNotificationPage />} />
         <Route path="/course-List/:courseName" element={<Premium/>} />
@@ -103,6 +104,7 @@ function App() {
         <Route path='/blog-details/:slug' element={<BlogDetails/>}/>
         <Route path='/write-blog' element={<CreateBlog/>}/>
         <Route path='/community' element={<Community/>}/>
+        <Route path="/job-details/:id" element={<JobDetails />} />
 
 
         {/* Online Compilers */}

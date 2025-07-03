@@ -3,6 +3,7 @@ import './SideBar.css';
 
 function Sidebar({ heading, selectedUrlSlug }) {
   const [expanded, setExpanded] = useState(null);
+  const [activeSlug, setActiveSlug] = useState(null);
 
   useEffect(() => {
     if (heading.length > 0) {
@@ -42,10 +43,11 @@ function Sidebar({ heading, selectedUrlSlug }) {
                       {heading.topics.map((topic, idx) => (
                         <li key={idx}>
                           <button
-                            className="topic-btn"
+                            className={`topic-btn ${activeSlug === topic.urlSlug ? 'active' : ''}`}
                             onClick={(e) => {
                               e.stopPropagation();
-                              selectedUrlSlug(topic.urlSlug);
+                              setActiveSlug(topic.urlSlug); // sets active
+                              selectedUrlSlug(topic.urlSlug); // your existing callback
                             }}
                           >
                             {topic.topicName}

@@ -37,10 +37,11 @@ export default function CourseList() {
       try {
 
         const response = await getAllTutorial();
+        console.log("Fetched courses:", response);
 
         // Map each tutorialName to icon & type
       const mappedCourses = response.map(course => {
-        const iconInfo = iconMap[course.tutorialName] || { icon: "question", type: "fas" }; // fallback icon
+        const iconInfo = iconMap[course.tutorialName]  || { icon: "question", type: "fas" }; // fallback icon
         return {
           ...course,
           icon: iconInfo.icon,

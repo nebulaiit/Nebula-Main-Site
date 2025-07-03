@@ -4,11 +4,13 @@ import certificateImg from "./images/certificate.png";
 import { useNavigate, useParams } from "react-router-dom";
 
 const Enrollment = () => {
-  const { courseName } = useParams();
+  const { index } = useParams();
   const [showPopup, setShowPopup] = useState(false);
   const [enrolled, setEnrolled] = useState(false);
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [isInCart, setIsInCart] = useState(false);
+
+  console.log("Index:", index);
 
   const navigate = useNavigate();
 
@@ -33,10 +35,10 @@ const Enrollment = () => {
   };
 
   const courseTitles = [
-    `Learn ${courseName} Basics`,
-    `Practice: ${courseName} Basics`,
-    `Learn ${courseName} Intermediate`,
-    `Practice: ${courseName} Intermediate`,
+    `Learn Java Basics`,
+    `Practice: Java Basics`,
+    `Learn Java Intermediate`,
+    `Practice: Java Intermediate`,
     'Build Final Project'
   ];
 
@@ -77,7 +79,7 @@ const Enrollment = () => {
               className="course-image"
             />
             <h4 className="course-tag">LEARNING PATH</h4>
-            <h1 className="course-title">Learn {courseName}</h1>
+            <h1 className="course-title">Learn Java</h1>
             <p className="course-description">
               Learn to code in Python—a beginner-friendly programming language
               used in data analysis, web development, task automation, and more.

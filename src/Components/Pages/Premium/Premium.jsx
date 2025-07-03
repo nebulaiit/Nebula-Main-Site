@@ -1,78 +1,62 @@
-import React from 'react';
-import './Premium.css'; 
-import course1 from "../../Images/course1.jpg"
-
-const courses = [
-  {
-    image: course1,
-    title: 'Java Tutorial for Complete Beginners',
-    instructor: 'John Purcell',
-    rating: 4.5,
-    reviews: 101915,
-    price: 519,
-    originalPrice: 799,
-    premium: true,
-    bestseller: false,
-  },
-  {
-    image: 'python-laptop.png',
-    title: 'The Complete Python Bootcamp From Zero to Hero in Python',
-    instructor: 'Jose Portilla, Pierian Training',
-    rating: 4.6,
-    reviews: 534994,
-    price: 519,
-    originalPrice: 3109,
-    premium: true,
-    bestseller: false,
-  },
-  {
-    image: 'angela-python.png',
-    title: '100 Days of Code: The Complete Python Pro Bootcamp',
-    instructor: 'Dr. Angela Yu, Developer and Lead Instructor',
-    rating: 4.7,
-    reviews: 365886,
-    price: 549,
-    originalPrice: 3279,
-    premium: true,
-    bestseller: true,
-  },
-  {
-    image: 'angela-fullstack.png',
-    title: 'The Complete Full-Stack Web Development Bootcamp',
-    instructor: 'Dr. Angela Yu, Developer and Lead Instructor',
-    rating: 4.7,
-    reviews: 434818,
-    price: 519,
-    originalPrice: 3109,
-    premium: true,
-    bestseller: true,
-  },
-];
+import React, { useEffect, useState } from 'react';
+import './Premium.css';
+import course1 from "../../Images/course1.jpg";
+import { useNavigate, useParams } from 'react-router-dom';
+import { getAllCourse } from '../../APIService/apiservice';
 
 const Premium = () => {
+
+  const [courses, setCourses] = useState([]);
+
+  const { courseName } = useParams();
+
+
+  useEffect(() => {
+
+    const fetchCourseList = async () => {
+      try {
+
+        const response = await getAllCourse(courseName);
+        console.log("Fetched courses:", response);
+        setCourses(response);
+
+      } catch (error) {
+        console.error("Error fetching documents:", error);
+      }
+    };
+    fetchCourseList();
+  }, [])
+
+  const navigator = useNavigate();
   return (
     <div className="course-list-container">
+      <h2>Premium Courses</h2>
       <div className="card-row">
         {courses.map((course, index) => (
-          <div className="course-card" key={index}>
-            <img  src={course.image}  alt={course.title}  className="course-image"
-            />
+          <div className="course-card" key={index} onClick={() => navigator(`/learning-path/${course.id}`)}>
+            <img src={course.image} alt={course.courseTitle} className="course-image" />
             <div className="course-details">
-                <h3>{course.title}</h3>
-                <p>{course.instructor}</p>
-                <p>
-                    <strong>{course.rating} ⭐</strong> ({course.reviews.toLocaleString()})
-                </p>
-                <p>
-                    <span className="price">₹{course.price}</span>{' '}
-                    <span className="original-price">₹{course.originalPrice}</span>
-                </p>
-                <div className="card-actions">
-                    <button className="add-to-cart">Add to cart</button>
-                    <button className="wishlist-btn">♡</button>
-                </div>
+              <h3 className='course-title'>{course.courseTitle}</h3>
+              {/* <p className="instructor">{course.instructor}</p> */}
+              {/* <p className="rating">
+                <strong>{course.rating} ⭐</strong> ({course.reviews.toLocaleString()})
+              </p> */}
+
+              <div className="duration">
+                <span>
+                  Duration : {course.duration} {course.durationUnit}
+                </span>
+              </div>
+              <div className="price-section">
+                <span className="price">₹{course.effectivePrice}</span>
+                <span className="original-price">₹{course.price}</span>
+              </div>
+              <div className="card-actions">
+                <button className="add-to-cart">Add to cart</button>
+                <button className="wishlist-btn">♡</button>
+              </div>
+              {course.bestseller && <span className="bestseller-badge">Bestseller</span>}
             </div>
-            
           </div>
         ))}
       </div>

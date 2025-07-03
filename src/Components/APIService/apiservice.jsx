@@ -61,6 +61,21 @@ export const getAllTutorial = async () =>{
     }
 }
 
+export const getAllCourse = async (courseName) =>{
+
+    const url = `${API_BASE_URL}${API_URLs.Get_Course_List}/${courseName}`
+
+  
+    try {
+        const response = await axios.get(url)
+        return response.data;
+        
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
+
 export const getHeadingList = async (tutorialName) =>{
 
     const url = `${API_BASE_URL}${API_URLs.GET_HEADING_LIST}/${tutorialName}`
@@ -150,6 +165,32 @@ export const getBlogDetails = async (slug) =>{
 export const getAllPosts = async () =>{
 
     const url = `${API_BASE_URL}${API_URLs.Get_All_posts}`
+  
+    try {
+        const response = await axios.get(url)
+        return response.data;
+        
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
+export const  getJobById = async (id) =>{
+
+    const url = `${API_BASE_URL}${API_URLs.Get_Job_Details}/${id}`
+  
+    try {
+        const response = await axios.get(url)
+        return response.data;
+        
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
+export const  getJobList = async () =>{
+
+    const url = `${API_BASE_URL}${API_URLs.Get_Job_list}`
   
     try {
         const response = await axios.get(url)
