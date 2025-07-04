@@ -5,10 +5,10 @@ import JobCard from './JobCard';
 
 const tabs = [
   'NEW JOBS OPENINGS',
-  'JOB ALERTS',
-  'COMPANY UPDATES',
-  'APPLY NOW',
-  'SETTINGS'
+  'APPLIED JOBS',
+  'INTERVIEW PREP',
+  'RESUME BUIDLING',
+  
 ];
 
 const JobNotification = () => {
@@ -22,7 +22,7 @@ const JobNotification = () => {
           {tabs.map(tab => (
             <button
               key={tab}
-              className={`tab-button ${activeTab === tab ? 'active' : ''}`}
+              className={`tab-buttons ${activeTab === tab ? 'active' : ''}`}
               onClick={() => setActiveTab(tab)}
             >
               {tab}
@@ -38,6 +38,13 @@ const JobNotification = () => {
           <div className="job-card-list">
      
             <JobCard />
+          </div>
+        )}
+
+        {activeTab === 'RESUME BUIDLING' && (
+          <div className="job-card-list">
+     
+           ad
           </div>
         )}
 

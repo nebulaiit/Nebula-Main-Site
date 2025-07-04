@@ -21,7 +21,7 @@ const handleCourseClick = (courseName , path) => {
 };
   return (
     <div className="language-header">
-      <h2>Learn {courseName} programming</h2>
+      <h2> {courseName} Programming</h2>
       <div className="language-header-tabs">
         {tabs.map((tab) => (
           <button

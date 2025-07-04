@@ -31,7 +31,7 @@ const Enrollment = () => {
   // };
 
   const handleJobNotificationClick = () => {
-    navigate("/job-notification");
+    navigate("/career");
   };
 
   const courseTitles = [

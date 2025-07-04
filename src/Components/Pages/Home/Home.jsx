@@ -18,51 +18,47 @@ export default function Home() {
     <div className="container-fluid homepage">
       {/* ✅ Hero Section */}
       <div className="hero-section">
+
+
         <div className="content-box-home">
           <h1>
-            Creative Web <br />
-            Development <br />
+            Creative Web Development <br />
             Company
           </h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus,
             risus sit amet auctor sodales, justo erat tempor eros.
           </p>
-          <Button>
+          {/* <Button>
             Get A Free Quote <KeyboardArrowRightIcon />
             <span className="circle"></span>
-          </Button>
+          </Button> */}
         </div>
+
+          
         <div className="image-box-home">
-<img src={images} alt="My Image" />
+          <img src={images} alt="My Image" />
         </div>
-        
+
       </div>
 
-      {/* ✅ Course List */}
+
       <CourseList />
 
-      {/* ✅ Curved Section */}
+
       <CurvedSection />
 
-      {/* ✅ Interactive Learning */}
+
       <InteractiveLearningSection />
 
-      {/* ✅ Practice with Compilers */}
+
       <OnlineCompilers />
 
-
-      {/* ✅ Why Nebula */}
       <WhyNebula />
-
-      {/* ✅ About Page */}
       <AboutAgencyPage />
 
-      {/* ✅ Services Section */}
       <ServicesSection />
 
-      {/* ✅ Learn On The Go */}
-      {/* <LearnOnTheGo /> */}
     </div>
   );
 }

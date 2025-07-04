@@ -94,7 +94,7 @@ export default function Header({ variant = "default" }) {
                     {/* Desktop Navigation Menu */}
                     <nav className="d-none d-md-block">
                         <ul className='list list-inline mb-0 d-flex align-items-center'>
-                            {["tutorial", "courses", "career"].map(menu => (
+                            {["tutorial", "courses"].map(menu => (
                                 <li key={menu} className='list-inline-item position-relative'>
                                     <Button onClick={() => toggleDropdown(menu)}>
                                         {menu.charAt(0).toUpperCase() + menu.slice(1)}
@@ -108,6 +108,7 @@ export default function Header({ variant = "default" }) {
                                     )}
                                 </li>
                             ))}
+                            <li><Button onClick={()=>navigate("/career")}>Career</Button></li>
                             <li><Button onClick={()=>navigate("/blog")}>Blog</Button></li>
                             <li><Button onClick={()=>navigate("/community")}>Community</Button></li>
                         </ul>

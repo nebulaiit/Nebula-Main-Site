@@ -1,0 +1,165 @@
+/* === Parent Container === */
+.dashboard-section {
+  padding: 2rem;
+  background-color: #f5f8ff;
+  border-radius: 16px;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* === Section Title === */
+.dashboard-section .tab-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e1e2f;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* === Stats Overview === */
+.dashboard-section .stats-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.dashboard-section .stat-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  min-width: 150px;
+  flex: 1;
+  border-top: 4px solid #ff2e93;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-section .stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.dashboard-section .stat-card h4 {
+  font-size: 2rem;
+  color: #ff2e93;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-section .stat-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* === Learning Grid === */
+.dashboard-section .learning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.dashboard-section .learning-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-section .learning-card:hover {
+  transform: scale(1.02);
+}
+
+.dashboard-section .learning-card .card-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* === Progress Bar === */
+.dashboard-section .learning-card .progress-wrapper {
+  margin-bottom: 1rem;
+}
+
+.dashboard-section .learning-card .progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.4rem;
+}
+
+.dashboard-section .learning-card .progress-bar .progress {
+  height: 100%;
+    background: linear-gradient(to right, #f880a2, #ff1f8e);
+  transition: width 0.4s ease-in-out;
+  border-radius: 6px;
+}
+
+/* === Resume Button === */
+.dashboard-section .learning-card .resume-btn {
+    border: 2px solid #e83e8c;
+    background: #fff;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: #e83e8c;
+    font-weight: 600;
+    cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.dashboard-section .learning-card .resume-btn:hover {
+    background: linear-gradient(to right, #ff5b8a, #ff1f8e);
+    color: #fff;
+    border: none;
+  transform: scale(1.03);
+}
+
+/* === Achievements Grid === */
+.dashboard-section .achievements-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.dashboard-section .badge-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  flex: 1;
+  min-width: 260px;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-section .badge-card:hover {
+  transform: translateY(-3px);
+}
+
+.dashboard-section .badge-card .badge-icon {
+  font-size: 2rem;
+  color: #ff2e93;
+}
+
+.dashboard-section .badge-card strong {
+  font-size: 1rem;
+  color: #333;
+}
+
+.dashboard-section .badge-card p {
+  font-size: 0.875rem;
+  color: #777;
+  margin: 0;
+}

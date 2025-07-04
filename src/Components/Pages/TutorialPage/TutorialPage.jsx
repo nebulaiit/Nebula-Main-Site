@@ -51,7 +51,7 @@ export default function TutorialPage() {
 
 
   return (
-    <div className="tutorial-page-wrapper py-4">
+    <div className="tutorial-page-wrapper py-4 px-4">
       <Sidebar heading={headings} selectedUrlSlug={setSelectedUrlSlug} />
 
       <SelectedTopicContent contentBlocks={selectedTopicContent} />

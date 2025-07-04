@@ -59,12 +59,7 @@ export default function Dropmenu({ closeDropdown, activeMenu }) {
             <button className='tutorial-btn'>{item.tutorialName}</button>
           </li>
         ));
-      case "career":
-        return ["Interview Prep", "Resume Building", "Tech Stacks"].map((career, i) => (
-          <li key={i}>
-            <button className='tutorial-btn'>{career}</button>
-          </li>
-        ));
+    
       default:
         return null;
     }

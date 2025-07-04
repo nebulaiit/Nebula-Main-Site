@@ -14,6 +14,7 @@ export const API_URLs = {
     Get_Course_List:"/api/courses/language",
     Get_Job_Details:"/api/jobs/job-details",
     Get_Job_list:"/api/jobs",
+    WishList:'/api/wishlist',
 }
 
 export const API_BASE_URL = "http://localhost:8080";

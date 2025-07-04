@@ -1,0 +1,98 @@
+/* MyLists.css - Pink themed modern design */
+
+.my-lists-wrapper {
+  padding: 2rem;
+  background-color: #edf3ff; /* Soft bluish background */
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+.my-lists-wrapper .tab-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e1e2f;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.my-lists-wrapper .tab-desc {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.my-lists-wrapper .my-lists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.my-lists-wrapper .list-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1.5px solid #ff2e93;
+}
+
+.my-lists-wrapper .list-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 31, 142, 0.2);
+}
+
+.my-lists-wrapper .list-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.my-lists-wrapper .list-card p {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.my-lists-wrapper .list-card strong {
+  color: #ff2e93;
+}
+
+.my-lists-wrapper .list-card .list-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.my-lists-wrapper .list-card .list-actions .btn-view,
+.my-lists-wrapper .list-card .list-actions .btn-delete {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 500;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.my-lists-wrapper .list-card .list-actions .btn-view {
+  background-color: #ff2e93;
+  color: white;
+}
+
+.my-lists-wrapper .list-card .list-actions .btn-view:hover {
+  background-color: #e60073;
+}
+
+.my-lists-wrapper .list-card .list-actions .btn-delete {
+  background-color: transparent;
+  color: #ff2e93;
+  border: 1.5px solid #ff2e93;
+}
+
+.my-lists-wrapper .list-card .list-actions .btn-delete:hover {
+  background-color: #ffe1f0;
+}

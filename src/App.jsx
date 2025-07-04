@@ -98,7 +98,7 @@ function App() {
         <Route path="/create-project" element={<CreateProject />} />
         <Route path="/learning-path/:index" element={<Enrollment />} />
         <Route path="/progamming/:courseName" element={<TutorialPage/>} />
-        <Route path="/job-notification" element={<JobNotificationPage />} />
+        <Route path="/career" element={<JobNotificationPage />} />
         <Route path="/course-List/:courseName" element={<Premium/>} />
         <Route path='/blog' element={<Blog/>}/>
         <Route path='/blog-details/:slug' element={<BlogDetails/>}/>

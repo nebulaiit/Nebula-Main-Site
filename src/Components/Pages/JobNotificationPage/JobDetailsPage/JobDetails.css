@@ -46,7 +46,7 @@
 
 .job-details-container .job-details-header .job-title-section .company-name {
   font-size: 18px;
-  color: #6b7280;
+  color: #e83e8c;
   margin-bottom: 4px;
 }
 
@@ -70,16 +70,16 @@
   padding: 18px 24px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;  
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   position: relative;
-  border-left: 6px solid #6366f1;
+  border: 1px solid #e83e8c ;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .job-details-container .info-grid .info-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 15px #e83e8c;
 }
 
 .job-details-container .info-grid .info-card h4 {

@@ -28,11 +28,8 @@
 
  .hero-section .content-box-home {
 
-  width: 500px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 650px;
+background-color: #daeef5 !important;
   text-align: left;
   background: none;
   padding: 0;
@@ -41,18 +38,9 @@
 }
 
 
-.content-box-home h1 {
-  font-size: 60px;
-  line-height: 72px;
-  font-weight: 700;
-  color: #0e0e49;
-  margin-bottom: 20px;
-}
-
-
 
 .hero-section .content-box-home h1 {
-  font-size: 60px;
+  font-size: 48px;
   line-height: 72px;
   font-weight: 700;
   color:  #0e0e49;
@@ -113,26 +101,7 @@
   height: 100%;
 }
 
-/* Extra Try Now Box */
-.try-now-box {
-  text-align: center;
-  margin-top: 40px;
-}
 
-.try-now-btn {
-  background: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
-  padding: 20px 40px;
-  border: none;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 18px;
-  transition: background 0.3s ease;
-}
-
-.try-now-btn:hover {
-  background: linear-gradient(to right, #ff6b6b 0%, #ff1f8e 100%);
-}
 
 /* ----------------------------- */
 /* Responsive styles */

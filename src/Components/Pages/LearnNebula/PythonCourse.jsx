@@ -11,7 +11,6 @@ const PythonCourse = () => {
   const { courseName } = useParams();
   const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(null);
-
   const [headings, setHeadings] = useState([])
 
   const handleCardClick = (index) => {
@@ -56,7 +55,7 @@ const PythonCourse = () => {
               <p className="mb-1 text-muted">Perfect for beginners serious about building a career in {courseName}.</p>
               <p className="mb-4 text-muted">Created by the Programiz team with over a decade of experience.</p>
 
-              <button className="btn btn-primary px-4" onClick={()=>handleEnrollmentClick(courseName)}>
+              <button className="btn btn-primary px-4" onClick={() => handleEnrollmentClick(courseName)}>
                 Try Now <i className="fas fa-arrow-right ms-2"></i>
               </button>
             </div>
@@ -85,11 +84,11 @@ const PythonCourse = () => {
           </ul>
           <p className="final-note">If you are simply looking to learn {courseName} step-by-step, you can follow our free tutorials in the next section.</p>
         </div>
-        <div className="container my-5">
+        {/* <div className="container my-5">
           <h2 className="fw-bold text-center mb-3">Beginner's Guide to {courseName}</h2>
           <p className="text-center">These tutorials will provide you with a solid foundation in {courseName} and prepare you for your career goals.</p>
-        </div>
-        <div className="container my-5 pink-feature-container">
+        </div> */}
+        {/* <div className="container my-5 pink-feature-container">
           {headings
             .sort((a, b) => a.orderIndex - b.orderIndex)
             .map((heading) => (
@@ -116,7 +115,7 @@ const PythonCourse = () => {
                 </div>
               </div>
             ))}
-        </div>
+        </div> */}
       </div>
     </>
   );

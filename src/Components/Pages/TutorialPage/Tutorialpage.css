@@ -1,27 +1,9 @@
 .tutorial-page-wrapper{
     
     display: flex;
-    justify-content:space-around ;
+    justify-content:space-between ;
+    align-items: start;
+
+    margin-top: 6%;
 }
 
-.tutorial-page-wrapper .content-container{
-    width: 70%;
-    height: 100px;
-    /* background-color: #f687bd; */
-    margin-top: 7%;
-    padding: 15px;
-  }
-  
-.tutorial-page-wrapper .content-container .content-heading{
-    color: black;
-}
-
-.tutorial-page-wrapper .content-container .content-image{
-    max-width: 100%;
-    margin: 10px 0 ;
-}
-.tutorial-page-wrapper .content-container .content-video{
-    width: 560px;
-    height:315px;
-
-}

@@ -1,0 +1,102 @@
+/* === Wishlist Section Wrapper === */
+.wishlist-wrapper {
+  padding: 2rem;
+  background-color: #f5f8ff;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* === Section Title and Description === */
+.wishlist-wrapper .tab-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e1e2f;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.wishlist-wrapper .tab-desc {
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* === Course List Layout === */
+.wishlist-wrapper .course-list {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* === Individual Course Card === */
+.wishlist-wrapper .course-card {
+  width: 30%;
+  gap: 20px;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wishlist-wrapper .course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 31, 142, 0.2);
+}
+
+/* === Course Image === */
+.wishlist-wrapper .course-card .course-image {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* === Course Info === */
+.wishlist-wrapper .course-info-wishlist {
+  flex: 1;
+}
+
+.wishlist-wrapper .course-info-wishlist h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e1e2f;
+  margin-bottom: 0.5rem;
+}
+
+.wishlist-wrapper .course-info-wishlist p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0.3rem 0;
+}
+
+/* === Buttons Row === */
+.wishlist-wrapper .course-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 12px;
+}
+
+/* === Buttons === */
+.wishlist-wrapper .course-actions .btn-remove,
+.wishlist-wrapper .course-actions .btn-move {
+    border: 2px solid #e83e8c;
+    background: #fff;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: #e83e8c;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.wishlist-wrapper .course-actions .btn-remove:hover,
+.wishlist-wrapper .course-actions .btn-move:hover {
+    background: linear-gradient(to right, #ff5b8a, #ff1f8e);
+    color: #fff;
+    border: none;
+  transform: scale(1.03);
+}

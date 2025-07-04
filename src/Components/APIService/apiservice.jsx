@@ -201,3 +201,43 @@ export const  getJobList = async () =>{
         throw error;
     }
 }
+
+export const  fetchWishlist = async (userId) =>{
+
+    const url = `${API_BASE_URL}${API_URLs.WishList}/${userId}`
+  
+    try {
+        const response = await axios.get(url)
+        return response.data;
+        
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
+export const  addWishlistItem = async (userId, item) =>{
+
+    const url = `${API_BASE_URL}${API_URLs.WishList}/${userId}`
+  
+    try {
+        const response = await axios.post(url, item)
+        return response.data;
+        
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
+export const  deleteWishlistItem  = async (userId) =>{
+
+    const url = `${API_BASE_URL}${API_URLs.WishList}/${userId}`
+  
+    try {
+        const response = await axios.delete(url)
+        return response.data;
+        
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}

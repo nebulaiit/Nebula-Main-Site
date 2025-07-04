@@ -73,10 +73,38 @@ a {
 
 .header nav li {
   position: relative;
-
   margin: 0 10px;
 }
 
+
+.header nav li button{
+  color: #000000; /* base theme color */
+  font-weight: 500;
+  font-size: 15px;
+  padding: 8px 14px;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+
+.header nav li button::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ff1f8e;
+  transition: width 0.3s ease;
+}
+
+.header nav li button:hover::after {
+  width: 100%;
+}
 
 /*RIGHT-END BUTTONS (Phone & PRO) */
 .right-end-btn {
