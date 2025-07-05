@@ -11,14 +11,17 @@ import CurvedSection from '../CurvedSection/CurvedSection';
 import WhyNebula from '../WhyNebula/WhyNebula';
 import AboutAgencyPage from '../AboutPage/AboutPage';
 
+// Import your local image
+import homepageIllustration from '../../Images/homepage-illustration1.png';
+
 export default function Home() {
 
-  const images = 'https://drive.google.com/uc?export=view&id=1azJwJHfp5ubvWf1m_lk1NntoMLkpZyoj'
+  // Use the imported image
+  const images = homepageIllustration;
   return (
     <div className="container-fluid homepage">
       {/* ✅ Hero Section */}
       <div className="hero-section">
-
 
         <div className="content-box-home">
           <h1>
@@ -35,9 +38,8 @@ export default function Home() {
           </Button> */}
         </div>
 
-          
         <div className="image-box-home">
-          <img src={images} alt="My Image" />
+          <img src={images} alt="Homepage Illustration" />
         </div>
 
       </div>
