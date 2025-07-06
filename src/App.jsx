@@ -61,6 +61,7 @@ import ToastList from './Components/Toast/ToastList';
 
 import CreateResume from './Components/Pages/JobNotificationPage/Resume/CreateResume/CreateResume';
 import ATSChecker from './Components/Pages/JobNotificationPage/Resume/Resume';
+import ForgotFlow from './Components/Login/ForgetPassword/ForgotFlow';
 
 
 
@@ -153,8 +154,7 @@ function App() {
         <Route path="/courses" element={<Courses />} />
           <Route path="/resume-checker" element={<ATSChecker />} />
     <Route path="/create-resume" element={<CreateResume />} />
- 
-
+    <Route path="/forgot-password" element={<ForgotFlow/>} />
       </Routes>
       <WebsiteFooter />
     </BrowserRouter>
