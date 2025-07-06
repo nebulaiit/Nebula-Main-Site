@@ -2,7 +2,8 @@
 .dashboard-section {
   padding: 2rem;
   background-color: #f5f8ff;
-  border-radius: 16px;
+  border: 2px solid #ff91c1;
+  border-radius: 15px;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
 }
