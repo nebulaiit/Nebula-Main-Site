@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './JobNotificationPage.css';
 import JobCard from './JobCard';
+import ATSChecker from './Resume/Resume';
 
 const tabs = [
   'NEW JOBS OPENINGS',
@@ -43,8 +44,7 @@ const JobNotification = () => {
 
         {activeTab === 'RESUME BUIDLING' && (
           <div className="job-card-list">
-     
-           ad
+            <ATSChecker/>
           </div>
         )}
 

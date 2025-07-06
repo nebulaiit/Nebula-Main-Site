@@ -58,6 +58,8 @@ import BlogDetails from './Components/Pages/Blogs/BlogDetails';
 import CreateBlog from './Components/Pages/Blogs/CreateBlog';
 import Community from './Components/Pages/CommunityPage/Community';
 import JobDetails from './Components/Pages/JobNotificationPage/JobDetailsPage/JobDetails';
+import CreateResume from './Components/Pages/JobNotificationPage/Resume/CreateResume/CreateResume';
+import ATSChecker from './Components/Pages/JobNotificationPage/Resume/Resume';
 
 
 function App() {
@@ -143,6 +145,8 @@ function App() {
         <Route path="/paymentPage" element={<PaymentPage />} />
         <Route path="/thankyou" element={<ThankYou />} />
         <Route path="/courses" element={<Courses />} />
+          <Route path="/resume-checker" element={<ATSChecker />} />
+    <Route path="/create-resume" element={<CreateResume />} />
  
 
       </Routes>
