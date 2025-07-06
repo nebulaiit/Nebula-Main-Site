@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter , Routes, Route } from "react-router-dom";
 import Header from './Components/Pages/Header/Header';
 import Home from './Components/Pages/Home/Home';
 
@@ -50,12 +50,15 @@ import TutorialPage from './Components/Pages/TutorialPage/TutorialPage';
 import Premium from './Components/Pages/Premium/Premium';
 import PaymentPage from './Components/Pages/PaymentPage/PaymentPage';
 import ThankYou from './Components/Pages/thankyou/thankyou';
+import Courses from './Components/Pages/LearningDashboard/Courses';
 import Blog from './Components/Pages/Blogs/Blog';
 import BlogDetails from './Components/Pages/Blogs/BlogDetails';
 import CreateBlog from './Components/Pages/Blogs/CreateBlog';
 import Community from './Components/Pages/CommunityPage/Community';
 import JobDetails from './Components/Pages/JobNotificationPage/JobDetailsPage/JobDetails';
+
 import ToastList from './Components/Toast/ToastList';
+
 import CreateResume from './Components/Pages/JobNotificationPage/Resume/CreateResume/CreateResume';
 import ATSChecker from './Components/Pages/JobNotificationPage/Resume/Resume';
 import ForgotFlow from './Components/Login/ForgetPassword/ForgotFlow';
@@ -90,26 +93,26 @@ function App() {
   // }, []);
 
   return (
-
-
+  
+    
     <BrowserRouter>
       <Header variant="default" />
-      <ToastList />
+      <ToastList/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/tutorial' element={<CourseList />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path='/tutorial' element={<CourseList/>}/>
+        <Route path="/contact" element={<ContactPage/>} />
         <Route path="/course/:courseName" element={<PythonCourse />} />
         <Route path="/login" element={<Login />} />
         <Route path="/create-project" element={<CreateProject />} />
         <Route path="/learning-path/:index" element={<Enrollment />} />
-        <Route path="/progamming/:courseName" element={<TutorialPage />} />
+        <Route path="/progamming/:courseName" element={<TutorialPage/>} />
         <Route path="/career" element={<JobNotificationPage />} />
-        <Route path="/course-List/:courseName" element={<Premium />} />
-        <Route path='/blog' element={<Blog />} />
-        <Route path='/blog-details/:slug' element={<BlogDetails />} />
-        <Route path='/write-blog' element={<CreateBlog />} />
-        <Route path='/community' element={<Community />} />
+        <Route path="/course-List/:courseName" element={<Premium/>} />
+        <Route path='/blog' element={<Blog/>}/>
+        <Route path='/blog-details/:slug' element={<BlogDetails/>}/>
+        <Route path='/write-blog' element={<CreateBlog/>}/>
+        <Route path='/community' element={<Community/>}/>
         <Route path="/job-details/:id" element={<JobDetails />} />
 
 

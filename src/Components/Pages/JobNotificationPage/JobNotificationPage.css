@@ -6,10 +6,6 @@
   padding-top: 7%;
 }
 
-.fade-in-section {
-  animation: fadeInSection 0.8s ease-out forwards;
-}
-
 .job-header {
   background: #fff;
   padding: 30px;
@@ -61,7 +57,7 @@
 
 .tab-content h3 {
   margin-top: 20px;
-  color: #e83e8c;
+  color: #333;
   font-weight: 500;
   text-align: center;
 }
@@ -75,14 +71,3 @@
 
 
 }
-@keyframes fadeInSection {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
