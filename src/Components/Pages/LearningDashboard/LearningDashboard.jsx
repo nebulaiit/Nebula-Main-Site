@@ -11,7 +11,7 @@ import Cart from "./Cart";
 const tabs = [
   { key: "dashboard", label: "Dashboard" },
   { key: "all", label: "All Courses" },
-  // { key: "lists", label: "My Lists" },
+  { key: "lists", label: "My Lists" },
   { key: "wishlist", label: "Wishlist" },
   { key: "cart", label: "Your Cart" },
 ];
@@ -37,8 +37,8 @@ const LearningDashboard = () => {
         return <Dashboard />;
       case "all":
         return <AllCourses />;
-      // case "lists":
-      //   return <MyLists />;
+      case "lists":
+        return <MyLists />;
       case "wishlist":
         return <Wishlist />;
       case "cart":

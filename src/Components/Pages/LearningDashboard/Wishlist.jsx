@@ -7,7 +7,7 @@ import { addToCart } from '../../../redux/cartSlice';
 
 const Wishlist = () => {
   const dispatch = useDispatch();
-
+  const { showToast } = useToast(); // ✅ use toast context
 
   const { items, loading } = useSelector((state) => state.wishlist);
   const userId = useSelector((state) => state.auth.userId);
