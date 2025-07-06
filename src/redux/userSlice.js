@@ -2,13 +2,19 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getUserDetails } from '../Components/APIService/apiservice';
 
+// Load user data from localStorage (if available)
+const userFromStorage = localStorage.getItem('user')
+  ? JSON.parse(localStorage.getItem('user'))
+  : null;
+
 // Thunk to fetch user details
 export const fetchUserDetails = createAsyncThunk(
-
   'user/fetchUserDetails',
   async (userId, { rejectWithValue }) => {
     try {
       const data = await getUserDetails(userId);
+      // Save to localStorage
+      localStorage.setItem('user', JSON.stringify(data));
       return data;
     } catch (error) {
       const message =
@@ -23,7 +29,7 @@ const userSlice = createSlice({
   name: 'user',
   initialState: {
     loading: false,
-    user: null,
+    user: userFromStorage,
     error: null,
   },
   reducers: {
@@ -31,6 +37,7 @@ const userSlice = createSlice({
       state.user = null;
       state.error = null;
       state.loading = false;
+      localStorage.removeItem('user'); // Clear persisted user
     },
   },
   extraReducers: (builder) => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './ServicesSection.css';
 
 import branding from "../../Images/branding.svg";
@@ -35,6 +35,59 @@ const services = [
 ];
 
 export default function ServicesSection() {
+
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          } else {
+            entry.target.classList.remove('in-view'); // 👈 REMOVE class on exit
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      cardRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
+  const handleMouseMove = (e, index) => {
+    const card = cardRefs.current[index];
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * 10;
+    const rotateY = ((x - centerX) / centerX) * -10;
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  };
+
+  const resetCardTransform = (index) => {
+    const card = cardRefs.current[index];
+    if (!card) return;
+    card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+  };
+
+
+
   return (
     <section className="services-section">
       <p className="subtitle">SERVICES WE’RE PROVIDED</p>
@@ -45,6 +98,10 @@ export default function ServicesSection() {
           <div
             className={`service-card ${service.highlight ? 'highlight' : ''}`}
             key={index}
+            ref={(el) => (cardRefs.current[index] = el)}
+            style={{ animationDelay: `${index * 0.2}s` }}
+            onMouseMove={(e) => handleMouseMove(e, index)}
+            onMouseLeave={() => resetCardTransform(index)}
           >
             <img src={service.icon} alt={service.title} />
             <h3>{service.title}</h3>
@@ -57,7 +114,7 @@ export default function ServicesSection() {
       </div>
 
       <div className="cta-section">
-        <p className='mt-3'>
+        <p className="mt-3">
           Hire a <span className="bold">Dedicated Developer</span>
         </p>
         <button className="cta-button">Hire Now &gt;</button>
@@ -65,4 +122,3 @@ export default function ServicesSection() {
     </section>
   );
 }
-

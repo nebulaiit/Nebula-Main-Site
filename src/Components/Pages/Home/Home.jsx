@@ -10,51 +10,29 @@ import CourseList from '../LearnNebula/CourseList';
 import CurvedSection from '../CurvedSection/CurvedSection';
 import WhyNebula from '../WhyNebula/WhyNebula';
 import AboutAgencyPage from '../AboutPage/AboutPage';
+import HeroSection from '../HeroSection/HeroSection';
+import Benefits from '../Benefits/Benefits';
 
 export default function Home() {
 
   const images = 'https://drive.google.com/uc?export=view&id=1azJwJHfp5ubvWf1m_lk1NntoMLkpZyoj'
   return (
     <div className="container-fluid homepage">
-      {/* ✅ Hero Section */}
-      <div className="hero-section">
+   
+      <HeroSection/>
 
+      {/* <CourseList /> */}
 
-        <div className="content-box-home">
-          <h1>
-            Creative Web Development <br />
-            Company
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus,
-            risus sit amet auctor sodales, justo erat tempor eros.
-          </p>
-          {/* <Button>
-            Get A Free Quote <KeyboardArrowRightIcon />
-            <span className="circle"></span>
-          </Button> */}
-        </div>
+      <Benefits/>
 
-          
-        <div className="image-box-home">
-          <img src={images} alt="My Image" />
-        </div>
-
-      </div>
-
-
-      <CourseList />
-
-
-      <CurvedSection />
-
+      {/* <CurvedSection /> */}
 
       <InteractiveLearningSection />
 
-
-      <OnlineCompilers />
+      {/* <OnlineCompilers /> */}
 
       <WhyNebula />
+
       <AboutAgencyPage />
 
       <ServicesSection />

@@ -1,77 +1,150 @@
-  .course-section {
-  padding: 30px 20px; 
+.course-section {
+  padding: 60px 30px;
   text-align: center;
   font-family: 'Inter', sans-serif;
-  color: #2d2d2d;  
-
+  color: #2d2d2d;
+  margin-top: 5%;
+  background: linear-gradient(to right, #fdf3ff, #f0f4ff);
+  animation: fadeInUp 1s ease-out;
 }
 
-.course-section .title {
-  font-size: 36px;
+.course-section .animated-title {
+  font-size: 40px;
   font-weight: 800;
-  color: #1f1f1f;  
-  margin-bottom: 10px;
+  color: #1f1f1f;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 1.4;
+  animation: slideInDown 1s ease-out;
 }
 
-.course-section .highlight {
-  color: #e24aa0;  
+.course-section .animated-title .emoji {
+  margin-right: 6px;
 }
 
-.course-section .subtitle {
-  font-size: 18px;
-  color: #555; 
-  margin-bottom: 40px;
+
+.course-section .animated-title .highlight {
+  color: #e24aa0;
+  background: linear-gradient(to right, #e24aa0, #ff77c4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.course-section .course-button-container {
+.course-section .quote {
+  font-size: 16px;
+  color: #666;
+  max-width: 750px;
+  margin: 0 auto 40px;
+  font-style: italic;
+  line-height: 1.6;
+
+  transition: all 0.3s ease;
+}
+
+
+
+.course-section .course-button-container {  
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  animation: fadeInUp 1s ease-out;
 }
 
 .course-section .course-button-container .course-btn {
-  background-color: #fff;  
-  border: 2px solid #e24aa0;  
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid #e24aa0;
   padding: 16px 24px;
   font-size: 16px;
-  color: #e24aa0;  
-  border-radius: 12px;
+  color: #e24aa0;
+  border-radius: 14px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 24px rgba(226, 74, 160, 0.15);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   min-width: 200px;
   transition: all 0.3s ease;
+  font-weight: 600;
 }
 
 .course-section .course-button-container .course-btn:hover {
-  background-color: #ffe6f0; 
-  transform: translateY(-3px);
-}
-
-.course-section .course-button-container .course-btn .course-icon {
-  font-size: 20px;
-  color: #e24aa0;
+  background: linear-gradient(to right, #ffe6f0, #ffe3fb);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(226, 74, 160, 0.25);
 }
 
 .course-section .course-button-container .course-btn:active {
   transform: translateY(1px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(226, 74, 160, 0.2);
 }
 
- 
+.course-section .course-button-container .course-btn .course-icon {
+  font-size: 22px;
+  color: #e24aa0;
+}
+
+.section-divider {
+  width: 120px;
+  height: 3px;
+  background: #e24aa0;
+  border: none;
+  border-radius: 2px;
+  margin: 40px auto 0;
+  opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .animated-title {
+    font-size: 28px;
+  }
+}
+/* Responsive Design */
 @media (max-width: 1024px) {
   .course-section {
     padding: 40px 20px;
   }
 
   .course-section .title {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   .course-section .subtitle {
@@ -81,27 +154,26 @@
 
   .course-section .course-button-container {
     gap: 15px;
-    max-width: 100%;
   }
 
   .course-section .course-button-container .course-btn {
     font-size: 14px;
     min-width: 170px;
-    padding: 12px 20px;
+    padding: 14px 20px;
   }
 
   .course-section .course-button-container .course-btn .course-icon {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
   .course-section {
     padding: 30px 15px;
   }
 
   .course-section .title {
-    font-size: 26px;
+    font-size: 28px;
   }
 
   .course-section .subtitle {
@@ -111,27 +183,26 @@
 
   .course-section .course-button-container {
     gap: 10px;
-    max-width: 100%;
   }
 
   .course-section .course-button-container .course-btn {
-    font-size: 14px;
-    min-width: 150px;
-    padding: 10px 18px;
+    font-size: 13px;
+    min-width: 160px;
+    padding: 12px 18px;
   }
 
   .course-section .course-button-container .course-btn .course-icon {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
- @media (max-width: 480px) {
+@media (max-width: 480px) {
   .course-section {
     padding: 20px 10px;
   }
 
   .course-section .title {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .course-section .subtitle {
@@ -140,18 +211,18 @@
   }
 
   .course-section .course-button-container {
-    gap: 8px;
     flex-direction: column;
     align-items: center;
+    gap: 12px;
   }
 
   .course-section .course-button-container .course-btn {
     font-size: 12px;
     min-width: 140px;
-    padding: 8px 15px;
+    padding: 10px 16px;
   }
 
   .course-section .course-button-container .course-btn .course-icon {
-    font-size: 14px;
+    font-size: 16px;
   }
 }

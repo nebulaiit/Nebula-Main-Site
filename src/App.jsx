@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter , Routes, Route } from "react-router-dom";
-
-
 import Header from './Components/Pages/Header/Header';
 import Home from './Components/Pages/Home/Home';
 
@@ -58,6 +56,9 @@ import BlogDetails from './Components/Pages/Blogs/BlogDetails';
 import CreateBlog from './Components/Pages/Blogs/CreateBlog';
 import Community from './Components/Pages/CommunityPage/Community';
 import JobDetails from './Components/Pages/JobNotificationPage/JobDetailsPage/JobDetails';
+import ToastList from './Components/Toast/ToastList';
+
+
 
 
 function App() {
@@ -86,12 +87,16 @@ function App() {
   //     document.removeEventListener('keydown', handleKeyDown);
   //   };
   // }, []);
-  
+
   return (
+  
+    
     <BrowserRouter>
       <Header variant="default" />
+      <ToastList/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path='/tutorial' element={<CourseList/>}/>
         <Route path="/contact" element={<ContactPage/>} />
         <Route path="/course/:courseName" element={<PythonCourse />} />
         <Route path="/login" element={<Login />} />

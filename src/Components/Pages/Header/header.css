@@ -22,16 +22,7 @@ a {
   align-items: center;
 }
 
-.glassmorphism {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
-  transition: background 0.3s ease, border 0.3s ease;
-  z-index: 9998;
-  position: fixed;
-  width: 100%;
-}
+
 
 /*LOGO*/
 

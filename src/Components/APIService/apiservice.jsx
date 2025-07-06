@@ -228,9 +228,9 @@ export const  addWishlistItem = async (userId, item) =>{
         throw error;
     }
 }
-export const  deleteWishlistItem  = async (userId) =>{
+export const  deleteWishlistItem  = async (wishlistItemId) =>{
 
-    const url = `${API_BASE_URL}${API_URLs.WishList}/${userId}`
+    const url = `${API_BASE_URL}${API_URLs.WishList}/${wishlistItemId}`
   
     try {
         const response = await axios.delete(url)

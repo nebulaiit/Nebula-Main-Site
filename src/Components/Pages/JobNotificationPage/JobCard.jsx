@@ -25,7 +25,7 @@ const JobCard = () => {
     return (
         <>
             {jobs.map((job) => (
-                <div className="job-card" key={job.id}>
+                <div className="job-card glassmorphism" key={job.id}>
                     <h2>{job.jobTitle}</h2>
                     <p className="company">{job.companyName}</p>
                     <p className="location">{job.location}</p>

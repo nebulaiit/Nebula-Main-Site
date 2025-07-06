@@ -5,16 +5,19 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setAuthData } from '../../redux/authSlice';
 import { fetchUserDetails } from '../../redux/userSlice';
+import { showToast } from '../../redux/toastSlice';
 
 const Login = () => {
   const [isSignUpActive, setIsSignUpActive] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const [values, setValues] = useState({
     userName: '',
     email: '',
     password: '',
   });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues((prevValues) => ({
@@ -33,13 +36,12 @@ const Login = () => {
 
       dispatch(setAuthData({ token: data.token, userId: data.userId }));
       dispatch(fetchUserDetails(data.userId));
-
-
-      alert('Login successful!');
+      dispatch(showToast({ message: 'Login successful!', type: 'success' }));
       navigate('/'); // Redirect to home page after successful login
     }
     catch (error) {
       alert(error.message);
+      showToast(error.message || 'Login failed', 'error'); // ✅ Error toast
     }
   };
 

@@ -1,27 +1,30 @@
-import React, { useEffect } from 'react'
-import "./Wishlist.css";
+import React, { useEffect } from 'react';
+import './Wishlist.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchWishlistThunk, removeFromWishlist } from '../../../redux/wishlistSlice';
 import { addToCart } from '../../../redux/cartSlice';
 
 
 const Wishlist = () => {
-
   const dispatch = useDispatch();
+  const { showToast } = useToast(); // ✅ use toast context
+
   const { items, loading } = useSelector((state) => state.wishlist);
-  const userId = useSelector((state) => state.auth.userId); // ✅ FIXED
+  const userId = useSelector((state) => state.auth.userId);
 
   useEffect(() => {
-    dispatch(fetchWishlistThunk(userId));
+    if (userId) {
+      dispatch(fetchWishlistThunk(userId));
+    }
   }, [dispatch, userId]);
 
-  const handleRemove = (courseId) => {
-    dispatch(removeFromWishlist({ userId, courseId }));
+  const handleRemove = (wishlistItemId) => {
+    dispatch(removeFromWishlist(wishlistItemId));
+
   };
 
-
   const handleMoveToCart = (course) => {
-    dispatch(addToCart(course)); // full course object
+    dispatch(addToCart(course));
 
   };
 
@@ -34,23 +37,26 @@ const Wishlist = () => {
         <p>Loading...</p>
       ) : (
         <div className="course-list">
-          {items.map((course) => (
-            <div className="course-card" key={course.courseId}>
+          {items.map((item) => (
+            <div className="course-card" key={item.id}>
               <img
-                src={course.imageUrl}
-                alt={course.title}
+                src={item.imageUrl}
+                alt={item.title}
                 className="course-image"
               />
               <div className="course-info-wishlist">
-                <h3>{course.title}</h3>
-                <p><strong>Instructor:</strong> {course.instructor}</p>
-                <p><strong>Duration:</strong> {course.duration}</p>
-                <p><strong>Level:</strong> {course.level}</p>
+                <h3>{item.title}</h3>
+                <p><strong>Instructor:</strong> {item.instructor}</p>
+                <p><strong>Duration:</strong> {item.duration}</p>
+                <p><strong>Level:</strong> {item.level}</p>
                 <div className="course-actions">
-                  <button className="btn-remove" onClick={() => handleRemove(course.courseId)}>
+                  <button
+                    className="btn-remove"
+                    onClick={() => handleRemove(item.id)}
+                  >
                     Remove
                   </button>
-                  <button className="btn-move" onClick={() => handleMoveToCart(course)}>
+                  <button className="btn-move" onClick={() => handleMoveToCart(item)}>
                     Move to Cart
                   </button>
                 </div>
@@ -60,7 +66,6 @@ const Wishlist = () => {
         </div>
       )}
     </div>
-
   );
 };
 

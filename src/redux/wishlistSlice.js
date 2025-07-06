@@ -20,9 +20,9 @@ export const addToWishlist = createAsyncThunk(
 
 export const removeFromWishlist = createAsyncThunk(
   'wishlist/removeFromWishlist',
-  async ({ userId, courseId }) => {
-    await deleteWishlistItem(userId, courseId);
-    return courseId;
+  async (wishlistItemId) => {
+    await deleteWishlistItem(wishlistItemId);
+    return wishlistItemId;
   }
 )
 

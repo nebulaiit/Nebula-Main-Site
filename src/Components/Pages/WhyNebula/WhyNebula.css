@@ -1,140 +1,168 @@
-
- .why-nebula {
+/* Root Container */
+.why-nebula {
   padding: 60px 20px;
   text-align: center;
-
   color: #1a202c;
+  transition: all 0.6s ease;
 }
 
-.why-nebula .why-nebula__title {
-  font-size: 32px;
-  font-weight: 700;
+/* Title */
+.why-nebula--title {
+  font-size: 36px;
+  font-weight: 800;
   margin-bottom: 40px;
   color: #1a202c;
+  position: relative;
+}
+.why-nebula--title::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, #e83e8c, #fa91b9);
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 2px;
+  transition: width 1s ease;
 }
 
-.why-nebula .why-nebula__cards {
+.why-nebula--title.in-view::after {
+  animation: growUnderline 1s ease forwards;
+}
+
+@keyframes growUnderline {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 580px;
+    opacity: 1;
+  }
+}
+
+/* Card Container */
+.why-nebula--cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
 }
 
-.why-nebula .why-nebula__cards .why-nebula__card {
+/* Each Card (initial state) */
+.why-nebula--card {
   flex: 1 1 280px;
   max-width: 320px;
   text-align: left;
-  padding: 20px;
+  padding: 24px;
   border: 3px solid #ed59ad;
-  transition: all 0.3s ease;
-  border-radius: 10px;
-  background-color: #ffffff;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(80px);
 }
 
-.why-nebula .why-nebula__cards .why-nebula__card:hover,
-.why-nebula .why-nebula__cards .why-nebula__card:active {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+/* Scroll-in animation per card */
+.why-nebula--card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Hover Effects */
+.why-nebula--card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(232, 62, 140, 0.15);
   background-color: #fff0f7;
-  color: #e24aa0;
   border-color: #e24aa0;
-  border-radius: 10px;
 }
 
-.why-nebula .why-nebula__cards .why-nebula__card 
-.why-nebula__icon {
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: #1a1a4c;
+/* Icon */
+.why-nebula--icon {
+  font-size: 32px;
+  color: #e83e8c;
+  margin-bottom: 16px;
 }
 
-.why-nebula .why-nebula__cards .why-nebula__card 
-.why-nebula__card-title {
-  font-size: 18px;
+/* Card Title */
+.why-nebula--card-title {
+  font-size: 20px;
   font-weight: 700;
+  color: #1a1a4c;
   margin-bottom: 10px;
 }
 
-.why-nebula .why-nebula__cards .why-nebula__card 
-.why-nebula__card-text {
+/* Card Text */
+.why-nebula--card-text {
   font-size: 15px;
   color: #555;
   line-height: 1.6;
 }
 
-/* Responsive: Mobile */
+/* Responsive Design */
+
+/* Mobile */
 @media (max-width: 768px) {
   .why-nebula {
     padding: 40px 15px;
   }
 
-  .why-nebula .why-nebula__title {
-    font-size: 24px;
-    margin-bottom: 20px;
+  .why-nebula--title {
+    font-size: 26px;
   }
 
-  .why-nebula .why-nebula__cards {
+  .why-nebula--cards {
     flex-direction: column;
-    align-items: center;
-    gap: 30px;
+    gap: 24px;
   }
 
-  .why-nebula .why-nebula__cards .why-nebula__card {
-    flex: 1 1 100%;
+  .why-nebula--card {
     max-width: 100%;
-    padding: 15px;
+    padding: 20px;
   }
 
-  .why-nebula .why-nebula__cards .why-nebula__card 
-  .why-nebula__icon {
-    font-size: 24px;
+  .why-nebula--icon {
+    font-size: 28px;
   }
 
-  .why-nebula .why-nebula__cards .why-nebula__card 
-  .why-nebula__card-title {
-    font-size: 16px;
+  .why-nebula--card-title {
+    font-size: 18px;
   }
 
-  .why-nebula .why-nebula__cards .why-nebula__card 
-  .why-nebula__card-text {
+  .why-nebula--card-text {
     font-size: 14px;
   }
 }
 
-/* Responsive: Tablet */
+/* Tablet */
 @media (max-width: 1024px) {
   .why-nebula {
     padding: 50px 20px;
   }
 
-  .why-nebula .why-nebula__title {
-    font-size: 28px;
-    margin-bottom: 30px;
+  .why-nebula--title {
+    font-size: 30px;
   }
 
-  .why-nebula .why-nebula__cards {
-    flex-direction: row;
+  .why-nebula--cards {
     justify-content: space-around;
   }
 
-  .why-nebula .why-nebula__cards .why-nebula__card {
+  .why-nebula--card {
     flex: 1 1 45%;
     max-width: 45%;
   }
 
-  .why-nebula .why-nebula__cards .why-nebula__card 
-  .why-nebula__icon {
-    font-size: 26px;
+  .why-nebula--icon {
+    font-size: 30px;
   }
 
-  .why-nebula .why-nebula__cards .why-nebula__card 
-  .why-nebula__card-title {
-    font-size: 17px;
+  .why-nebula--card-title {
+    font-size: 19px;
   }
 
-  .why-nebula .why-nebula__cards .why-nebula__card 
-  .why-nebula__card-text {
+  .why-nebula--card-text {
     font-size: 15px;
   }
 }
-

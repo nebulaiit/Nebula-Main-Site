@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getAllCourse } from '../../APIService/apiservice';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToWishlist } from '../../../redux/wishlistSlice';
-import { useToast } from '../../Toast/ToastProvider';
+
 
 
 const Premium = () => {
@@ -13,7 +13,7 @@ const Premium = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { showToast } = useToast();
+
 
   const userId = useSelector((state) => state.auth.userId); // assumes you store userId in auth slice
 
@@ -40,12 +40,12 @@ const Premium = () => {
       imageUrl: course.image,
     };
     dispatch(addToWishlist({ userId, item }));
-      showToast(`${course.courseTitle} added to wishlist!`);
+     
   };
 
   const handleMoveToCart = (course) => {
   dispatch(addToCart(course)); // full course object
-  showToast(`${course.courseTitle} added to cart!`);
+
 
 };
 
