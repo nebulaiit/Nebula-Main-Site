@@ -1,46 +1,130 @@
 import React, { useState } from 'react';
+import { loginUser, signUpUser } from '../APIService/apiservice';
 import './Login.css';
-import studentImg from '../Images/Logo/login.png';
-import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setAuthData } from '../../redux/authSlice';
+import { fetchUserDetails } from '../../redux/userSlice';
+import { showToast } from '../../redux/toastSlice';
 
 const Login = () => {
-  const [isSignUp, setIsSignUp] = useState(false);
+  const [isSignUpActive, setIsSignUpActive] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [values, setValues] = useState({
+    userName: '',
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  }
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const data = await loginUser(values);
+      console.log('Login successful:', data);
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('userId', data.userId);
+
+      dispatch(setAuthData({ token: data.token, userId: data.userId }));
+      dispatch(fetchUserDetails(data.userId));
+      dispatch(showToast({ message: 'Login successful!', type: 'success' }));
+      navigate('/'); // Redirect to home page after successful login
+    }
+    catch (error) {
+      alert(error.message);
+      showToast(error.message || 'Login failed', 'error'); // ✅ Error toast
+    }
+  };
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    try {
+      const data = await signUpUser(values);
+      console.log('Signup successful:', data);
+      // localStorage.setItem('token', data.token);
+
+      alert('Signup successful!');
+    } catch (error) {
+      setSignUpError(error.message);
+
+    }
+  };
+
 
   return (
-    <div className="login-wrapper">
-      <div className="login-image animated-img">
-        <img src={studentImg} alt="IT Student" />
+    <div className={`container login-container ${isSignUpActive ? 'right-panel-active' : ''}`} id="container">
+      <div className="form-container sign-up-container">
+        <form onSubmit={handleSignUp}>
+          <h1>Create Account</h1>
+          <div className="social-container">
+            <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
+            <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
+            <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>or use your email for registration</span>
+
+          <div className="input-group">
+            <label>Username</label>
+            <input type="text" placeholder="username" name="userName" value={values.userName} onChange={handleChange} required />
+          </div>
+
+          <div className="input-group">
+            <label>Email</label>
+            <input type="email" placeholder="email" name="email" value={values.email || ''} onChange={handleChange} required />
+          </div>
+
+          <div className="input-group">
+            <label>Password</label>
+            <input type="password" placeholder="password" name="password" value={values.password} onChange={handleChange} required />
+          </div>
+
+          <button type="submit" className="sign-up-btn" >Sign Up</button>
+        </form>
       </div>
 
-      <div className="form-layer">
-        <div className={`login-form-layer ${!isSignUp ? 'active' : ''}`}>
-          <h2>Welcome to <span>IT Portal</span></h2>
-          <input type="text" placeholder="Username or Email" />
-          <input type="password" placeholder="Password" />
-          <button className="login-btn">Log In</button>
-       <div className="options">
-      <Link to="/forgot-password">Forgot password?</Link>
-</div>
-          <p style={{ textAlign: 'center' }}>or continue with</p>
-          <div className="social-login">
-            <button className="google">G</button>
-            <button className="facebook">f</button>
+      <div className="form-container sign-in-container">
+        <form onSubmit={handleLogin}>
+          <h1>Sign in</h1>
+          <div className="social-container">
+            <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
+            <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
+            <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
           </div>
-          <p className="signup-link">
-            New here? <span onClick={() => setIsSignUp(true)}>Create an account</span>
-          </p>
-        </div>
-
-        <div className={`login-form-layer ${isSignUp ? 'active' : ''}`}>
-          <h2>Join <span>IT Portal</span></h2>
-          <input type="text" placeholder="Full Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button className="login-btn">Sign Up</button>
-          <p className="signup-link">
-            Already have an account? <span onClick={() => setIsSignUp(false)}>Log in</span>
-          </p>
+          <span>or use your account</span>
+          <div className="input-group">
+            <label>Username</label>
+            <input type="text" placeholder="username" name="userName" value={values.userName} onChange={handleChange} required />
+          </div>
+          <div className="input-group">
+            <label>Password</label>
+            <input type="password" placeholder="password" name="password" value={values.password} onChange={handleChange} required />
+          </div>
+          {/* {loginError && <p className="error">{loginError}</p>} */}
+          <a href="#">Forgot your password?</a>
+          <button type="submit" className="sign-in-btn">Sign In</button>
+        </form>
+      </div>
+      <div className="overlay-container">
+        <div className="overlay">
+          <div className="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>To keep connected with us please login with your personal info</p>
+            <button className="ghost" onClick={() => setIsSignUpActive(false)}>Sign In</button>
+          </div>
+          <div className="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button className="ghost" onClick={() => setIsSignUpActive(true)}>Sign Up</button>
+          </div>
         </div>
       </div>
     </div>
