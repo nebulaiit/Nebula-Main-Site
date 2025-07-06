@@ -61,7 +61,10 @@ import ToastList from './Components/Toast/ToastList';
 
 import CreateResume from './Components/Pages/JobNotificationPage/Resume/CreateResume/CreateResume';
 import ATSChecker from './Components/Pages/JobNotificationPage/Resume/Resume';
+<<<<<<< HEAD
 import ForgotFlow from './Components/Login/ForgetPassword/ForgotFlow';
+=======
+>>>>>>> parent of d58a330 (update code)
 
 
 
@@ -154,7 +157,12 @@ function App() {
         <Route path="/courses" element={<Courses />} />
           <Route path="/resume-checker" element={<ATSChecker />} />
     <Route path="/create-resume" element={<CreateResume />} />
+<<<<<<< HEAD
     <Route path="/forgot-password" element={<ForgotFlow/>} />
+=======
+ 
+
+>>>>>>> parent of d58a330 (update code)
       </Routes>
       <WebsiteFooter />
     </BrowserRouter>
