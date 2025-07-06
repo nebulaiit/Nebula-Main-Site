@@ -85,6 +85,7 @@
 .hero .hero-image {
   opacity: 0;
   transform: translateX(60px);
+  margin: -10px;
 }
 
 .hero.in-view .hero-image {
