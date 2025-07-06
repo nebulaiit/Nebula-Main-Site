@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter , Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './Components/Pages/Header/Header';
 import Home from './Components/Pages/Home/Home';
 
@@ -61,9 +61,8 @@ import ToastList from './Components/Toast/ToastList';
 
 import CreateResume from './Components/Pages/JobNotificationPage/Resume/CreateResume/CreateResume';
 import ATSChecker from './Components/Pages/JobNotificationPage/Resume/Resume';
+
 import ForgotFlow from './Components/Login/ForgotFlow';
-
-
 
 function App() {
 
@@ -93,26 +92,26 @@ function App() {
   // }, []);
 
   return (
-  
-    
+
+
     <BrowserRouter>
       <Header variant="default" />
-      <ToastList/>
+      <ToastList />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/tutorial' element={<CourseList/>}/>
-        <Route path="/contact" element={<ContactPage/>} />
+        <Route path='/tutorial' element={<CourseList />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="/course/:courseName" element={<PythonCourse />} />
         <Route path="/login" element={<Login />} />
         <Route path="/create-project" element={<CreateProject />} />
         <Route path="/learning-path/:index" element={<Enrollment />} />
-        <Route path="/progamming/:courseName" element={<TutorialPage/>} />
+        <Route path="/progamming/:courseName" element={<TutorialPage />} />
         <Route path="/career" element={<JobNotificationPage />} />
-        <Route path="/course-List/:courseName" element={<Premium/>} />
-        <Route path='/blog' element={<Blog/>}/>
-        <Route path='/blog-details/:slug' element={<BlogDetails/>}/>
-        <Route path='/write-blog' element={<CreateBlog/>}/>
-        <Route path='/community' element={<Community/>}/>
+        <Route path="/course-List/:courseName" element={<Premium />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path='/blog-details/:slug' element={<BlogDetails />} />
+        <Route path='/write-blog' element={<CreateBlog />} />
+        <Route path='/community' element={<Community />} />
         <Route path="/job-details/:id" element={<JobDetails />} />
 
 
@@ -152,10 +151,11 @@ function App() {
         <Route path="/paymentPage" element={<PaymentPage />} />
         <Route path="/thankyou" element={<ThankYou />} />
         <Route path="/courses" element={<Courses />} />
-          <Route path="/resume-checker" element={<ATSChecker />} />
-    <Route path="/create-resume" element={<CreateResume />} />
-  <Route path="/forgot-password" element={< ForgotFlow />} />
- 
+        <Route path="/resume-checker" element={<ATSChecker />} />
+        <Route path="/create-resume" element={<CreateResume />} />  
+        <Route path="/forgot-password" element={<ForgotFlow />} />
+
+
 
       </Routes>
       <WebsiteFooter />
