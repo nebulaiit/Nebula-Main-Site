@@ -8,7 +8,7 @@ import ReplyThread from './Reply/ReplyThread';
 
 
 export default function Community() {
-    const reactionTypes = ['👍', '❤️', '🔥', '💡']; 
+    const reactionTypes = ['👍', '❤️', '🔥', '💡'];
     const [post, setPost] = useState('');
     const [tags, setTags] = useState([]);
     const [activeTab, setActiveTab] = useState('Post');
@@ -227,21 +227,45 @@ export default function Community() {
                                         ))}
                                     </div>
 
+
                                     {/* Reply Section */}
-                                    <div className="reply-section">
-                                        <ReplyInput onReply={(reply, name) => handleReply(item.id, reply, name)} />
-                                        <div className="replies">
-                                            {item.replies.map((reply) => (
-                                                <ReplyThread
-                                                    key={reply.id}
-                                                    postId={item.id}
-                                                    reply={reply}
-                                                    onReply={handleReply}
-                                                    onReact={handleReplyReact}
-                                                />
-                                            ))}
+                                    {(item.replies.length > 0 || item.showReplyInput) && (
+                                        <div className="reply-section">
+                                            {item.showReplyInput && (
+                                                <ReplyInput onReply={(reply, name) => handleReply(item.id, reply, name)} />
+                                            )}
+                                            {item.replies.length > 0 && item.showReplies && (
+                                                <div className="replies">
+                                                    {item.replies.map((reply) => (
+                                                        <ReplyThread
+                                                            key={reply.id}
+                                                            postId={item.id}
+                                                            reply={reply}
+                                                            onReply={handleReply}
+                                                            onReact={handleReplyReact}
+                                                        />
+                                                    ))}
+                                                </div>
+                                            )}
                                         </div>
+                                    )}
+
+                                    {/* Reply Toggle Button */}
+                                    <div className="reply-toggle">
+                                        <button
+                                            className="reply-toggle-btn"
+                                            onClick={() => {
+                                                setPosts(posts.map(p =>
+                                                    p.id === item.id
+                                                        ? { ...p, showReplies: !p.showReplies, showReplyInput: true }
+                                                        : p
+                                                ));
+                                            }}
+                                        >
+                                            💬 {item.replies.length > 0 ? `${item.replies.length} Replies` : 'Reply'}
+                                        </button>
                                     </div>
+
                                 </div>
                             ))}
                         </div>
@@ -312,4 +336,3 @@ export default function Community() {
     );
 
 }
-

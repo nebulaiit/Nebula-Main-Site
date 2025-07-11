@@ -1,0 +1,42 @@
+.reply-thread {
+  margin-left: 20px;
+  border-left: 2px solid #e2e8f0;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.reply-content {
+  background-color: #f9fafb;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.reply-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.reaction-btn,
+.reply-btn,
+.toggle-nested-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.reaction-btn:hover,
+.reply-btn:hover,
+.toggle-nested-btn:hover {
+  text-decoration: underline;
+}
+
+.nested-reply-input {
+  margin-top: 8px;
+}
+
+.nested-replies {
+  margin-top: 10px;
+}

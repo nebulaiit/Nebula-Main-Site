@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import ReactMarkdown from "react-markdown";
 
 
+
 export default function BlogDetails() {
 
     const { slug } = useParams();
@@ -67,15 +68,39 @@ export default function BlogDetails() {
                                     <li className='list-inline-item '><i className="fa-brands fa-twitter"></i></li>
                                 </ul>
                             </div>
+                         
                         </div>
                     </div>
 
                     <div className="blog-user-comment-container">
+                        <h3>Comments (3)</h3>
+                        <div className="user-comment">
+                            <img src="https://source.unsplash.com/40x40/?face" alt="user" />
+                            <div>
+                                <p className="comment-author">Ritika Sharma</p>
+                                <p className="comment-text">This blog clarified a lot about useEffect and useContext. Thanks!</p>
+                                <p className="comment-time">2 hours ago</p>
+                            </div>
+                        </div>
 
+                        <div className="user-comment">
+                            <img src={`https://source.unsplash.com/41x41/?portrait`} alt="user" />
+                            <div>
+                                <p className="comment-author">Nikhil Joshi</p>
+                                <p className="comment-text">Loved the breakdown on custom hooks!</p>
+                                <p className="comment-time">Yesterday</p>
+                            </div>
+                        </div>
                     </div>
+
                     <div className="blog-commentForm-container">
-
+                        <h4>Leave a Comment</h4>
+                        <form>
+                            <textarea placeholder="Write your comment..." rows="4" required></textarea>
+                            <button type="submit">Post Comment</button>
+                        </form>
                     </div>
+
 
 
                 </div>

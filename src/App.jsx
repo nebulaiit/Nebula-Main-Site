@@ -50,7 +50,7 @@ import TutorialPage from './Components/Pages/TutorialPage/TutorialPage';
 import Premium from './Components/Pages/Premium/Premium';
 import PaymentPage from './Components/Pages/PaymentPage/PaymentPage';
 import ThankYou from './Components/Pages/thankyou/thankyou';
-import Courses from './Components/Pages/LearningDashboard/Courses';
+import Courses from './Components/Pages/CoursePlaySection/Courses';
 import Blog from './Components/Pages/Blogs/Blog';
 import BlogDetails from './Components/Pages/Blogs/BlogDetails';
 import CreateBlog from './Components/Pages/Blogs/CreateBlog';
@@ -63,6 +63,7 @@ import CreateResume from './Components/Pages/JobNotificationPage/Resume/CreateRe
 import ATSChecker from './Components/Pages/JobNotificationPage/Resume/Resume';
 
 import ForgotFlow from './Components/Login/ForgotFlow';
+import CourseListPage from './Components/Pages/Courses/CourseListPage';
 
 function App() {
 
@@ -113,6 +114,7 @@ function App() {
         <Route path='/write-blog' element={<CreateBlog />} />
         <Route path='/community' element={<Community />} />
         <Route path="/job-details/:id" element={<JobDetails />} />
+        <Route path="/course-list" element={<CourseListPage />} />
 
 
         {/* Online Compilers */}

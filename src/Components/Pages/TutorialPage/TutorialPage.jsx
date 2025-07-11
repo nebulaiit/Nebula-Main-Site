@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Sidebar from '../SideBar/SideBar';
+import SideBar from '../SideBar/SideBar';
 import './Tutorialpage.css';
 import { getContentList, getHeadingList } from '../../APIService/apiservice';
 import { useParams, useSearchParams } from 'react-router-dom';
@@ -52,7 +52,7 @@ export default function TutorialPage() {
 
   return (
     <div className="tutorial-page-wrapper py-4 px-4">
-      <Sidebar heading={headings} selectedUrlSlug={setSelectedUrlSlug} />
+      <SideBar heading={headings} selectedUrlSlug={setSelectedUrlSlug} />
 
       <SelectedTopicContent contentBlocks={selectedTopicContent} />
 

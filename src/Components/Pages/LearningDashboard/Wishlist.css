@@ -4,6 +4,8 @@
   background-color: #f5f8ff;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
+  border: 2px solid #ff91c1;
+  border-radius: 15px;
 }
 
 /* === Section Title and Description === */
@@ -81,22 +83,22 @@
 /* === Buttons === */
 .wishlist-wrapper .course-actions .btn-remove,
 .wishlist-wrapper .course-actions .btn-move {
-    border: 2px solid #e83e8c;
-    background: #fff;
-    padding: 5px 14px;
-    border-radius: 50px;
-    font-size: 1rem;
-    color: #e83e8c;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  border: 2px solid #e83e8c;
+  background: #fff;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 1rem;
+  color: #e83e8c;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 
 .wishlist-wrapper .course-actions .btn-remove:hover,
 .wishlist-wrapper .course-actions .btn-move:hover {
-    background: linear-gradient(to right, #ff5b8a, #ff1f8e);
-    color: #fff;
-    border: none;
+  background: linear-gradient(to right, #ff5b8a, #ff1f8e);
+  color: #fff;
+  border: none;
   transform: scale(1.03);
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './SideBar.css';
 
-function Sidebar({ heading, selectedUrlSlug }) {
+function SideBar({ heading, selectedUrlSlug }) {
   const [expanded, setExpanded] = useState(null);
   const [activeSlug, setActiveSlug] = useState(null);
 
@@ -67,4 +67,4 @@ function Sidebar({ heading, selectedUrlSlug }) {
   );
 }
 
-export default Sidebar;
+export default SideBar;

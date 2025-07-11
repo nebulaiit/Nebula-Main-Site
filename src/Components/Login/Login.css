@@ -31,10 +31,10 @@
 }
 
 .animated-img img {
-  width: 100%;
-  max-width: 400px;
-  object-fit: contain;
-  animation: float 4s ease-in-out infinite;
+    width: 100%;
+    max-width: 650px;
+    object-fit: contain;
+    animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -61,12 +61,14 @@
   opacity: 0;
   transform: translateY(30px);
   pointer-events: none;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .login-form-layer.active {
+  width:80% ;
+  /* background-color: #d12e7b; */
   opacity: 1;
   transform: translateY(0);
   pointer-events: all;
@@ -76,7 +78,7 @@
   font-size: 28px;
   margin-bottom: 20px;
   color: #333;
-  text-align: center;
+  text-align: left;
 }
 
 .login-form-layer h2 span {
@@ -84,6 +86,13 @@
   font-weight: 700;
 }
 
+
+.login-form-layer form{
+
+  width: 80%;
+  margin: 20px 0;
+  /* background-color: #777; */
+}
 .login-form-layer input {
   padding: 12px 18px;
   margin-bottom: 16px;
@@ -95,6 +104,7 @@
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  margin: 20px 0;
 }
 
 .login-form-layer input:focus {
@@ -114,7 +124,7 @@
   font-size: 15px;
   cursor: pointer;
   transition: background 0.3s ease;
-  margin: 0 auto 16px;
+  margin:  16px 0;
 }
 
 .login-btn:hover {
