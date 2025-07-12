@@ -1,193 +1,164 @@
-
- /* Main Section Styling */
+/* Main Section Styling */
 .interactive-learning-section {
 
   padding: 80px 20px;
   text-align: center;
 }
 
-  /* Subtitle Styling */
-  .interactive-learning-section .subtitle {
-    color: #f52887;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 10px;
+/* Subtitle Styling */
+.interactive-learning-section .subtitle {
+  color: #f52887;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Title Styling */
+.interactive-learning-section .title {
+  font-size: 36px;
+  color: #0b0c3f;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* Container for the Interactive Learning Section */
+.interactive-learning-section .interactive-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+/* Left Section Styling */
+.interactive-learning-section .interactive-container .left {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+
+.interactive-learning-section .interactive-container .left .menu-item {
+  border: 2px solid #e83e8c;
+  background: #fff;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  color: #e83e8c;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(232, 62, 140, 0.2);
+  transition: all 0.4s ease;
+  margin: 10px 0;
+}
+
+.interactive-learning-section .interactive-container .menu-content {
+  width: 50%;
+  height: 280px;
+  padding: 20px 28px;
+  background: rgba(239, 246, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Title Styling */
+.interactive-learning-section .interactive-container .menu-content .menu-title {
+  font-size: 26px;
+  font-weight: 6  00;
+  margin-bottom: 18px;
+  color: #e83e8c;
+}
+
+/* List Styling */
+.interactive-learning-section .interactive-container .menu-content .menu-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.interactive-learning-section .interactive-container .menu-content .menu-list li {
+  font-size: 16px;
+  color: #3b82f6;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.interactive-learning-section .interactive-container .menu-content .menu-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #60a5fa;
+  font-size: 20px;
+  line-height: 1;
+  top: 1px;
+}
+
+.interactive-learning-section .interactive-container .menu-content .menu-list li:hover {
+  color: #1d4ed8;
+  transform: translateX(4px);
+  text-shadow: 0 0 8px rgba(93, 135, 255, 0.5);
+}
+
+/* Active Menu Item */
+.interactive-learning-section .interactive-container .left .menu-item.active {
+  background: linear-gradient(135deg, #f52887, #ff7eb3);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(245, 40, 135, 0.4);
+  transform: scale(1.05);
+}
+
+/* Hover Effect */
+.interactive-learning-section .interactive-container .left .menu-item:hover {
+  background: linear-gradient(135deg, #f52887, #ff7eb3);
+  color: #fff;
+  transform: translateX(5px) scale(1.02);
+  box-shadow: 0 4px 18px rgba(245, 40, 135, 0.3);
+}
+
+/* Menu Content Container Animations */
+.interactive-learning-section .interactive-container .menu-content {
+  animation: fadeInSlide 0.6s ease-in-out;
+  transition: all 0.4s ease;
+}
+
+/* List Item Animations */
+.interactive-learning-section .interactive-container .menu-content .menu-list li {
+  animation: fadeSlideIn 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(1) { animation-delay: 0.1s; }
+.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(2) { animation-delay: 0.2s; }
+.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(3) { animation-delay: 0.3s; }
+.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(4) { animation-delay: 0.4s; }
+.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(5) { animation-delay: 0.5s; }
+
+/* Keyframes */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
   }
-
-  /* Title Styling */
-  .interactive-learning-section .title {
-    font-size: 36px;
-    color: #0b0c3f;
-    font-weight: 700;
-    margin-bottom: 50px;
-  }
-
-  /* Container for the Interactive Learning Section */
-  .interactive-learning-section .interactive-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    flex-wrap: wrap;
-    text-align: left;
-  }
-
-    /* Left Section Styling */
-    .interactive-learning-section .interactive-container .left {
-      max-width: 400px;
-      display: flex;
-      flex-direction: column;
-    }
-
-      /* Feature Block Styling */
-      .interactive-learning-section .interactive-container .left .feature-block {
-        margin-bottom: 25px;
-      }
-
-      /* Feature Button Styling */
-      .interactive-learning-section .interactive-container .left .feature-button-box {
-        background-color: #fff;
-        border: 2px solid #e24aa0;
-        padding: 16px 20px;
-        font-weight: 600;
-        cursor: pointer;
-        border-radius: 10px;
-        width: 100%;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #e24aa0;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        text-align: center;
-      }
-
-        /* Hover and Active Feature Button Styling */
-        .interactive-learning-section .interactive-container .left .feature-button-box:hover,
-        .interactive-learning-section .interactive-container .left .feature-button-box.active {
-          transform: translateY(-2px);
-          background-color: #fff0f7;
-          color: #e24aa0;
-          border-color: #e24aa0;
-          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
-
-      /* Feature Description Styling */
-      .interactive-learning-section .interactive-container .left .feature-description {
-        font-weight: bold;
-        font-size: 15px;
-        color: #333;
-        margin-top: 10px;
-        margin-left: 10px;
-        text-align: center;
-      }
-
-      /* Try Nebula PRO Button Styling */
-      .interactive-learning-section .interactive-container .left .try-pro-button {
-        margin-top: 30px;
-        padding: 12px 30px;
-        background: linear-gradient(to right, #f52887, #b041ff);
-        color: #fff;
-        border: none;
-        border-radius: 50px;
-        font-weight: bold;
-        cursor: pointer;
-        align-self: center;
-        transition: 0.3s ease;
-      }
-
-        /* Hover Effect for Try Nebula PRO Button */
-        .interactive-learning-section .interactive-container .left .try-pro-button:hover {
-          transform: scale(1.05);
-        }
-
-    /* Right Section Styling */
-    .interactive-learning-section .interactive-container .right {
-      flex: 1;
-      max-width: 750px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-      /* Video Styling */
-      .interactive-learning-section .interactive-container .right .feature-video {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        height: 500px;
-      }
-
-/* Responsive Styling */
-
-/* For Screens Smaller Than 1024px */
-@media (max-width: 1024px) {
-  .interactive-learning-section .interactive-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .interactive-learning-section .interactive-container .left,
-  .interactive-learning-section .interactive-container .right {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .interactive-learning-section .interactive-container .right {
-    height: auto;
-  }
-
-  .interactive-learning-section .interactive-container .right .feature-video {
-    height: 400px;
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
-/* For Screens Smaller Than 768px */
-@media (max-width: 768px) {
-  .interactive-learning-section .title {
-    font-size: 28px;
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
   }
-
-  .interactive-learning-section .interactive-container .left .feature-button-box {
-    height: auto;
-    padding: 14px 16px;
-    font-size: 14px;
-  }
-
-  .interactive-learning-section .interactive-container .left .feature-description {
-    font-size: 14px;
-    margin-left: 0;
-  }
-
-  .interactive-learning-section .interactive-container .left .try-pro-button {
-    width: 100%;
-    font-size: 14px;
-  }
-
-  .interactive-learning-section .interactive-container .right .feature-video {
-    height: 300px;
-  }
-}
-
-/* For Screens Smaller Than 480px */
-@media (max-width: 480px) {
-  .interactive-learning-section {
-    padding: 50px 15px;
-  }
-
-  .interactive-learning-section .title {
-    font-size: 22px;
-  }
-
-  .interactive-learning-section .subtitle {
-    font-size: 12px;
-  }
-
-  .interactive-learning-section .interactive-container .right .feature-video {
-    height: 220px;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
