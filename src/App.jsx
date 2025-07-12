@@ -65,37 +65,20 @@ import ATSChecker from './Components/Pages/JobNotificationPage/Resume/Resume';
 import ForgotFlow from './Components/Login/ForgotFlow';
 
 function App() {
-
-  // useEffect(() => {
-  //   // Disable right-click
-  //   const handleContextMenu = (e) => e.preventDefault();
-  //   document.addEventListener('contextmenu', handleContextMenu);
-
-  //   // Disable F12, Ctrl+Shift+I/J/C, Ctrl+U
-  //   const handleKeyDown = (e) => {
-  //     if (
-  //       e.keyCode === 123 || // F12
-  //       (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) ||
-  //       (e.ctrlKey && e.key.toUpperCase() === 'U')
-  //     ) {
-  //       e.preventDefault();
-  //       return false;
-  //     }
-  //   };
-  //   document.addEventListener('keydown', handleKeyDown);
-
-  //   // Cleanup listeners on unmount
-  //   return () => {
-  //     document.removeEventListener('contextmenu', handleContextMenu);
-  //     document.removeEventListener('keydown', handleKeyDown);
-  //   };
-  // }, []);
+  useEffect(() => {
+    document.body.style.backgroundImage = `url("/bi12.jpg")`; // Set your universal background image path
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundAttachment = "fixed";
+  }, []);
 
   return (
 
 
     <BrowserRouter>
       <Header variant="default" />
+      <div className="body-blur-bg">
       <ToastList />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -159,6 +142,7 @@ function App() {
 
       </Routes>
       <WebsiteFooter />
+      </div>
     </BrowserRouter>
   );
 }
