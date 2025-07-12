@@ -67,7 +67,7 @@ import CourseListPage from './Components/Pages/Courses/CourseListPage';
 
 function App() {
   useEffect(() => {
-    document.body.style.backgroundImage = `url("/bi12.jpg")`; // Set your universal background image path
+    // document.body.style.backgroundImage = `url("/bi5.jpg")`; // Set your universal background image path
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundPosition = "center center";
@@ -80,70 +80,70 @@ function App() {
     <BrowserRouter>
       <Header variant="default" />
       <div className="body-blur-bg">
-      <ToastList />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path='/tutorial' element={<CourseList />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/course/:courseName" element={<PythonCourse />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/create-project" element={<CreateProject />} />
-        <Route path="/learning-path/:index" element={<Enrollment />} />
-        <Route path="/progamming/:courseName" element={<TutorialPage />} />
-        <Route path="/career" element={<JobNotificationPage />} />
-        <Route path="/course-List/:courseName" element={<Premium />} />
-        <Route path='/blog' element={<Blog />} />
-        <Route path='/blog-details/:slug' element={<BlogDetails />} />
-        <Route path='/write-blog' element={<CreateBlog />} />
-        <Route path='/community' element={<Community />} />
-        <Route path="/job-details/:id" element={<JobDetails />} />
-        <Route path="/course-list" element={<CourseListPage />} />
+        <ToastList />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path='/tutorial' element={<CourseList />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/course/:courseName" element={<PythonCourse />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/create-project" element={<CreateProject />} />
+          <Route path="/learning-path/:index" element={<Enrollment />} />
+          <Route path="/progamming/:courseName" element={<TutorialPage />} />
+          <Route path="/career" element={<JobNotificationPage />} />
+          <Route path="/course-List/:courseName" element={<Premium />} />
+          <Route path='/blog' element={<Blog />} />
+          <Route path='/blog-details/:slug' element={<BlogDetails />} />
+          <Route path='/write-blog' element={<CreateBlog />} />
+          <Route path='/community' element={<Community />} />
+          <Route path="/job-details/:id" element={<JobDetails />} />
+          <Route path="/course-list" element={<CourseListPage />} />
 
 
-        {/* Online Compilers */}
-        <Route path="/compiler/Python" element={<PythonCompiler />} />
-        <Route path="/compiler/:courseName" element={<RCompiler />} />
-        <Route path="/compiler/Mysql" element={<SQLEditor />} />
-        <Route path="/compiler/:courseName" element={<HTMLCSSEditor />} />
-        <Route path="/compiler/:courseName" element={<JavaScriptCompiler />} />
-        <Route path="/compiler/Java" element={<JavaCompiler />} />
-        <Route path="/compiler/:courseName" element={<CCompiler />} />
-        <Route path="/compiler/:courseName" element={<CppCompiler />} />
-        <Route path="/compiler/:courseName" element={<CSharpCompiler />} />
-        <Route path="/compiler/:courseName" element={<GoCompiler />} />
-        <Route path="/compiler/:courseName" element={<PHPCompiler />} />
-        <Route path="/compiler/:courseName" element={<SwiftCompiler />} />
-        <Route path="/compiler/:courseName" element={<RustCompiler />} />
+          {/* Online Compilers */}
+          <Route path="/compiler/Python" element={<PythonCompiler />} />
+          <Route path="/compiler/:courseName" element={<RCompiler />} />
+          <Route path="/compiler/Mysql" element={<SQLEditor />} />
+          <Route path="/compiler/:courseName" element={<HTMLCSSEditor />} />
+          <Route path="/compiler/:courseName" element={<JavaScriptCompiler />} />
+          <Route path="/compiler/Java" element={<JavaCompiler />} />
+          <Route path="/compiler/:courseName" element={<CCompiler />} />
+          <Route path="/compiler/:courseName" element={<CppCompiler />} />
+          <Route path="/compiler/:courseName" element={<CSharpCompiler />} />
+          <Route path="/compiler/:courseName" element={<GoCompiler />} />
+          <Route path="/compiler/:courseName" element={<PHPCompiler />} />
+          <Route path="/compiler/:courseName" element={<SwiftCompiler />} />
+          <Route path="/compiler/:courseName" element={<RustCompiler />} />
 
-        {/* Examples Pages Routing */}
-        <Route path="/tutorial/Ruby/RubyExamples" element={<RubyExamples />} />
-        <Route path="/examples/:courseName" element={<PythonExamples />} />
-        <Route path="/tutorial/JavaScript/JavaScriptExamples" element={<JavaScriptExamples />} />
-        <Route path="/tutorial/Java/JavaExamples" element={<JavaExamples />} />
-        <Route path="/tutorial/HTML/HTMLExamples" element={<HTMLExamples />} />
-        <Route path="/tutorial/CSS/CSSExamples" element={<CSSExamples />} />
-        <Route path="/tutorial/SQL/SQLExamples" element={<SQLExamples />} />
-        <Route path="/tutorial/C/CExamples" element={<CExamples />} />
-        <Route path="/tutorial/Cpp/CppExamples" element={<CppExamples />} />
-        <Route path="/tutorial/CSharp/CSharpExamples" element={<CSharpExamples />} />
-        <Route path="/tutorial/Swift/SwiftExamples" element={<SwiftExamples />} />
-        <Route path="/tutorial/Rust/RustExamples" element={<RustExamples />} />
-        <Route path="/tutorial/DSA/DSAExamples" element={<DSAExamples />} />
-
-
-
-        <Route path="/learning-dashboard" element={<LearningDashboard />} />
-        <Route path="/paymentPage" element={<PaymentPage />} />
-        <Route path="/thankyou" element={<ThankYou />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/resume-checker" element={<ATSChecker />} />
-        <Route path="/create-resume" element={<CreateResume />} />  
-        <Route path="/forgot-password" element={<ForgotFlow />} />
+          {/* Examples Pages Routing */}
+          <Route path="/tutorial/Ruby/RubyExamples" element={<RubyExamples />} />
+          <Route path="/examples/:courseName" element={<PythonExamples />} />
+          <Route path="/tutorial/JavaScript/JavaScriptExamples" element={<JavaScriptExamples />} />
+          <Route path="/tutorial/Java/JavaExamples" element={<JavaExamples />} />
+          <Route path="/tutorial/HTML/HTMLExamples" element={<HTMLExamples />} />
+          <Route path="/tutorial/CSS/CSSExamples" element={<CSSExamples />} />
+          <Route path="/tutorial/SQL/SQLExamples" element={<SQLExamples />} />
+          <Route path="/tutorial/C/CExamples" element={<CExamples />} />
+          <Route path="/tutorial/Cpp/CppExamples" element={<CppExamples />} />
+          <Route path="/tutorial/CSharp/CSharpExamples" element={<CSharpExamples />} />
+          <Route path="/tutorial/Swift/SwiftExamples" element={<SwiftExamples />} />
+          <Route path="/tutorial/Rust/RustExamples" element={<RustExamples />} />
+          <Route path="/tutorial/DSA/DSAExamples" element={<DSAExamples />} />
 
 
 
-      </Routes>
-      <WebsiteFooter />
+          <Route path="/learning-dashboard" element={<LearningDashboard />} />
+          <Route path="/paymentPage" element={<PaymentPage />} />
+          <Route path="/thankyou" element={<ThankYou />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/resume-checker" element={<ATSChecker />} />
+          <Route path="/create-resume" element={<CreateResume />} />
+          <Route path="/forgot-password" element={<ForgotFlow />} />
+
+
+
+        </Routes>
+        <WebsiteFooter />
       </div>
     </BrowserRouter>
   );
