@@ -5,6 +5,7 @@ import userReducer from './userSlice';
 import wishlistReducer from './wishlistSlice'
 import cartReducer from './cartSlice'
 import toastReducer from './toastSlice'
+import darkModeReducer from './darkModeSlice';
 
 export const store = configureStore({
   reducer: {
@@ -13,5 +14,6 @@ export const store = configureStore({
     wishlist: wishlistReducer,
     cart: cartReducer,
     toast: toastReducer,
+    darkMode: darkModeReducer,
   },
 });
