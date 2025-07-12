@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import './Wishlist.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchWishlistThunk, removeFromWishlist } from '../../../redux/wishlistSlice';
-import { addToCart } from '../../../redux/cartSlice';
+import { showToast } from '../../../redux/toastSlice';
 
 
 const Wishlist = () => {
   const dispatch = useDispatch();
-  const { showToast } = useToast(); // ✅ use toast context
+
 
   const { items, loading } = useSelector((state) => state.wishlist);
   const userId = useSelector((state) => state.auth.userId);
@@ -20,12 +20,13 @@ const Wishlist = () => {
 
   const handleRemove = (wishlistItemId) => {
     dispatch(removeFromWishlist(wishlistItemId));
-
+    showToast('Removed from wishlist', 'error'); 
   };
 
   const handleMoveToCart = (course) => {
     dispatch(addToCart(course));
-
+    dispatch(removeFromWishlist(course.id));
+    showToast('Moved to cart!', 'success'); 
   };
 
   return (

@@ -124,7 +124,7 @@ export const contactUs = async (body) =>{
     const url = `${API_BASE_URL}${API_URLs.CONTACT}`
   
     try {
-        const response = await axios.get(url,body)
+        const response = await axios.post(url,body)
         return response.data;
         
     } catch (error) {
@@ -162,6 +162,23 @@ export const getBlogDetails = async (slug) =>{
         throw error;
     }
 }
+
+export const addBlogs = async (formData) => {
+    const url = `${API_BASE_URL}${API_URLs.Add_BLog}`;
+
+    try {
+        const response = await axios.post(url, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+};
+
 export const getAllPosts = async () =>{
 
     const url = `${API_BASE_URL}${API_URLs.Get_All_posts}`
@@ -234,6 +251,21 @@ export const  deleteWishlistItem  = async (wishlistItemId) =>{
   
     try {
         const response = await axios.delete(url)
+        return response.data;
+        
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
+
+
+export const  ReplyToPost = async (id,body) =>{
+
+    const url = `${API_BASE_URL}${API_URLs.Reply_To_Post}/${id}/${'replies'}`
+  
+    try {
+        const response = await axios.get(url,body)
         return response.data;
         
     } catch (error) {

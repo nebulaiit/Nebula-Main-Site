@@ -60,7 +60,7 @@ const Login = () => {
 
       <div className="form-layer">
         <div className={`login-form-layer ${!isSignUp ? 'active' : ''}`}>
-          <h2>Welcome to <span>IT Portal</span></h2>
+          <h2>Welcome to <span>Qubitron X</span></h2>
           <form onSubmit={handleLogin}>
             <input type="text" name="userName" placeholder="Username or Email" value={values.userName} onChange={handleChange} required />
             <input type="password" name="password" placeholder="Password" value={values.password} onChange={handleChange} required />
@@ -80,7 +80,7 @@ const Login = () => {
         </div>
 
         <div className={`login-form-layer ${isSignUp ? 'active' : ''}`}>
-          <h2>Join <span>IT Portal</span></h2>
+          <h2>Join <span>Qubitron X</span></h2>
           <form onSubmit={handleSignUp}>
             <input type="text" name="userName" placeholder="Full Name" value={values.userName} onChange={handleChange} required />
             <input type="email" name="email" placeholder="Email" value={values.email} onChange={handleChange} required />

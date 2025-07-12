@@ -1,0 +1,51 @@
+import React from 'react'
+import CategorySection from './CategorySection';
+import './courseList.css';
+
+
+export default function CourseListPage() {
+
+    const courses = [
+  {
+    id: '1',
+    title: 'Java Spring Boot Masterclass',
+    category: 'Full Stack Java Development',
+    instructor: 'Shubham M.',
+    price: 799,
+    thumbnailUrl: 'https://via.placeholder.com/300x140'
+  },
+  {
+    id: '2',
+    title: 'React & Tailwind Web App',
+    category: 'Web Development',
+    instructor: 'Shubham M.',
+    price: 599,
+    thumbnailUrl: 'https://via.placeholder.com/300x140'
+  },
+  // ... more
+];
+
+    const grouped = {
+        'Full Stack Java Development': [],
+        'Web Development': [],
+        'Data Analytics': [],
+        'Data Science': [],
+    };
+
+    courses.forEach((course) => {
+        if (grouped[course.category]) {
+            grouped[course.category].push(course);
+        }
+    });
+    return (
+        <>
+            <div className="course-list-wrapper">
+                {Object.entries(grouped).map(([category, list]) => (
+                    list.length > 0 && <CategorySection key={category} title={category} courses={list} />
+                ))}
+            </div>
+
+
+        </>
+    )
+}

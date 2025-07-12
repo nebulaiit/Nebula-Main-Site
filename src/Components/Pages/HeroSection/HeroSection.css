@@ -91,6 +91,7 @@
   animation: fadeInRight 1.2s ease forwards;
   animation-delay: 0.6s;
 }
+
 /* Hero Image */
 .hero .tilt-wrapper {
   perspective: 1000px;
@@ -98,8 +99,8 @@
 }
 
 .hero .tilt-wrapper img {
-    width: 500px;
-    height: 600px;
+  width: 500px;
+  height: 600px;
   transition: transform 0.6s ease, box-shadow 0.4s ease;
   transform-style: preserve-3d;
   will-change: transform;
@@ -117,6 +118,7 @@
     opacity: 0;
     transform: translateX(-50px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -128,6 +130,7 @@
     opacity: 0;
     transform: translateX(60px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -139,6 +142,7 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);

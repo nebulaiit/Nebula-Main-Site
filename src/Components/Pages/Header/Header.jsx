@@ -16,23 +16,15 @@ import { useSelector } from 'react-redux';
 
 export default function Header({ variant = "default" }) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [userInfo, setUserInfo] = useState(null);
-    const [openDropdown, setOpenDropdown] = useState(null);
+
     const [menuOpen, setMenuOpen] = useState(false);
-    const [courses, setCourses] = useState([]);
+
     const [drawerOpen, setDrawerOpen] = useState(false); // FIXED
     const navigate = useNavigate();
     const location = useLocation();
 
     const hideElement = ["/login"].includes(location.pathname);
 
-    const toggleDropdown = (menu) => {
-        setOpenDropdown(prev => (prev === menu ? null : menu));
-    };
-
-    const closeDropdown = () => {
-        setOpenDropdown(null);
-    };
 
     const handleClickAway = () => {
         setMenuOpen(false);
@@ -61,8 +53,6 @@ export default function Header({ variant = "default" }) {
     }, []);
 
     const user = useSelector((state) => state.user.user);
-    console.log(user)
-
 
     useEffect(() => {
         const handleScroll = () => {
@@ -94,22 +84,9 @@ export default function Header({ variant = "default" }) {
                     {/* Desktop Navigation Menu */}
                     <nav className="d-none d-md-block">
                         <ul className='list list-inline mb-0 d-flex align-items-center'>
-                            {/* {["tutorial", "courses"].map(menu => (
-                                <li key={menu} className='list-inline-item position-relative'>
-                                    <Button onClick={() => toggleDropdown(menu)}>
-                                        {menu.charAt(0).toUpperCase() + menu.slice(1)}
-                                        <ExpandMoreIcon className='ms-2' />
-                                    </Button>
-                                    {openDropdown === menu && (
-                                        <Dropmenu
-                                            closeDropdown={closeDropdown}
-                                            activeMenu={menu}
-                                        />
-                                    )}
-                                </li>
-                            ))} */}
+
                             <li><Button onClick={() => navigate("/tutorial")}>Tutorial</Button></li>
-                            <li><Button onClick={() => navigate("/course")}>Course</Button></li>
+                            <li><Button onClick={() => navigate("/course-list")}>Course</Button></li>
                             <li><Button onClick={() => navigate("/career")}>Career</Button></li>
                             <li><Button onClick={() => navigate("/blog")}>Blog</Button></li>
                             <li><Button onClick={() => navigate("/community")}>Community</Button></li>

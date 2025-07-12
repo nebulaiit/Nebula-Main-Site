@@ -1,115 +1,190 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPython, faJs, faJava, faHtml5, faCss3, faReact } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase } from '@fortawesome/free-solid-svg-icons';
+  import React, { useCallback, useEffect, useRef, useState } from 'react';
+  import { useNavigate } from 'react-router-dom';
+  import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+  import { library } from '@fortawesome/fontawesome-svg-core';
+  import { faPython, faJs, faJava, faHtml5, faCss3, faReact } from '@fortawesome/free-brands-svg-icons';
+  import { faDatabase } from '@fortawesome/free-solid-svg-icons';
+  import { FaCodeBranch, FaServer } from 'react-icons/fa';
+  import './CourseList.css';
+  import { getAllTutorial } from '../../APIService/apiservice';
 
-import './CourseList.css';
-import { getAllTutorial } from '../../APIService/apiservice';
+  library.add(faPython, faJs, faJava, faHtml5, faCss3, faDatabase, faReact);
 
-// Add icons to the library
-library.add(faPython, faJs, faJava, faHtml5, faCss3, faDatabase, faReact);
+  export default function CourseList() {
+    const navigate = useNavigate();
+    const data = {
+      Frontend: ['HTML', 'CSS', 'JavaScript', 'Angular', 'React'],
+      Backend: ['NodeJS', 'Database', 'Java', 'Python', 'Ruby'],
+    };
 
-export default function CourseList() {
-  const navigate = useNavigate();
-  const [courses, setCourses] = useState([]);
-  const [quoteIndex, setQuoteIndex] = useState(0);
+    const [courses, setCourses] = useState([]);
+    const [section, setSection] = useState(null);
+    const [showSections, setShowSections] = useState(false);
 
-  const quotes = [
-    "Every great developer you know got there by solving problems they were unqualified to solve — until they actually did it.",
-    "Learning to write programs stretches your mind, and helps you think better. – Bill Gates",
-    "Code is not just code, it’s your superpower in the digital world.",
-    "The best way to predict the future is to create it — with code.",
-    "Stay curious. Keep building. One line of code at a time.",
-    "Dream in code. Build with purpose. Deploy with confidence."
-  ];
+    const buttonRef = useRef(null);
+    const svgRef = useRef(null);
+    const sectionRefs = useRef({});
+    const componentRefs = useRef({});
+    const headingRef = useRef(null);
 
-  const handleCourseClick = (tutorialName) => {
-    localStorage.setItem("selectedCourse", tutorialName);
-    navigate(`/course/${tutorialName}`);
-  };
+    const iconMap = {
+      Python: { icon: 'python', type: 'fab' },
+      MySql: { icon: 'database', type: 'fas' },
+      Java: { icon: 'java', type: 'fab' },
+      'React.js': { icon: 'react', type: 'fab' },
+      HTML: { icon: 'html5', type: 'fab' },
+      CSS: { icon: 'css3', type: 'fab' },
+    };
 
-  const iconMap = {
-    "Python": { icon: "python", type: "fab" },
-    "MySql": { icon: "database", type: "fas" },
-    "Java": { icon: "java", type: "fab" },
-    "React.js": { icon: "react", type: "fab" },
-    "HTML": { icon: "html5", type: "fab" },
-    "CSS": { icon: "css3", type: "fab" }
-    // Add more as needed
-  };
+    useEffect(() => {
+      const fetchTutorialList = async () => {
+        try {
+          const response = await getAllTutorial();
+          const mappedCourses = response.map(course => {
+            const iconInfo = iconMap[course.tutorialName] || { icon: 'question', type: 'fas' };
+            return { ...course, icon: iconInfo.icon, type: iconInfo.type };
+          });
+          setCourses(mappedCourses);
+        } catch (error) {
+          console.error('Error fetching documents:', error);
+        }
+      };
+      fetchTutorialList();
+    }, []);
 
+    const setRef = useCallback((refs, key) => node => {
+      if (node) refs.current[key] = node;
+      else delete refs.current[key];
+    }, []);
 
+    const drawCurvedLine = (start, end, delay = 0) => {
+      if (!start || !end || !svgRef.current) return;
 
-  useEffect(() => {
+      const svgBox = svgRef.current.getBoundingClientRect();
+      const startBox = start.getBoundingClientRect();
+      const endBox = end.getBoundingClientRect();
 
-    const fetchTutorialList = async () => {
-      try {
+      const startX = startBox.left + startBox.width / 2 - svgBox.left;
+      const startY = startBox.top + startBox.height - svgBox.top;
+      const endX = endBox.left + endBox.width / 2 - svgBox.left;
+      const endY = endBox.top - svgBox.top;
 
-        const response = await getAllTutorial();
-        console.log("Fetched courses:", response);
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', `M${startX},${startY} C${startX},${startY + (endY - startY) * 0.6} ${endX},${endY - (endY - startY) * 0.6} ${endX},${endY}`);
+      path.setAttribute('class', 'fancy-line dynamic-line');
 
-        // Map each tutorialName to icon & type
-        const mappedCourses = response.map(course => {
-          const iconInfo = iconMap[course.tutorialName] || { icon: "question", type: "fas" }; // fallback icon
-          return {
-            ...course,
-            icon: iconInfo.icon,
-            type: iconInfo.type
-          };
+      const length = path.getTotalLength();
+      path.style.strokeDasharray = `${length} ${length}`;
+      path.style.strokeDashoffset = length;
+
+      svgRef.current.appendChild(path);
+      void path.offsetWidth;
+
+      setTimeout(() => {
+        path.style.strokeDashoffset = 0;
+      }, delay);
+    };
+
+    const drawLines = () => {
+      const svg = svgRef.current;
+      if (!svg) return;
+
+      svg.querySelectorAll('.dynamic-line').forEach(path => path.remove());
+      let delay = 0;
+      const increment = 300;
+
+      if (showSections && !section && buttonRef.current) {
+        Object.keys(data).forEach(sec => {
+          drawCurvedLine(buttonRef.current, sectionRefs.current[sec], delay);
+          delay += increment;
         });
-        setCourses(mappedCourses)
-
-      } catch (error) {
-        console.error("Error fetching documents:", error);
+      } else if (section && headingRef.current) {
+        data[section].forEach((lang, i) => {
+          const langEl = componentRefs.current[lang];
+          drawCurvedLine(headingRef.current, langEl, i * increment);
+        });
       }
     };
-    fetchTutorialList();
-    const quoteInterval = setInterval(() => {
-      setQuoteIndex((prev) => (prev + 1) % quotes.length);
-    }, 6000);
 
-    return () => clearInterval(quoteInterval);
-  }, [])
+    useEffect(() => {
+      const id = requestAnimationFrame(drawLines);
+      return () => {
+        cancelAnimationFrame(id);
+        svgRef.current?.querySelectorAll('.dynamic-line').forEach(path => path.remove());
+      };
+    }, [section, showSections]);
 
-  return (
-    <div className="course-section  ">
-      <AnimatedHeading
-        emoji="🚀"
-        text="Welcome to Qubitron X"
-        highlight="Next-Gen Learning"
-      />
+    useEffect(() => {
+      const handleResize = () => setSection(prev => prev);
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
-      <p className="quote fade-in-up">{quotes[quoteIndex]}</p>
+    const handleCourseClick = tutorialName => {
+      localStorage.setItem('selectedCourse', tutorialName);
+      navigate(`/course/${tutorialName}`);
+    };
 
-      <div className="course-button-container">
-        {courses.map((course, index) => (
-          <button
-            className="course-btn"
-            key={index}
-            onClick={() => handleCourseClick(course.tutorialName)}
-          >
-            <FontAwesomeIcon
-              icon={[course.type, course.icon]}
-              className="course-icon"
-            />
-            {course.tutorialName}
+    const handleWebDevClick = () => {
+      setShowSections(true);
+      setSection(null);
+    };
+
+    return (
+      <div className="coures-wrapper">
+        <div className="webdev-btn-wrapper">
+          <button ref={buttonRef} onClick={handleWebDevClick} className="webdev-btn">
+            Web Development
           </button>
-        ))}
+        </div>
+
+        <svg className="live-curve-svg" ref={svgRef}>
+          <defs>
+            <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#1565c0" />
+              <stop offset="100%" stopColor="#42a5f5" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        {showSections && !section && (
+          <div className="section-row fade-in">
+            {Object.keys(data).map((sec, i) => (
+              <div
+                key={sec}
+                ref={setRef(sectionRefs, sec)}
+                className="card"
+                style={{ animationDelay: `${i * 0.1}s` }}
+                onClick={() => setSection(sec)}
+              >
+                <div className="icon-title">
+                  {sec === 'Frontend' ? <FaCodeBranch size={22} /> : <FaServer size={22} />}
+                  <h3>{sec}</h3>
+                </div>
+                <p>{data[sec].length} Topics</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {section && (
+          <>
+            <h2 ref={headingRef} className="sub-title">{section}</h2>
+            <div className="component-row fade-in">
+              {data[section].map((language, i) => (
+                <div
+                  key={language}
+                  ref={setRef(componentRefs, language)}
+                  className="component-card"
+                  style={{ animationDelay: `${i * 0.1}s` }}
+                  onClick={() => handleCourseClick(language)}
+                >
+                  <h4>{language}</h4>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
       </div>
-
-      {/* Styled line */}
-      <hr className="section-divider" />
-    </div>
-  );
-}
-
-const AnimatedHeading = ({ emoji, text, highlight }) => {
-  return (
-    <h2 className="animated-title">
-      <span className="emoji">{emoji}</span>{' '}
-      {text} <span className="highlight">{highlight}</span>
-    </h2>
-  );
-};
+    );
+  }

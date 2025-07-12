@@ -1,63 +1,126 @@
 .blog-form-wrapper {
   width: 80%;
   margin: 60px auto;
- margin-top: 8%;
+  margin-top: 8%;
   padding: 40px;
-  background: #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-  border-radius: 16px;
-  transition: all 0.3s ease;
+  /* background: rgba(255, 255, 255, 0.12); */
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25); */
+  animation: fadeIn 0.5s ease;
 }
 
-.blog-form-wrapper h2 {
+.neon-title {
   text-align: center;
-  margin-bottom: 25px;
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 38px;
+  font-weight: 700;
   color: #0f172a;
+  background: linear-gradient(to right, #ff0080, #7928ca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
 }
 
 .blog-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
 }
 
 .blog-form input,
 .blog-form textarea {
-  padding: 14px 16px;
-  font-size: 15px;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  width: 48%;
+  padding: 16px;
+  font-size: 16px;
+  border: 2px solid transparent;
+  border-radius: 12px;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f9fafb;
-  transition: border 0.3s ease;
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  color: #111;
+  border: 1px solid pink;
+}
+
+.blog-form textarea {
+  width: 100%;
+}
+
+.blog-form input::placeholder,
+.blog-form textarea::placeholder {
+  color: #6b7280;
 }
 
 .blog-form input:focus,
 .blog-form textarea:focus {
   outline: none;
-  border-color: #3b82f6;
+  border-color: #ff0080;
+  box-shadow: 0 0 10px #ff0080aa;
   background-color: #fff;
 }
 
-.blog-form textarea {
-  resize: vertical;
-  min-height: 150px;
+.blog-form input[type="file"] {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid pink;
+  padding: 14px;
+  border-radius: 12px;
+  font-family: 'Segoe UI', sans-serif;
+  cursor: pointer;
+  color: #4b5563;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-.blog-form button {
-  background: linear-gradient(to right, #3b82f6, #2563eb);
+.blog-form input[type="file"]:focus {
+  outline: none;
+  border-color: #ff0080;
+  box-shadow: 0 0 10px #ff0080aa;
+  background-color: #fff;
+}
+
+.blog-form input[type="file"]::file-selector-button {
+  background: linear-gradient(to right, #ff0080, #7928ca);
   color: white;
-  padding: 14px;
-  font-size: 16px;
-  font-weight: 500;
   border: none;
+  padding: 8px 14px;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
+.blog-form input[type="file"]::file-selector-button:hover {
+  background: linear-gradient(to right, #7928ca, #ff0080);
+}
+
+.blog-form textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.blog-form button {
+  background: linear-gradient(to right, #ff0080, #7928ca);
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
 .blog-form button:hover {
-  background: linear-gradient(to right, #2563eb, #1e40af);
+  transform: scale(1.03);
+  background: linear-gradient(to right, #7928ca, #ff0080);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

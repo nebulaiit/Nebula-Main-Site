@@ -1,50 +1,60 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import ReplyInput from './ReplyInput';
-
-
+import './ReplyThread.css'; // optional styling
 
 export default function ReplyThread({ reply, postId, onReply, onReact }) {
     const reactionTypes = ['👍', '❤️', '🔥', '💡'];
     const [showReplyInput, setShowReplyInput] = useState(false);
+    const [showNestedReplies, setShowNestedReplies] = useState(false);
+
+    const replies = reply.replies || []; // ✅ fallback to empty array
+    console.log(reply)
 
     return (
-        <>
-            <div className="reply">
-                <strong>{reply.user}</strong> <span className="reply-time">({reply.time})</span>
-                <p>{reply.text}</p>
+        <div className="reply-thread">
+            <div className="reply-content">
+                <p><strong>{reply.author}</strong> <span className="reply-time">· {reply.time}</span></p>
+                <p>{reply.content}</p>
 
-                <div className="reaction-row">
+                <div className="reply-actions">
                     {reactionTypes.map((emoji) => (
-                        <button
-                            key={emoji}
-                            onClick={() => onReact(postId, reply.id, emoji)}
-                            className="reaction-btn"
-                        >
-                            {emoji} {reply.reactions[emoji] || ''}
+                        <button key={emoji} onClick={() => onReact(postId, reply.id, emoji)} className="reaction-btn">
+                            {emoji} {reply.reactions?.[emoji] || ''}
                         </button>
                     ))}
+                    <button onClick={() => setShowReplyInput(!showReplyInput)} className="reply-btn">
+                        💬 Reply
+                    </button>
+                    {replies.length > 0 && (
+                        <button onClick={() => setShowNestedReplies(!showNestedReplies)} className="toggle-nested-btn">
+                            {showNestedReplies ? '🔽 Hide' : `▶️ ${replies.length} replies`}
+                        </button>
+                    )}
                 </div>
 
-                 <ReplyInput
-                        onReply={(text, name) => {
+                {showReplyInput && (
+                    <div className="nested-reply-input">
+                        <ReplyInput onReply={(text, name) => {
                             onReply(postId, text, name, reply.id);
                             setShowReplyInput(false);
-                        }}
-                    />
+                        }} />
+                    </div>
+                )}
 
-
-                <div className="nested-replies">
-                    {reply.replies.map((nested) => (
-                        <ReplyThread
-                            key={nested.id}
-                            reply={nested}
-                            postId={postId}
-                            onReply={onReply}
-                            onReact={onReact}
-                        />
-                    ))}
-                </div>
+                {showNestedReplies && replies.length > 0 && (
+                    <div className="nested-replies">
+                        {replies.map((nestedReply) => (
+                            <ReplyThread
+                                key={nestedReply.id}
+                                postId={postId}
+                                reply={nestedReply}
+                                onReply={onReply}
+                                onReact={onReact}
+                            />
+                        ))}
+                    </div>
+                )}
             </div>
-        </>
-    )
+        </div>
+    );
 }

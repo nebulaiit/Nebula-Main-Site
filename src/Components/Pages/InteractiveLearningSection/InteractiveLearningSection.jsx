@@ -1,44 +1,44 @@
 import React, { useState } from "react";
 import "./InteractiveLearningSection.css";
 
-import video1 from "../../video/pro-sensai-demo.mp4";
-import video2 from "../../video/pro-project-demo.mp4";
-import video3 from "../../video/pro-interactive-course-demo.mp4";
-import video4 from "../../video/pro-challenges-demo.mp4";
-import video5 from "../../video/pro-certificate-demo.mp4";
 
-const features = [
-  {
-    title: "Hands-on learning",
-    description: "Practice what you learn with our interactive courses, practice problems, and quizzes.",
-    video: video1,
-  },
-  {
-    title: "Practice projects",
-    description: "Build your confidence through guided real-world projects.",
-    video: video2,
-  },
-  {
-    title: "Coding challenges",
-    description: "Level up your skills with our challenges and compete on our global leaderboard.",
-    video: video3,
-  },
-  {
-    title: "AI mentor",
-    description: "Get personalized AI help with code explanation, error fixing, and feedback for improvements.",
-    video: video4,
-  },
-  {
-    title: "Professional certificates",
-    description: "Showcase your expertise and stand out to your potential employers.",
-    video: video5,
-  },
-];
+
+const hierarchyData = {
+  'Hands-On Learning': [
+    'Interactive Labs',
+    'Real-time Simulations',
+    'Guided Tutorials',
+    'Hardware Integration',
+    'Live Debugging',
+  ],
+  'Practice Project': [
+    'Beginner Projects',
+    'Intermediate Projects',
+    'Capstone Project',
+    'Team Collaboration',
+    'GitHub Integration',
+  ],
+  'Coding Challenge': [
+    'Daily Challenge',
+    'Weekly Hackathon',
+    'Timed Quizzes',
+    'Problem Sets by Level',
+    'Peer Ranking',
+  ],
+  'Professional Certificate': [
+    'Completion Criteria',
+    'Industry Recognition',
+    'Shareable Certificate',
+    'LinkedIn Integration',
+    'Mock Interviews',
+  ],
+};
+
 
 export default function InteractiveLearningSection() {
-  const [selectedFeature, setSelectedFeature] = useState(features[0].title);
 
-  const current = features.find((f) => f.title === selectedFeature);
+  const [activeTopic, setActiveTopic] = useState('Hands-On Learning');
+
 
   return (
     <section className="interactive-learning-section">
@@ -47,33 +47,27 @@ export default function InteractiveLearningSection() {
       <br></br>
       <div className="interactive-container">
         <div className="left">
-          {features.map((feature, index) => (
-            <div key={index} className="feature-block">
-              <button
-                className={`feature-button-box ${
-                  selectedFeature === feature.title ? "active" : ""
-                }`}
-                onClick={() => setSelectedFeature(feature.title)}
-              >
-                {feature.title}
-              </button>
-              {selectedFeature === feature.title && (
-                <p className="feature-description">{feature.description}</p>
-              )}
+          {Object.keys(hierarchyData).map((topic) => (
+            <div
+              key={topic}
+              onClick={() => setActiveTopic(topic)}
+              className={`menu-item ${activeTopic === topic ? 'active' : ''}`}
+            >
+              {topic}
             </div>
           ))}
-          <button className="try-pro-button">Try Nebula PRO</button>
         </div>
-
-        <div className="right">
-          <video
-            className="feature-video"
-            src={current.video}
-            controls
-            autoPlay
-            muted
-            loop
-          />
+        <div className="menu-content">
+          {activeTopic && (
+            <div>
+              <h2 className="menu-title">{activeTopic}</h2>
+              <ul className="menu-list">
+                {hierarchyData[activeTopic].map((subtopic, index) => (
+                  <li key={index}>{subtopic}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </section>

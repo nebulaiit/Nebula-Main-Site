@@ -5,6 +5,8 @@
   background-color: #edf3ff; /* Soft bluish background */
   font-family: 'Segoe UI', sans-serif;
   min-height: 100vh;
+        border: 2px solid #ff91c1;
+        border-radius: 15px;
 }
 
 .my-lists-wrapper .tab-title {

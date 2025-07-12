@@ -4,6 +4,8 @@
   background-color: #f5f8ff;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
+      border: 2px solid #ff91c1;
+  border-radius: 15px;
 }
 
 /* === Section Heading === */
