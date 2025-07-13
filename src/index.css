@@ -1,21 +1,29 @@
 
-body,
-html {
-  margin: 0;
-  padding: 0;
-  background: url('/bi5.jpg') no-repeat center center fixed;
-
+.body-blur-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: url('/bi8.jpg'); /* Use your image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  filter: blur(16px) brightness(0.8);
+  transition: background-image 0.5s, filter 0.3s;
+  pointer-events: none;
 }
 
 .glassmorphism-navbar {
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+
   transition: background 0.3s ease, border 0.3s ease;
   z-index: 9998;
   position: fixed;
-  width: 100%;
+  
 }
 
 
@@ -27,3 +35,4 @@ html {
   transition: background 0.3s ease, border 0.3s ease;
 
 }
+

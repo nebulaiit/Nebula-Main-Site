@@ -1,24 +1,42 @@
+/* LIGHT MODE */
 body {
+  background: linear-gradient(135deg, #ffe6f0 0%, #ffd6f5 50%, #ffc0f0 100%);
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Inter', 'Roboto', 'Open Sans', Arial, sans-serif;
-  transition: background-image 0.5s;
+  transition: background 0.5s ease, color 0.5s ease;
+  color: #111827;
 }
 
-.body-blur-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background-image: url('/bi8.jpg'); /* Use your image path */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  filter: blur(16px) brightness(0.8);
-  transition: background-image 0.5s, filter 0.3s;
-  pointer-events: none;
+/* DARK MODE */
+body.dark-mode {
+ background: radial-gradient(
+    circle at 100% 50%,  /* position the glow bottom-right */
+    #a020f0 0%,         /* vibrant purple core */
+    #3b1755 30%,        /* deep purple */
+    #0d0d0d 70%,        /* near-black */
+    #000000 100%        /* full black */
+  );
+  color: #f3f4f6;
+}
+
+/* Wrapper background (if needed to override inner sections) */
+body.dark-mode .community-wrapper {
+  background: transparent; /* inherit the gradient */
+}
+
+/* Card or inner sections in dark mode */
+body.dark-mode .discussion-card {
+  background: #1f2937;
+  border-color: #334155;
+  transition: background 0.3s ease;
+}
+
+/* Optional light mode card styling */
+.discussion-card {
+  transition: background 0.3s ease;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
 }

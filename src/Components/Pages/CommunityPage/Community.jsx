@@ -16,7 +16,7 @@ export default function Community() {
     const [tagsList, setTagsList] = useState(['study-group', 'share-insight', 'help-question']);
     const [showTagModal, setShowTagModal] = useState(false);
     const [newTag, setNewTag] = useState('');
-    const [darkMode, setDarkMode] = useState(false)
+    const darkMode = useSelector((state) => state.darkMode.enabled);
 
 
     const handlePost = () => {
@@ -323,12 +323,7 @@ export default function Community() {
                 </div>
             )}
 
-            {/* Theme Toggle */}
-            <div className="theme-toggle-container" onClick={() => setDarkMode(!darkMode)}>
-                <div className={`theme-toggle ${darkMode ? "dark" : ""}`}>
-                    <div className="toggle-label">{darkMode ? "🌙" : "☀️"}</div>
-                </div>
-            </div>
+
 
 
 

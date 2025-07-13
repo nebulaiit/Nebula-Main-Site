@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './HeroSection.css';
-import student from '../../Images/HomePage/hero-student.png'
+import student from '../../Images/HomePage/HomepageBg.png'
 
 const HeroSection = () => {
   const heroRef = useRef();

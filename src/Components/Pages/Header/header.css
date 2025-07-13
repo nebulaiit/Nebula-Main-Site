@@ -10,21 +10,20 @@ a {
   color: #000;
 }
 /*HEADER CONTAINER */
-.header {
-  padding: 10px 0;
-  width: 100%;
+
+.header{
+  padding: 10px 10px;
+  width: 80%;
   position: fixed;
-  top: 0;
+  background-color: rgba(240, 240, 240, 0.259);
+  top: 3%;
+  left: 10%;
   z-index: 100;
-  /* background: white; */
+  border-radius: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-
-
-/*LOGO*/
 
 .header .images-wrapper img {
   width: 80px;
@@ -32,8 +31,6 @@ a {
   padding: 10px;
   cursor: pointer;
 }
-
-
 
 .header .search-box {
   position: relative;
@@ -436,5 +433,58 @@ a {
   font-weight: bold;
   margin-bottom: 10px;
 
+}
+
+
+/* -------------------------------
+   DARK MODE HEADER STYLES
+------------------------------- */
+.header.dark {
+  background-color: #0f172a;
+  color: #f9fafb;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.header.dark a,
+.header.dark nav li button {
+  color: #f9fafb;
+}
+
+.header.dark .search-box input {
+  background-color: #1e293b !important;
+  color: #f1f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header.dark .right-end-btn .phone-btn,
+.header.dark .right-end-btn .pro-btn {
+  background: linear-gradient(to right, #ff4ecb, #c084fc);
+  color: #ffffff;
+}
+
+.header.dark .profile-dropdown .dropdown-menu {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+.header.dark .dropdown-item {
+  color: #e2e8f0;
+}
+
+.header.dark .dropdown-item:hover {
+  color: #facc15;
+  background-color: transparent;
+}
+
+.header.dark .user-info .email {
+  color: #f472b6;
+}
+
+.header.dark .user-info .email:hover {
+  color: #facc15;
+}
+
+.header.dark .profile-img {
+  border: 2px solid #f472b6;
 }
 

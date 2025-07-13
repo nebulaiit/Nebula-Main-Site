@@ -16,12 +16,11 @@ import { useSelector } from 'react-redux';
 
 export default function Header({ variant = "default" }) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-
     const [menuOpen, setMenuOpen] = useState(false);
-
     const [drawerOpen, setDrawerOpen] = useState(false); // FIXED
     const navigate = useNavigate();
     const location = useLocation();
+    const darkMode = useSelector((state) => state.darkMode.enabled);    
 
     const hideElement = ["/login"].includes(location.pathname);
 
@@ -71,19 +70,19 @@ export default function Header({ variant = "default" }) {
     return (
         <div>
             {variant === "default" && !hideElement && (
-                <div className='header d-flex justify-content-between align-items-center container-fluid'>
+                <div className={`header container-fluid ${darkMode ? 'dark' : ''}`}>
                     <div className="images-wrapper" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
                         <img src={logo} alt="Logo" />
                     </div>
 
-                    <div className="search-box d-none d-md-block">
+                    {/* <div className="search-box d-none d-md-block">
                         <span><SearchIcon /></span>
                         <input type="text" placeholder='Search Tutorial & Examples' />
-                    </div>
+                    </div> */}
 
                     {/* Desktop Navigation Menu */}
-                    <nav className="d-none d-md-block">
-                        <ul className='list list-inline mb-0 d-flex align-items-center'>
+                    <nav className="d-none d-md-block ">
+                        <ul className='list list-inline my-0 d-flex align-items-center'>
 
                             <li><Button onClick={() => navigate("/tutorial")}>Tutorial</Button></li>
                             <li><Button onClick={() => navigate("/course-list")}>Course</Button></li>
@@ -94,7 +93,7 @@ export default function Header({ variant = "default" }) {
                     </nav>
 
                     {/* Right-end Buttons */}
-                    <ul className='right-end-btn list list-inline mb-0 d-none d-md-flex align-items-center'>
+                    <ul className='right-end-btn list list-inline my-0 d-none d-md-flex align-items-center'>
                         <li className='list-inline-item'>
                             <Link to="/contact">
                                 <Button className='phone-btn'>

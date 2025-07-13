@@ -1,13 +1,13 @@
 /* JobNotification.css */
 .job-notification-wrapper {
   padding: 40px;
-  background-color: #f0f6ff;
+
   min-height: 100vh;
   padding-top: 7%;
 }
 
 .job-header {
-  background: #fff;
+ 
   padding: 30px;
   border: 2px solid #e83e8c;
   border-radius: 16px;
