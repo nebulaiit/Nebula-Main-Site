@@ -15,26 +15,13 @@ import Benefits from '../Benefits/Benefits';
 
 export default function Home() {
 
-  const images = 'https://drive.google.com/uc?export=view&id=1azJwJHfp5ubvWf1m_lk1NntoMLkpZyoj'
   return (
     <div className="container-fluid homepage">
    
       <HeroSection/>
-
-      {/* <CourseList /> */}
-
       <Benefits/>
-
-      {/* <CurvedSection /> */}
-
       <InteractiveLearningSection />
-
-      {/* <OnlineCompilers /> */}
-
       <WhyNebula />
-
-      {/* <AboutAgencyPage /> */}
-
       <ServicesSection />
 
     </div>

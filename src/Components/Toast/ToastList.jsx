@@ -6,6 +6,8 @@ import { removeToast } from '../../redux/toastSlice';
 const ToastList = () => {
   const toasts = useSelector((state) => state.toast);
   const dispatch = useDispatch();
+      const darkMode = useSelector((state) => state.darkMode.enabled);
+  
 
   useEffect(() => {
     const timers = toasts.map((toast) =>
@@ -18,7 +20,7 @@ const ToastList = () => {
 
 
   return (
-    <div className="toast-container">
+    <div className={`toast-container ${darkMode ? 'dark' : ''}`}>
       {toasts.map((toast) => (
         <div key={toast.id} className={`toast ${toast.type}`}>
           <p>{toast.message || '⚠️ NO MESSAGE'}</p>

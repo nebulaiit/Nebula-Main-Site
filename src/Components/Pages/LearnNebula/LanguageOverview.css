@@ -1,0 +1,137 @@
+.language-overview {
+  padding: 40px 8%;
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+
+
+.overview-section {
+  margin-bottom: 60px;
+}
+
+.overview-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border-left: 4px solid #ff5c8d;
+  padding-left: 15px;
+  position: relative;
+  animation: fadeInDown 0.6s ease forwards;
+  opacity: 0;
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-card {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid #e83e8c;
+  flex: 1;
+  min-width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.language-overview.dark .info-card{
+  background-color: #0f172a;
+  border: 2px solid #40145e;
+}
+
+.language-overview.dark .info-card h3{
+  color: #8928ca;
+}
+.language-overview.dark .info-card ul li{
+  color: #ffffff;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px #8928ca41;
+}
+
+.roadmap {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.roadmap-step {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.roadmap-step:hover {
+  transform: scale(1.02);
+}
+
+.language-overview.in-view .info-card,
+.language-overview.in-view .roadmap-step,
+.language-overview.in-view .overview-section h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Initial state (before in view) */
+.info-card,
+.roadmap-step,
+.overview-section h2 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+  transition-delay: 0s;
+  /* overridden inline */
+}
+
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .card-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .overview-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .info-card {
+    padding: 16px;
+  }
+
+  .roadmap-step {
+    padding: 16px;
+  }
+}

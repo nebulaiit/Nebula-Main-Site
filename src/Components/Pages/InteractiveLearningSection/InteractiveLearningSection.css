@@ -10,8 +10,15 @@
   color: #f52887;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 1.3rem;
   margin-bottom: 10px;
+}
+
+.interactive-learning-section.dark .subtitle {
+
+  color: #f52887;
+  ;
+
 }
 
 /* Title Styling */
@@ -19,7 +26,13 @@
   font-size: 36px;
   color: #0b0c3f;
   font-weight: 700;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+
+.interactive-learning-section.dark .title {
+
+  color: #ffffffc4;
+
 }
 
 /* Container for the Interactive Learning Section */
@@ -54,10 +67,11 @@
 }
 
 .interactive-learning-section .interactive-container .menu-content {
-  width: 50%;
-  height: 280px;
+  width: 33%;
+  height: 290px;
+  margin-top: 0.5%;
   padding: 20px 28px;
-  background: rgba(239, 246, 255, 0.4);
+  /* background-color: #ffffff; */
   backdrop-filter: blur(10px);
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -65,12 +79,18 @@
   transition: all 0.3s ease;
 }
 
+
 /* Title Styling */
 .interactive-learning-section .interactive-container .menu-content .menu-title {
   font-size: 26px;
-  font-weight: 6  00;
+  font-weight: 6 00;
   margin-bottom: 18px;
   color: #e83e8c;
+}
+
+.interactive-learning-section.dark .interactive-container .menu-content .menu-title {
+
+  color: #ffffff;
 }
 
 /* List Styling */
@@ -80,8 +100,9 @@
 }
 
 .interactive-learning-section .interactive-container .menu-content .menu-list li {
-  font-size: 16px;
-  color: #3b82f6;
+  width:50%;
+  font-size: 1.1rem;
+  color: #000000d4;
   margin-bottom: 10px;
   position: relative;
   padding-left: 20px;
@@ -89,18 +110,29 @@
   cursor: pointer;
 }
 
+.interactive-learning-section.dark .interactive-container .menu-content .menu-list li {
+
+  color: #ffffffad;
+
+}
+
 .interactive-learning-section .interactive-container .menu-content .menu-list li::before {
   content: '•';
   position: absolute;
   left: 0;
-  color: #60a5fa;
+  color: #010101ad;
   font-size: 20px;
   line-height: 1;
   top: 1px;
 }
+.interactive-learning-section.dark .interactive-container .menu-content .menu-list li::before {
+
+  color: #f4f4f4ad;
+
+}
 
 .interactive-learning-section .interactive-container .menu-content .menu-list li:hover {
-  color: #1d4ed8;
+  color: #e83e8c;
   transform: translateX(4px);
   text-shadow: 0 0 8px rgba(93, 135, 255, 0.5);
 }
@@ -133,11 +165,25 @@
   opacity: 0;
 }
 
-.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(1) { animation-delay: 0.1s; }
-.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(2) { animation-delay: 0.2s; }
-.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(3) { animation-delay: 0.3s; }
-.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(4) { animation-delay: 0.4s; }
-.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(5) { animation-delay: 0.5s; }
+.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.interactive-learning-section .interactive-container .menu-content .menu-list li:nth-child(5) {
+  animation-delay: 0.5s;
+}
 
 /* Keyframes */
 @keyframes fadeInSlide {
@@ -145,6 +191,7 @@
     opacity: 0;
     transform: translateY(20px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -156,9 +203,9 @@
     opacity: 0;
     transform: translateX(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
-

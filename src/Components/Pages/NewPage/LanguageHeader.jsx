@@ -20,7 +20,7 @@ const handleCourseClick = (courseName , path) => {
    navigate(`${path}/${courseName}`);
 };
   return (
-    <div className="language-header">
+    <div className="language-header ">
       <h2> {courseName} Programming</h2>
       <div className="language-header-tabs">
         {tabs.map((tab) => (

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./InteractiveLearningSection.css";
+import { useSelector } from 'react-redux';
+
 
 
 
@@ -39,9 +41,10 @@ export default function InteractiveLearningSection() {
 
   const [activeTopic, setActiveTopic] = useState('Hands-On Learning');
 
+  const darkMode = useSelector((state) => state.darkMode.enabled);
 
   return (
-    <section className="interactive-learning-section">
+    <section className={`interactive-learning-section ${darkMode ? 'dark' : ''}`}>
       <p className="subtitle">INTERACTIVE LEARNING</p>
       <h2 className="title">Overcome your fear of coding with Nebula PRO</h2>
       <br></br>
@@ -57,7 +60,7 @@ export default function InteractiveLearningSection() {
             </div>
           ))}
         </div>
-        <div className="menu-content">
+        <div className="menu-content glassmorphism">
           {activeTopic && (
             <div>
               <h2 className="menu-title">{activeTopic}</h2>

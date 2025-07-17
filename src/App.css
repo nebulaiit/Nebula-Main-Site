@@ -1,6 +1,6 @@
 /* LIGHT MODE */
 body {
-  background: linear-gradient(135deg, #ffe6f0 0%, #ffd6f5 50%, #ffc0f0 100%);
+  background:white;
   min-height: 100vh;
   width: 100%;
   margin: 0;
@@ -8,17 +8,13 @@ body {
   font-family: 'Inter', 'Roboto', 'Open Sans', Arial, sans-serif;
   transition: background 0.5s ease, color 0.5s ease;
   color: #111827;
+  box-sizing: border-box;
 }
 
 /* DARK MODE */
 body.dark-mode {
- background: radial-gradient(
-    circle at 100% 50%,  /* position the glow bottom-right */
-    #a020f0 0%,         /* vibrant purple core */
-    #3b1755 30%,        /* deep purple */
-    #0d0d0d 70%,        /* near-black */
-    #000000 100%        /* full black */
-  );
+
+  background-color: #0f0c29;
   color: #f3f4f6;
 }
 

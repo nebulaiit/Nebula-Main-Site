@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './WhyNebula.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faStar, faCode } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
 
 const cardData = [
   {
@@ -24,15 +25,16 @@ const cardData = [
 const WhyNebula = () => {
   const cardRefs = useRef([]);
   const titleRef = useRef(null);
+  const darkMode = useSelector((state) => state.darkMode.enabled);
 
- useEffect(() => {
+
+useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('in-view');
-        } else {
-          entry.target.classList.remove('in-view'); // 👈 Remove on exit
+          observer.unobserve(entry.target); // ✅ Stop observing after first view
         }
       });
     },
@@ -48,21 +50,22 @@ const WhyNebula = () => {
   };
 }, []);
 
+
   return (
-    <div className="why-nebula">
-      <h2 className="why-nebula--title" ref={titleRef}>Why Nebula IT?</h2>
-      <div className="why-nebula--cards">
+    <div className={`why-nebula ${darkMode ? 'dark' : ''}`}>
+      <h2 className="why-nebula-title" ref={titleRef}>Why Qubitron<span className='title-x'>X</span> ?</h2>
+      <div className="why-nebula-cards">
         {cardData.map((card, index) => (
           <div
-            className="why-nebula--card"
+            className="why-nebula-card glassmorphism"
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
           >
-            <div className="why-nebula--icon">
+            <div className="why-nebula-icon">
               <FontAwesomeIcon icon={card.icon} />
             </div>
-            <h4 className="why-nebula--card-title">{card.title}</h4>
-            <p className="why-nebula--card-text">{card.text}</p>
+            <h4 className="why-nebula-card-title">{card.title}</h4>
+            <p className="why-nebula-card-text">{card.text}</p>
           </div>
         ))}
       </div>

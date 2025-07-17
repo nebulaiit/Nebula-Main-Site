@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import './Community.css';
 import { getAllPosts } from '../../APIService/apiservice';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ReplyInput from './Reply/ReplyInput';
 import ReplyThread from './Reply/ReplyThread';
+import { Filter } from 'bad-words';
+import { showToast } from '../../../redux/toastSlice';
 
 
 
 export default function Community() {
+
     const reactionTypes = ['👍', '❤️', '🔥', '💡'];
     const [post, setPost] = useState('');
     const [tags, setTags] = useState([]);
@@ -17,10 +20,21 @@ export default function Community() {
     const [showTagModal, setShowTagModal] = useState(false);
     const [newTag, setNewTag] = useState('');
     const darkMode = useSelector((state) => state.darkMode.enabled);
+    const filter = new Filter();
+    const dispatch = useDispatch();
 
+    filter.addWords('sex', 'nude', 'porn', 'xxx', 'damn'); // add your custom blocklist here
 
     const handlePost = () => {
-        if (!post.trim()) return alert('Write something before posting!');
+        if (!post.trim()) {
+            return alert('Write something before posting!');
+        }
+
+        if (filter.isProfane(post)) {
+            dispatch(showToast({ message: "⚠️ Avoid offensive language!", type: "error" }));
+            return;
+        }
+
         const newPost = {
             id: Date.now(),
             content: post,
@@ -32,6 +46,7 @@ export default function Community() {
         setPost('');
         setTags([]);
     };
+
 
     const toggleTag = (tag) => {
         setTags((prev) => prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]);
@@ -53,6 +68,12 @@ export default function Community() {
 
     const handleReply = (postId, replyText, username = 'Anonymous', parentReplyId = null) => {
         if (!replyText.trim()) return;
+
+        if (filter.isProfane(replyText)) {
+            dispatch(showToast({ message: "⚠️ Avoid offensive language!", type: "error" }));
+            return;
+        }
+
         const newReply = {
             id: Date.now(),
             text: replyText,

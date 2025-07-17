@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import './JobNotificationPage.css';
 import JobCard from './JobCard';
 import ATSChecker from './Resume/Resume';
+import ComingSoon from '../ComingSoon/ComingSoon';
+import { useSelector } from 'react-redux';
+import MockInterview from '../MockInterview/MockInterview';
 
 const tabs = [
   'NEW JOBS OPENINGS',
@@ -14,10 +17,12 @@ const tabs = [
 
 const JobNotification = () => {
   const [activeTab, setActiveTab] = useState('NEW JOBS OPENINGS');
+    const darkMode = useSelector((state) => state.darkMode.enabled);    
+
 
   return (
-    <div className="job-notification-wrapper">
-      <div className="job-header">
+    <div className={`job-notification-wrapper ${darkMode ? 'dark' : ''}`}>
+      <div className="job-header glassmorphism">
         <h1>JOB NOTIFICATION <span role="img" aria-label="briefcase">💼</span> <span role="img" aria-label="chart">📊</span></h1>
         <div className="job-tabs">
           {tabs.map(tab => (
@@ -33,7 +38,7 @@ const JobNotification = () => {
       </div>
 
       <div className="tab-content">
-        <h3>Active Tab: {activeTab}</h3>
+        <h3>{activeTab}</h3>
 
         {activeTab === 'NEW JOBS OPENINGS' && (
           <div className="job-card-list">
@@ -47,6 +52,13 @@ const JobNotification = () => {
             <ATSChecker/>
           </div>
         )}
+        {activeTab === 'INTERVIEW PREP' && (
+          <div className="job-card-list">
+            {/* <ComingSoon/> */}
+            <MockInterview/>
+          </div>
+        )}
+       
 
         {/* You can add content logic for other tabs as needed */}
 

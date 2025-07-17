@@ -7,14 +7,21 @@
     color: #f52887;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 1.2rem;
   }
+
+
 
   .title {
     font-size: 36px;
     color: #0b0c3f;
     font-weight: 700;
     margin-bottom: 50px;
+  }
+
+  .services-section.dark .title {
+    color: #ffffffcc;
+
   }
 
   .services-grid {
@@ -27,18 +34,23 @@
 
   /* === Card Animation Base === */
   .service-card {
-    background: #fff;
     padding: 30px 20px;
     border-radius: 12px;
     width: 260px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-   transition: transform 0.2s ease, box-shadow 0.3s ease, opacity 0.4s ease;
-  transform-style: preserve-3d;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, opacity 0.4s ease;
+    transform-style: preserve-3d;
     border: 3px solid #fd8ec5;
 
     opacity: 0;
     transform: translateY(40px);
     transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .services-section.dark .service-card {
+    background: rgb(255, 255, 255);
+    color: rgb(232, 62, 140);
+    box-shadow: rgba(232, 62, 140, 0.2) 0px 8px 20px;
+    border-color: rgb(232, 62, 140);
   }
 
   /* === Scroll Animation Triggered === */
@@ -75,6 +87,9 @@
     color: #0b0c3f;
     margin-bottom: 15px;
   }
+    .services-section.dark .service-card h3{
+      color: #e83e8c;
+    }
 
   .service-card p {
     font-size: 14px;
@@ -112,19 +127,26 @@
     color: #0b0c3f;
   }
 
+  .services-section.dark .cta-section p {
+
+    color: #ffffffc2;
+  } 
+
   .cta-section .bold {
     font-weight: bold;
   }
 
   .cta-button {
-    padding: 12px 30px;
-    background: linear-gradient(to right, #f52887, #b041ff);
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    font-weight: bold;
+    border: 2px solid #e83e8c;
+    background: #fff;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #e83e8c;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(232, 62, 140, 0.2);
+    transition: all 0.4s ease;
   }
 
   .cta-button:hover {

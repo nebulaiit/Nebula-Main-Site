@@ -5,6 +5,7 @@ import branding from "../../Images/branding.svg";
 import development from "../../Images/development.svg";
 import marketing from "../../Images/marketing.svg";
 import app from '../../Images/app.svg';
+import { useSelector } from 'react-redux';
 
 const services = [
   {
@@ -37,6 +38,8 @@ const services = [
 export default function ServicesSection() {
 
   const cardRefs = useRef([]);
+  const darkMode = useSelector((state) => state.darkMode.enabled);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,9 +47,7 @@ export default function ServicesSection() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('in-view');
-          } else {
-            entry.target.classList.remove('in-view'); // 👈 REMOVE class on exit
-          }
+          } 
         });
       },
       { threshold: 0.2 }
@@ -89,14 +90,14 @@ export default function ServicesSection() {
 
 
   return (
-    <section className="services-section">
+    <section className={`services-section ${darkMode ? 'dark' : ''}`}>
       <p className="subtitle">SERVICES WE’RE PROVIDED</p>
       <h2 className="title">Our Design & Development Services</h2>
 
-      <div className="services-grid">
+      <div className="services-grid ">
         {services.map((service, index) => (
           <div
-            className={`service-card ${service.highlight ? 'highlight' : ''}`}
+            className={`service-card glassmorphism ${service.highlight ? 'highlight' : ''}`}
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
             style={{ animationDelay: `${index * 0.2}s` }}

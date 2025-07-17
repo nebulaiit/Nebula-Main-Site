@@ -24,12 +24,12 @@ const myCourseLists = [
 
 const MyLists = () => {
   return (
-    <div className="my-lists-wrapper">
+    <div className="my-lists-wrapper ">
       <h2 className="tab-title">My Lists</h2>
       <p className="tab-desc">Your saved course collections appear here.</p>
       <div className="my-lists">
         {myCourseLists.map((list) => (
-          <div className="list-card" key={list.id}>
+          <div className="list-card glassmorphism" key={list.id}>
             <h3>{list.title}</h3>
             <p>{list.description}</p>
             <p><strong>{list.courseCount}</strong> courses</p>

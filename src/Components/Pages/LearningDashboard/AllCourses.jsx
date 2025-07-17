@@ -48,12 +48,12 @@ const AllCourses = () => {
   };
 
   return (
-    <div className="all-courses">
+    <div className="all-courses glassmorphism">
       <h2 className="tab-title">All Courses</h2>
       <p className="tab-desc">Explore your available courses here.</p>
       <div className="course-list">
         {allCourses.map((course) => (
-          <div key={course.id} className="course-card">
+          <div key={course.id} className="course-card ">
             <h4>{course.title}</h4>
             <p>{course.description}</p>
             <small>Duration: {course.duration}</small>

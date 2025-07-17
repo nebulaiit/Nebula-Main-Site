@@ -10,14 +10,16 @@ const Cart = () => {
 
   const dispatch = useDispatch();
   const cartCourses = useSelector((state) => state.cart.items); //
-  console.log(cartCourses); 
+  const darkMode = useSelector((state) => state.darkMode.enabled);
+
+
   const handleCheckout = (id) => alert(`Proceed to checkout with course ${id}`);
 
   const handleRemove = (id) => {
     dispatch(removeFromCart(id));
   };
   return (
-    <div className="cart-section">
+    <div className={`cart-section  ${darkMode ? 'dark' : ''}`}>
       <h2 className="tab-title">Your Cart</h2>
       <p className="tab-desc">These are the courses you've added to your cart.</p>
 
@@ -26,7 +28,7 @@ const Cart = () => {
       ) : (
         <div className="cart-grid">
           {cartCourses.map((course) => (
-            
+
             <div className="cart-card" key={course.courseId}>
               <img src={course.imageUrl} alt={course.title} className="course-image" />
               <div className="course-info">

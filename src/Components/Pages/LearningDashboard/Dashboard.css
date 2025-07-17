@@ -1,11 +1,10 @@
 /* === Parent Container === */
 .dashboard-section {
   padding: 2rem;
-  background-color: #f5f8ff;
   border-radius: 16px;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
-      border: 2px solid #ff91c1;
+  border: 2px solid #ff91c1;
 }
 
 /* === Section Title === */
@@ -99,28 +98,28 @@
 
 .dashboard-section .learning-card .progress-bar .progress {
   height: 100%;
-    background: linear-gradient(to right, #f880a2, #ff1f8e);
+  background: linear-gradient(to right, #f880a2, #ff1f8e);
   transition: width 0.4s ease-in-out;
   border-radius: 6px;
 }
 
 /* === Resume Button === */
 .dashboard-section .learning-card .resume-btn {
-    border: 2px solid #e83e8c;
-    background: #fff;
-    padding: 10px 24px;
-    border-radius: 50px;
-    font-size: 1rem;
-    color: #e83e8c;
-    font-weight: 600;
-    cursor: pointer;
+  border: 2px solid #e83e8c;
+  background: #fff;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 1rem;
+  color: #e83e8c;
+  font-weight: 600;
+  cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .dashboard-section .learning-card .resume-btn:hover {
-    background: linear-gradient(to right, #ff5b8a, #ff1f8e);
-    color: #fff;
-    border: none;
+  background: linear-gradient(to right, #ff5b8a, #ff1f8e);
+  color: #fff;
+  border: none;
   transform: scale(1.03);
 }
 

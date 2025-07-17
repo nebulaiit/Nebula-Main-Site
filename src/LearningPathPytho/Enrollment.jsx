@@ -2,33 +2,19 @@ import React, { useState } from "react";
 import "./Enrollment.css";
 import certificateImg from "./images/certificate.png";
 import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Enrollment = () => {
   const { index } = useParams();
   const [showPopup, setShowPopup] = useState(false);
-  const [enrolled, setEnrolled] = useState(false);
-  const [isWishlisted, setIsWishlisted] = useState(false);
-  const [isInCart, setIsInCart] = useState(false);
 
-  console.log("Index:", index);
+  const darkMode = useSelector((state) => state.darkMode.enabled);
 
   const navigate = useNavigate();
-
-  const handleEnrollClick = () => {
-    setEnrolled(true);
-    setTimeout(() => {
-      setEnrolled(false);
-      navigate("/login");
-    }, 1000);
-  };
 
   const togglePopup = () => {
     setShowPopup((prev) => !prev);
   };
-
-  // const handleMenuClick = () => {
-  //   navigate("/progamming");
-  // };
 
   const handleJobNotificationClick = () => {
     navigate("/career");
@@ -58,19 +44,17 @@ const Enrollment = () => {
   ];
 
 
-  
+
 
   const handleBuyCourse = () => {
-    navigate("/course-premium");  
+    navigate("/course");
   };
 
   return (
-    <div className="enrollment-page">
-      {/* === Sticky Right Sidebar === */}
-     
+    <div className={`enrollment-page  ${darkMode ? 'dark' : ''}`}>
 
       <main className="main-content">
-        {/* === Course Intro === */}
+
         <section className="course-container">
           <div className="course-left">
             <img
@@ -160,20 +144,20 @@ const Enrollment = () => {
         )}
       </main>
 
-       <aside className="sticky-enroll">
+      <aside className="sticky-enroll">
         <div className="course-right">
           <div className="course-benefits">
-       
+
             <button className=" mb-3 buy-course" onClick={handleBuyCourse}> Buy Course </button>
 
             <p>✅ Learn Python step-by-step from start to finish.</p>
             <p>✅ Solve 100+ practice problems in real-time.</p>
             <p>✅ Get certified and prepare for your first Python interview.</p>
-        </div>
+          </div>
           <p className="salary">💰 Average Salary (IN): ₹5,80,000</p>
           <p>📦 Prerequisites: None</p>
           <hr className="border-t-2 border- darkgray-300 mb-4" />
- 
+
           <div className="job-notification-box">
             <h2>Stay Updated with Job Notifications</h2>
             <p>Get the latest job opportunities in the tech industry tailored to your skills.</p>

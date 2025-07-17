@@ -55,7 +55,7 @@ export default function Header({ variant = "default" }) {
 
     useEffect(() => {
         const handleScroll = () => {
-            const header = document.querySelector('.header');
+            const header = document.getElementById('header');
             if (window.scrollY > 0) {
                 header.classList.add('glassmorphism-navbar');
             } else {
@@ -70,15 +70,11 @@ export default function Header({ variant = "default" }) {
     return (
         <div>
             {variant === "default" && !hideElement && (
-                <div className={`header container-fluid ${darkMode ? 'dark' : ''}`}>
+                <div className={`header container-fluid ${darkMode ? 'dark' : ''}`} id='header'>
                     <div className="images-wrapper" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
                         <img src={logo} alt="Logo" />
                     </div>
 
-                    {/* <div className="search-box d-none d-md-block">
-                        <span><SearchIcon /></span>
-                        <input type="text" placeholder='Search Tutorial & Examples' />
-                    </div> */}
 
                     {/* Desktop Navigation Menu */}
                     <nav className="d-none d-md-block ">
@@ -103,18 +99,18 @@ export default function Header({ variant = "default" }) {
                         </li>
                         <li className='list-inline-item'>
                             <Button className='pro-btn' onClick={() => navigate("/login")} disableElevation>
-                                UPGRADE TO PRO
+                               Log In
                             </Button>
                         </li>
                         <li className='list-inline-item ms-1'>
                             <ClickAwayListener onClickAway={handleClickAway}>
                                 <div className="profile-dropdown">
                                     <button className="profile-btn" onClick={() => setMenuOpen(!menuOpen)}>
-                                        <img src={profile} alt="User" className="profile-img mt-1" />
+                                        <img src={profile} alt="User" className="profile-img" />
                                     </button>
 
                                     {menuOpen && (
-                                        <div className="dropdown-menu show">
+                                        <div className="dropdown-menu show glassmorphism">
                                             <div className="user-info" onClick={() => handleDashboardClick("dashboard")} style={{ cursor: 'pointer' }}>
                                                 <img src={profile} className="user-img" alt="profile" />
                                                 <div>

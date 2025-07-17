@@ -5,10 +5,12 @@ import std2 from '../../Images/HomePage/std2.jpeg';
 import SchoolIcon from '@mui/icons-material/School';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PeopleIcon from '@mui/icons-material/People';
+import { useSelector } from 'react-redux';
     
 
 const Benefits = () => {
     const img = [std1, std2, std1, std2];
+      const darkMode = useSelector((state) => state.darkMode.enabled);
 
     const benefitsData = [
         {
@@ -55,7 +57,7 @@ const Benefits = () => {
 
     return (
         <div
-            className={`search-benefits-container ${inView ? 'animate-benefits' : ''}`}
+            className={`search-benefits-container ${inView ? 'animate-benefits' : ''} ${darkMode ? 'dark' : ''}`}
             ref={sectionRef}
         >
             <div className="benefit-content">
@@ -75,7 +77,7 @@ const Benefits = () => {
                     </h2>
                     <div className="benefits-list">
                         {benefitsData.map((benefit, index) => (
-                            <div className="benefit-item" key={index}>
+                            <div className="benefit-item " key={index}>
                                 <div className="icon-wrapper">
                                     <div className="benefit-icon">{benefit.icon}</div>
                                 </div>

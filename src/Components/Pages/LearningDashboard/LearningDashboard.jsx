@@ -37,8 +37,8 @@ const LearningDashboard = () => {
         return <Dashboard />;
       case "all":
         return <AllCourses />;
-      case "lists":
-        return <MyLists />;
+      // case "lists":
+      //   return <MyLists />;
       case "wishlist":
         return <Wishlist />;
       case "cart":
@@ -65,8 +65,8 @@ const LearningDashboard = () => {
         </nav>
       </header>
 
-      <main className="dashboard-main">
-        <div className="content-box">{renderTab()}</div>
+      <main className="dashboard-main ">
+        <div className="content-box glassmorphism">{renderTab()}</div>
       </main>
     </div>
   );

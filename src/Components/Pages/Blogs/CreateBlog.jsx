@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './CreateBlog.css';
-import axios from 'axios'; // or use your API service if wrapped
 import { addBlogs } from '../../APIService/apiservice';
 import { useDispatch } from 'react-redux';
 import { showToast } from '../../../redux/toastSlice';

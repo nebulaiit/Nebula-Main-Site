@@ -1,11 +1,11 @@
-
 .language-header {
+  width: 90%;
+  margin: 0 auto;
   text-align: center;
   margin-bottom: 30px;
   padding: 20px 0;
-  background: #ffe1f0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
+  /* background-color: #0f172a; */
 }
 
 .language-header .language-header-title {
@@ -45,10 +45,10 @@
   transition: background 0.5s ease-in-out;
   text-transform: capitalize;
 
-} 
-.language-header .language-header-tabs .tab-button:hover,
-.language-header .language-header-tabs .tab-button:active {
-    background: linear-gradient(to right, #ff5b8a, #ff1f8e);
+}
+
+.language-header .language-header-tabs .tab-button:hover {
+  background: linear-gradient(to right, #ff5b8a, #ff1f8e);
   color: #ffffff;
   border: 2px solid #ffffff;
   transform: translateY(-5px);
@@ -88,4 +88,3 @@
     max-width: 300px;
   }
 }
-

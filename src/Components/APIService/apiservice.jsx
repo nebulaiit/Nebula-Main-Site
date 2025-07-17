@@ -1,44 +1,45 @@
-import axios from 'axios';  
+import axios from 'axios';
 import { API_BASE_URL, API_URLs } from './constant';
+import MockInterview from '../Pages/MockInterview/MockInterview';
 
 
 //login api
- export const loginUser = async (body) => {
-  const url = `${API_BASE_URL}${API_URLs.GET_LOGIN}`;  
+export const loginUser = async (body) => {
+    const url = `${API_BASE_URL}${API_URLs.GET_LOGIN}`;
 
-   try {
+    try {
         const response = await axios.post(url, body)
         console.log(response);
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 };
 
- export const  signUpUser = async (body) => {
-  const url = `${API_BASE_URL}${API_URLs.GET_SIGNUP}`;  
+export const signUpUser = async (body) => {
+    const url = `${API_BASE_URL}${API_URLs.GET_SIGNUP}`;
 
-   try {
+    try {
         const response = await axios.post(url, body)
         console.log(response);
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 };
 
-export const getUserDetails = async (id) =>{
+export const getUserDetails = async (id) => {
 
     const url = `${API_BASE_URL}${API_URLs.Get_User_Details}/${id}`
-  
+
     try {
         const response = await axios.get(url)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
@@ -46,117 +47,117 @@ export const getUserDetails = async (id) =>{
 }
 
 
-export const getAllTutorial = async () =>{
+export const getAllTutorial = async () => {
 
     const url = `${API_BASE_URL}${API_URLs.GET_TUTORIAL}`
 
-  
+
     try {
         const response = await axios.get(url)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 }
 
-export const getAllCourse = async (courseName) =>{
+export const getAllCourse = async (courseName) => {
 
     const url = `${API_BASE_URL}${API_URLs.Get_Course_List}/${courseName}`
 
-  
+
     try {
         const response = await axios.get(url)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 }
 
-export const getHeadingList = async (tutorialName) =>{
+export const getHeadingList = async (tutorialName) => {
 
     const url = `${API_BASE_URL}${API_URLs.GET_HEADING_LIST}/${tutorialName}`
 
-  
+
     try {
         const response = await axios.get(url)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 }
 
-export const getContentList = async (urlSlug) =>{
+export const getContentList = async (urlSlug) => {
 
     const url = `${API_BASE_URL}${API_URLs.GET_CONTENT_BY_SLUG}/${urlSlug}`
     console.log(url)
-  
+
     try {
         const response = await axios.get(url)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 }
 
-export const getTopics = async (id) =>{
+export const getTopics = async (id) => {
 
     const url = `${API_BASE_URL}${API_URLs.GET_TOPICS}/${id}`
-  
+
     try {
         const response = await axios.get(url)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 }
-export const contactUs = async (body) =>{
+export const contactUs = async (body) => {
 
     const url = `${API_BASE_URL}${API_URLs.CONTACT}`
-  
+
     try {
-        const response = await axios.post(url,body)
+        const response = await axios.post(url, body)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 }
 
-export const getBlogList = async () =>{
+export const getBlogList = async () => {
 
     const url = `${API_BASE_URL}${API_URLs.Blog_List}`
-  
+
     try {
         const response = await axios.get(url)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 }
 
-export const getBlogDetails = async (slug) =>{
+export const getBlogDetails = async (slug) => {
 
     const url = `${API_BASE_URL}${API_URLs.Blog_Details}/${slug}`
 
     console.log(url)
-  
+
     try {
         const response = await axios.get(url)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
@@ -179,80 +180,80 @@ export const addBlogs = async (formData) => {
     }
 };
 
-export const getAllPosts = async () =>{
+export const getAllPosts = async () => {
 
     const url = `${API_BASE_URL}${API_URLs.Get_All_posts}`
-  
+
     try {
         const response = await axios.get(url)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 }
-export const  getJobById = async (id) =>{
+export const getJobById = async (id) => {
 
     const url = `${API_BASE_URL}${API_URLs.Get_Job_Details}/${id}`
-  
+
     try {
         const response = await axios.get(url)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 }
-export const  getJobList = async () =>{
+export const getJobList = async () => {
 
     const url = `${API_BASE_URL}${API_URLs.Get_Job_list}`
-  
+
     try {
         const response = await axios.get(url)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 }
 
-export const  fetchWishlist = async (userId) =>{
+export const fetchWishlist = async (userId) => {
 
     const url = `${API_BASE_URL}${API_URLs.WishList}/${userId}`
-  
+
     try {
         const response = await axios.get(url)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 }
-export const  addWishlistItem = async (userId, item) =>{
+export const addWishlistItem = async (userId, item) => {
 
     const url = `${API_BASE_URL}${API_URLs.WishList}/${userId}`
-  
+
     try {
         const response = await axios.post(url, item)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 }
-export const  deleteWishlistItem  = async (wishlistItemId) =>{
+export const deleteWishlistItem = async (wishlistItemId) => {
 
     const url = `${API_BASE_URL}${API_URLs.WishList}/${wishlistItemId}`
-  
+
     try {
         const response = await axios.delete(url)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
@@ -260,16 +261,30 @@ export const  deleteWishlistItem  = async (wishlistItemId) =>{
 }
 
 
-export const  ReplyToPost = async (id,body) =>{
+export const ReplyToPost = async (id, body) => {
 
     const url = `${API_BASE_URL}${API_URLs.Reply_To_Post}/${id}/${'replies'}`
-  
+
     try {
-        const response = await axios.get(url,body)
+        const response = await axios.get(url, body)
         return response.data;
-        
+
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
     }
 }
+
+export const getMockInterview = async (params) => {
+
+    const url = `${API_BASE_URL}${API_URLs.Mock_Interview}`
+
+    try {
+        console.log(url, null, { params })
+        // const response = await axios.post(url, null, { params });
+        return response.data;
+    } catch (error) {
+        console.error("Error:", error.response || error.message);
+        throw error;
+    }
+};

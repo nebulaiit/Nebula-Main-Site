@@ -136,9 +136,6 @@ export default function Blog() {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("in-view");
-                    } else {
-                        // Remove the class when out of view to re-trigger on re-entry
-                        entry.target.classList.remove("in-view");
                     }
                 });
             },

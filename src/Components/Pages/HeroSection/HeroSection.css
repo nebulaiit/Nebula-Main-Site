@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   margin-top: 6%;
   transform: translateY(60px);
+  opacity: 0;
   transition: all 1s ease-out;
 }
 
@@ -18,7 +19,9 @@
 .hero .hero-text {
   max-width: 50%;
   opacity: 0;
+  margin-top: 5.25%;
   transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .hero.in-view .hero-text {
@@ -28,12 +31,17 @@
 
 .hero .hero-text h1 {
   font-size: 4.5rem;
-  color: #1f1f1f;
   font-weight: 800;
-  background: linear-gradient(to right, #e83e8c, #ff70a6);
+  background: linear-gradient(to right, #b74df5, #ff5ca8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
+}
+
+.hero.dark .hero-text h1 {
+  background: linear-gradient(90deg, #ff5ca8, #b74df5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Paragraph */
@@ -43,6 +51,11 @@
   color: #555;
   opacity: 0;
   transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero.dark .hero-text p {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .hero.in-view .hero-text p {
@@ -53,19 +66,22 @@
 /* Enroll Button */
 .hero .enroll-btn {
   margin-top: 30px;
-  border: 2px solid #e83e8c;
-  background: #fff;
-  padding: 12px 28px;
-  border-radius: 12px;
+  padding: 12px 45px;
   font-size: 1rem;
-  color: #e83e8c;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(232, 62, 140, 0.2);
-  transition: all 0.4s ease;
+  background: linear-gradient(to right, #b74df5, #ff5ca8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #b74df5, #ff5ca8);
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(232, 62, 141, 0.41), 0 -8px 20px #b74df531 inset;
   opacity: 0;
   transform: translateY(40px);
+  transition: all 0.3s ease-in-out;
 }
+
 
 .hero.in-view .enroll-btn {
   animation: fadeInUp 1.2s ease forwards;
@@ -73,15 +89,19 @@
 }
 
 .hero .enroll-btn:hover {
-  background: linear-gradient(to right, #ff5b8a, #ff1f8e);
-  color: #fff;
-  border: none;
-  transform: scale(1.05);
+  background: linear-gradient(to right, #b74df5, #ff5ca8);
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #fff;
+  color: #fff; /* fallback for non-webkit browsers */
+  box-shadow: 0 10px 25px rgba(183, 77, 245, 0.3);
+  transition: all 0.3s ease;
 }
 
+/* Hero Image */
 .hero .hero-image {
   opacity: 0;
   transform: translateX(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .hero.in-view .hero-image {
@@ -89,7 +109,7 @@
   animation-delay: 0.6s;
 }
 
-/* Hero Image */
+/* Tilt Effect */
 .hero .tilt-wrapper {
   perspective: 1000px;
   display: inline-block;
@@ -103,10 +123,8 @@
   will-change: transform;
 }
 
-/* Hover animation for tilt */
 .hero .tilt-wrapper:hover img {
-  transform:  scale(1.05);
-
+  transform: scale(1.05);
 }
 
 /* Keyframes */

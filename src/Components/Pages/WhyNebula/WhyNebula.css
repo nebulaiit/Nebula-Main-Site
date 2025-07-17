@@ -7,14 +7,23 @@
 }
 
 /* Title */
-.why-nebula--title {
+.why-nebula-title {
   font-size: 36px;
   font-weight: 800;
   margin-bottom: 40px;
   color: #1a202c;
   position: relative;
 }
-.why-nebula--title::after {
+.why-nebula-title .title-x{
+  color: #ed59ad;
+}
+
+.why-nebula.dark .why-nebula-title {
+  color: #ffffffd4;
+
+}
+
+.why-nebula-title::after {
   content: '';
   width: 0;
   height: 3px;
@@ -25,7 +34,7 @@
   transition: width 1s ease;
 }
 
-.why-nebula--title.in-view::after {
+.why-nebula-title.in-view::after {
   animation: growUnderline 1s ease forwards;
 }
 
@@ -34,6 +43,7 @@
     width: 0;
     opacity: 0;
   }
+
   100% {
     width: 580px;
     opacity: 1;
@@ -41,7 +51,7 @@
 }
 
 /* Card Container */
-.why-nebula--cards {
+.why-nebula-cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -49,54 +59,68 @@
 }
 
 /* Each Card (initial state) */
-.why-nebula--card {
+.why-nebula-card {
   flex: 1 1 280px;
   max-width: 320px;
   text-align: left;
   padding: 24px;
   border: 3px solid #ed59ad;
   border-radius: 12px;
-  background-color: #fff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  transition: all 0.4s ease;
   opacity: 0;
   transform: translateY(80px);
 }
 
-/* Scroll-in animation per card */
-.why-nebula--card.in-view {
+.why-nebula.dark .why-nebula-card {
+  /* background: rgb(255, 255, 255);
+  color: rgb(232, 62, 140);
+  box-shadow: rgba(232, 62, 140, 0.2) 0px 8px 20px; */
+  /* border-color: rgb(232, 62, 140); */
+  border: none;
+}
+
+
+.why-nebula-card.in-view {
   opacity: 1;
   transform: translateY(0);
   transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
 /* Hover Effects */
-.why-nebula--card:hover {
-  transform: translateY(-8px);
+.why-nebula-card:hover {
   box-shadow: 0 12px 28px rgba(232, 62, 140, 0.15);
-  background-color: #fff0f7;
   border-color: #e24aa0;
 }
 
 /* Icon */
-.why-nebula--icon {
+.why-nebula-icon {
   font-size: 32px;
   color: #e83e8c;
   margin-bottom: 16px;
 }
 
 /* Card Title */
-.why-nebula--card-title {
+.why-nebula-card-title {
   font-size: 20px;
   font-weight: 700;
   color: #1a1a4c;
   margin-bottom: 10px;
 }
+.why-nebula.dark .why-nebula-card .why-nebula-card-title {
+
+  color: #f6f6f6;
+
+}
+
+.why-nebula  .why-nebula-card-text {
+  font-size: 15px;
+  color: #000000cb;
+  line-height: 1.6;
+}
 
 /* Card Text */
-.why-nebula--card-text {
+.why-nebula.dark  .why-nebula-card-text {
   font-size: 15px;
-  color: #555;
+  color: #d4d4d4cb;
   line-height: 1.6;
 }
 
@@ -108,29 +132,29 @@
     padding: 40px 15px;
   }
 
-  .why-nebula--title {
+  .why-nebula-title {
     font-size: 26px;
   }
 
-  .why-nebula--cards {
+  .why-nebula-cards {
     flex-direction: column;
     gap: 24px;
   }
 
-  .why-nebula--card {
+  .why-nebula-card {
     max-width: 100%;
     padding: 20px;
   }
 
-  .why-nebula--icon {
+  .why-nebula-icon {
     font-size: 28px;
   }
 
-  .why-nebula--card-title {
+  .why-nebula-card-title {
     font-size: 18px;
   }
 
-  .why-nebula--card-text {
+  .why-nebula-card-text {
     font-size: 14px;
   }
 }
@@ -141,28 +165,28 @@
     padding: 50px 20px;
   }
 
-  .why-nebula--title {
+  .why-nebula-title {
     font-size: 30px;
   }
 
-  .why-nebula--cards {
+  .why-nebula-cards {
     justify-content: space-around;
   }
 
-  .why-nebula--card {
+  .why-nebula-card {
     flex: 1 1 45%;
     max-width: 45%;
   }
 
-  .why-nebula--icon {
+  .why-nebula-icon {
     font-size: 30px;
   }
 
-  .why-nebula--card-title {
+  .why-nebula-card-title {
     font-size: 19px;
   }
 
-  .why-nebula--card-text {
+  .why-nebula-card-text {
     font-size: 15px;
   }
 }
