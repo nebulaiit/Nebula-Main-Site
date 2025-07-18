@@ -2,6 +2,14 @@
 @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
 .login-wrapper {
   display: flex;
   width: 100%;
@@ -31,10 +39,10 @@
 }
 
 .animated-img img {
-    width: 100%;
-    max-width: 650px;
-    object-fit: contain;
-    animation: float 4s ease-in-out infinite;
+  width: 100%;
+  max-width: 650px;
+  object-fit: contain;
+  animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -61,14 +69,10 @@
   opacity: 0;
   transform: translateY(30px);
   pointer-events: none;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
 }
 
 .login-form-layer.active {
-  width:80% ;
-  /* background-color: #d12e7b; */
+  width: 80%;
   opacity: 1;
   transform: translateY(0);
   pointer-events: all;
@@ -86,13 +90,11 @@
   font-weight: 700;
 }
 
-
-.login-form-layer form{
-
+.login-form-layer form {
   width: 80%;
   margin: 20px 0;
-  /* background-color: #777; */
 }
+
 .login-form-layer input {
   padding: 12px 18px;
   margin-bottom: 16px;
@@ -124,7 +126,7 @@
   font-size: 15px;
   cursor: pointer;
   transition: background 0.3s ease;
-  margin:  16px 0;
+  margin: 16px 0;
 }
 
 .login-btn:hover {
@@ -195,24 +197,28 @@
   text-decoration: underline;
 }
 
+/* Tablet and below (up to 768px) */
 @media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
   .login-wrapper {
     flex-direction: column;
     height: auto;
     min-height: 600px;
   }
 
+  .login-container {
+    flex-direction: column;
+    width: 95%;
+    margin: 30px auto;
+  }
+
   .login-image,
   .form-layer {
     width: 100%;
     height: auto;
-  }
-
-  .login-image {
-    padding: 40px 20px;
-  }
-
-  .form-layer {
     padding: 40px 20px;
   }
 
@@ -221,5 +227,57 @@
     transform: none !important;
     opacity: 1 !important;
     pointer-events: all !important;
+  }
+
+  .login-form-layer form {
+    width: 100%;
+  }
+
+  .login-form-layer input {
+    width: 100%;
+  }
+}
+
+/* Phones (<480px) */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .login-container {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .login-image,
+  .form-layer {
+    padding: 30px 15px;
+  }
+
+  .animated-img img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .login-form-layer h2 {
+    font-size: 22px;
+  }
+
+  .login-btn {
+    padding: 10px 30px;
+    font-size: 14px;
+  }
+
+  .social-login button {
+    height: 36px;
+    width: 36px;
+    font-size: 16px;
+  }
+}
+
+/* Large screens (>1024px) */
+@media (min-width: 1024px) {
+  .login-container {
+    width: 80%;
   }
 }
