@@ -202,3 +202,154 @@
     text-align: center;
   }
 }
+/* ---------- Tablet View (<=1024px) ---------- */
+@media (max-width: 1024px) {
+  /* Stack the layout vertically */
+  .job-details-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px;
+  }
+
+  /* Make job details take full width */
+  .job-details-wrapper .job-details-container {
+    width: 100%;
+    padding: 28px;
+  }
+
+  /* Related job section moves below the main content */
+  .job-details-wrapper .related-job-container {
+    width: 100%;
+    margin-top: 32px;
+    height: auto;
+  }
+
+  /* Reduce spacing between info cards */
+  .job-details-container .info-grid {
+    gap: 16px;
+  }
+
+  /* Slightly tighter padding on info cards */
+  .job-details-container .info-grid .info-card {
+    padding: 16px;
+  }
+}
+
+/* ---------- Mobile & Small Tablets (<=768px) ---------- */
+@media (max-width: 768px) {
+  /* Narrower padding for mobile/tablet */
+  .job-details-wrapper {
+    padding: 20px 14px;
+  }
+
+  /* Compact padding inside job details */
+  .job-details-wrapper .job-details-container {
+    padding: 20px;
+  }
+
+  /* Header switches to vertical layout */
+  .job-details-container .job-details-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  /* Smaller logo for mobile view */
+  .job-details-container .job-details-header .company-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Adjust title and company text size for better fit */
+  .job-details-container .job-details-header .job-title-section h1 {
+    font-size: 22px;
+  }
+
+  .job-details-container .job-details-header .job-title-section .company-name {
+    font-size: 16px;
+  }
+
+  .job-details-container .job-details-header .job-title-section .location {
+    font-size: 14px;
+  }
+
+  /* Section headers and text shrink for readability */
+  .job-details-container .section h3 {
+    font-size: 18px;
+  }
+
+  .job-details-container .section p,
+  .job-details-container .section pre {
+    font-size: 14px;
+  }
+
+  /* Skill badges resize */
+  .job-details-container .skills-list .skill-badge {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  /* Button scales with screen */
+  .job-details-container .apply-section .apply-btn {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+
+  /* Related job container adapts */
+  .job-details-wrapper .related-job-container {
+    padding: 16px;
+  }
+}
+
+/* ---------- Mobile Phones (<=480px) ---------- */
+@media (max-width: 480px) {
+  /* Less margin for very small screens */
+  .job-details-wrapper {
+    padding: 16px 12px;
+    margin-top: 14%;
+  }
+
+  /* Compact container padding */
+  .job-details-wrapper .job-details-container {
+    padding: 16px;
+  }
+
+  /* Smaller job title and company text */
+  .job-details-container .job-details-header .job-title-section h1 {
+    font-size: 20px;
+  }
+
+  .job-details-container .job-details-header .job-title-section .company-name,
+  .job-details-container .job-details-header .job-title-section .location {
+    font-size: 14px;
+  }
+
+  /* Info grid becomes single column */
+  .job-details-container .info-grid {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* Info card gets tighter spacing */
+  .job-details-container .info-grid .info-card {
+    padding: 14px;
+  }
+
+  /* Section titles resize */
+  .job-details-container .section h3 {
+    font-size: 17px;
+  }
+
+  /* Apply button stretches full width */
+  .job-details-container .apply-section .apply-btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  /* Related job box takes full width */
+  .job-details-wrapper .related-job-container {
+    width: 100%;
+    padding: 14px;
+    height: auto;
+  }
+}

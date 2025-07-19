@@ -171,3 +171,102 @@
     transform: translateY(0);
   }
 }
+/* Responsive Enhancements */
+@media (max-width: 1200px) {
+  .ats-checker-container {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .ats-checker-container .left-container,
+  .ats-checker-container .right-container {
+    width: 100%;
+    height: auto;
+    padding: 30px 24px;
+    text-align: center;
+  }
+
+  .ats-checker-container .right-container .ats-heading {
+    font-size: 24px;
+  }
+
+  .ats-checker-container select,
+  .ats-checker-container input[type="file"],
+  .ats-checker-container button,
+  .ats-checker-container .create-resume-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ats-checker-container {
+    padding: 25px 16px;
+    gap: 32px;
+  }
+
+  .left-container h2 {
+    font-size: 20px;
+  }
+
+  .ats-checker-container .right-container .ats-heading {
+    font-size: 22px;
+  }
+
+  .ats-result h3 {
+    font-size: 20px;
+  }
+
+  .ats-result p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .ats-checker-container input[type="file"],
+  .ats-checker-container select {
+    font-size: 15px;
+  }
+
+  .ats-checker-container button,
+  .ats-checker-container .create-resume-btn {
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  .ats-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ats-checker-container {
+    padding: 20px 12px;
+    gap: 24px;
+  }
+
+  .left-container h2,
+  .ats-checker-container .right-container .ats-heading {
+    font-size: 18px;
+  }
+
+  .ats-checker-container button,
+  .ats-checker-container .create-resume-btn {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .ats-result {
+    padding: 16px;
+    border-left-width: 4px;
+  }
+
+  .ats-result h3 {
+    font-size: 18px;
+  }
+
+  .ats-result p {
+    font-size: 14px;
+  }
+}
