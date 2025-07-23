@@ -7,6 +7,10 @@
   border: 2px solid #ff91c1;
 }
 
+.dashboard-section.dark{
+  border: var(--border-dark);
+}
+
 /* === Section Title === */
 .dashboard-section .tab-title {
   font-size: 2rem;
@@ -14,6 +18,10 @@
   color: #1e1e2f;
   text-align: center;
   margin-bottom: 2rem;
+}
+
+.dashboard-section.dark .tab-title {
+  color: var(--text-secondary);
 }
 
 /* === Stats Overview === */
@@ -37,6 +45,13 @@
   transition: transform 0.3s ease;
 }
 
+.dashboard-section.dark .stat-card{
+  background: var(--bg-primary-dark);
+ border-top: 4px solid #8928ca;
+  box-shadow: 0 6px 16px rgba(252, 252, 252, 0.137);
+
+} 
+
 .dashboard-section .stat-card:hover {
   transform: translateY(-4px);
 }
@@ -47,9 +62,17 @@
   margin-bottom: 0.5rem;
 }
 
+.dashboard-section.dark .stat-card h4{
+  color: var(--text-title-dark);
+}
+
 .dashboard-section .stat-card p {
   font-size: 1rem;
   color: #555;
+}
+
+.dashboard-section.dark .stat-card p{
+  color: var(--text-secondary);
 }
 
 /* === Learning Grid === */
@@ -70,6 +93,11 @@
   justify-content: space-between;
   transition: transform 0.3s ease;
 }
+.dashboard-section.dark .learning-card{
+  background: var(--bg-primary-dark);
+  box-shadow: 0 6px 18px rgba(252, 252, 252, 0.137);
+  border: var(--border-dark);
+}
 
 .dashboard-section .learning-card:hover {
   transform: scale(1.02);
@@ -82,6 +110,9 @@
   margin-bottom: 1rem;
 }
 
+.dashboard-section.dark .learning-card .card-header{
+  color: var(--text-secondary);
+}
 /* === Progress Bar === */
 .dashboard-section .learning-card .progress-wrapper {
   margin-bottom: 1rem;
@@ -98,10 +129,15 @@
 
 .dashboard-section .learning-card .progress-bar .progress {
   height: 100%;
-  background: linear-gradient(to right, #f880a2, #ff1f8e);
+  background: var(--text-heading);
+
   transition: width 0.4s ease-in-out;
   border-radius: 6px;
 }
+
+.dashboard-section.dark .learning-card .progress-bar .progress{
+  background: var(--text-heading-dark);
+} 
 
 /* === Resume Button === */
 .dashboard-section .learning-card .resume-btn {
@@ -115,6 +151,8 @@
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
 }
+
+
 
 .dashboard-section .learning-card .resume-btn:hover {
   background: linear-gradient(to right, #ff5b8a, #ff1f8e);
@@ -144,6 +182,12 @@
   transition: transform 0.3s ease;
 }
 
+.dashboard-section.dark .badge-card{
+  background: var(--bg-primary-dark);
+  box-shadow: 0 4px 12px rgba(252, 252, 252, 0.137);
+  border: var(--border-dark);
+} 
+
 .dashboard-section .badge-card:hover {
   transform: translateY(-3px);
 }
@@ -156,6 +200,10 @@
 .dashboard-section .badge-card strong {
   font-size: 1rem;
   color: #333;
+}
+
+.dashboard-section.dark .badge-card strong{
+  color: var(--text-secondary);
 }
 
 .dashboard-section .badge-card p {

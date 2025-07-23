@@ -154,7 +154,7 @@ export default function CourseList() {
             <div
               key={sec}
               ref={setRef(sectionRefs, sec)}
-              className="card glassmorphism"
+              className="card "
               style={{ animationDelay: `${i * 0.1}s` }}
               onClick={() => setSection(sec)}
             >

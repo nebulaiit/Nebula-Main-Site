@@ -41,13 +41,7 @@ import DarkMode from './Components/DarkMode/DarkMode';
 import { useSelector } from 'react-redux';
 
 function App() {
-  // useEffect(() => {
-  //   // document.body.style.backgroundImage = `url("/bi5.jpg")`; // Set your universal background image path
-  //   document.body.style.backgroundSize = "cover";
-  //   document.body.style.backgroundRepeat = "no-repeat";
-  //   document.body.style.backgroundPosition = "center center";
-  //   document.body.style.backgroundAttachment = "fixed";
-  // }, []);
+
 
   const darkMode = useSelector((state) => state.darkMode.enabled);
 

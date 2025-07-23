@@ -31,6 +31,19 @@ export const signUpUser = async (body) => {
         throw error;
     }
 };
+export const signUpUserWithGoogle = async (body) => {
+    const url = `${API_BASE_URL}${API_URLs.GET_SIGNUP_WITHGOOGLE}`;
+
+    try {
+        const response = await axios.post(url, body)
+        console.log(response);
+        return response.data;
+
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+};
 
 export const getUserDetails = async (id) => {
 

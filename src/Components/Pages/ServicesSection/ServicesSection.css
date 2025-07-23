@@ -1,164 +1,194 @@
-  .services-section {
-    padding: 80px 20px;
-    text-align: center;
-  }
+.services-section {
+  padding: 80px 20px;
+  text-align: center;
+}
 
-  .subtitle {
-    color: #f52887;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 1.2rem;
-  }
+.services-section .subtitle {
+  background: var( --text-heading-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
 
 
 
-  .title {
-    font-size: 36px;
-    color: #0b0c3f;
-    font-weight: 700;
-    margin-bottom: 50px;
-  }
+.services-section .title {
+  font-size: 36px;
+  color: #0b0c3f;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
 
-  .services-section.dark .title {
-    color: #ffffffcc;
+.services-section.dark .title {
+  color: #ffffffcc;
 
-  }
+}
 
-  .services-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 60px;
-  }
+.services-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 60px;
+}
 
-  /* === Card Animation Base === */
-  .service-card {
-    padding: 30px 20px;
-    border-radius: 12px;
-    width: 260px;
-    transition: transform 0.2s ease, box-shadow 0.3s ease, opacity 0.4s ease;
-    transform-style: preserve-3d;
-    border: 3px solid #fd8ec5;
+/* === Card Animation Base === */
+.service-card {
+  padding: 30px 20px;
+  border-radius: 12px;
+  width: 260px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, opacity 0.4s ease;
+  transform-style: preserve-3d;
+  border: var(--border);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
+.services-section.dark .service-card {
+
+background: linear-gradient(140deg, #2b2658, #0f0c29);
+    border: none;
+}
+
+/* === Scroll Animation Triggered === */
+.service-card.in-view {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.services-section .service-card:hover,
+.services-section .service-card:active {
+  box-shadow: var(--box-shadow);
+
+  transform: translateY(-5px);
+  border-color: #e24aa0;
+}
+.services-section.dark .service-card:hover,
+.services-section.dark .service-card:active {
+
+  box-shadow: var(--box-shadow-dark);
+  transform: translateY(-5px);
+
+  border-color: #9b05ff;
+}
+
+/* Optional: FadeInUp Animation Keyframe (if you want smoother effect) */
+@keyframes fadeInUp {
+  0% {
     opacity: 0;
     transform: translateY(40px);
-    transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
-  .services-section.dark .service-card {
-    background: rgb(255, 255, 255);
-    color: rgb(232, 62, 140);
-    box-shadow: rgba(232, 62, 140, 0.2) 0px 8px 20px;
-    border-color: rgb(232, 62, 140);
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  /* === Scroll Animation Triggered === */
-  .service-card.in-view {
-    animation: fadeInUp 0.6s ease forwards;
+.service-card img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 18px;
+  color: var(--text-title);
+  margin-bottom: 15px;
+}
+
+.services-section.dark .service-card h3 {
+  color: var(--text-title-dark);
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Consistent link style */
+.service-card a,
+.service-card .learn-more-link {
+  color: #555;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.service-card a:hover,
+.service-card .learn-more-link:hover,
+.service-card a:active,
+.service-card .learn-more-link:active {
+  color: #ff007f;
+}
+
+/* CTA section */
+.cta-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-section p {
+  font-size: 20px;
+ background: var( --text-heading);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.services-section.dark .cta-section p {
+
+  background: var( --text-heading-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta-section .bold {
+  font-weight: bold;
+}
+
+.cta-button {
+  padding: 12px 45px;
+  background: var( --text-heading);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid transparent;
+  border-image: var(--text-heading);
+  border-radius: 50px;
+  font-size: 1rem;
+  color: #e83e8c;
+  font-weight: 600;
+  cursor: pointer;
+   box-shadow: 0 8px 20px rgba(232, 62, 141, 0.41), 0 -8px 20px #b74df531 inset;
+
+  transition: all 0.4s ease;
+}
+
+.services-section.dark  .cta-button{
+  background: var( --text-heading-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid transparent;
+  box-shadow: 0 8px 20px rgba(156, 62, 232, 0.41), 0 -8px 20px #b74df531 inset;
+  animation: blink 2.0s infinite;
+}
+.cta-button:hover {
+  transform: scale(1.05);
+}
+
+@keyframes blink {
+  0%, 100% {
+    box-shadow: 0 8px 20px rgba(156, 62, 232, 0.41), 0 -8px 20px #b74df531 inset;
+
   }
+  50% {
+    box-shadow: 0 0px 0px rgba(156, 62, 232, 0.41), 0 -8px 20px #b74df531 inset;
 
-  .service-card:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-    background-color: #fff0f7;
-    border-color: #e24aa0;
   }
+}
 
-  /* Optional: FadeInUp Animation Keyframe (if you want smoother effect) */
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .service-card img {
-    width: 80px;
-    margin-bottom: 20px;
-  }
-
-  .service-card h3 {
-    font-size: 18px;
-    color: #0b0c3f;
-    margin-bottom: 15px;
-  }
-    .services-section.dark .service-card h3{
-      color: #e83e8c;
-    }
-
-  .service-card p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 15px;
-  }
-
-  /* Consistent link style */
-  .service-card a,
-  .service-card .learn-more-link {
-    color: #555;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .service-card a:hover,
-  .service-card .learn-more-link:hover,
-  .service-card a:active,
-  .service-card .learn-more-link:active {
-    color: #ff007f;
-  }
-
-  /* CTA section */
-  .cta-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .cta-section p {
-    font-size: 20px;
-    color: #0b0c3f;
-  }
-
-  .services-section.dark .cta-section p {
-
-    color: #ffffffc2;
-  } 
-
-  .cta-section .bold {
-    font-weight: bold;
-  }
-
-  .cta-button {
-    border: 2px solid #e83e8c;
-    background: #fff;
-    padding: 12px 28px;
-    border-radius: 12px;
-    font-size: 1rem;
-    color: #e83e8c;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(232, 62, 140, 0.2);
-    transition: all 0.4s ease;
-  }
-
-  .cta-button:hover {
-    transform: scale(1.05);
-  }
-
-  /* Hover state for cards */
-  .service-card:hover,
-  .service-card:active {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    background-color: #fff0f7;
-    color: #e24aa0;
-    border-color: #e24aa0;
-  }
+/* Hover state for cards */

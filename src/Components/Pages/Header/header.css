@@ -72,6 +72,11 @@ a {
   background-color: #ff1f8e;
   transition: width 0.3s ease;
 }
+.header.dark nav li button::after {
+
+  background-color: #8928ca;
+
+}
 
 .header nav li button:hover::after {
   width: 100%;
@@ -126,15 +131,18 @@ a {
 
 }
 
+.header.dark .right-end-btn .phone-btn:hover,
+.header.dark .right-end-btn .pro-btn:hover {
+
+  color: #ffffff;
+
+}
+
 .right-end-btn .phone-btn:hover {
   opacity: 0.85;
 }
 
-/* .right-end-btn .pro-btn:hover{
-  padding: 8px 20px;
-} */
 
-/* PROFILE DROPDOWN */
 .profile-dropdown {
   position: relative;
 }

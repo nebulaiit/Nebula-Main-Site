@@ -1,10 +1,14 @@
 .cart-section {
   padding: 32px;
-  background: #f1f5fc;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(255, 31, 142, 0.05);
-  border: 2px solid #ff91c1;
+  border: var(--border);
   transition: all 0.3s ease-in-out;
+}
+
+.cart-section.dark{
+  border: var(--border-dark);
+  
 }
 
 .cart-section .tab-title {
@@ -14,6 +18,10 @@
   text-align: center;
   margin-bottom: 12px;
   text-transform: uppercase;
+}
+
+.cart-section.dark .tab-title{
+  color: var(--text-title-dark);
 }
 
 .cart-section .tab-desc {
@@ -38,7 +46,6 @@
 
   width: 25%;
   height: auto;
-  background-color: #ffffff;
   border: 1.5px solid #ffd6ec;
 
   border-radius: 16px;

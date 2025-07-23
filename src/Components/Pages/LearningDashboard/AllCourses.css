@@ -3,8 +3,13 @@
   padding: 2rem;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
-      border: 2px solid #ff91c1;
-  border-radius: 15px;
+  border: 2px solid #ff91c1;
+  border-radius: var(--border-radius);
+}
+
+.all-courses.dark {
+ border: var(--border-dark);
+
 }
 
 /* === Section Heading === */
@@ -14,6 +19,10 @@
   color: #1e1e2f;
   text-align: center;
   margin-bottom: 0.5rem;
+}
+
+.all-courses.dark .tab-title{
+  color: var(--text-secondary);
 }
 
 .all-courses .tab-desc {
@@ -32,10 +41,9 @@
 
 /* === Individual Course Card === */
 .all-courses .course-card {
-  background-color: #ffffff;
-  border-radius: 16px;
+  border-radius:var(--border-radius);
   padding: 1.5rem;
-  border: 1.5px solid #ffd6ec;
+  border:var(--border);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -43,9 +51,18 @@
   justify-content: space-between;
 }
 
+.all-courses.dark .course-card{
+  border: var(--border-dark);
+  box-shadow: var(--box-shadow);
+} 
+
 .all-courses .course-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(255, 31, 142, 0.2);
+}
+.all-courses.dark .course-card:hover{
+  box-shadow: 0 8px 20px rgba(195, 31, 255, 0.341);
+
 }
 
 /* === Course Title & Description === */
@@ -54,6 +71,10 @@
   color: #1e1e2f;
   margin-bottom: 0.5rem;
 }
+
+.all-courses.dark .course-card h4{
+  color: var(--text-secondary);
+} 
 
 .all-courses .course-card p {
   font-size: 0.95rem;
@@ -67,14 +88,14 @@
 }
 
 /* === Enroll Button === */
-.all-courses .enroll-btn {
+.all-courses .view-btn {
   margin-top: 1rem;
   background: #fff;
   color: #e83e8c;
   border: none;
   padding: 10px 24px;
   border: 2px solid #e83e8c;
-  border-radius:60px;
+  border-radius: 60px;
   font-weight: 500;
   font-size: 0.95rem;
   cursor: pointer;
@@ -82,9 +103,9 @@
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.all-courses .enroll-btn:hover {
-    background: linear-gradient(to right, #ff5b8a, #ff1f8e);
-    color: #fff;
-    border: none;
+.all-courses .view-btn:hover {
+  background: linear-gradient(to right, #ff5b8a, #ff1f8e);
+  color: #fff;
+  border: none;
 
 }

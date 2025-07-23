@@ -16,9 +16,7 @@
   max-width: 100%;
   min-height: 550px;
   margin: auto;
-  background: #fff;
   border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .login-image {
@@ -26,25 +24,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
   padding: 60px;
 }
 
 .animated-img img {
-    width: 100%;
-    max-width: 650px;
-    object-fit: contain;
-    animation: float 4s ease-in-out infinite;
+  width: 100%;
+  max-width: 650px;
+  object-fit: contain;
+  animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 .form-layer {
   width: 50%;
-  background: #fff;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -61,13 +64,11 @@
   opacity: 0;
   transform: translateY(30px);
   pointer-events: none;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
+
 }
 
 .login-form-layer.active {
-  width:80% ;
+  width: 80%;
   /* background-color: #d12e7b; */
   opacity: 1;
   transform: translateY(0);
@@ -77,22 +78,37 @@
 .login-form-layer h2 {
   font-size: 28px;
   margin-bottom: 20px;
-  color: #333;
+  color: var(--bg-primary-dark);
   text-align: left;
 }
 
+.login-wrapper.dark .login-form-layer h2 {
+  color: var(--text-secondary);
+
+}
+
 .login-form-layer h2 span {
-  color: #e83e8c;
+  background: var(--text-heading);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.login-wrapper.dark .login-form-layer h2 span {
+  background: var(--text-primary-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 700;
 }
 
 
-.login-form-layer form{
+.login-form-layer form {
 
   width: 80%;
   margin: 20px 0;
   /* background-color: #777; */
 }
+
 .login-form-layer input {
   padding: 12px 18px;
   margin-bottom: 16px;
@@ -114,43 +130,58 @@
   box-shadow: 0 0 6px rgba(232, 62, 140, 0.2);
 }
 
-.login-btn {
-  background: #e83e8c;
-  color: white;
+.login-form-layer .login-btn {
+  background: var(--text-heading);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid transparent;
+  border-image: var(--text-primary);
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(232, 62, 141, 0.41), 0 -8px 20px #b74df531 inset;
   padding: 12px 40px;
-  border: none;
-  border-radius: 30px;
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
   transition: background 0.3s ease;
-  margin:  16px 0;
+  margin: 16px 0;
 }
 
-.login-btn:hover {
-  background: #d12e7b;
-}
+
 
 .options {
-  text-align: center;
+
   margin-bottom: 14px;
 }
 
 .options a {
   font-size: 14px;
-  color: #666;
+  color: var(--bg-primary-dark);
   text-decoration: none;
+}
+
+.login-wrapper.dark .options a {
+
+  color: var(--text-secondary);
+
 }
 
 .options a:hover {
   color: #e83e8c;
 }
 
+.continue-option {
+  color: var(--bg-primary-dark);
+}
+
+.login-wrapper.dark .continue-option {
+  color: var(--bg-primary);
+}
+
 .social-login {
   display: flex;
   gap: 14px;
   margin-bottom: 16px;
-  justify-content: center;
+  justify-content: start;
 }
 
 .social-login button {
@@ -167,12 +198,12 @@
   transition: 0.2s ease-in-out;
 }
 
-.social-login button:hover {
-  background: #ffe5f1;
-}
 
-.google {
+
+.social-login .google-btn {
   color: #db4437;
+    height: 40px;
+  width: 40px;
 }
 
 .facebook {
@@ -181,8 +212,14 @@
 
 .signup-link {
   font-size: 14px;
-  color: #777;
-  text-align: center;
+  color: var(--bg-primary-dark);
+
+}
+
+.login-wrapper.dark .signup-link {
+  font-size: 14px;
+  color: var(--bg-primary);
+
 }
 
 .signup-link span {

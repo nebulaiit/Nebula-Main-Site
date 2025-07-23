@@ -97,7 +97,7 @@ export default function ServicesSection() {
       <div className="services-grid ">
         {services.map((service, index) => (
           <div
-            className={`service-card glassmorphism ${service.highlight ? 'highlight' : ''}`}
+            className={`service-card ${service.highlight ? 'highlight' : ''}`}
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
             style={{ animationDelay: `${index * 0.2}s` }}

@@ -7,10 +7,10 @@ import { showToast } from '../../../redux/toastSlice';
 
 const Wishlist = () => {
   const dispatch = useDispatch();
-
-
   const { items, loading } = useSelector((state) => state.wishlist);
   const userId = useSelector((state) => state.auth.userId);
+  const darkMode = useSelector((state) => state.darkMode.enabled);
+
 
   useEffect(() => {
     if (userId) {
@@ -20,17 +20,17 @@ const Wishlist = () => {
 
   const handleRemove = (wishlistItemId) => {
     dispatch(removeFromWishlist(wishlistItemId));
-    showToast('Removed from wishlist', 'error'); 
+    showToast('Removed from wishlist', 'error');
   };
 
   const handleMoveToCart = (course) => {
     dispatch(addToCart(course));
     dispatch(removeFromWishlist(course.id));
-    showToast('Moved to cart!', 'success'); 
+    showToast('Moved to cart!', 'success');
   };
 
   return (
-    <div className="wishlist-wrapper">
+    <div className={`wishlist-wrapper ${darkMode ? 'dark' : ''}`}>
       <h2 className="tab-title">Wishlist</h2>
       <p className="tab-desc">Courses you've added to your wishlist.</p>
 

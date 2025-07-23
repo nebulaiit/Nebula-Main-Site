@@ -1,12 +1,15 @@
 /* === Wishlist Section Wrapper === */
 .wishlist-wrapper {
   padding: 2rem;
-  background-color: #f5f8ff;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
-  border: 2px solid #ff91c1;
-  border-radius: 15px;
+  border: var(--border);
+  border-radius: var(--border-radius);
 }
+
+.wishlist-wrapper.dark{
+  border: var(--border-dark);
+} 
 
 /* === Section Title and Description === */
 .wishlist-wrapper .tab-title {
@@ -16,6 +19,10 @@
   text-align: center;
   margin-bottom: 0.5rem;
 }
+
+.wishlist-wrapper.dark .tab-title{
+  color: var(--text-secondary);
+} 
 
 .wishlist-wrapper .tab-desc {
   font-size: 1rem;
@@ -34,7 +41,6 @@
 .wishlist-wrapper .course-card {
   width: 30%;
   gap: 20px;
-  background-color: #ffffff;
   padding: 1.5rem;
   border-radius: 16px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);

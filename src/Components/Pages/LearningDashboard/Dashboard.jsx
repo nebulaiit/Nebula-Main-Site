@@ -1,20 +1,26 @@
 import React from 'react'
-
 import "./Dashboard.css";
+import { useSelector } from 'react-redux';
 
-const stats = { total: 12, completed: 5, inProgress: 4 };
-const learning = [
-  { id: 1, title: "React for Beginners", progress: 60 },
-  { id: 2, title: "Python Fundamentals", progress: 40 },
-];
-const achievements = [
-  { id: 1, title: "Python Beginner Badge", date: "Mar 2025" },
-  { id: 2, title: "100 Days of Code Streak", date: "Feb 2025" },
-];
+
+
 
 const Dashboard = () => {
+  const stats = { total: 12, completed: 5, inProgress: 4 };
+  const learning = [
+    { id: 1, title: "React for Beginners", progress: 60 },
+    { id: 2, title: "Python Fundamentals", progress: 40 },
+  ];
+  const achievements = [
+    { id: 1, title: "Python Beginner Badge", date: "Mar 2025" },
+    { id: 2, title: "100 Days of Code Streak", date: "Feb 2025" },
+  ];
+
+
+  const darkMode = useSelector((state) => state.darkMode.enabled);
+
   return (
-    <div className="dashboard-section">
+    <div className={`dashboard-section ${darkMode ? 'dark' : ''}`}>
       <h2 className="tab-title">🎓 Your Learning Dashboard</h2>
       <div className="stats-cards">
         <div className="stat-card"><h4>{stats.total}</h4><p>Total Courses</p></div>

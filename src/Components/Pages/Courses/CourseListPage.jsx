@@ -19,6 +19,23 @@ export default function CourseListPage() {
         },
         {
             id: '2',
+            title: 'Java Spring Boot Masterclass',
+            category: 'Full Stack Java Development',
+            instructor: 'Shubham M.',
+            price: 799,
+            thumbnailUrl: 'https://via.placeholder.com/300x140'
+        },
+        {
+            id: '3',
+            title: 'Java Spring Boot Masterclass',
+            category: 'Full Stack Java Development',
+            instructor: 'Shubham M.',
+            price: 799,
+            thumbnailUrl: 'https://via.placeholder.com/300x140'
+        },
+  
+        {
+            id: '4',
             title: 'React & Tailwind Web App',
             category: 'Web Development',
             instructor: 'Shubham M.',

@@ -32,14 +32,14 @@
 .hero .hero-text h1 {
   font-size: 4.5rem;
   font-weight: 800;
-  background: linear-gradient(to right, #b74df5, #ff5ca8);
+  background: var( --text-heading);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
 }
 
 .hero.dark .hero-text h1 {
-  background: linear-gradient(90deg, #ff5ca8, #b74df5);
+  background: var( --text-heading-dark);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -55,7 +55,7 @@
 }
 
 .hero.dark .hero-text p {
-  color: rgba(255, 255, 255, 0.8);
+  color:var(--text-secondary);
 }
 
 .hero.in-view .hero-text p {
@@ -69,12 +69,12 @@
   padding: 12px 45px;
   font-size: 1rem;
   font-weight: 600;
-  cursor: pointer;
-  background: linear-gradient(to right, #b74df5, #ff5ca8);
+  cursor: pointer;  
+  background: var( --text-heading);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border: 2px solid transparent;
-  border-image: linear-gradient(to right, #b74df5, #ff5ca8);
+  border-image: var(--text-heading);
   border-radius: 50px;
   box-shadow: 0 8px 20px rgba(232, 62, 141, 0.41), 0 -8px 20px #b74df531 inset;
   opacity: 0;
@@ -89,7 +89,7 @@
 }
 
 .hero .enroll-btn:hover {
-  background: linear-gradient(to right, #b74df5, #ff5ca8);
+  background: var( --text-heading);
   -webkit-background-clip: unset;
   -webkit-text-fill-color: #fff;
   color: #fff; /* fallback for non-webkit browsers */

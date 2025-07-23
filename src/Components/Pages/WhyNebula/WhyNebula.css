@@ -14,8 +14,11 @@
   color: #1a202c;
   position: relative;
 }
+.why-nebula.dark .why-nebula-title .title-x{
+   color: var(--text-title-dark);
+}
 .why-nebula-title .title-x{
-  color: #ed59ad;
+  color: var(--text-title);
 }
 
 .why-nebula.dark .why-nebula-title {
@@ -27,11 +30,15 @@
   content: '';
   width: 0;
   height: 3px;
-  background: linear-gradient(to right, #e83e8c, #fa91b9);
+  background: var(--text-title);
   display: block;
   margin: 15px auto 0;
   border-radius: 2px;
   transition: width 1s ease;
+}
+
+.why-nebula.dark .why-nebula-title::after{
+  background: var(--text-title-dark);
 }
 
 .why-nebula-title.in-view::after {
@@ -71,10 +78,7 @@
 }
 
 .why-nebula.dark .why-nebula-card {
-  /* background: rgb(255, 255, 255);
-  color: rgb(232, 62, 140);
-  box-shadow: rgba(232, 62, 140, 0.2) 0px 8px 20px; */
-  /* border-color: rgb(232, 62, 140); */
+  background:linear-gradient(140deg ,#2b2658,#0f0c29) ;
   border: none;
 }
 
@@ -87,7 +91,11 @@
 
 /* Hover Effects */
 .why-nebula-card:hover {
-  box-shadow: 0 12px 28px rgba(232, 62, 140, 0.15);
+  box-shadow:var(--box-shadow);
+  border-color: #e24aa0;
+}
+.why-nebula.dark  .why-nebula-card:hover {
+  box-shadow:var(--box-shadow-dark);
   border-color: #e24aa0;
 }
 

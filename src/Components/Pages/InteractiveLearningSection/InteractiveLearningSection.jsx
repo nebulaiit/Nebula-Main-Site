@@ -3,8 +3,6 @@ import "./InteractiveLearningSection.css";
 import { useSelector } from 'react-redux';
 
 
-
-
 const hierarchyData = {
   'Hands-On Learning': [
     'Interactive Labs',
@@ -60,7 +58,7 @@ export default function InteractiveLearningSection() {
             </div>
           ))}
         </div>
-        <div className="menu-content glassmorphism">
+        <div className="menu-content">
           {activeTopic && (
             <div>
               <h2 className="menu-title">{activeTopic}</h2>

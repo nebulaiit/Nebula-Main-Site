@@ -2,28 +2,27 @@ import React, { useEffect, useState } from 'react';
 import './header.css';
 import logo from "../../Images/Logo/Logo.svg";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Drawer, IconButton } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import profile from "../../Images/profile-icon.jpg";
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
-import Dropmenu from './Dropmenu';
 import { getAllTutorial } from '../../APIService/apiservice';
 import { useSelector } from 'react-redux';
 
-export default function Header({ variant = "default" }) {
+export default function     Header({ variant = "default" }) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [drawerOpen, setDrawerOpen] = useState(false); // FIXED
     const navigate = useNavigate();
     const location = useLocation();
-    const darkMode = useSelector((state) => state.darkMode.enabled);    
+    const darkMode = useSelector((state) => state.darkMode.enabled);
+    const user = useSelector((state) => state.user.user);
 
     const hideElement = ["/login"].includes(location.pathname);
 
+    console.log(user)
 
     const handleClickAway = () => {
         setMenuOpen(false);
@@ -37,21 +36,6 @@ export default function Header({ variant = "default" }) {
     const handleLogoClick = () => {
         navigate("/");
     };
-
-    useEffect(() => {
-        const fetchTutorialList = async () => {
-            try {
-                const response = await getAllTutorial();
-                setCourses(response);
-            } catch (error) {
-                console.error("Error fetching tutorials:", error);
-            }
-        };
-        fetchTutorialList();
-
-    }, []);
-
-    const user = useSelector((state) => state.user.user);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -99,7 +83,7 @@ export default function Header({ variant = "default" }) {
                         </li>
                         <li className='list-inline-item'>
                             <Button className='pro-btn' onClick={() => navigate("/login")} disableElevation>
-                               Log In
+                                Log In
                             </Button>
                         </li>
                         <li className='list-inline-item ms-1'>
@@ -125,7 +109,7 @@ export default function Header({ variant = "default" }) {
                                             <button className="dropdown-item" onClick={() => handleDashboardClick("All Courses")}>All Courses</button>
 
                                             {!isLoggedIn ? (
-                                                <button className="dropdown-item" onClick={() => navigate("/login")}>
+                                                <button className="dropdown-item" onClick={() => {navigate("/login"); setIsLoggedIn(true);}}>
                                                     <ExitToAppOutlinedIcon className="me-2" /> Login
                                                 </button>
                                             ) : (
@@ -133,7 +117,7 @@ export default function Header({ variant = "default" }) {
                                                     localStorage.clear();
                                                     setIsLoggedIn(false);
                                                     setUserInfo(null);
-                                                    navigate("/");
+                                                    navigate("/login");
                                                 }}>
                                                     <ExitToAppOutlinedIcon className="me-2" /> Logout
                                                 </button>

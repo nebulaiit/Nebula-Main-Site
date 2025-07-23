@@ -6,12 +6,13 @@ import Wishlist from "./Wishlist";
 import Dashboard from "./Dashboard";
 import MyLists from './MyLists'
 import Cart from "./Cart";
+import { useSelector } from "react-redux";
 
 
 const tabs = [
   { key: "dashboard", label: "Dashboard" },
   { key: "all", label: "All Courses" },
-  { key: "lists", label: "My Lists" },
+  // { key: "lists", label: "My Lists" },
   { key: "wishlist", label: "Wishlist" },
   { key: "cart", label: "Your Cart" },
 ];
@@ -20,6 +21,8 @@ const LearningDashboard = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [activeTab, setActiveTab] = useState("all");
+    const darkMode = useSelector((state) => state.darkMode.enabled);
+
 
   useEffect(() => {
     const section = new URLSearchParams(location.search).get("section");
@@ -49,9 +52,9 @@ const LearningDashboard = () => {
   };
 
   return (
-    <div className="learning-dashboard">
+    <div className={`learning-dashboard ${darkMode ? 'dark' : ''}`}>
       <header className="dashboard-header">
-        <h1>📚 My Learning</h1>
+        <h1> My Learning</h1>
         <nav className="nav-tabs">
           {tabs.map((tab) => (
             <button
@@ -66,7 +69,7 @@ const LearningDashboard = () => {
       </header>
 
       <main className="dashboard-main ">
-        <div className="content-box glassmorphism">{renderTab()}</div>
+        <div className="content-box">{renderTab()}</div>
       </main>
     </div>
   );

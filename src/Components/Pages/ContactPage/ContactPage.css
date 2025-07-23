@@ -1,10 +1,11 @@
 /* === CONTACT PAGE ROOT === */
 .contact-page {
-  padding: 60px 40px;
-  background: #f5f5f5;
+  width: 90%;
+  margin:  auto;
+  padding: 20px 40px;
   font-family: 'Inter', 'Arial', sans-serif;
   min-height: 100vh;
-  padding-top: 7%;
+  margin-top: 9%;
 }
 
 /* === TOP BANNER === */
@@ -17,24 +18,31 @@
 }
 
 .contact-page .top-banner h1 {
-  font-size: 26px;
-  color: #ff4d88;
+  font-size: 2.375rem;
+  background: var( --text-heading);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 700;
   margin-bottom: 8px;
 }
 
+.contact-page.dark .top-banner h1 {
 
-.contact-page .top-banner h2 {
+  background: var( --text-heading-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-  font-size: 32px;
-  color: #e60073;
-  font-weight: 700;
 }
 
 
 .contact-page .top-banner p {
-  font-size: 15px;
+  font-size: 1rem;
   color: #555;
+  margin-top: 12px;
+}
+.contact-page.contact-page.dark .top-banner p {
+  font-size: 1rem;
+  color: var(--text-secondary);
   margin-top: 12px;
 }
 
@@ -51,14 +59,20 @@
 
 .contact-page .info-cards .card {
 
-  background: #ffffff;
+  background: transparent;
+  border: var(--border);
   padding: 20px;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   text-align: center;
   width: 220px;
   box-shadow: 0 4px 12px rgba(230, 0, 115, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
+}
+.contact-page.dark .info-cards .card {
+  border: var(--border-dark);
+  box-shadow: 0 4px 12px rgba(230, 0, 115, 0.1);
+  
 }
 
 
@@ -73,15 +87,25 @@
 
   font-size: 26px;
   margin-bottom: 10px;
-  color: #ff4d88;
+  color: var(--text-title);
 }
+.contact-page.dark .info-cards .card i {
+  color: var(--text-title-dark);
 
 
+}
 .contact-page .info-cards .card h3 {
 
   font-size: 18px;
-  color: #ff4d88;
+  color: var(--text-title);
+  
   margin-bottom: 6px;
+}
+
+.contact-page.dark .info-cards .card h3 {
+
+  color: var(--text-title-dark);
+
 }
 
 
@@ -90,6 +114,10 @@
   margin: 4px 0;
   font-weight: normal;
   color: #666;
+}
+.contact-page.dark .info-cards .card p {
+
+  color: var(--text-secondary);
 }
 
 
@@ -101,7 +129,7 @@
 /* === FORM AND MAP SECTION === */
 
 .contact-page .form-map-section {
-
+  width: 100%;
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
@@ -115,10 +143,15 @@
 
   flex: 1;
   max-width: 500px;
-  background: #ffffff;
+  background: transparent;
+  border: var(--border);
   padding: 30px;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 4px 12px rgba(230, 0, 115, 0.15);
+}
+
+.contact-page.dark .form-map-section .contact-form{
+  border: var(--border-dark);
 }
 
 
@@ -139,10 +172,19 @@
   padding: 12px 14px;
   margin-bottom: 18px;
   border: 1.5px solid #ff66a3;
+  color: #000000;
   border-radius: 8px;
   font-size: 15px;
-  background: #fafafa;
+  background: #b1b1b136;
   transition: border-color 0.3s;
+}
+
+.contact-page.dark .contact-form input[type="text"],
+.contact-page.dark .contact-form input[type="email"],
+.contact-page.dark .contact-form textarea {
+  border: var(--border-dark);
+  color: #ffffff;
+
 }
 
 
@@ -151,11 +193,11 @@
 
   border-color: #e60073;
   outline: none;
-  background: #fff;
+  background: #dedede1d;
 }
 
 /* PHONE INPUT */
-.phone-input {
+.contact-page .form-map-section .contact-form  .phone-input {
   display: flex;
   gap: 12px;
   margin-bottom: 18px;
@@ -164,9 +206,17 @@
 
 .contact-page .form-map-section .contact-form .phone-input .select-phone-no{
   height: 50px !important;
-  border: 1.5px solid #ff66a3 !important;
-
+  border: var(--border);
+  background: #b1b1b136;
   margin-bottom: 7px ;
+  color: var(--bg-primary-dark);
+
+}
+.contact-page.dark .form-map-section .contact-form .phone-input .select-phone-no{
+
+  border: var(--border-dark);
+  color: var(--text-secondary);
+
 }
 
 
@@ -183,9 +233,15 @@
   flex: 0.4;
 }
 
-.contact-page .form-map-section .contact-form .phone-input input {
+.contact-page .form-map-section .contact-form .phone-input select option {
+  color: #333;
+  background: #fafafa;
+}
 
+.contact-page .form-map-section .contact-form .phone-input input {
   flex: 1;
+  background: #b1b1b136;
+
 }
 
 
@@ -218,7 +274,7 @@
   color: #ffffff;
   padding: 12px;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s;

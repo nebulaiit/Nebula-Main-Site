@@ -57,7 +57,7 @@ useEffect(() => {
       <div className="why-nebula-cards">
         {cardData.map((card, index) => (
           <div
-            className="why-nebula-card glassmorphism"
+            className="why-nebula-card"
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
           >

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import "./AllCourses.css";
+import { useSelector } from 'react-redux';
 
 const allCourses = [
   {
@@ -36,19 +37,14 @@ const allCourses = [
 ];
 
 const AllCourses = () => {
-  const handleAddToCart = (course) => {
-    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
-    if (existingCart.some((c) => c.id === course.id)) {
-      alert("Course already in cart");
-      return;
-    }
-    const updated = [...existingCart, course];
-    localStorage.setItem("cart", JSON.stringify(updated));
-    alert("Course added to cart!");
-  };
+
+  const darkMode = useSelector((state) => state.darkMode.enabled);
+
+
+
 
   return (
-    <div className="all-courses glassmorphism">
+    <div className={`all-courses ${darkMode ? 'dark' : ''}`}>
       <h2 className="tab-title">All Courses</h2>
       <p className="tab-desc">Explore your available courses here.</p>
       <div className="course-list">
@@ -57,8 +53,8 @@ const AllCourses = () => {
             <h4>{course.title}</h4>
             <p>{course.description}</p>
             <small>Duration: {course.duration}</small>
-            <button className="enroll-btn" onClick={() => handleAddToCart(course)}>
-              Enroll
+            <button className="view-btn">
+              View
             </button>
           </div>
         ))}
