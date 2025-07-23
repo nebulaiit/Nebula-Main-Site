@@ -123,3 +123,44 @@
     transform: translateY(0);
   }
 }
+
+/* 📱 Responsive Fixes (no changes to your main CSS) */
+@media (max-width: 768px) {
+  .blog-form {
+    flex-direction: column;
+  }
+
+  .blog-form input,
+  .blog-form input[type="file"],
+  .blog-form textarea,
+  .blog-form button {
+    width: 100%;
+  }
+
+  .blog-form-wrapper {
+    padding: 24px;
+    margin-top: 15%;
+  }
+
+  .neon-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .neon-title {
+    font-size: 24px;
+    padding-top: 20%;
+  }
+
+  .blog-form input,
+  .blog-form textarea {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .blog-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}

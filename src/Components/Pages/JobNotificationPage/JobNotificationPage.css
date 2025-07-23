@@ -1,17 +1,20 @@
-/* JobNotification.css */
+/* ========================
+   Job Notification Wrapper
+========================= */
 .job-notification-wrapper {
   padding: 40px;
   min-height: 100vh;
-  margin-top:7%;
+  margin-top: 7%;
 }
 
+/* ========================
+   Job Header Section
+========================= */
 .job-header {
-
   padding: 30px;
   border: 2px solid #e83e8c;
   border-radius: 16px;
   text-align: center;
- 
   margin-bottom: 30px;
 }
 
@@ -23,6 +26,9 @@
   letter-spacing: 1px;
 }
 
+/* ========================
+   Tabs Navigation
+========================= */
 .job-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -42,6 +48,7 @@
   transition: all 0.3s ease;
 }
 
+/* Active / Hover Tab Styling */
 .tab-buttons.active,
 .tab-buttons:hover {
   background: linear-gradient(to right, #ff5b8a, #ff1f8e);
@@ -49,9 +56,11 @@
   border: none;
 }
 
-.tab-content{
-  width: 98%; 
-
+/* ========================
+   Tab Content Section
+========================= */
+.tab-content {
+  width: 98%;
 }
 
 .tab-content h3 {
@@ -61,12 +70,91 @@
   text-align: center;
 }
 
+/* ========================
+   Job Cards Grid
+========================= */
 .job-card-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: start;
   margin-top: 25px;
+}
 
+/* ========================
+   Responsive Styling
+========================= */
 
+/* ---------- Large Tablets / Laptops (<=1024px) ---------- */
+@media (max-width: 1024px) {
+  .job-notification-wrapper {
+    padding: 30px 20px;
+    padding-top: 30%; /* Shifts content lower to avoid overlap with fixed headers if any */
+  }
+
+  .tab-buttons {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .tab-content {
+    width: 100%;
+  }
+
+  .job-card-list {
+    justify-content: center; /* Center cards on smaller screens */
+  }
+}
+
+/* ---------- Tablets (<=768px) ---------- */
+@media (max-width: 768px) {
+  .job-header {
+    padding: 24px 18px;
+  }
+
+  .job-header h1 {
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+  }
+
+  .tab-buttons {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+
+  .tab-content h3 {
+    font-size: 1.1rem;
+    margin-top: 16px;
+  }
+
+  .job-card-list {
+    gap: 16px;
+    justify-content: center;
+  }
+}
+
+/* ---------- Mobile Phones (<=480px) ---------- */
+@media (max-width: 480px) {
+  .job-notification-wrapper {
+    padding: 10% 14px;
+    margin-top: 14%; /* Reduces top space for better mobile view */
+  }
+
+  .job-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .tab-buttons {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  .tab-content h3 {
+    font-size: 1rem;
+  }
+
+  .job-card-list {
+    flex-direction: column;
+    align-items: center; /* Stacks job cards vertically on small screens */
+  }
 }
