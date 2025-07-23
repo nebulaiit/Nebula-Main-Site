@@ -3,10 +3,19 @@
 
   padding: 20px;
   width: 340px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-radius: var(--border-radius);
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+}
+
+.job-card.dark{
+  background: var(--card-background);
+  border: none;
+  box-shadow: var(--box-shadow-dark);
+
 }
 
 .job-card h2 {
@@ -15,27 +24,58 @@
   margin-bottom: 6px;
 }
 
-.job-card p {
-  font-size: 0.9rem;
-    margin: 5px 0;
+.job-card.dark h2 {
+
+  color: var(--text-secondary);
+
 }
 
-.company {
+.job-card p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  color: var(--bg-primary-dark);
+}
+
+.job-card.dark p {
+
+  color: var(--text-secondary-dark);
+}
+
+.job-card .company {
   font-weight: bold;
-  color: #e83e8c;
+  color: var(--text-title);
   margin-bottom: 6px;
 }
 
+.job-card.dark .company {
+  color: var(--text-title-dark);
+}
 
-.job-footer {
+
+.job-card .job-footer {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
 }
 
-.location, .salary, .job-footer span {
-  color: #555;
+.job-card .location, .salary {
+  color: var(--bg-primary-dark);
   font-size: 0.9rem;
+}
+
+.job-footer span  {
+  color: var(--bg-primary-dark);
+  font-size: 0.9rem;
+}
+
+.job-card.dark .location, .salary{
+  color: var( --text-secondary-dark);
+
+}
+
+.job-footer.dark span {
+  color: var( --text-secondary-dark);
+
 }
 
 .job-card .view-btn {
@@ -47,6 +87,12 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.job-card.dark .view-btn{
+  background: var( --button-dark);
+}
+
+
 /* ✅ Responsive Styling - Optimized */
 @media (max-width: 1024px) {
   .job-notification-wrapper {

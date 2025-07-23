@@ -1,20 +1,22 @@
 .siderbar-wrapper .sidebar {
-  width: 350px;
+  width: 380px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   /* background: #f9f9fb; */
-
   border-radius: 16px;
 
 }
 
 .siderbar-wrapper .sidebar .menu-card {
-  background-color: #ffffff;
   border-radius: 14px;
   margin-bottom: 16px;
-  box-shadow: 0 3px 10px rgba(249, 168, 212, 0.2);
+  box-shadow: 5px 10px 10px rgba(252, 31, 153, 0.226);
   overflow: hidden;
-  border: 1px solid #fce7f3;
   transition: all 0.3s ease-in-out;
+}
+
+.siderbar-wrapper.dark .sidebar .menu-card {
+  box-shadow: 5px 10px 10px rgba(210, 22, 248, 0.212);
+
 }
 
 .siderbar-wrapper .sidebar .menu-card .menu-title {
@@ -23,7 +25,7 @@
   align-items: center;
   padding: 18px 22px;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 1.1rem;
   color: #1e293b;
   cursor: pointer;
   background: #fff0f6;
@@ -31,9 +33,11 @@
   transition: background 0.3s ease;
 }
 
-.menu-card.expanded .menu-title {
-  background-color: #ffe4f0;
+.siderbar-wrapper.dark  .sidebar .menu-card .menu-title{
+  background: var( --card-background);
+  color: var(--text-secondary);
 }
+
 
 .siderbar-wrapper .sidebar .menu-card .submenu {
   padding: 14px 20px 20px 20px;

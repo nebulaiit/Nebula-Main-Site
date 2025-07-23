@@ -7,6 +7,7 @@
   --text-heading-dark: linear-gradient(90deg, #ff5ca8, #b74df5);
 
   --text-secondary: #f3f4f6;
+  --text-secondary-dark: #f3f4f6b5;
 
   --text-title: #e83e8c;
   --text-title-dark: #8928ca;
@@ -17,7 +18,11 @@
 
   --border-radius: 1rem;
 
-  --background-color: #0f172a;
+  --background-color: #8928ca;
+
+  --card-background:linear-gradient(140deg, #2b2658, #0f0c29);
+  --sub-card-background:linear-gradient(140deg, #0f0c29,#2b2658);
+  
   --border:2px solid #e60073;
   --border-dark: 2px solid #561d97;
 
@@ -27,6 +32,7 @@
   --box-shadow: 10px 10px 28px rgba(248, 22, 180, 0.15);
   --box-shadow-dark: 10px 10px 28px rgba(210, 22, 248, 0.15);
 
+  --button-dark:linear-gradient(90deg, #8928ca, #b74df5);
 
 }
 

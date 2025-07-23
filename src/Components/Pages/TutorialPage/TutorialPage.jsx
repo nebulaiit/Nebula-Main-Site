@@ -4,12 +4,15 @@ import './Tutorialpage.css';
 import { getContentList, getHeadingList } from '../../APIService/apiservice';
 import { useParams, useSearchParams } from 'react-router-dom';
 import SelectedTopicContent from './selectedTopicContent';
+import { useSelector } from 'react-redux';
 
 export default function TutorialPage() {
   const { courseName } = useParams();
   const [headings, setHeadings] = useState([])
   const [selectedUrlSlug, setSelectedUrlSlug] = useState(null);
   const [selectedTopicContent, setSelectedTopicContent] = useState([])
+  const darkMode = useSelector((state) => state.darkMode.enabled);
+
 
   // Fetch headings
 
@@ -51,7 +54,7 @@ export default function TutorialPage() {
 
 
   return (
-    <div className="tutorial-page-wrapper py-4 px-4">
+    <div className={`tutorial-page-wrapper py-4 px-4  ${darkMode ? 'dark' : ''}`}>
       <SideBar heading={headings} selectedUrlSlug={setSelectedUrlSlug} />
 
       <SelectedTopicContent contentBlocks={selectedTopicContent} />

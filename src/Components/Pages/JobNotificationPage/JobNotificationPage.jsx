@@ -22,7 +22,7 @@ const JobNotification = () => {
 
   return (
     <div className={`job-notification-wrapper ${darkMode ? 'dark' : ''}`}>
-      <div className="job-header glassmorphism">
+      <div className="job-header ">
         <h1>JOB NOTIFICATION <span role="img" aria-label="briefcase">💼</span> <span role="img" aria-label="chart">📊</span></h1>
         <div className="job-tabs">
           {tabs.map(tab => (

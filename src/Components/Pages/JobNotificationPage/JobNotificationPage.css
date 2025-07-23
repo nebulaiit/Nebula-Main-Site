@@ -12,47 +12,66 @@
 ========================= */
 .job-header {
   padding: 30px;
-  border: 2px solid #e83e8c;
-  border-radius: 16px;
+  border: var(--border);
+  border-radius: var(--border-radius);
   text-align: center;
   margin-bottom: 30px;
 }
 
+.job-notification-wrapper.dark .job-header{
+  border: var(--border-dark);
+}
+
 .job-header h1 {
   font-size: 2rem;
-  color: #e83e8c;
+  color: var(--text-title);
   font-weight: 700;
   margin-bottom: 20px;
   letter-spacing: 1px;
 }
 
-/* ========================
-   Tabs Navigation
-========================= */
-.job-tabs {
+.job-notification-wrapper.dark .job-header h1{
+  color: var(--text-title-dark);
+
+}
+
+.job-notification-wrapper .job-header .job-tabs {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
 
-.tab-buttons {
-  border: 2px solid #e83e8c;
-  background: #fff;
+.job-notification-wrapper .job-header .job-tabs .tab-buttons {
+  border: var(--border);
+  background: var(--bg-primary);
   padding: 10px 24px;
   border-radius: 10px;
   font-size: 1rem;
-  color: #e83e8c;
+  color: var(--text-title);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
+.job-notification-wrapper.dark .job-header .job-tabs .tab-buttons{
+  border: var(--border-dark);
+    color: var(--text-title-dark); 
+  background: var(--bg-primary-dark);
+
+}
+
 /* Active / Hover Tab Styling */
-.tab-buttons.active,
-.tab-buttons:hover {
+.job-notification-wrapper .job-header .job-tabs .tab-buttons.active,
+.job-notification-wrapper .job-header .job-tabs .tab-buttons:hover {
   background: linear-gradient(to right, #ff5b8a, #ff1f8e);
-  color: #fff;
+  color: var(--bg-primary);
+  border: none;
+}
+.job-notification-wrapper.dark .job-header .job-tabs .tab-buttons.active,
+.job-notification-wrapper.dark .job-header .job-tabs .tab-buttons:hover {
+  background: linear-gradient(135deg, #a115f3 50%, #7710b3);
+  color: var(--bg-primary);
   border: none;
 }
 
@@ -65,9 +84,15 @@
 
 .tab-content h3 {
   margin-top: 20px;
-  color: #333;
+  color: var(--text-title);
+
   font-weight: 500;
   text-align: center;
+}
+.job-notification-wrapper.dark .tab-content h3 {
+
+  color: var(--text-title-dark);
+ 
 }
 
 /* ========================
@@ -81,9 +106,6 @@
   margin-top: 25px;
 }
 
-/* ========================
-   Responsive Styling
-========================= */
 
 /* ---------- Large Tablets / Laptops (<=1024px) ---------- */
 @media (max-width: 1024px) {

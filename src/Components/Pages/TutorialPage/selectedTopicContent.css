@@ -9,13 +9,25 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.content-container.dark {
+
+    background: var(--card-background);
+
+}
+
 .content-container .content-heading {
     font-size: 1.8rem;
-    color: #c21873;
-    margin-bottom: 16px;
+    color: var(--text-title);
+    margin-bottom: 1rem;
     font-weight: 700;
-    border-bottom: 2px solid #ffc1e3;
-    padding-bottom: 6px;
+    border-bottom: var(--border);
+    padding-bottom: 15px;
+}
+
+.content-container.dark .content-heading {
+    color: var(--text-title-dark);
+    border-bottom: var(--border-dark);
+
 }
 
 .content-container .content-para {
@@ -23,11 +35,19 @@
     color: #333;
     margin-bottom: 20px;
     line-height: 1.7;
-    background: #fff;
+    background: var(--bg-primary);
     padding: 16px;
     border-left: 4px solid #f472b6;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(255, 105, 180, 0.08);
+}
+
+.content-container.dark .content-para {
+    background: var(--bg-primary-dark);
+    color: var(--text-secondary);
+    border-left: 4px solid #8928ca;
+
+
 }
 
 .content-container .content-image {
@@ -51,7 +71,7 @@
 }
 
 .content-container pre {
-    background-color: #fdf2f8;
+    background: var(--bg-primary);
     padding: 16px;
     border-radius: 12px;
     overflow-x: auto;
@@ -60,6 +80,11 @@
     color: #222;
     box-shadow: inset 0 0 0 1px #f472b6;
     margin-bottom: 24px;
+}
+
+.content-container.dark pre {
+    background: var(--bg-primary-dark);
+    color: var(--text-secondary);
 }
 
 .content-container code {

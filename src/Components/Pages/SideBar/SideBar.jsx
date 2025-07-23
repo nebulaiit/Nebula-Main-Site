@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './SideBar.css';
+import { useSelector } from 'react-redux';
 
 function SideBar({ heading, selectedUrlSlug }) {
   const [expanded, setExpanded] = useState(null);
   const [activeSlug, setActiveSlug] = useState(null);
+  const darkMode = useSelector((state) => state.darkMode.enabled);
+
 
   useEffect(() => {
     if (heading.length > 0) {
@@ -22,7 +25,7 @@ function SideBar({ heading, selectedUrlSlug }) {
   };
 
   return (
-    <div className="siderbar-wrapper">
+    <div className={`siderbar-wrapper ${darkMode ? 'dark' : ''}`}>
       <div className="sidebar">
         {[...heading]
           .sort((a, b) => a.orderIndex - b.orderIndex)

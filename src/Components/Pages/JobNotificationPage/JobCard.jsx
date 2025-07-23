@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './JobCard.css';
 import { useNavigate } from 'react-router-dom';
 import { getJobList } from '../../APIService/apiservice';
+import { useSelector } from 'react-redux';
 
 const JobCard = () => {
     const navigate = useNavigate();
     const [jobs, setJobs] = useState([]);
+    const darkMode = useSelector((state) => state.darkMode.enabled);    
+
 
     useEffect(() => {
         const fetchJobList = async () => {
@@ -25,7 +28,7 @@ const JobCard = () => {
     return (
         <>
             {jobs.map((job) => (
-                <div className="job-card" key={job.id}>
+                <div className={`job-card ${darkMode ? 'dark' : ''}`} key={job.id}>
                     <h2>{job.jobTitle}</h2>
                     <p className="company">{job.companyName}</p>
                     <p className="location">{job.location}</p>

@@ -443,7 +443,7 @@ a {
    DARK MODE HEADER STYLES
 ------------------------------- */
 .header.dark {
-  background-color: #0f172a;
+  background:var(--sub-card-background);
   color: #f9fafb;
   transition: background 0.3s ease, color 0.3s ease;
 }

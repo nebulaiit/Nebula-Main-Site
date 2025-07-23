@@ -1,7 +1,10 @@
 import React from 'react';
 import './selectedTopicContent.css'; // Optional: if you want to isolate styles
+import { useSelector } from 'react-redux';
 
 export default function SelectedTopicContent({ contentBlocks }) {
+    const darkMode = useSelector((state) => state.darkMode.enabled);
+  
     
   const renderBlock = (block) => {
     switch (block.type) {
@@ -34,7 +37,7 @@ export default function SelectedTopicContent({ contentBlocks }) {
   };
 
   return (
-    <div className="content-container">
+    <div className={`content-container ${darkMode ? 'dark' : ''}`}>
       {contentBlocks && contentBlocks.length > 0 ? (
         contentBlocks.map(renderBlock)
       ) : (
