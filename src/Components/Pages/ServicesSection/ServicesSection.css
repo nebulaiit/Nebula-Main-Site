@@ -4,15 +4,17 @@
 }
 
 .services-section .subtitle {
-  background: var( --text-heading-dark);
+  background: var(--text-heading-dark);
+  background-clip: text;
   -webkit-background-clip: text;
+
+  color: transparent;
   -webkit-text-fill-color: transparent;
+
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.2rem;
 }
-
-
 
 .services-section .title {
   font-size: 36px;
@@ -23,7 +25,6 @@
 
 .services-section.dark .title {
   color: #ffffffcc;
-
 }
 
 .services-grid {
@@ -48,9 +49,8 @@
 }
 
 .services-section.dark .service-card {
-
-background: linear-gradient(140deg, #2b2658, #0f0c29);
-    border: none;
+  background: linear-gradient(140deg, #2b2658, #0f0c29);
+  border: none;
 }
 
 /* === Scroll Animation Triggered === */
@@ -61,16 +61,14 @@ background: linear-gradient(140deg, #2b2658, #0f0c29);
 .services-section .service-card:hover,
 .services-section .service-card:active {
   box-shadow: var(--box-shadow);
-
   transform: translateY(-5px);
   border-color: #e24aa0;
 }
+
 .services-section.dark .service-card:hover,
 .services-section.dark .service-card:active {
-
   box-shadow: var(--box-shadow-dark);
   transform: translateY(-5px);
-
   border-color: #9b05ff;
 }
 
@@ -135,15 +133,21 @@ background: linear-gradient(140deg, #2b2658, #0f0c29);
 
 .cta-section p {
   font-size: 20px;
- background: var( --text-heading);
+
+  background: var(--text-heading);
+  background-clip: text;
   -webkit-background-clip: text;
+
+  color: transparent;
   -webkit-text-fill-color: transparent;
 }
 
 .services-section.dark .cta-section p {
-
-  background: var( --text-heading-dark);
+  background: var(--text-heading-dark);
+  background-clip: text;
   -webkit-background-clip: text;
+
+  color: transparent;
   -webkit-text-fill-color: transparent;
 }
 
@@ -153,42 +157,53 @@ background: linear-gradient(140deg, #2b2658, #0f0c29);
 
 .cta-button {
   padding: 12px 45px;
-  background: var( --text-heading);
+  background: var(--text-heading);
+  background-clip: text;
   -webkit-background-clip: text;
+
+  color: transparent;
   -webkit-text-fill-color: transparent;
+
   border: 2px solid transparent;
   border-image: var(--text-heading);
   border-radius: 50px;
   font-size: 1rem;
-  color: #e83e8c;
   font-weight: 600;
   cursor: pointer;
-   box-shadow: 0 8px 20px rgba(232, 62, 141, 0.41), 0 -8px 20px #b74df531 inset;
+
+  box-shadow: 0 8px 20px rgba(232, 62, 141, 0.41),
+              0 -8px 20px #b74df531 inset;
 
   transition: all 0.4s ease;
 }
 
-.services-section.dark  .cta-button{
-  background: var( --text-heading-dark);
+.services-section.dark .cta-button {
+  background: var(--text-heading-dark);
+  background-clip: text;
   -webkit-background-clip: text;
+
+  color: transparent;
   -webkit-text-fill-color: transparent;
+
   border: 2px solid transparent;
-  box-shadow: 0 8px 20px rgba(156, 62, 232, 0.41), 0 -8px 20px #b74df531 inset;
+
+  box-shadow: 0 8px 20px rgba(156, 62, 232, 0.41),
+              0 -8px 20px #b74df531 inset;
+
   animation: blink 2.0s infinite;
 }
+
 .cta-button:hover {
   transform: scale(1.05);
 }
 
 @keyframes blink {
   0%, 100% {
-    box-shadow: 0 8px 20px rgba(156, 62, 232, 0.41), 0 -8px 20px #b74df531 inset;
-
+    box-shadow: 0 8px 20px rgba(156, 62, 232, 0.41),
+                0 -8px 20px #b74df531 inset;
   }
   50% {
-    box-shadow: 0 0px 0px rgba(156, 62, 232, 0.41), 0 -8px 20px #b74df531 inset;
-
+    box-shadow: 0 0px 0px rgba(156, 62, 232, 0.41),
+                0 -8px 20px #b74df531 inset;
   }
 }
-
-/* Hover state for cards */
