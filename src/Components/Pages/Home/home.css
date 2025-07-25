@@ -1,5 +1,24 @@
 .homepage {
-
   min-height: 100vh;
   margin: 2% 0;
+  padding: 0 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Tablet View (medium screens) */
+@media (max-width: 1024px) {
+  .homepage {
+    padding: 0 5%;
+    margin: 4% 0;
+  }
+}
+
+/* Mobile View (small screens) */
+@media (max-width: 600px) {
+  .homepage {
+    padding: 0 4%;
+    margin: 6% 0;
+  }
 }
