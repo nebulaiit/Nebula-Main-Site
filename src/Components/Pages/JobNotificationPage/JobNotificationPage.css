@@ -2,9 +2,9 @@
    Job Notification Wrapper
 ========================= */
 .job-notification-wrapper {
-  padding: 40px;
+  width: 84%;
   min-height: 100vh;
-  margin-top: 7%;
+  margin-top: 25vh;
 }
 
 /* ========================
@@ -37,12 +37,12 @@
 
 .job-notification-wrapper .job-header .job-tabs {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   gap: 20px;
 }
 
 .job-notification-wrapper .job-header .job-tabs .tab-buttons {
+  flex: 1;
   border: var(--border);
   background: var(--bg-primary);
   padding: 10px 24px;

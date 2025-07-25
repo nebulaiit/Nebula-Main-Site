@@ -1,7 +1,5 @@
 import React from 'react'
 import "./Cart.css";
-import pythonImg from "./python.jpeg";
-import reactImg from "./react.jpg";
 import { useDispatch, useSelector } from 'react-redux';
 
 

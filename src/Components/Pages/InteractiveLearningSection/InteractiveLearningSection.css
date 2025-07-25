@@ -145,9 +145,13 @@
 }
 
 .interactive-learning-section .interactive-container .menu-content .menu-list li:hover {
-  color: #e83e8c;
+  color: var(--text-title);
   transform: translateX(4px);
   text-shadow: 0 0 8px rgba(93, 135, 255, 0.5);
+}
+.interactive-learning-section.dark .interactive-container .menu-content .menu-list li:hover {
+  color: var(--text-title-dark);
+
 }
 
 /* Active Menu Item */

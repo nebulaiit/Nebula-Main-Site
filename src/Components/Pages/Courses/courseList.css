@@ -1,10 +1,9 @@
 .course-list-wrapper {
-    margin-top: 7%;
-    padding: 40px;
-    /* background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
+    margin-top: 25vh;
     min-height: 100vh;
     color: white;
     font-family: 'Poppins', sans-serif;
+    width: 84%;
 }
 
 .course-list-wrapper .category-section .category-title {
@@ -17,6 +16,8 @@
 .course-list-wrapper.dark .category-section .category-title {
 
     color: #ffffff;
+    border-left: 4px solid #561d97;
+
 
 }
 
@@ -30,7 +31,7 @@
 }
 
 .course-list-wrapper .category-section .course-grid .course-card {
-    width: 22%;
+    width: 28%;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
@@ -41,7 +42,7 @@
     cursor: pointer;
 }
 
-.course-list-wrapper .category-section .course-grid .course-card {
+.course-list-wrapper.dark .category-section .course-grid .course-card {
   background: linear-gradient(140deg, #2b2658, #0f0c29);
   border: none;
 }
@@ -64,7 +65,11 @@
 .course-list-wrapper .category-section .course-grid .course-card .course-info h3 {
     font-size: 18px;
     margin-bottom: 5px;
-    color: #e83e8c;
+    color: var(--text-title);
+}
+.course-list-wrapper.dark .category-section .course-grid .course-card .course-info h3 {
+
+    color: var(--text-title-dark);
 }
 
 
@@ -73,8 +78,14 @@
     width: 50px;
     height: 35px;
     padding: 7px 10px;
-    background: #e83e8c;
+    background: var(--text-title);
     color: rgb(255, 255, 255);
     border-radius: 12px;
     font-weight: 600;
+}
+
+.course-list-wrapper.dark .category-section .course-grid .course-card .course-info .price-tag {
+
+    background: var(--text-title-dark);
+
 }

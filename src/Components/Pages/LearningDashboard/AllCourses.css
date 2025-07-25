@@ -22,7 +22,7 @@
 }
 
 .all-courses.dark .tab-title{
-  color: var(--text-secondary);
+  color: var(--text-title-dark);
 }
 
 .all-courses .tab-desc {
@@ -30,6 +30,11 @@
   color: #666;
   text-align: center;
   margin-bottom: 2rem;
+}
+.all-courses.dark .tab-desc {
+
+  color: var(--text-secondary);
+
 }
 
 /* === Course List Grid === */
@@ -52,8 +57,8 @@
 }
 
 .all-courses.dark .course-card{
-  border: var(--border-dark);
-  box-shadow: var(--box-shadow);
+background: var(--card-background);
+border: none;
 } 
 
 .all-courses .course-card:hover {
@@ -78,7 +83,7 @@
 
 .all-courses .course-card p {
   font-size: 0.95rem;
-  color: #555;
+  color: #656565;
   margin-bottom: 0.5rem;
 }
 
@@ -91,10 +96,10 @@
 .all-courses .view-btn {
   margin-top: 1rem;
   background: #fff;
-  color: #e83e8c;
+  color: var(--text-title);
   border: none;
   padding: 10px 24px;
-  border: 2px solid #e83e8c;
+  border: var(--border);
   border-radius: 60px;
   font-weight: 500;
   font-size: 0.95rem;
@@ -107,5 +112,15 @@
   background: linear-gradient(to right, #ff5b8a, #ff1f8e);
   color: #fff;
   border: none;
+
+}
+
+
+.all-courses.dark .view-btn {
+
+  background: none;
+  color: var(--text-title-dark);
+  border: var(--border-dark);
+  border-radius: 60px;
 
 }

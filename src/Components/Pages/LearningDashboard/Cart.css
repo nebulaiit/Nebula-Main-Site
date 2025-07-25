@@ -30,6 +30,11 @@
   text-align: center;
   margin-bottom: 28px;
 }
+.cart-section .tab-desc {
+
+  color: var(--text-secondary-dark);
+
+}
 
 /* Grid layout for cards */
 .cart-section .cart-grid {

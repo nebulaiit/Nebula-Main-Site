@@ -19,14 +19,15 @@
 }
 
 .coures-wrapper .webdev-btn-wrapper .webdev-btn {
-  background-color: #d81b60;
+  background-color: var(--text-title);
   color: white;
   padding: 16px 35px;
   font-size: 18px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(216, 27, 96, 0.3);
+  box-shadow:var(--box-shadow);
+
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   letter-spacing: 0.5px;
   animation: pulse 2s infinite;
@@ -35,7 +36,15 @@
 .coures-wrapper .webdev-btn-wrapper .webdev-btn:hover {
   background-color: #e91e63;
   transform: translateY(-5px) scale(1.05) rotateZ(2deg);
-  box-shadow: 0 15px 40px rgba(216, 27, 96, 0.5);
+  box-shadow:var(--box-shadow);
+}
+
+.coures-wrapper.dark .webdev-btn-wrapper .webdev-btn{
+  background-color: var(--text-title-dark);
+  box-shadow:var(--box-shadow-dark);
+    animation: darkPulse 2s infinite;
+  
+
 }
 
 @keyframes pulse {
@@ -52,6 +61,23 @@
   100% {
     transform: scale(1);
     box-shadow: 0 8px 25px rgba(216, 27, 96, 0.3);
+  }
+}
+
+@keyframes darkPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 8px 25px rgba(210, 22, 248, 0.3);
+  }
+
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(210, 22, 248, 0.4);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 8px 25px rgba(210, 22, 248, 0.3);
   }
 }
 
@@ -110,7 +136,7 @@
 .card:hover,
 .sub-card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--box-shadow-dark);
+  box-shadow: var(--box-shadow-dark-3d);
 }
 
 .component-card.active {
@@ -123,9 +149,18 @@
 .card h3,
 .component-card h4 {
   margin: 0;
-  color: #e91e63;
+  color: var(--text-title);
   font-weight: 700;
   font-size: 20px;
+}
+
+.coures-wrapper.dark .card h3{
+  color: var(--text-title-dark);
+
+}
+
+.coures-wrapper.dark .component-card h4 {
+  color: var(--text-title-dark);
 }
 
 .card p,
@@ -149,9 +184,15 @@
 .sub-sub-title {
   margin-top: 10px;
   font-size: 35px;
-  color: #e91e63;
+  color: var(--text-title);
   font-weight: 700;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+.coures-wrapper.dark .sub-title,
+.coures-wrapper.dark .sub-sub-title {
+
+  color: var(--text-title-dark);
+
 }
 
 .icon-title {
@@ -174,12 +215,16 @@
 
 .fancy-line {
   fill: none;
-  stroke: #d81b60;
+  stroke: var(--text-title);
   stroke-width: 5px;
   stroke-linecap: round;
   stroke-linejoin: round;
   opacity: 0.9;
   transition: stroke-dashoffset 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.coures-wrapper.dark .fancy-line{
+  stroke: var(--text-title-dark);
 }
 
 .fade-in {

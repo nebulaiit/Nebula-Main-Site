@@ -1,5 +1,4 @@
 :root {
-
   --bg-primary: white;
   --bg-primary-dark: #0f0c29;
 
@@ -31,11 +30,12 @@
 
   --box-shadow: 10px 10px 28px rgba(248, 22, 180, 0.15);
   --box-shadow-dark: 10px 10px 28px rgba(210, 22, 248, 0.15);
+  --box-shadow-dark-3d: 10px 10px 28px rgba(210, 22, 248, 0.15) inset;
 
+  --button-hover: linear-gradient(to right, #ff5b8a, #ff1f8e);
   --button-dark:linear-gradient(90deg, #8928ca, #b74df5);
 
 }
-
 
 
 body {
@@ -48,6 +48,13 @@ body {
   transition: background 0.5s ease, color 0.5s ease;
   color: #111827;
   box-sizing: border-box;
+
+}
+
+#root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* DARK MODE */

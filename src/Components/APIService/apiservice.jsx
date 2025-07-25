@@ -31,6 +31,7 @@ export const signUpUser = async (body) => {
         throw error;
     }
 };
+
 export const signUpUserWithGoogle = async (body) => {
     const url = `${API_BASE_URL}${API_URLs.GET_SIGNUP_WITHGOOGLE}`;
 

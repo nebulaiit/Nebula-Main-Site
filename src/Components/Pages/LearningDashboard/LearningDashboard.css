@@ -1,16 +1,9 @@
 
-:root {
-  --primary-color: #ff1f8e;
-  --secondary-color: #ffbd84;
-  --hover-gradient: linear-gradient(to right, var(--secondary-color), var(--primary-color));
-  --base-radius: 12px;
-  --base-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-  --hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --font-primary: 'Segoe UI', sans-serif;
-}
+
 
 /* ========== ROOT CONTAINER ========== */
 .learning-dashboard {
+  width:100%;
   font-family: var(--font-primary);
   min-height: 100vh;
   margin-top: 10%;
@@ -25,10 +18,8 @@
   height: 200px;
 }
 .learning-dashboard.dark .dashboard-header {
-  background: linear-gradient(to right, #fff0f6, #e0f2ff);
- 
+  background:var(--sub-card-background);
   box-shadow: 0 2px 6px rgba(11, 11, 11, 0.1);
-
 }
 
 
@@ -62,7 +53,7 @@
 }
 
 .learning-dashboard.dark .dashboard-header .nav-tabs .tab-btn{
-  color: var(--bg-primary-dark);
+  color: var(--bg-primary);
 }
 .learning-dashboard.dark .dashboard-header .nav-tabs .tab-btn:hover {
   color: var(--text-title-dark);

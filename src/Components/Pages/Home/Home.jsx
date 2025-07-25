@@ -5,11 +5,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import ServicesSection from '../ServicesSection/ServicesSection';
 import InteractiveLearningSection from '../InteractiveLearningSection/InteractiveLearningSection';
 
-import OnlineCompilers from '../OnlineCompilers/OnlineCompilers';
-import CourseList from '../LearnNebula/CourseList';
-import CurvedSection from '../CurvedSection/CurvedSection';
 import WhyNebula from '../WhyNebula/WhyNebula';
-import AboutAgencyPage from '../AboutPage/AboutPage';
 import HeroSection from '../HeroSection/HeroSection';
 import Benefits from '../Benefits/Benefits';
 
@@ -22,7 +18,7 @@ export default function Home() {
       <Benefits/>
       <InteractiveLearningSection />
       <WhyNebula />
-      <ServicesSection />
+      <ServicesSection /> 
 
     </div>
   );

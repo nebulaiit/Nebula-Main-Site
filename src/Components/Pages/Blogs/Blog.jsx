@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import './Blog.css';
-import blogImg from '../../Images/blog/blog-img.png';
 import ReactImg from '../../Images/blog/ReactImg.png';
-import AiImg from '../../Images/blog/ai.jpg';
 import UiImg from '../../Images/blog/ui.avif';
 import WorkspaceImg from '../../Images/blog/Workspace.jpg';
 import { useNavigate } from 'react-router-dom';
-import profileImg from '../../Images/profile-icon.jpg';
 import Slider from 'react-slick';
+import { useSelector } from 'react-redux';
 
 export default function Blog() {
     const navigate = useNavigate();
+    const darkMode = useSelector((state) => state.darkMode.enabled);
+
 
     const featured = [
         { title: "React Coding Setup", image: ReactImg },
@@ -126,30 +126,10 @@ export default function Blog() {
         });
     };
 
-    useEffect(() => {
-        const elements = document.querySelectorAll(
-            ".blog-card-items, .featured-card-horizontal, .blog-card"
-        );
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("in-view");
-                    }
-                });
-            },
-            { threshold: 0.2 }
-        );
-
-        elements.forEach((el) => observer.observe(el));
-
-        return () => elements.forEach((el) => observer.unobserve(el));
-    }, []);
 
 
     return (
-        <div className='blog-container'>
+        <div className={`blog-container ${darkMode ? 'dark' : ''}`}>
 
             <div className="carousel-container">
                 <Slider {...settings} >

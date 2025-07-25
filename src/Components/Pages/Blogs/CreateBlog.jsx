@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import './CreateBlog.css';
 import { addBlogs } from '../../APIService/apiservice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { showToast } from '../../../redux/toastSlice';
 
 export default function CreateBlog() {
 
     const dispatch = useDispatch();
+    const darkMode = useSelector((state) => state.darkMode.enabled);
+
     const [newBlog, setNewBlog] = useState({
         blogTitle: '',
         category: '',
@@ -56,7 +58,7 @@ export default function CreateBlog() {
     };
 
     return (
-        <div className="blog-form-wrapper">
+        <div className={`blog-form-wrapper ${darkMode ? 'dark' : ''}`}>
             <h2 className="neon-title"> Create a New Blog</h2>
             <form onSubmit={handleBlogSubmit} className="blog-form">
                 <div className='d-flex justify-content-between align-items-center'>
