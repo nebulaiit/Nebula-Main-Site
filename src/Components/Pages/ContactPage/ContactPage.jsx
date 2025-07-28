@@ -35,7 +35,7 @@ const ContactPage = () => {
   const handleWhatsAppClick = () => {
     console.log('User clicked WhatsApp contact button');
 
-    const phone = '918793905753';
+    const phone = '918788763679';
 
     const fullName = `${user?.firstName ?? ''} ${user?.lastName ?? ''}`.trim();
     const email = user?.email ?? '';
@@ -48,7 +48,7 @@ const ContactPage = () => {
     const newWindow = window.open(whatsappURL, '_blank');
 
     if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-      alert('It seems WhatsApp is not installed or pop-ups are blocked. Please contact us directly at 8793905753.');
+      alert('It seems WhatsApp is not installed or pop-ups are blocked. Please contact us directly at 8788763679.');
     }
   };
 
