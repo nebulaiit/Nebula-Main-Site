@@ -72,7 +72,7 @@ export default function     Header({ variant = "default" }) {
                         </ul>
                     </nav>
 
-                    {/* Right-end Buttons */}
+                
                     <ul className='right-end-btn list list-inline my-0 d-none d-md-flex align-items-center'>
                         <li className='list-inline-item'>
                             <Link to="/contact">
@@ -130,7 +130,7 @@ export default function     Header({ variant = "default" }) {
 
                     </ul>
 
-                    {/* Hamburger for Mobile */}
+                
                     <div className='d-md-none'>
                         <IconButton onClick={() => setDrawerOpen(true)}>
                             <MenuIcon fontSize="large" />
@@ -141,7 +141,7 @@ export default function     Header({ variant = "default" }) {
                     <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
                         <div style={{ width: 250, padding: 20 }}>
                             <p>Mobile menu here</p>
-                            {/* Add mobile navigation logic here if required */}
+                          
                         </div>
                     </Drawer>
                 </div>
