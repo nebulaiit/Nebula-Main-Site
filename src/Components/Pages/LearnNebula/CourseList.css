@@ -99,7 +99,7 @@
 
 }
 
-.section-row .card{
+.coures-wrapper.dark .section-row .card{
   background: linear-gradient(140deg, #2b2658, #0f0c29);
   border: none;
 }
@@ -118,6 +118,7 @@
   z-index: 2;
   flex-grow: 1;
   flex-basis: 0;
+  box-shadow: var(--box-shadow);
 
 }
 
