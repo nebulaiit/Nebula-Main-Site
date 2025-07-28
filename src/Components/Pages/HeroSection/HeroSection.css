@@ -1,8 +1,9 @@
 /* Global Reset & Box Sizing */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Hero Section */
@@ -10,8 +11,8 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: start;
-  padding: 20px 2%;
+  align-items: flex-start;
+  padding: 20px 4%;
   flex-wrap: wrap;
   margin-top: 6%;
   transform: translateY(60px);
@@ -27,6 +28,7 @@
 /* Hero Text Section */
 .hero .hero-text {
   max-width: 50%;
+  flex: 1 1 500px;
   opacity: 0;
   margin-top: 5.25%;
   transform: translateX(-50px);
@@ -39,32 +41,26 @@
 }
 
 .hero .hero-text h1 {
-  font-size: 4.5rem;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
   font-weight: 800;
   background: var(--text-heading);
-
   background-clip: text;
   -webkit-background-clip: text;
-
   color: transparent;
   -webkit-text-fill-color: transparent;
-
   line-height: 1.2;
 }
 
 .hero.dark .hero-text h1 {
   background: var(--text-heading-dark);
-
-  background-clip: text;
   -webkit-background-clip: text;
-
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
 
 /* Paragraph */
 .hero .hero-text p {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   margin-top: 1rem;
   color: #555;
   opacity: 0;
@@ -89,22 +85,15 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-
   background: var(--text-heading);
-
   background-clip: text;
   -webkit-background-clip: text;
-
   color: transparent;
   -webkit-text-fill-color: transparent;
-
   border: 2px solid transparent;
   border-image: var(--text-heading);
   border-radius: 50px;
-
-  box-shadow: 0 8px 20px rgba(232, 62, 141, 0.41),
-    0 -8px 20px #b74df531 inset;
-
+  box-shadow: 0 8px 20px rgba(232, 62, 141, 0.41),0 -8px 20px #b74df531 inset;
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.3s ease-in-out;
@@ -117,19 +106,17 @@
 
 .hero .enroll-btn:hover {
   background: var(--text-heading);
-
   background-clip: unset;
   -webkit-background-clip: unset;
-
   color: #fff;
   -webkit-text-fill-color: #fff;
-
   box-shadow: 0 10px 25px rgba(183, 77, 245, 0.3);
   transition: all 0.3s ease;
 }
 
 /* Hero Image */
 .hero .hero-image {
+  flex: 1 1 400px;
   opacity: 0;
   transform: translateX(60px);
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -140,15 +127,23 @@
   animation-delay: 0.6s;
 }
 
-/* Tilt Effect */
+/* Tilt Wrapper - Responsive Image Fix */
 .hero .tilt-wrapper {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   perspective: 1000px;
-  display: inline-block;
 }
 
 .hero .tilt-wrapper img {
-  width: 560px;
-  height: 600px;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 20px;
   transition: transform 0.6s ease, box-shadow 0.4s ease;
   transform-style: preserve-3d;
   will-change: transform;
@@ -196,8 +191,9 @@
 }
 
 
+/* Responsive Styles */
+@media (max-width: 768px) {
 
-@media (min-width: 577px) and (max-width: 991px) {
   .hero {
     flex-direction: column;
     align-items: center;
@@ -213,6 +209,19 @@
 
   .hero .hero-text h1 {
     font-size: 3rem;
+    padding-top: 20%;
+    gap: 40px;
+  }
+
+  .hero .hero-text,
+  .hero .hero-image {
+    max-width: 100%;
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .hero .hero-text h1 {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
     line-height: 1.3;
   }
 
@@ -240,6 +249,7 @@
     animation-delay: 0.6s;
   }
 }
+
 @media (max-width: 576px) {
   .hero {
     flex-direction: column;
@@ -275,12 +285,31 @@
   .hero .tilt-wrapper img {
     width: 100%;
     height: auto;
-    max-width: 100%;
+    max-height: 320px;
   }
 
   .hero .hero-image {
     margin-top: 30px;
     animation: fadeInUp 1.2s ease forwards;
     animation-delay: 0.6s;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .hero .hero-text h1 {
+    font-size: clamp(1.6rem, 8vw, 2rem);
+  }
+
+  .hero .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .hero .enroll-btn {
+    padding: 10px 20px;
+  }
+
+  .hero .tilt-wrapper img {
+    max-height: 280px;
   }
 }
