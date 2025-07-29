@@ -61,7 +61,7 @@ export default function CreateBlog() {
         <div className={`blog-form-wrapper ${darkMode ? 'dark' : ''}`}>
             <h2 className="neon-title"> Create a New Blog</h2>
             <form onSubmit={handleBlogSubmit} className="blog-form">
-                <div className='d-flex justify-content-between align-items-center'>
+                <div className='blog-input-items'>
                     <input
                         type="text"
                         name="blogTitle"
@@ -80,7 +80,7 @@ export default function CreateBlog() {
                     />
                 </div>
 
-                <div className='d-flex justify-content-between align-items-center'>
+                <div className='blog-input-items'>
                     <input
                         type="file"
                         accept="image/*"

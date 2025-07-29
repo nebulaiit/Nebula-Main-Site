@@ -10,11 +10,11 @@
 .hero {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
-  padding: 20px 4%;
+  /* padding: 20px 4%; */
   flex-wrap: wrap;
-  margin-top: 6%;
+  margin-top:16.5vh;
   transform: translateY(60px);
   opacity: 0;
   transition: all 1s ease-out;
@@ -27,10 +27,9 @@
 
 /* Hero Text Section */
 .hero .hero-text {
-  max-width: 50%;
-  flex: 1 1 500px;
+  max-width: 48%;
   opacity: 0;
-  margin-top: 5.25%;
+  margin-top: 5.25vh;
   transform: translateX(-50px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
@@ -116,7 +115,8 @@
 
 /* Hero Image */
 .hero .hero-image {
-  flex: 1 1 400px;
+    width: 40%;
+
   opacity: 0;
   transform: translateX(60px);
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -129,8 +129,8 @@
 
 /* Tilt Wrapper - Responsive Image Fix */
 .hero .tilt-wrapper {
-  width: 100%;
-  max-width: 560px;
+    width: 120%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -191,114 +191,102 @@
 }
 
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-
+/* Tablet (≤992px) */
+@media (max-width: 992px) {
   .hero {
     flex-direction: column;
     align-items: center;
-    padding: 40px 5%;
-    margin-top: 12%;
+    padding: 50px 5%;
+    margin-top: 12vh;
   }
 
   .hero .hero-text {
     max-width: 100%;
     text-align: center;
-    margin-top: 4%;
+    margin-top: 40px;
   }
 
-  .hero .hero-text h1 {
-    font-size: 3rem;
-    padding-top: 20%;
-    gap: 40px;
-  }
-
-  .hero .hero-text,
   .hero .hero-image {
-    max-width: 100%;
-    flex: 1 1 100%;
+    width: 100%;
+    margin-top: 30px;
     text-align: center;
   }
 
+  .hero .tilt-wrapper {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .hero .tilt-wrapper img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
   .hero .hero-text h1 {
-    font-size: clamp(1.8rem, 6vw, 2.4rem);
+    font-size: 2.4rem;
     line-height: 1.3;
+    margin-bottom: 10px;
   }
 
   .hero .hero-text p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     padding: 0 10px;
   }
 
   .hero .enroll-btn {
     font-size: 1rem;
-    padding: 12px 35px;
+    padding: 12px 32px;
     margin-top: 20px;
-  }
-
-  .hero .tilt-wrapper img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
   }
 
   .hero .hero-image {
     margin-top: 30px;
-    text-align: center;
-    animation: fadeInUp 1.2s ease forwards;
-    animation-delay: 0.6s;
+  }
+
+  .hero .tilt-wrapper img {
+    max-height: 400px;
   }
 }
 
+/* Small Devices (≤576px) */
 @media (max-width: 576px) {
   .hero {
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 5%;
-    margin-top: 20%;
-    text-align: center;
+    flex-direction: column-reverse;
+    margin-top: 6vh;
+    padding: 30px 20px;
   }
 
   .hero .hero-text {
-    width: 100%;
-    margin-top: 5%;
+    margin-top: 30px;
   }
 
   .hero .hero-text h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     line-height: 1.3;
-    width: 100%;
   }
 
   .hero .hero-text p {
     font-size: 1rem;
-    line-height: 1.6;
-    padding: 0 10px;
   }
 
   .hero .enroll-btn {
     font-size: 0.95rem;
     padding: 10px 25px;
-    margin-top: 20px;
   }
 
   .hero .tilt-wrapper img {
-    width: 100%;
-    height: auto;
-    max-height: 320px;
-  }
-
-  .hero .hero-image {
-    margin-top: 30px;
-    animation: fadeInUp 1.2s ease forwards;
-    animation-delay: 0.6s;
+    max-height: 300px;
   }
 }
 
-
+/* Extra Small Devices (≤480px) */
 @media (max-width: 480px) {
   .hero .hero-text h1 {
-    font-size: clamp(1.6rem, 8vw, 2rem);
+    font-size: 1.8rem;
   }
 
   .hero .hero-text p {
@@ -306,10 +294,12 @@
   }
 
   .hero .enroll-btn {
+    font-size: 0.9rem;
     padding: 10px 20px;
   }
 
   .hero .tilt-wrapper img {
-    max-height: 280px;
+    max-height: 260px;
   }
 }
+

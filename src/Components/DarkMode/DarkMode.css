@@ -55,3 +55,36 @@
   border-image: linear-gradient(120deg, #3b82f6, #9333ea) 1;
   box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
 }
+
+/* Tablet (≤992px) */
+@media (max-width: 992px) {
+  .theme-toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    bottom: 20px;
+    right: 25px;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 46px;
+    height: 46px;
+    font-size: 16px;
+    bottom: 18px;
+    right: 20px;
+  }
+}
+
+/* Small Devices (≤480px) */
+@media (max-width: 480px) {
+  .theme-toggle {
+    width: 42px;
+    height: 42px;
+    font-size: 15px;
+    bottom: 16px;
+    right: 16px;
+  }
+}

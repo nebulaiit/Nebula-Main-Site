@@ -1,6 +1,8 @@
 /* ===== Base Styles ===== */
 .course-container-wraper {
   margin-top: 10%;
+  width: 84%;
+
 }
 
 li {

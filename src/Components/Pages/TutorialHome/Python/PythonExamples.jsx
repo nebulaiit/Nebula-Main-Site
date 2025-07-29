@@ -2,7 +2,7 @@ import React from 'react';
 
 const PythonExamples = () => {
   return (
-    <div className="example-container">
+    <div className="example-container mt-5">
       <h1>Python Examples</h1>
       <p>Here are some basic Python examples:</p>
       <pre>

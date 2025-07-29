@@ -3,13 +3,16 @@ import './WebsiteFooter.css';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { useSelector } from 'react-redux';
 
 const WebsiteFooter = () => {
   const location = useLocation();
   const hideElement = ["/login"].includes(location.pathname);
+    const darkMode = useSelector((state) => state.darkMode.enabled);
+
 
   const sections = {
-    'Qubitron X': [
+    'QubitronX': [
       'Loren lopude',
       'Dolor Site mete',
     ],
@@ -29,7 +32,7 @@ const WebsiteFooter = () => {
   return (
     <>
       {!hideElement && (
-        <footer className="footer">
+        <footer className={`footer ${darkMode ? 'dark' : ''}`}>
           <div className="footer-container">
             {Object.entries(sections).map(([title, links]) => (
               <div className="footer-section" key={title}>

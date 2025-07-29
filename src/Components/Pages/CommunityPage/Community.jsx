@@ -206,10 +206,12 @@ export default function Community() {
                                     </span>
                                 ))}
                                 <button className="add-tag" onClick={() => setShowTagModal(true)}>+ Add Tags</button>
+
+                                <button className="submit-btn" onClick={handlePost}>Post</button>
                             </div>
 
                             {/* Tabs & Post Button */}
-                            <div className="tab-bar">
+                            {/* <div className="tab-bar">
                                 {['Post', 'Discussion', 'Resources', 'Announcements'].map((tab) => (
                                     <button
                                         key={tab}
@@ -219,8 +221,7 @@ export default function Community() {
                                         {tab}
                                     </button>
                                 ))}
-                                <button className="submit-btn" onClick={handlePost}>Post</button>
-                            </div>
+                            </div> */}
                         </div>
 
                         {/* Post Feed */}

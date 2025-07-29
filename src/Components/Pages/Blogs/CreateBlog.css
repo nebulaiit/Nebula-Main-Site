@@ -27,6 +27,12 @@
   gap: 22px;
 }
 
+.blog-form-wrapper .blog-form .blog-input-items{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .blog-form input,
 .blog-form textarea {
   width: 48%;
@@ -148,6 +154,13 @@ background: var(--button-hover);
     flex-direction: column;
   }
 
+  .blog-form-wrapper .blog-form .blog-input-items{
+flex-direction: column;
+gap: 20px;
+  align-items: center;
+}
+  
+
   .blog-form input,
   .blog-form input[type="file"],
   .blog-form textarea,
@@ -166,7 +179,7 @@ background: var(--button-hover);
 }
 
 @media (max-width: 480px) {
-  .neon-title {
+  .neon-title { 
     font-size: 24px;
     padding-top: 20%;
   }

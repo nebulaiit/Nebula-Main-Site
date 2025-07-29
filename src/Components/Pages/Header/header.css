@@ -1,3 +1,4 @@
+/* RESET & GLOBAL STYLES */
 * {
   margin: 0;
   padding: 0;
@@ -9,13 +10,11 @@ a {
   color: #000;
 }
 
-/*HEADER CONTAINER */
-
+/* HEADER CONTAINER */
 .header {
   padding: 10px 10px;
   width: 85%;
   position: fixed;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   top: 3%;
   left: 7%;
   z-index: 100;
@@ -23,18 +22,19 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* LOGO */
 .header .images-wrapper img {
   width: 80px;
   height: 80px;
   padding: 10px;
+  margin-left: 30px;
   cursor: pointer;
-      margin-left: 30px;
 }
 
-
-/* NAVIGATION MENU (Desktop) */
+/* NAVIGATION (Desktop) */
 .header nav {
   display: flex;
   justify-content: space-between;
@@ -46,10 +46,8 @@ a {
   margin: 0 10px;
 }
 
-
 .header nav li button {
-  color: #000000;
-  /* base theme color */
+  color: #000;
   font-weight: 500;
   font-size: 18px;
   padding: 8px 14px;
@@ -62,7 +60,6 @@ a {
   text-transform: capitalize;
 }
 
-
 .header nav li button::after {
   content: "";
   position: absolute;
@@ -73,35 +70,28 @@ a {
   background-color: #ff1f8e;
   transition: width 0.3s ease;
 }
-.header.dark nav li button::after {
-
-  background-color: #8928ca;
-
-}
 
 .header nav li button:hover::after {
   width: 100%;
 }
 
-/*RIGHT-END BUTTONS (Phone & PRO) */
-.right-end-btn {
+.header.dark nav li button::after {
+  background-color: #8928ca;
+}
 
+/* RIGHT-END BUTTONS */
+.right-end-btn {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-
 .right-end-btn li {
   list-style: none;
 }
 
-/* Phone and Pro Button */
-
-
 .right-end-btn .phone-btn,
 .right-end-btn .pro-btn {
-
   border: 1px solid #e83e8c;
   background: #fff;
   padding: 8px 15px;
@@ -111,39 +101,24 @@ a {
   font-weight: 600;
   cursor: pointer;
   text-transform: capitalize;
-}
-
-.css-1umw9bq-MuiSvgIcon-root{
-    font-size: 0.8rem;
-}
-
-.header.dark .right-end-btn .phone-btn,
-.header.dark .right-end-btn .pro-btn {
-  border: 1px solid #e83e8c;
-  color: #e83e8c;
-
+  transition: all 0.3s ease;
 }
 
 .right-end-btn .phone-btn:hover,
 .right-end-btn .pro-btn:hover {
   background: #e83e8c;
   color: #fff;
-  transition: all 0.3s ease;
-
-}
-
-.header.dark .right-end-btn .phone-btn:hover,
-.header.dark .right-end-btn .pro-btn:hover {
-
-  color: #ffffff;
-
 }
 
 .right-end-btn .phone-btn:hover {
   opacity: 0.85;
 }
 
+.css-1umw9bq-MuiSvgIcon-root {
+  font-size: 0.8rem;
+}
 
+/* PROFILE DROPDOWN */
 .profile-dropdown {
   position: relative;
 }
@@ -151,19 +126,16 @@ a {
 .profile-btn {
   margin: 0;
   background-color: transparent;
-  background-color: transparent;
   border: none;
   display: flex;
   align-items: center;
   padding: 8px 12px;
-  width: 100%;
-  text-align: left;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
-.profile-btn:hover{
+.profile-btn:hover {
   transform: scale(1.15);
 }
 
@@ -174,68 +146,44 @@ a {
   margin-right: 15px;
 }
 
-
 .profile-dropdown .dropdown-menu {
   position: absolute;
   top: 145%;
   right: 35%;
-  color: #000000;
-  border-radius: 12px;
-  width: auto;
   list-style: none;
   padding: 8px 0;
+  border-radius: 12px;
   margin: 0;
+  width: auto;
+  color: #000;
 }
 
-
-/* User Info in Dropdown */
-
+/* DROPDOWN USER INFO */
 .user-info {
   display: flex;
   align-items: center;
   padding: 10px;
-
-
-}
-
-.user-info .email {
-  color: #c42c8a;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.user-info .email:hover {
-  color: rgb(2, 2, 2);
-}
-
-
-.user-img {
-  width: 30px;
-
-  cursor: pointer;
 }
 
 .user-info .user-img {
   width: 30px;
-
   height: 30px;
   border-radius: 50%;
   margin-right: 10px;
+  cursor: pointer;
 }
-
-
 
 .user-info .email {
   color: #c42c8a;
   font-size: 13px;
+  cursor: pointer;
 }
 
 .user-info .email:hover {
-  color: rgb(2, 2, 2);
+  color: #000;
 }
 
-/* Dropdown Items */
-
+/* DROPDOWN MENU ITEMS */
 .dropdown-item {
   padding: 10px;
   width: 100%;
@@ -246,21 +194,7 @@ a {
   cursor: pointer;
   color: #080808;
   font-size: 14px;
-
 }
-
-.dropdown-item:focus,
-.dropdown-item:hover {
-
-  background-color: transparent;
-}
-
-.right-end-btn {
-  display: flex;
-  align-items: center;
-}
-
-
 
 .dropdown-item:hover,
 .dropdown-item:focus {
@@ -268,8 +202,101 @@ a {
   background-color: transparent;
 }
 
-/* MOBILE STYLES */
+/* DARK MODE HEADER STYLES */
+.header.dark {
+  background: var(--sub-card-background);
+  color: #f9fafb;
+  transition: background 0.3s ease, color 0.3s ease;
+}
 
+.header.dark a,
+.header.dark nav li button {
+  color: #f9fafb;
+}
+
+.header.dark .right-end-btn .phone-btn,
+.header.dark .right-end-btn .pro-btn {
+  border: 1px solid #e83e8c;
+  color: #e83e8c;
+}
+
+.header.dark .right-end-btn .phone-btn:hover,
+.header.dark .right-end-btn .pro-btn:hover {
+  color: #fff;
+}
+
+.header.dark .profile-dropdown .dropdown-menu {
+  color: #e2e8f0;
+}
+
+.header.dark .dropdown-item {
+  color: #000;
+}
+
+.header.dark .dropdown-item:hover {
+  color: #e83e8c;
+}
+
+.header.dark .user-info .email {
+  color: #f472b6;
+}
+
+.header.dark .user-info .email:hover {
+  color: #facc15;
+}
+
+.header.dark .profile-img {
+  border: 2px solid #f472b6;
+}
+
+.header  .css-53g0n7-MuiButtonBase-root-MuiIconButton-root {
+  color: var(--bg-primary-dark) !important ;
+  font-size: 1rem;
+}
+.header.dark  .css-53g0n7-MuiButtonBase-root-MuiIconButton-root {
+  color: var(--bg-primary) !important ;
+  font-size: 1rem;
+}
+
+
+.css-uks7c6-MuiSvgIcon-root {
+  font-size: 2.8rem !important;
+}
+
+.mobile-menu-icon {
+  margin-top: 2px;
+}
+
+.css-y7ab46-MuiPaper-root-MuiDrawer-paper {
+   background: rgba(255, 255, 255, 0.15) !important; /* translucent white */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* soft shadow */
+  backdrop-filter: blur(10px); /* glass blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25); /* soft border */
+}
+
+.mobile-drawer img{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 25px;
+}
+
+.mobile-drawer ul li button{
+  color: var(--bg-primary);
+  font-weight: 500;
+  font-size: 18px;
+  padding: 8px 14px;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  text-transform: capitalize;
+
+}
+
+/* MOBILE RESPONSIVE STYLES */
 @media (max-width: 1024px) {
   .header {
     padding: 8px 20px;
@@ -278,37 +305,6 @@ a {
   .header .images-wrapper img {
     width: 60px;
     height: 60px;
-  }
-
-  .search-box {
-    max-width: 300px;
-  }
-
-
-  .dropdown_menu {
-    width: 90%;
-    height: auto;
-    top: 80px;
-  }
-
-  .dropdown_menu .left-box,
-  .dropdown_menu .right-box {
-    width: 100%;
-  }
-
-  .dropdown_menu {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .course-detail-box {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .course-detail-box .topic-list,
-  .course-detail-box .material-list {
-    width: 100%;
   }
 
   .right-end-btn {
@@ -322,7 +318,6 @@ a {
   }
 }
 
-/* Mobile Devices (width less than 768px) */
 @media (max-width: 767px) {
   .header {
     padding: 5px 15px;
@@ -336,47 +331,8 @@ a {
     margin-top: 10px;
   }
 
-  .header nav li {
+  .header nav ul li {
     margin: 8px 0;
-  }
-
-  .search-box {
-    width: 100%;
-    max-width: 100%;
-    margin-top: 10px;
-  }
-
-  .dropdown_menu {
-    width: 95%;
-    top: 70px;
-    height: auto;
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .dropdown_menu .left-box,
-  .dropdown_menu .right-box {
-    width: 100%;
-    border: none;
-    padding: 10px 0;
-  }
-
-  .dropdown_menu .pro-box {
-    margin-left: 0;
-    width: 100%;
-    height: 80px;
-  }
-
-  .course-detail-box {
-    flex-direction: column;
-    margin-left: 0;
-    width: 100%;
-    gap: 15px;
-  }
-
-  .course-detail-box .topic-list,
-  .course-detail-box .material-list {
-    width: 100%;
   }
 
   .profile-dropdown .dropdown-menu {
@@ -410,13 +366,6 @@ a {
     justify-content: flex-start;
   }
 
-}
-
-@media (max-width: 768px) {
-  .search-box {
-    display: none;
-  }
-
   nav {
     display: none !important;
   }
@@ -424,60 +373,8 @@ a {
   .right-end-btn {
     display: none !important;
   }
-}
 
-
-/*MOBILE DRAWER (Optional Mobile Menu)*/
-.drawer-content {
-  padding: 20px;
-  width: 250px;
-}
-
-.drawer-content p {
-  font-weight: bold;
-  margin-bottom: 10px;
-
-}
-
-
-/* -------------------------------
-   DARK MODE HEADER STYLES
-------------------------------- */
-.header.dark {
-  background:var(--sub-card-background);
-  color: #f9fafb;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.header.dark a,
-.header.dark nav li button {
-  color: #f9fafb;
-}
-
-
-
-.header.dark .profile-dropdown .dropdown-menu {
-  /* background-color: #1e293b; */
-  color: #e2e8f0;
-}
-
-.header.dark .dropdown-item {
-  color: #000000;
-}
-
-.header.dark .dropdown-item:hover {
-  color: #e83e8c;
-  background-color: transparent;
-}
-
-.header.dark .user-info .email {
-  color: #f472b6;
-}
-
-.header.dark .user-info .email:hover {
-  color: #facc15;
-}
-
-.header.dark .profile-img {
-  border: 2px solid #f472b6;
+  .header .drawer-toggle-btn {
+    display: block;
+  }
 }

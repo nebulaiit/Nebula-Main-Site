@@ -89,3 +89,85 @@
     background: var(--text-title-dark);
 
 }
+/* Tablet (up to 992px) */
+@media (max-width: 992px) {
+  .course-list-wrapper {
+    width: 90%;
+    margin-top: 20vh;
+  }
+
+  .course-list-wrapper .category-section .course-grid {
+    /* justify-content: center; */
+    gap: 30px;
+    margin: 30px 20px;
+  }
+
+  .course-list-wrapper .category-section .course-grid .course-card {
+    width: 45%;
+  }
+
+  .course-list-wrapper .category-section .category-title {
+    font-size: 24px;
+  }
+}
+
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .course-list-wrapper {
+    width: 95%;
+       margin-top: 20vh;
+
+  }
+
+  .course-list-wrapper .category-section .course-grid {
+    justify-content: start;
+    margin: 20px 15px;
+    gap:30px 55px;
+  }
+
+  .course-list-wrapper .category-section .course-grid .course-card {
+    width: 40%;
+  }
+
+  .course-list-wrapper .category-section .course-grid .course-card .course-img {
+    height: 120px;
+  }
+
+  .course-list-wrapper .category-section .course-grid .course-card .course-info h3 {
+    font-size: 16px;
+  }
+
+  .course-list-wrapper .category-section .category-title {
+    font-size: 20px;
+  }
+}
+
+/* Small Devices (up to 480px) */
+@media (max-width: 480px) {
+  .course-list-wrapper {
+    width: 100%;
+    padding: 0 25px;
+     margin-top: 18vh;
+
+  }
+
+  .course-list-wrapper .category-section .course-grid {
+    gap: 20px;
+  }
+
+  .course-list-wrapper .category-section .course-grid .course-card {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .course-list-wrapper .category-section .course-grid .course-card .course-img {
+    height: 100px;
+  }
+
+  .course-list-wrapper .category-section .course-grid .course-card .course-info .price-tag {
+    font-size: 0.85rem;
+    width: auto;
+    height: auto;
+    padding: 6px 10px;
+  }
+}

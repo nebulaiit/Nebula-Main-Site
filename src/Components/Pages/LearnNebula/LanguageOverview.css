@@ -1,17 +1,16 @@
 .language-overview {
-  padding: 40px 8%;
+  margin-top: 5%;
+  /* padding: 40px 8%; */
   background: var(--background);
   color: var(--text);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-
-
-.overview-section {
+.language-overview .overview-section {
   margin-bottom: 60px;
 }
 
-.overview-section h2 {
+.language-overview .overview-section h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
   border-left: 4px solid #ff5c8d;
@@ -21,20 +20,20 @@
   opacity: 0;
 }
 
-.card-row {
+.language-overview .overview-section .card-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-around;
+  gap: 40px;
 }
 
-.info-card {
-  background: #fff;
+.language-overview .overview-section .card-row .info-card {
+  background-color: var(--bg-primary);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   padding: 20px;
   border-radius: 15px;
-  border: 2px solid #e83e8c;
-  flex: 1;
-  min-width: 280px;
+  border: var(--border);
+  width: 30%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
@@ -42,16 +41,22 @@
   animation-delay: 0.2s;
 }
 
-.language-overview.dark .info-card{
-  background-color: #0f172a;
-  border: 2px solid #40145e;
+.language-overview.dark .overview-section .card-row .info-card {
+  background-color: var(--bg-primary-dark);
+  border: var(--border-dark);
 }
 
-.language-overview.dark .info-card h3{
-  color: #8928ca;
+.language-overview  .overview-section .card-row .info-card h3 {
+  color: var(--text-title);
 }
-.language-overview.dark .info-card ul li{
-  color: #ffffff;
+.language-overview.dark  .overview-section .card-row .info-card h3 {
+  color: var(--text-title-dark);
+}
+.language-overview.dark  .overview-section .card-row .info-card ul li {
+  color: var(--text-secondary);
+}
+.language-overview.dark  .overview-section .card-row .info-card ul li a{
+  color: var(--text-secondary);
 }
 
 .info-card:hover {
@@ -59,23 +64,48 @@
   box-shadow: 0 8px 20px #8928ca41;
 }
 
-.roadmap {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.overview-section .roadmap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+  
 }
 
-.roadmap-step {
-  background: var(--card-bg);
+.overview-section .roadmap .roadmap-step {
+  background-color: var(--bg-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   padding: 20px;
-  border-radius: 12px;
-
-  transition: transform 0.3s ease;
+  border-radius: 15px;
+  border: var(--border);
+  width: 30%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.6s ease forwards;
-  animation-delay: 0.3s;
+  animation-delay: 0.2s;
 }
+
+.language-overview.dark .overview-section .roadmap .roadmap-step {
+  background-color: var(--bg-primary-dark);
+  border: var(--border-dark);
+}
+
+.language-overview .overview-section .roadmap .roadmap-step h4{
+  color: var(--text-title);
+}
+
+.language-overview.dark .overview-section .roadmap .roadmap-step h4{
+  color: var(--text-title-dark);
+}
+
+.language-overview .overview-section .roadmap .roadmap-step p{
+  color: var(--text-primary-dark);
+}
+.language-overview.dark .overview-section .roadmap .roadmap-step p{
+  color: var(--text-secondary);
+}
+
 
 .roadmap-step:hover {
   transform: scale(1.02);
@@ -99,7 +129,6 @@
   /* overridden inline */
 }
 
-
 /* Animations */
 @keyframes fadeInUp {
   to {
@@ -116,22 +145,51 @@
 }
 
 /* Responsive */
+/* Tablet (768px to 992px) */
 @media (max-width: 992px) {
-  .card-row {
+  .language-overview .overview-section .card-row,
+  .language-overview .overview-section .roadmap {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .language-overview .overview-section .card-row .info-card,
+  .language-overview .overview-section .roadmap .roadmap-step {
+    width: 80%;
   }
 }
 
+/* Mobile (up to 768px) */
 @media (max-width: 768px) {
-  .overview-section h2 {
-    font-size: 1.5rem;
+  .language-overview .overview-section h2 {
+    font-size: 1.4rem;
+    padding-left: 10px;
   }
 
-  .info-card {
+  .language-overview .overview-section .card-row .info-card,
+  .language-overview .overview-section .roadmap .roadmap-step {
+    width: 90%;
     padding: 16px;
   }
 
-  .roadmap-step {
-    padding: 16px;
+  .language-overview .overview-section {
+    margin-bottom: 40px;
+  }
+
+  .language-overview {
+    margin-top: 10%;
   }
 }
+
+/* Extra small devices (up to 576px) */
+@media (max-width: 576px) {
+  .language-overview .overview-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .language-overview .overview-section .card-row .info-card,
+  .language-overview .overview-section .roadmap .roadmap-step {
+    width: 95%;
+  }
+}
+

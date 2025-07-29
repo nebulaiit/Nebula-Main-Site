@@ -1,10 +1,13 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './LanguageHeader.css';
+import { useSelector } from 'react-redux';
 
 export default function LanguageHeader() {
   const navigate = useNavigate();
   const location = useLocation();
+      const darkMode = useSelector((state) => state.darkMode.enabled);    
+  
 
   const tabs = [
     { label: 'TUTORIALS', path: '/progamming' },
@@ -20,8 +23,8 @@ const handleCourseClick = (courseName , path) => {
    navigate(`${path}/${courseName}`);
 };
   return (
-    <div className="language-header ">
-      <h2> {courseName} Programming</h2>
+    <div className={`language-header ${darkMode ? 'dark' : ''}`}>
+      <h2 className='language-header-title '> {courseName} Programming</h2>
       <div className="language-header-tabs">
         {tabs.map((tab) => (
           <button

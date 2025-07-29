@@ -11,7 +11,7 @@ import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import { getAllTutorial } from '../../APIService/apiservice';
 import { useSelector } from 'react-redux';
 
-export default function     Header({ variant = "default" }) {
+export default function Header({ variant = "default" }) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [drawerOpen, setDrawerOpen] = useState(false); // FIXED
@@ -72,7 +72,7 @@ export default function     Header({ variant = "default" }) {
                         </ul>
                     </nav>
 
-                
+
                     <ul className='right-end-btn list list-inline my-0 d-none d-md-flex align-items-center'>
                         <li className='list-inline-item'>
                             <Link to="/contact">
@@ -109,7 +109,7 @@ export default function     Header({ variant = "default" }) {
                                             <button className="dropdown-item" onClick={() => handleDashboardClick("All Courses")}>All Courses</button>
 
                                             {!isLoggedIn ? (
-                                                <button className="dropdown-item" onClick={() => {navigate("/login"); setIsLoggedIn(true);}}>
+                                                <button className="dropdown-item" onClick={() => { navigate("/login"); setIsLoggedIn(true); }}>
                                                     <ExitToAppOutlinedIcon className="me-2" /> Login
                                                 </button>
                                             ) : (
@@ -130,18 +130,28 @@ export default function     Header({ variant = "default" }) {
 
                     </ul>
 
-                
-                    <div className='d-md-none'>
+
+                    <div className='d-md-none mobile-menu-icon'>
                         <IconButton onClick={() => setDrawerOpen(true)}>
-                            <MenuIcon fontSize="large" />
+                            <MenuIcon fontSize="large" classList="menu-icon"/>
                         </IconButton>
                     </div>
 
                     {/* Optional Drawer for Mobile (implement this if needed) */}
                     <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-                        <div style={{ width: 250, padding: 20 }}>
-                            <p>Mobile menu here</p>
-                          
+                        <div style={{ width: 250, padding: 20 }} className="mobile-drawer ">
+                            <img src={logo} alt="Logo" />
+                            <ul className='list list-inline my-0'>
+
+                                <li><Button onClick={() => navigate("/tutorial")}>Tutorial</Button></li>
+                                <li><Button onClick={() => navigate("/course-list")}>Course</Button></li>
+                                <li><Button onClick={() => navigate("/career")}>Career</Button></li>
+                                <li><Button onClick={() => navigate("/blog")}>Blog</Button></li>
+                                <li><Button onClick={() => navigate("/community")}>Community</Button></li>
+                            </ul>
+
+
+
                         </div>
                     </Drawer>
                 </div>

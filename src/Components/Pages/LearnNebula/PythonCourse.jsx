@@ -16,7 +16,7 @@ const PythonCourse = () => {
     <>
       <div className='course-container-wraper'>
         <LanguageHeader />
-        <LanguageOverview/>
+        <LanguageOverview courseName={courseName}/>
       
       </div>
     </>

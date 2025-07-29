@@ -22,7 +22,7 @@
 
 .contact-page .top-banner h1 {
   font-size: 2.375rem;
-  background: var( --text-heading);
+  background: var( --text-heading-dark);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
@@ -31,7 +31,7 @@
 
 .contact-page.dark .top-banner h1 {
 
-  background: var( --text-heading-dark);
+  background: var( --text-heading);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
