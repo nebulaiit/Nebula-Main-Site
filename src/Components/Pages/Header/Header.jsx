@@ -8,8 +8,8 @@ import { Button, Drawer, IconButton } from '@mui/material';
 import profile from "../../Images/profile-icon.jpg";
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
-import { getAllTutorial } from '../../APIService/apiservice';
 import { useSelector } from 'react-redux';
+import NewIcon from '@mui/icons-material/NewspaperOutlined';
 
 export default function Header({ variant = "default" }) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,7 +22,6 @@ export default function Header({ variant = "default" }) {
 
     const hideElement = ["/login"].includes(location.pathname);
 
-    console.log(user)
 
     const handleClickAway = () => {
         setMenuOpen(false);
@@ -133,23 +132,49 @@ export default function Header({ variant = "default" }) {
 
                     <div className='d-md-none mobile-menu-icon'>
                         <IconButton onClick={() => setDrawerOpen(true)}>
-                            <MenuIcon fontSize="large" classList="menu-icon"/>
+                            <MenuIcon fontSize="large" classList="menu-icon" />
                         </IconButton>
                     </div>
 
                     {/* Optional Drawer for Mobile (implement this if needed) */}
                     <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
                         <div style={{ width: 250, padding: 20 }} className="mobile-drawer ">
-                            <img src={logo} alt="Logo" />
-                            <ul className='list list-inline my-0'>
+                            <div className="drawer-header">
+                                <div>
+                                    <img src={logo} alt="Logo" />
+                                </div>
+                                <div>
+                                    <button className="profile-btn" onClick={() => setMenuOpen(!menuOpen)}>
+                                        <img src={profile} alt="User" className="profile-img" />
+                                    </button>
+                                </div>
+                            </div>
 
-                                <li><Button onClick={() => navigate("/tutorial")}>Tutorial</Button></li>
-                                <li><Button onClick={() => navigate("/course-list")}>Course</Button></li>
-                                <li><Button onClick={() => navigate("/career")}>Career</Button></li>
-                                <li><Button onClick={() => navigate("/blog")}>Blog</Button></li>
-                                <li><Button onClick={() => navigate("/community")}>Community</Button></li>
-                            </ul>
-
+                            <div className="drawer-body">
+                                <ul className='list list-inline my-0'>
+                                    <li>
+                                        <NewIcon />
+                                        <Button onClick={() => navigate("/tutorial")}>Tutorial</Button>
+                                    </li>
+                                    <li><Button onClick={() => navigate("/course-list")}>Course</Button></li>
+                                    <li><Button onClick={() => navigate("/career")}>Career</Button></li>
+                                    <li><Button onClick={() => navigate("/blog")}>Blog</Button></li>
+                                    <li><Button onClick={() => navigate("/community")}>Community</Button></li>
+                                </ul>
+                                <div className="drawer-footer">
+                                    <div>
+                                        <Button>Contact Us</Button>
+                                        <Button>LogIn</Button>
+                                    </div>
+                                
+                                    <div>
+                                        <div>Reach Us Out</div>
+                                        <Button><i className="fa-brands fa-whatsapp"></i></Button>
+                                        <Button><i className="fa-brands fa-instagram"></i></Button>
+                                        <Button><i className="fa-brands fa-linkedin"></i></Button>
+                                    </div>
+                                </div>
+                            </div>
 
 
                         </div>

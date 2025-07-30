@@ -175,6 +175,7 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    flex-wrap: nowrap;
   }
 
   .image-grid {

@@ -267,22 +267,58 @@ a {
   margin-top: 2px;
 }
 
+.mobile-drawer{
+  height: 50vh;
+}
+
 .css-y7ab46-MuiPaper-root-MuiDrawer-paper {
-   background: rgba(255, 255, 255, 0.15) !important; /* translucent white */
+   /* background: rgba(255, 255, 255, 0.15) !important;  */
+  background: rgba(255, 255, 255, 0.359) !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* soft shadow */
-  backdrop-filter: blur(10px); /* glass blur effect */
+  backdrop-filter: blur(15px); /* glass blur effect */
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.25); /* soft border */
 }
 
-.mobile-drawer img{
-  width: 50px;
-  height: 50px;
-  margin-bottom: 25px;
+.mobile-drawer .drawer-header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3vh;
+  background-color: #facc15;
 }
 
+.mobile-drawer .drawer-header img{
+  width: 50px;
+  height: 50px;
+}
+
+.mobile-drawer .drawer-body{
+  background-color: #ff1f8e;
+  height: 100%;
+}
+.mobile-drawer .drawer-body ul{
+  background-color: #1fff80;
+}
+
+.mobile-drawer .drawer-header .profile-btn{
+  float: right;
+}
+
+.mobile-drawer .drawer-header .profile-btn .profile-img{
+  margin: 0;
+}
+
+.mobile-drawer .drawer-footer{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background-color: #8928ca;
+}
 .mobile-drawer ul li button{
-  color: var(--bg-primary);
+  color: #111;
   font-weight: 500;
   font-size: 18px;
   padding: 8px 14px;

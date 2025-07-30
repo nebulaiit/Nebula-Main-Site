@@ -5,10 +5,10 @@
 
 
 .footer {
-  background-image: url('footer.jpg');
+  /* background-image: url('footer.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   color: rgba(213, 64, 64, 0);
   text-align: center;
   padding: 60px 20px;
