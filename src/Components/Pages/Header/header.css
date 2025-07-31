@@ -249,15 +249,14 @@ a {
   border: 2px solid #f472b6;
 }
 
-.header  .css-53g0n7-MuiButtonBase-root-MuiIconButton-root {
+.header .css-53g0n7-MuiButtonBase-root-MuiIconButton-root {
   color: var(--bg-primary-dark) !important ;
   font-size: 1rem;
 }
-.header.dark  .css-53g0n7-MuiButtonBase-root-MuiIconButton-root {
+.header.dark .css-53g0n7-MuiButtonBase-root-MuiIconButton-root {
   color: var(--bg-primary) !important ;
   font-size: 1rem;
 }
-
 
 .css-uks7c6-MuiSvgIcon-root {
   font-size: 2.8rem !important;
@@ -267,12 +266,12 @@ a {
   margin-top: 2px;
 }
 
-.mobile-drawer{
+.mobile-drawer {
   height: 50vh;
 }
 
 .css-y7ab46-MuiPaper-root-MuiDrawer-paper {
-   /* background: rgba(255, 255, 255, 0.15) !important;  */
+  /* background: rgba(255, 255, 255, 0.15) !important;  */
   background: rgba(255, 255, 255, 0.359) !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* soft shadow */
   backdrop-filter: blur(15px); /* glass blur effect */
@@ -280,44 +279,32 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.25); /* soft border */
 }
 
-.mobile-drawer .drawer-header{
+.mobile-drawer .drawer-header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 3vh;
-  background-color: #facc15;
 }
 
-.mobile-drawer .drawer-header img{
+.mobile-drawer .drawer-header img {
   width: 50px;
   height: 50px;
 }
 
-.mobile-drawer .drawer-body{
-  background-color: #ff1f8e;
+.mobile-drawer .drawer-body {
   height: 100%;
 }
-.mobile-drawer .drawer-body ul{
-  background-color: #1fff80;
-}
 
-.mobile-drawer .drawer-header .profile-btn{
+.mobile-drawer .drawer-header .profile-btn {
   float: right;
 }
 
-.mobile-drawer .drawer-header .profile-btn .profile-img{
+.mobile-drawer .drawer-header .profile-btn .profile-img {
   margin: 0;
 }
 
-.mobile-drawer .drawer-footer{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  background-color: #8928ca;
-}
-.mobile-drawer ul li button{
+.mobile-drawer ul li button {
   color: #111;
   font-weight: 500;
   font-size: 18px;
@@ -329,7 +316,39 @@ a {
   transition: all 0.3s ease;
   position: relative;
   text-transform: capitalize;
+}
 
+.mobile-drawer .drawer-footer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* align-items: center; */
+  row-gap: 20px;
+  text-align: start;
+  /* background-color: #8928ca; */
+}
+
+.mobile-drawer .drawer-footer .reach-us {
+  font-size: 1.3rem;
+  color: var(--bg-primary-dark);
+}
+
+.mobile-drawer .drawer-footer .footer-btn button {
+  background: none;
+  margin-right: 15px;
+  font-size: 18px;
+  color: #111;
+  text-transform: capitalize;
+  display: block;
+  cursor: pointer;
+}
+
+.mobile-drawer .drawer-footer .social-logo button {
+  width: 15px;
+  height: 15px;
+  font-size: 1.5rem;
+  color: #470d31;
 }
 
 /* MOBILE RESPONSIVE STYLES */

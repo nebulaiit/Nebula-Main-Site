@@ -109,3 +109,84 @@
         font-size: 0.95rem;
     }
 }
+
+/* ----------------------------
+   Responsive Content Styling
+----------------------------- */
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .content-container {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .content-container .content-heading {
+    font-size: 1.3rem;
+    padding-bottom: 10px;
+  }
+
+  .content-container .content-para {
+    font-size: 0.9rem;
+    padding: 12px;
+    line-height: 1.6;
+  }
+
+  .content-container .content-image {
+    max-width: 100%;
+    margin: 12px 0;
+  }
+
+  .content-container .content-video {
+    height: 200px;
+    max-width: 100%;
+    margin: 16px 0;
+  }
+
+  .content-container pre {
+    font-size: 0.85rem;
+    padding: 12px;
+  }
+}
+
+/* Large Mobile / Small Tablet (481px – 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .content-container {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .content-container .content-heading {
+    font-size: 1.4rem;
+  }
+
+  .content-container .content-para {
+    font-size: 0.95rem;
+  }
+
+  .content-container .content-video {
+    height: 240px;
+  }
+
+  .content-container pre {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets (768px – 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .content-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .content-container .content-heading {
+    font-size: 1.6rem;
+  }
+
+  .content-container .content-video {
+    height: 320px;
+  }
+}

@@ -23,6 +23,7 @@
   --sub-card-background:linear-gradient(140deg, #0f0c29,#2b2658);
   
   --border:2px solid #e60073;
+  --border-mobile:1px solid #e60073;
   --border-dark: 2px solid #561d97;
 
   --heading-size: 2.5rem;

@@ -10,6 +10,10 @@ import ClickAwayListener from '@mui/material/ClickAwayListener';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import { useSelector } from 'react-redux';
 import NewIcon from '@mui/icons-material/NewspaperOutlined';
+import ForumIcon from '@mui/icons-material/ForumOutlined';
+import SchoolIcon from '@mui/icons-material/SchoolOutlined';
+import DescriptionIcon from '@mui/icons-material/DescriptionOutlined';
+import MenuBookIcon from '@mui/icons-material/MenuBookOutlined';
 
 export default function Header({ variant = "default" }) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -140,11 +144,11 @@ export default function Header({ variant = "default" }) {
                     <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
                         <div style={{ width: 250, padding: 20 }} className="mobile-drawer ">
                             <div className="drawer-header">
-                                <div>
+                                <div >
                                     <img src={logo} alt="Logo" />
                                 </div>
                                 <div>
-                                    <button className="profile-btn" onClick={() => setMenuOpen(!menuOpen)}>
+                                    <button className="profile-btn" onClick={() => { handleDashboardClick("dashboard"), setDrawerOpen(false) }}>
                                         <img src={profile} alt="User" className="profile-img" />
                                     </button>
                                 </div>
@@ -154,21 +158,34 @@ export default function Header({ variant = "default" }) {
                                 <ul className='list list-inline my-0'>
                                     <li>
                                         <NewIcon />
-                                        <Button onClick={() => navigate("/tutorial")}>Tutorial</Button>
+                                        <Button onClick={() =>{ navigate("/tutorial"),setDrawerOpen(false)}}>Tutorial</Button>
                                     </li>
-                                    <li><Button onClick={() => navigate("/course-list")}>Course</Button></li>
-                                    <li><Button onClick={() => navigate("/career")}>Career</Button></li>
-                                    <li><Button onClick={() => navigate("/blog")}>Blog</Button></li>
-                                    <li><Button onClick={() => navigate("/community")}>Community</Button></li>
+                                    <li><MenuBookIcon /><Button onClick={() => {navigate("/course-list"),setDrawerOpen(false)}}>Course</Button></li>
+                                    <li><SchoolIcon /><Button onClick={() => {navigate("/career"),setDrawerOpen(false)}}>Career</Button></li>
+                                    <li><DescriptionIcon /><Button onClick={() => {navigate("/blog"),setDrawerOpen(false)}}>Blog</Button></li>
+                                    <li><ForumIcon /><Button onClick={() => {navigate("/community"),setDrawerOpen(false)}}>Community</Button></li>
                                 </ul>
                                 <div className="drawer-footer">
-                                    <div>
-                                        <Button>Contact Us</Button>
-                                        <Button>LogIn</Button>
+                                    <div className="footer-btn">
+                                        <Button onClick={() => {navigate("/contact"),setDrawerOpen(false)}}> <LocalPhoneIcon /> Contact Us</Button>
+                                        {!isLoggedIn ? (
+                                            <button className="dropdown-item" onClick={() => { navigate("/login"); setIsLoggedIn(true); }}>
+                                                <ExitToAppOutlinedIcon className="me-2" /> Login
+                                            </button>
+                                        ) : (
+                                            <button className="dropdown-item" onClick={() => {
+                                                localStorage.clear();
+                                                setIsLoggedIn(false);
+                                                setUserInfo(null);
+                                                navigate("/login");
+                                            }}>
+                                                <ExitToAppOutlinedIcon className="me-2" /> Logout
+                                            </button>
+                                        )}
                                     </div>
-                                
-                                    <div>
-                                        <div>Reach Us Out</div>
+
+                                    <div className="social-logo">
+                                        <p className="mb-4 reach-us">Reach Us Out</p>
                                         <Button><i className="fa-brands fa-whatsapp"></i></Button>
                                         <Button><i className="fa-brands fa-instagram"></i></Button>
                                         <Button><i className="fa-brands fa-linkedin"></i></Button>

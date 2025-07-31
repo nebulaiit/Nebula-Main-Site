@@ -3,6 +3,7 @@ import "./Enrollment.css";
 import certificateImg from "./images/certificate.png";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import profile from "../Components/Images/profile-icon.jpg";
 
 const Enrollment = () => {
   const { index } = useParams();
@@ -50,123 +51,140 @@ const Enrollment = () => {
     navigate("/course");
   };
 
+
+  const whatYouLearn = [
+    {
+      id: 1,
+      title: "JavaScript, React, & Node.js",
+      description: "Build fully-fledged websites and web apps.",
+    },
+    {
+      id: 2,
+      title: "JavaScript Interviews",
+      description: "Prepare for JavaScript Interviews.",
+    },
+    {
+      id: 3,
+      title: "Data Structures & Algorithms",
+      description: "Prepare for the data structures and algorithm interviews.",
+    },
+  ];
+
+  const skillHighlights = [
+    { title: "Web Development", learners: "14M" },
+    { title: "JavaScript", learners: "18M" },
+    { title: "HTML", learners: "12M" },
+    { title: "CSS", learners: "9.9M" },
+    { title: "Node.Js", learners: "3.4M" },
+  ];
+  const testimonials = [
+    {
+      id: 1,
+      text: `Taking this course was a great decision for me, as it boosted my confidence into finally doing something and feeling capable of being a solid web developer`,
+      user: "Diego José V.",
+      subtext: "Review from The Ultimate 2025 Fullstack Web Development Bootcamp",
+      image: profile,
+      link: "#",
+    },
+    {
+      id: 2,
+      text: `Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.`,
+      user: "Alvin Lim",
+      subtext: "Technical Co-Founder, CTO at Dimensional",
+      image: profile,
+    },
+    {
+      id: 3,
+      text: `Udemy was rated the most popular online course or certification program for learning how to code according to StackOverflow's 2023 Developer survey.`,
+      user: "StackOverflow",
+      subtext: "37,076 responses collected",
+      image: profile,
+      link: "#",
+    },
+  ];
+
   return (
     <div className={`enrollment-page  ${darkMode ? 'dark' : ''}`}>
+      <div className="course-card-wrapper">
+        <div className="course-content">
+          <h1 className="course-title">Full Stack Web Developer<br />Career Accelerator</h1>
+          <p className="course-description">
+            Your career in full stack web development starts here. Fast-track learning and interview prep. Grow skills at your own pace. Expand your earnings potential.
+          </p>
 
-      <main className="main-content">
-
-        <section className="course-container">
-          <div className="course-left">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/1042/1042337.png"
-              alt="Rocket Icon"
-              className="course-image"
-            />
-            <h4 className="course-tag">LEARNING PATH</h4>
-            <h1 className="course-title">Learn Java</h1>
-            <p className="course-description">
-              Learn to code in Python—a beginner-friendly programming language
-              used in data analysis, web development, task automation, and more.
-            </p>
-            <div className="course-info">
-              <span>📘 Level: Beginner</span>
-              <span>⏱ Duration: 2 months</span>
-              <span>💻 Type: Interactive</span>
-              <span>🗣 Language: English</span>
-              <span>🧩 Practice Problems: 220+</span>
-              <span>📝 Quizzes: 80+</span>
+          <div className="course-stats">
+            <div className="stat-item">
+              <span className="value"><span className="star">★</span>4.7</span>
+              <span className="label">average course rating</span>
+            </div>
+            <div className="stat-item">
+              <span className="value">126</span>
+              <span className="label">practice exercises</span>
+            </div>
+            <div className="stat-item">
+              <span className="value">87.6</span>
+              <span className="label">hours of content</span>
             </div>
           </div>
-        </section>
 
-        {/* === Learning Path Overview === */}
-        <section className="learning-overview">
-          <h2>Learning Path Overview</h2>
-          {courseTitles.map((title, index) => (
-            <article className="course-box" key={index}>
-              <h4>Course {index + 1}</h4>
-              <h3>{title}</h3>
-              <p>Course {index + 1} description goes here. Learn and practice key skills.</p>
-            </article>
+          <button className="subscribe-btn">Start subscription</button>
+          <p className="enrolled">👥 <strong>1.5M</strong> learners already enrolled</p>
+        </div>
+
+        <div className="course-image">
+          <img src='' alt="Instructor" />
+        </div>
+      </div>
+
+      <div className="learning-section">
+        <h2 className="section-title">What you'll learn</h2>
+        <div className="learning-cards">
+          {whatYouLearn.map((item) => (
+            <div key={item.id} className="learning-card">
+              <h3 className="learning-title">{item.title}</h3>
+              <p className="learning-desc">{item.description}</p>
+              <span className="card-number">{item.id}</span>
+            </div>
           ))}
+        </div>
 
-          <div className="start-learning-container">
-            {/* <button className="start-learning-btn" onClick={handleMenuClick}>
-              Get Started Learning
-            </button> */}
-          </div>
-        </section>
+        <h2 className="section-title">Learn the skills that matter most</h2>
+        <div className="skills-grid">
+          {skillHighlights.map((skill, index) => (
+            <div key={index} className="skill-card">
+              <div className="skill-icon">💻</div>
+              <div>
+                <strong>{skill.title}</strong><br />
+                {skill.learners} learners
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-        {/* === Projects Section === */}
-        <section className="projects-section">
-          <h2>
-            Learn practically <br />
-            <span>by solving real-world problems.</span>
-          </h2>
-          <p className="project-subtitle">Projects you will create:</p>
-          <div className="project-grid">
-            {projects.map((project) => (
-              <div className="project-card" key={project.title}>
-                <img src={project.img} alt={`${project.title} Icon`} />
+      <section className="testimonial-section">
+        <h2 className="testimonial-heading">What other learners are saying</h2>
+        <div className="testimonial-cards">
+          {testimonials.map((item) => (
+            <div key={item.id} className="testimonial-card">
+              <div className="quote-mark">“</div>
+              <p className="testimonial-text">
+                {item.text}
+
+              </p>
+              <div className="testimonial-user">
+                <img src={item.image} alt={item.user} className="user-img" />
                 <div>
-                  <h3>{project.title}</h3>
-                  <p>Learn More →</p>
+                  <strong>{item.user}</strong>
+                  <p className="subtext">{item.subtext}</p>
                 </div>
               </div>
-            ))}
-          </div>
-        </section>
-
-        {/* === Certificate Section === */}
-        <section className="certificate-section-wrapper">
-          <div className="certificate-section">
-            <img src={certificateImg} alt="Certificate Preview" className="cert-preview" />
-            <div className="cert-text">
-              <h2>Claim Your Certificate</h2>
-              <p>You’ll receive an industry-recognized certificate after completing the path.</p>
-              <button className="claim-button" onClick={togglePopup}>
-                Claim Certificate
-              </button>
             </div>
-          </div>
-        </section>
-
-        {/* === Certificate Preview Popup === */}
-        {showPopup && (
-          <div className="popup-overlay" onClick={togglePopup}>
-            <div className="popup" onClick={(e) => e.stopPropagation()}>
-              <img src={certificateImg} alt="Full Certificate Preview" />
-              <button className="popup-close" onClick={togglePopup}>
-                ×
-              </button>
-            </div>
-          </div>
-        )}
-      </main>
-
-      <aside className="sticky-enroll">
-        <div className="course-right">
-          <div className="course-benefits">
-
-            <button className=" mb-3 buy-course" onClick={handleBuyCourse}> Buy Course </button>
-
-            <p>✅ Learn Python step-by-step from start to finish.</p>
-            <p>✅ Solve 100+ practice problems in real-time.</p>
-            <p>✅ Get certified and prepare for your first Python interview.</p>
-          </div>
-          <p className="salary">💰 Average Salary (IN): ₹5,80,000</p>
-          <p>📦 Prerequisites: None</p>
-          <hr className="border-t-2 border- darkgray-300 mb-4" />
-
-          <div className="job-notification-box">
-            <h2>Stay Updated with Job Notifications</h2>
-            <p>Get the latest job opportunities in the tech industry tailored to your skills.</p>
-            <button className="job-notification-btn" onClick={handleJobNotificationClick}>
-              View Job Notifications
-            </button>
-          </div>
+          ))}
         </div>
-      </aside>
+      </section>
+
+
     </div>
   );
 };
