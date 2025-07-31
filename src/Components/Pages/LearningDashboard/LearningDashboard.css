@@ -128,19 +128,19 @@
 
 @media (max-width: 768px) {
   .learning-dashboard {
-    padding-top: 60px; /* Adjust for smaller screens */ 
+    margin-top: 15%;
   }
 
   .learning-dashboard .dashboard-header h1 {
     font-size: 26px;
   }
 
-  .dashboard-header .nav-tabs {
+  .learning-dashboard .dashboard-header .nav-tabs {
     justify-content: center;
     gap: 16px;
   }
 
-  .nav-tabs .tab-btn {
+  .learning-dashboard .dashboard-header  .nav-tabs .tab-btn {
     font-size: 16px;
     padding: 6px 0;
   }
