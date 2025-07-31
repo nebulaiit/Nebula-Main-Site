@@ -98,3 +98,84 @@
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
+/* ========== Responsive Design ========== */
+
+@media (max-width: 1024px) {
+  .learning-dashboard .dashboard-header {
+    padding-top: 60px;
+    padding: 20px 30px;
+    height: auto;
+  }
+
+  .learning-dashboard .dashboard-header h1 {
+    font-size: 30px;
+  }
+
+  .dashboard-header .nav-tabs {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .nav-tabs .tab-btn {
+    font-size: 18px;
+    margin: 20px 5px;
+  }
+
+  .learning-dashboard .dashboard-main {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .learning-dashboard {
+    padding-top: 60px; /* Adjust for smaller screens */ 
+  }
+
+  .learning-dashboard .dashboard-header h1 {
+    font-size: 26px;
+  }
+
+  .dashboard-header .nav-tabs {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .nav-tabs .tab-btn {
+    font-size: 16px;
+    padding: 6px 0;
+  }
+
+  .learning-dashboard .dashboard-main {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .learning-dashboard {
+    padding-top: 60px; /* Adjust for smaller screens */
+  }
+
+  .learning-dashboard .dashboard-header {
+    padding: 16px 20px;
+    text-align: center;
+  }
+
+  .learning-dashboard .dashboard-header h1 {
+    font-size: 22px;
+  }
+
+  .dashboard-header .nav-tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-tabs .tab-btn {
+    font-size: 15px;
+    margin: 10px 0;
+  }
+
+  .learning-dashboard .dashboard-main {
+    padding: 16px;
+  }
+}
