@@ -169,7 +169,7 @@ export default function Header({ variant = "default" }) {
                                     <div className="footer-btn">
                                         <Button onClick={() => {navigate("/contact"),setDrawerOpen(false)}}> <LocalPhoneIcon /> Contact Us</Button>
                                         {!isLoggedIn ? (
-                                            <button className="dropdown-item" onClick={() => { navigate("/login"); setIsLoggedIn(true); }}>
+                                            <button className="dropdown-item" onClick={() => { navigate("/login"); }}>
                                                 <ExitToAppOutlinedIcon className="me-2" /> Login
                                             </button>
                                         ) : (
