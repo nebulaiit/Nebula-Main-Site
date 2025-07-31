@@ -135,9 +135,11 @@
     font-size: 26px;
   }
 
+
   .learning-dashboard .dashboard-header .nav-tabs {
     justify-content: center;
     gap: 16px;
+    flex-direction: row;
   }
 
   .learning-dashboard .dashboard-header  .nav-tabs .tab-btn {
@@ -165,7 +167,6 @@
   }
 
   .dashboard-header .nav-tabs {
-    flex-direction: column;
     align-items: center;
     gap: 12px;
   }
