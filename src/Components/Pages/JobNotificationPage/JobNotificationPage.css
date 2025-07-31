@@ -18,7 +18,7 @@
   margin-bottom: 30px;
 }
 
-.job-notification-wrapper.dark .job-header{
+.job-notification-wrapper.dark .job-header {
   border: var(--border-dark);
 }
 
@@ -30,19 +30,19 @@
   letter-spacing: 1px;
 }
 
-.job-notification-wrapper.dark .job-header h1{
+.job-notification-wrapper.dark .job-header h1 {
   color: var(--text-title-dark);
-
 }
 
 .job-notification-wrapper .job-header .job-tabs {
   display: flex;
-  justify-content: space-around;
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
 }
 
 .job-notification-wrapper .job-header .job-tabs .tab-buttons {
-  flex: 1;
+  flex: 1 1 auto;
   border: var(--border);
   background: var(--bg-primary);
   padding: 10px 24px;
@@ -52,13 +52,14 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  min-width: 120px;
+  text-align: center;
 }
 
-.job-notification-wrapper.dark .job-header .job-tabs .tab-buttons{
+.job-notification-wrapper.dark .job-header .job-tabs .tab-buttons {
   border: var(--border-dark);
-    color: var(--text-title-dark); 
+  color: var(--text-title-dark);
   background: var(--bg-primary-dark);
-
 }
 
 /* Active / Hover Tab Styling */
@@ -68,6 +69,7 @@
   color: var(--bg-primary);
   border: none;
 }
+
 .job-notification-wrapper.dark .job-header .job-tabs .tab-buttons.active,
 .job-notification-wrapper.dark .job-header .job-tabs .tab-buttons:hover {
   background: linear-gradient(135deg, #a115f3 50%, #7710b3);
@@ -85,14 +87,12 @@
 .tab-content h3 {
   margin-top: 20px;
   color: var(--text-title);
-
   font-weight: 500;
   text-align: center;
 }
-.job-notification-wrapper.dark .tab-content h3 {
 
+.job-notification-wrapper.dark .tab-content h3 {
   color: var(--text-title-dark);
- 
 }
 
 /* ========================
@@ -106,36 +106,41 @@
   margin-top: 25px;
 }
 
-
-/* ---------- Large Tablets / Laptops (<=1024px) ---------- */
-@media (max-width: 1024px) {
+/* ---------- Large Tablets / Laptops (≤992px) ---------- */
+@media (max-width: 992px) {
   .job-notification-wrapper {
+    width: 94%;
+    margin-top: 12vh;
     padding: 30px 20px;
-    padding-top: 30%; /* Shifts content lower to avoid overlap with fixed headers if any */
+  }
+
+  .job-header h1 {
+    font-size: 1.75rem;
   }
 
   .tab-buttons {
-    padding: 10px 20px;
     font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+
+  .job-card-list {
+    justify-content: center;
   }
 
   .tab-content {
     width: 100%;
   }
-
-  .job-card-list {
-    justify-content: center; /* Center cards on smaller screens */
-  }
 }
 
-/* ---------- Tablets (<=768px) ---------- */
+/* ---------- Tablets / Mobiles (≤768px) ---------- */
 @media (max-width: 768px) {
-  .job-header {
+  .job-notification-wrapper {
+    margin-top: 12vh;
     padding: 24px 18px;
   }
 
   .job-header h1 {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     margin-bottom: 16px;
   }
 
@@ -155,20 +160,20 @@
   }
 }
 
-/* ---------- Mobile Phones (<=480px) ---------- */
-@media (max-width: 480px) {
-  .job-notification-wrapper {
-    padding: 10% 14px;
-    margin-top: 14%; /* Reduces top space for better mobile view */
+/* ---------- Small Devices (≤576px) ---------- */
+@media (max-width: 576px) {
+  .job-header {
+    padding: 20px 14px;
+    margin-top: 10%;
   }
 
   .job-header h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .tab-buttons {
-    padding: 8px 14px;
     font-size: 0.9rem;
+    padding: 8px 14px;
   }
 
   .tab-content h3 {
@@ -177,6 +182,31 @@
 
   .job-card-list {
     flex-direction: column;
-    align-items: center; /* Stacks job cards vertically on small screens */
+    align-items: center;
+  }
+}
+
+/* ---------- Extra Small Devices (≤480px) ---------- */
+@media (max-width: 480px) {
+  .job-notification-wrapper {
+    padding: 12% 14px;
+    margin-top: 20%;
+  }
+
+  .job-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .tab-buttons {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .tab-content h3 {
+    font-size: 0.95rem;
+  }
+
+  .job-card-list {
+    gap: 14px;
   }
 }
