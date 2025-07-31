@@ -136,8 +136,10 @@
   }
 
   .dashboard-header .nav-tabs {
-    justify-content: center;
+    /* display: flex !important; */
+    justify-content: space-between !important;
     gap: 16px;
+    flex-direction: row;
   }
 
   .nav-tabs .tab-btn {
@@ -165,7 +167,6 @@
   }
 
   .dashboard-header .nav-tabs {
-    flex-direction: column;
     align-items: center;
     gap: 12px;
   }

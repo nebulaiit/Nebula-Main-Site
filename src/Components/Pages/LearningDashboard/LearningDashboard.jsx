@@ -55,7 +55,7 @@ const LearningDashboard = () => {
     <div className={`learning-dashboard ${darkMode ? 'dark' : ''}`}>
       <header className="dashboard-header">
         <h1> My Learning</h1>
-        <nav className="nav-tabs">
+        <div className="nav-tabs">
           {tabs.map((tab) => (
             <button
               key={tab.key}
@@ -65,7 +65,7 @@ const LearningDashboard = () => {
               {tab.label}
             </button>
           ))}
-        </nav>
+        </div>
       </header>
 
       <main className="dashboard-main ">
