@@ -7,6 +7,9 @@
 }
 
 .enrollment-page .course-card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -99,25 +102,25 @@
   object-fit: cover;
 }
 
-.enrollment-page  .learning-section {
+.enrollment-page .learning-section  {
   padding: 40px 20px;
   font-family: 'Segoe UI', sans-serif;
   color: #1c1c1c;
 }
 
-.section-title {
+.enrollment-page .learning-section .section-title {
   font-size: 1.8rem;
   font-weight: bold;
   margin: 20px 0;
 }
 
-.learning-cards {
+.enrollment-page .learning-section .learning-cards {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.learning-card {
+.enrollment-page .learning-section .learning-cards .learning-card {
   flex: 1 1 30%;
   background-color: #fff;
   border-radius: 16px;
@@ -127,39 +130,34 @@
   min-width: 280px;
 }
 
-.learning-title {
+.enrollment-page .learning-section .learning-cards .learning-card .learning-title {
   font-size: 1.2rem;
   font-weight: 600;
 }
 
-.learning-desc {
+.enrollment-page .learning-section .learning-cards .learning-card .learning-desc {
   margin: 8px 0 16px;
   color: #444;
 }
 
-.course-link {
-  color: #6d28d9;
-  font-weight: 600;
-  text-decoration: none;
-}
 
-.card-number {
+.enrollment-page .learning-section .learning-cards .learning-card .card-number {
   position: absolute;
   font-size: 5rem;
-  color: rgba(109, 40, 217, 0.05);
+  color: rgba(108, 40, 217, 0.14);
   right: 16px;
   bottom: 8px;
   font-weight: bold;
 }
 
-.skills-grid {
+.enrollment-page .learning-section .skills-grid  {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
   margin-top: 24px;
 }
 
-.skill-card {
+.enrollment-page .learning-section .skills-grid .skill-card {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -170,29 +168,29 @@
   min-width: 140px;
 }
 
-.skill-icon {
+.enrollment-page .learning-section .skills-grid .skill-card .skill-icon {
   font-size: 1.6rem;
 }
 
-.testimonial-section {
+.enrollment-page .testimonial-section {
   padding: 60px 20px;
   text-align: center;
 }
 
-.testimonial-heading {
+.enrollment-page .testimonial-section .testimonial-heading {
   font-size: 2rem;
   margin-bottom: 40px;
   color: #161616;
 }
 
-.testimonial-cards {
+.enrollment-page .testimonial-section .testimonial-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
 
-.testimonial-card {
+.enrollment-page .testimonial-section .testimonial-cards .testimonial-card {
   background: #fff;
   color: #1f1f35;
   border-radius: 16px;
@@ -205,7 +203,7 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.quote-mark {
+.enrollment-page .testimonial-section .testimonial-cards .testimonial-card .quote-mark {
   font-size: 4.5rem;
   width: 20px;
   height: 50px;
@@ -213,27 +211,27 @@
   font-family: Georgia, serif;
 }
 
-.testimonial-text {
+.enrollment-page .testimonial-section .testimonial-cards .testimonial-card .testimonial-text {
   font-size: 1rem;
   margin: 12px 0 20px;
   height: 120px;
   padding: 10px 0;
 }
 
-.testimonial-user {
+.enrollment-page .testimonial-section .testimonial-cards .testimonial-card .testimonial-user {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.user-img {
+.enrollment-page .testimonial-section .testimonial-cards .testimonial-card .testimonial-user .user-img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.subtext {
+.enrollment-page .testimonial-section .testimonial-cards .testimonial-card .testimonial-user .subtext {
   font-size: 0.9rem;
   color: #666;
 }
