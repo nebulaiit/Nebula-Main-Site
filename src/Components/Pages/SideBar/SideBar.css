@@ -91,3 +91,71 @@
 .menu-card.expanded .menu-title i {
   transform: rotate(180deg);
 }
+/* ----------------------------
+   Responsive Sidebar Styling
+----------------------------- */
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .siderbar-wrapper .sidebar {
+    width: 100%;
+    border-radius: 0;
+    padding: 0 10px;
+  }
+
+  .siderbar-wrapper .sidebar .menu-card {
+    margin-bottom: 12px;
+  }
+
+  .topic-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .siderbar-wrapper .sidebar .menu-card .menu-title {
+    padding: 14px 16px;
+    font-size: 1rem;
+  }
+
+  .siderbar-wrapper .sidebar .menu-card .submenu {
+    padding: 12px 16px 16px 16px;
+  }
+}
+
+/* Large Mobile / Small Tablet (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .siderbar-wrapper .sidebar {
+    width: 100%;
+    border-radius: 12px;
+    padding: 0 16px;
+  }
+
+  .topic-btn {
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+
+  .siderbar-wrapper .sidebar .menu-card .menu-title {
+    padding: 16px 20px;
+  }
+
+  .siderbar-wrapper .sidebar .menu-card .submenu {
+    padding: 14px 18px 18px 18px;
+  }
+}
+
+/* Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .siderbar-wrapper .sidebar {
+    width: 320px;
+  }
+
+  .topic-btn {
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+
+  .siderbar-wrapper .sidebar .menu-card .menu-title {
+    padding: 18px 22px;
+  }
+}
