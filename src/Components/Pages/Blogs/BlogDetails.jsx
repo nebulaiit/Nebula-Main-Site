@@ -104,7 +104,7 @@ export default function BlogDetails() {
 
 
                 </div>
-                <div className="blog-detials-sidebar-wrapper">
+                {/* <div className="blog-detials-sidebar-wrapper">
                     <h2>Recent Blogs</h2>
                     <ul className='recent-blogs-list'>
                         <li className='recent-blog-item'>Understanding React Hooks</li>
@@ -112,7 +112,7 @@ export default function BlogDetails() {
                         <li className='recent-blog-item'>CSS Grid vs Flexbox</li>
                         <li className='recent-blog-item'>Building Responsive Websites</li>
                     </ul>
-                </div>
+                </div> */}
             </div>
         </>
     )
