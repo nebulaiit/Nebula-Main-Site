@@ -1,5 +1,5 @@
 .coures-wrapper {
-  margin: 12% 0;
+  margin: 10% 0;
   width: 100%;
   text-align: center;
   position: relative;
@@ -8,14 +8,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: inherit;
+  min-height: auto;
 }
 
 .coures-wrapper .webdev-btn-wrapper {
   margin-bottom: 50px;
-  /* display: flex;
-  flex-direction: column;
-  gap: 20px; */
 }
 
 .coures-wrapper .webdev-btn-wrapper .webdev-btn {
