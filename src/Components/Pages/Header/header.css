@@ -331,7 +331,7 @@ margin-top: -7px;
 }
 
 .mobile-drawer .drawer-footer .reach-us {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: var(--bg-primary-dark);
 }
 
@@ -348,8 +348,9 @@ margin-top: -7px;
 .mobile-drawer .drawer-footer .social-logo button {
   width: 15px;
   height: 15px;
-  font-size: 1.5rem;
-  color: #470d31;
+  font-size: 2.5rem;
+  margin-top: 15px;
+  color: var(--bg-primary-dark);
 }
 
 /* MOBILE RESPONSIVE STYLES */
@@ -386,6 +387,12 @@ margin-top: -7px;
     width: 100%;
     margin-top: 10px;
   }
+
+  .header .images-wrapper img {
+
+    margin-left: 0px;
+
+}
 
   .header nav ul li {
     margin: 8px 0;

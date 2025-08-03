@@ -26,7 +26,6 @@ export default function Header({ variant = "default" }) {
 
     const hideElement = ["/login"].includes(location.pathname);
 
-
     const handleClickAway = () => {
         setMenuOpen(false);
     };
@@ -53,6 +52,26 @@ export default function Header({ variant = "default" }) {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const handleWhatsAppClick = () => {
+        console.log('User clicked WhatsApp contact button');
+
+        const phone = '918788763679';
+
+        const fullName = `${user?.firstName ?? ''} ${user?.lastName ?? ''}`.trim();
+        const email = user?.email ?? '';
+
+        const preFilledMessage = `Hi QubitronX Team, I'm ${fullName} (${email}). I'd like to know more about your courses.`;
+        const encodedMessage = encodeURIComponent(preFilledMessage);
+
+        const whatsappURL = `https://wa.me/${phone}?text=${encodedMessage}`;
+
+        const newWindow = window.open(whatsappURL, '_blank');
+
+        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+            alert('It seems WhatsApp is not installed or pop-ups are blocked. Please contact us directly at 8788763679.');
+        }
+    };
 
     return (
         <div>
@@ -158,16 +177,16 @@ export default function Header({ variant = "default" }) {
                                 <ul className='list list-inline my-0'>
                                     <li>
                                         <NewIcon />
-                                        <Button onClick={() =>{ navigate("/tutorial"),setDrawerOpen(false)}}>Tutorial</Button>
+                                        <Button onClick={() => { navigate("/tutorial"), setDrawerOpen(false) }}>Tutorial</Button>
                                     </li>
-                                    <li><MenuBookIcon /><Button onClick={() => {navigate("/course-list"),setDrawerOpen(false)}}>Course</Button></li>
-                                    <li><SchoolIcon /><Button onClick={() => {navigate("/career"),setDrawerOpen(false)}}>Career</Button></li>
-                                    <li><DescriptionIcon /><Button onClick={() => {navigate("/blog"),setDrawerOpen(false)}}>Blog</Button></li>
-                                    <li><ForumIcon /><Button onClick={() => {navigate("/community"),setDrawerOpen(false)}}>Community</Button></li>
+                                    <li><MenuBookIcon /><Button onClick={() => { navigate("/course-list"), setDrawerOpen(false) }}>Course</Button></li>
+                                    <li><SchoolIcon /><Button onClick={() => { navigate("/career"), setDrawerOpen(false) }}>Career</Button></li>
+                                    <li><DescriptionIcon /><Button onClick={() => { navigate("/blog"), setDrawerOpen(false) }}>Blog</Button></li>
+                                    <li><ForumIcon /><Button onClick={() => { navigate("/community"), setDrawerOpen(false) }}>Community</Button></li>
                                 </ul>
                                 <div className="drawer-footer">
                                     <div className="footer-btn">
-                                        <Button onClick={() => {navigate("/contact"),setDrawerOpen(false)}}> <LocalPhoneIcon /> Contact Us</Button>
+                                        <Button onClick={() => { navigate("/contact"), setDrawerOpen(false) }}> <LocalPhoneIcon /> Contact Us</Button>
                                         {!isLoggedIn ? (
                                             <button className="dropdown-item" onClick={() => { navigate("/login"); }}>
                                                 <ExitToAppOutlinedIcon className="me-2" /> Login
@@ -186,7 +205,7 @@ export default function Header({ variant = "default" }) {
 
                                     <div className="social-logo">
                                         <p className="mb-4 reach-us">Reach Us Out</p>
-                                        <Button><i className="fa-brands fa-whatsapp"></i></Button>
+                                        <Button onClick={handleWhatsAppClick}><i className="fa-brands fa-whatsapp"></i></Button>
                                         <Button><i className="fa-brands fa-instagram"></i></Button>
                                         <Button><i className="fa-brands fa-linkedin"></i></Button>
                                     </div>

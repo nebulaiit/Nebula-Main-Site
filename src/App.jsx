@@ -4,10 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './Components/Pages/Header/Header';
 import Home from './Components/Pages/Home/Home';
 
-
-
 import Login from './Components/Login/Login';
-import CreateProject from './LearningPathPytho/CreateProject';
 import Enrollment from './LearningPathPytho/Enrollment';
 import PythonCourse from './Components/Pages/LearnNebula/PythonCourse';
 import CourseList from './Components/Pages/LearnNebula/CourseList';
@@ -62,8 +59,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/course/:courseName" element={<PythonCourse />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/create-project" element={<CreateProject />} />
-        <Route path="/learning-path/:index" element={<Enrollment />} />
+        <Route path="/learning-path/:id" element={<Enrollment />} />
         <Route path="/progamming/:courseName" element={<TutorialPage />} />
         <Route path="/career" element={<JobNotificationPage />} /> 
         <Route path="/course-List/:courseName" element={<Premium />} />

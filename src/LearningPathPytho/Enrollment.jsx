@@ -1,56 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Enrollment.css";
-import certificateImg from "./images/certificate.png";
 import { useNavigate, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import profile from "../Components/Images/profile-icon.jpg";
+import { showToast } from "../redux/toastSlice";
+import { getCourseDetails } from "../Components/APIService/apiservice";
 
 const Enrollment = () => {
-  const { index } = useParams();
-  const [showPopup, setShowPopup] = useState(false);
 
   const darkMode = useSelector((state) => state.darkMode.enabled);
-
-  const navigate = useNavigate();
-
-  const togglePopup = () => {
-    setShowPopup((prev) => !prev);
-  };
-
-  const handleJobNotificationClick = () => {
-    navigate("/career");
-  };
-
-  const courseTitles = [
-    `Learn Java Basics`,
-    `Practice: Java Basics`,
-    `Learn Java Intermediate`,
-    `Practice: Java Intermediate`,
-    'Build Final Project'
-  ];
-
-  const projects = [
-    {
-      title: "Rock, Paper & Scissors",
-      img: "https://cdn-icons-png.flaticon.com/512/184/184250.png"
-    },
-    {
-      title: "Tic Tac Toe",
-      img: "https://cdn-icons-png.flaticon.com/512/342/342362.png"
-    },
-    {
-      title: "QR Code Generator",
-      img: "https://cdn-icons-png.flaticon.com/512/6081/6081304.png"
-    }
-  ];
-
-
-
-
-  const handleBuyCourse = () => {
-    navigate("/course");
-  };
-
+  const dispatch = useDispatch();
+  const { id } = useParams();
 
   const whatYouLearn = [
     {
@@ -103,6 +63,25 @@ const Enrollment = () => {
     },
   ];
 
+  const handleClick = () => {
+    dispatch(showToast({ message: 'Course Added to Cart', type: 'info' }));
+  }
+
+  useEffect(() => {
+
+    const fetchCourseDetails = async () => {
+      try {
+        const response = await getCourseDetails(id);
+
+        console.log(response);
+      } catch (error) {
+        console.error("Error fetching documents:", error);
+      }
+    };
+    fetchCourseDetails();
+  }, []);
+
+
   return (
     <div className={`enrollment-page  ${darkMode ? 'dark' : ''}`}>
       <div className="course-card-wrapper">
@@ -127,7 +106,7 @@ const Enrollment = () => {
             </div>
           </div>
 
-          <button className="subscribe-btn">Start subscription</button>
+          <button className="subscribe-btn" onClick={handleClick}>Start Your Journey</button>
           <p className="enrolled">👥 <strong>1.5M</strong> learners already enrolled</p>
         </div>
 
@@ -137,7 +116,7 @@ const Enrollment = () => {
       </div>
 
       <div className="learning-section">
-        <h2 className="section-title">What you'll learn</h2>
+        <h2 className="learning-section-title">What you'll learn</h2>
         <div className="learning-cards">
           {whatYouLearn.map((item) => (
             <div key={item.id} className="learning-card">
@@ -148,7 +127,7 @@ const Enrollment = () => {
           ))}
         </div>
 
-        <h2 className="section-title">Learn the skills that matter most</h2>
+        <h2 className="learning-section-title">Learn the skills that matter most</h2>
         <div className="skills-grid">
           {skillHighlights.map((skill, index) => (
             <div key={index} className="skill-card">

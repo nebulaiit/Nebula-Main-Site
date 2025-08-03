@@ -17,7 +17,6 @@ export const loginUser = async (body) => {
         throw error;
     }
 };
-
 export const signUpUser = async (body) => {
     const url = `${API_BASE_URL}${API_URLs.GET_SIGNUP}`;
 
@@ -31,7 +30,6 @@ export const signUpUser = async (body) => {
         throw error;
     }
 };
-
 export const signUpUserWithGoogle = async (body) => {
     const url = `${API_BASE_URL}${API_URLs.GET_SIGNUP_WITHGOOGLE}`;
 
@@ -45,7 +43,6 @@ export const signUpUserWithGoogle = async (body) => {
         throw error;
     }
 };
-
 export const getUserDetails = async (id) => {
 
     const url = `${API_BASE_URL}${API_URLs.Get_User_Details}/${id}`
@@ -59,8 +56,6 @@ export const getUserDetails = async (id) => {
         throw error;
     }
 }
-
-
 export const getAllTutorial = async () => {
 
     const url = `${API_BASE_URL}${API_URLs.GET_TUTORIAL}`
@@ -75,7 +70,6 @@ export const getAllTutorial = async () => {
         throw error;
     }
 }
-
 export const getAllCourse = async (courseName) => {
 
     const url = `${API_BASE_URL}${API_URLs.Get_Course_List}/${courseName}`
@@ -90,7 +84,18 @@ export const getAllCourse = async (courseName) => {
         throw error;
     }
 }
+export const getCourseDetails = async (id) => {
 
+    const url = `${API_BASE_URL}${API_URLs.Get_Course_Details}/${id}`
+    try {
+        const response = await axios.get(url)
+        return response.data;
+
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
 export const getHeadingList = async (tutorialName) => {
 
     const url = `${API_BASE_URL}${API_URLs.GET_HEADING_LIST}/${tutorialName}`
@@ -105,7 +110,6 @@ export const getHeadingList = async (tutorialName) => {
         throw error;
     }
 }
-
 export const getContentList = async (urlSlug) => {
 
     const url = `${API_BASE_URL}${API_URLs.GET_CONTENT_BY_SLUG}/${urlSlug}`
@@ -120,7 +124,6 @@ export const getContentList = async (urlSlug) => {
         throw error;
     }
 }
-
 export const getTopics = async (id) => {
 
     const url = `${API_BASE_URL}${API_URLs.GET_TOPICS}/${id}`
@@ -147,7 +150,6 @@ export const contactUs = async (body) => {
         throw error;
     }
 }
-
 export const getBlogList = async () => {
 
     const url = `${API_BASE_URL}${API_URLs.Blog_List}`
@@ -161,7 +163,6 @@ export const getBlogList = async () => {
         throw error;
     }
 }
-
 export const getBlogDetails = async (slug) => {
 
     const url = `${API_BASE_URL}${API_URLs.Blog_Details}/${slug}`
@@ -177,7 +178,6 @@ export const getBlogDetails = async (slug) => {
         throw error;
     }
 }
-
 export const addBlogs = async (formData) => {
     const url = `${API_BASE_URL}${API_URLs.Add_BLog}`;
 
@@ -193,7 +193,6 @@ export const addBlogs = async (formData) => {
         throw error;
     }
 };
-
 export const getAllPosts = async () => {
 
     const url = `${API_BASE_URL}${API_URLs.Get_All_posts}`
@@ -233,7 +232,6 @@ export const getJobList = async () => {
         throw error;
     }
 }
-
 export const fetchWishlist = async (userId) => {
 
     const url = `${API_BASE_URL}${API_URLs.WishList}/${userId}`
@@ -273,8 +271,6 @@ export const deleteWishlistItem = async (wishlistItemId) => {
         throw error;
     }
 }
-
-
 export const ReplyToPost = async (id, body) => {
 
     const url = `${API_BASE_URL}${API_URLs.Reply_To_Post}/${id}/${'replies'}`
@@ -288,7 +284,6 @@ export const ReplyToPost = async (id, body) => {
         throw error;
     }
 }
-
 export const getMockInterview = async (params) => {
 
     const url = `${API_BASE_URL}${API_URLs.Mock_Interview}`

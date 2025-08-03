@@ -1,0 +1,323 @@
+.profile-container {
+  max-width: 100%;
+  font-family: "Segoe UI", sans-serif;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  border: var(--border);
+  border-radius: 16px;
+}
+.profile-container.dark {
+
+  border: var(--border-dark);
+}
+
+.profile-container .profile-wrapper {
+    padding: 1.8rem;
+}
+
+.profile-container .profile-wrapper .profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.profile-container .profile-wrapper .profile-header .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #007bff;
+}
+
+.profile-container .profile-wrapper .profile-header .profile-info h2 {
+  margin: 0;
+  text-transform: capitalize;
+}
+
+
+
+.profile-container .profile-wrapper .profile-body section {
+  margin-bottom: 1.5rem;
+}
+
+.profile-container .profile-wrapper .profile-body section .headline {
+  color: #666;
+  margin-top: 0.2rem;
+}
+
+
+
+hr {
+  margin: 2rem 0;
+  color: var(--text-title);
+  opacity: 1;
+}
+.profile-container.dark hr {
+  margin: 2rem 0;
+  color: var(--text-title-dark);
+  opacity: 1;
+}
+
+
+
+
+.profile-container .profile-wrapper .profile-body .btn-outline,
+.profile-container .resume-section button {
+     border:var(--border);
+    background: var(--bg-primary);
+    padding: 8px 15px;
+    border-radius: 51px;
+    font-size: 1.1rem;
+    color: var(--text-title);
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+}
+.profile-container.dark .profile-wrapper .profile-body .btn-outline,
+.profile-container.dark .resume-section button {
+     border:var(--border-dark);
+    background: var(--bg-primary-dark);
+    color: var(--text-title-dark);
+
+}
+
+.profile-container .profile-wrapper .profile-body .btn-outline:hover,
+.profile-container .resume-section button:hover  {
+  background: var(--text-title);
+  color: white;
+  border: none;
+}
+.profile-container.dark .profile-wrapper .profile-body .btn-outline:hover,
+.profile-container.dark .resume-section button:hover {
+  background: var(--text-title-dark);
+  color:var(--bg-primary) ;
+  border: none;
+}
+
+
+.profile-container .resume-section {
+  text-align: center;
+}
+.profile-container .resume-section h2{
+    color: var(--bg-primary-dark);
+}
+.profile-container.dark .resume-section h2{
+    color: var(--bg-primary);
+}
+
+.profile-container .resume-section button{
+    margin-top: 10px;
+}
+
+
+/* Modal */
+.profile-container .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex; /* enables centering */
+  justify-content: center; /* centers horizontally */
+  align-items: center;     /* centers vertically */
+  z-index: 999;
+}
+
+.profile-container .modal-overlay .profile-modal {
+  background: white;
+  border-radius: 8px;
+  width: 500px;
+  max-height: 90vh;
+  overflow-y: auto; /* adds scroll inside modal if needed */
+  padding: 1.5rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.profile-container .modal-overlay .profile-modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-container .modal-overlay .profile-modal .modal-header .modal-header h3 {
+  margin: 0;
+}
+
+.profile-container .modal-overlay .profile-modal .modal-header .close-button {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-container .modal-overlay .profile-modal .modal-body {
+  margin-top: 1rem;
+}
+
+.profile-container .modal-overlay .profile-modal .modal-body .form-group {
+  margin-bottom: 1rem;
+}
+
+.profile-container .modal-overlay .profile-modal .modal-body .form-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.profile-container .modal-overlay .profile-modal .modal-body .form-group input,
+.profile-container .modal-overlay .profile-modal .modal-body .form-group textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.profile-container .modal-overlay .profile-modal .modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+
+.profile-container .modal-overlay .profile-modal .modal-footer .cancel,
+.profile-container .modal-overlay .profile-modal .modal-footer .btn-primary{
+    background: var(--bg-primary) ;
+    padding: 0.4rem 1rem;
+    border-radius: var(--border-radius);
+}
+
+.profile-container .modal-overlay .profile-modal .modal-footer .cancel{
+    border: 2px solid var(--color-error);
+    color: var(--color-error);
+
+}
+.profile-container .modal-overlay .profile-modal .modal-footer .cancel:hover{
+    border: 2px solid var(--color-error);
+    color: var(--bg-primary);
+    background-color: var(--color-error);
+
+}
+
+
+.profile-container .modal-overlay .profile-modal .modal-footer .btn-primary{
+    border: 2px solid var(--color-success);
+    color: var(--color-success);
+
+}
+.profile-container .modal-overlay .profile-modal .modal-footer .btn-primary:hover{
+    border: 2px solid var(--color-success);
+    color: var(--bg-primary);
+    background-color: var(--color-success);
+
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .profile-container {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .profile-container .profile-wrapper {
+    padding: 1rem;
+  }
+
+  .profile-container .profile-wrapper .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-container .profile-wrapper .profile-header .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-container .resume-section {
+    padding: 1rem;
+  }
+
+  .profile-container .modal-overlay .profile-modal {
+    width: 90%;
+    padding: 1rem;
+  }
+}
+
+/* Large Mobile / Small Tablet (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .profile-container {
+    flex-direction: column;
+    padding: 1.2rem;
+    gap: 1.2rem;
+  }
+
+  .profile-container .profile-wrapper {
+    padding: 1.2rem;
+  }
+
+  .profile-container .profile-wrapper .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-container .profile-wrapper .profile-header .avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  .profile-container .modal-overlay .profile-modal {
+    width: 80%;
+    padding: 1.2rem;
+  }
+}
+
+/* Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .profile-container {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .profile-container .profile-wrapper {
+    padding: 1.5rem;
+  }
+
+  .profile-container .profile-wrapper .profile-header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .profile-container .profile-wrapper .profile-header .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-container .modal-overlay .profile-modal {
+    width: 70%;
+  }
+}

@@ -1,9 +1,8 @@
-
 /* === Global Reset === */
 
 .enrollment-page {
-  width: 90%;
-  margin-top: 12%;
+  width: 88%;
+  margin-top: 10%;
 }
 
 .enrollment-page .course-card-wrapper {
@@ -14,24 +13,27 @@
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   padding: 32px;
-  background: linear-gradient(to right, #f660ab, #ffffff);
+  background: linear-gradient(to right, #f788bf, #f4c4dc);
+}
+.enrollment-page.dark .course-card-wrapper {
+  background: var(--card-background);
 }
 
 .enrollment-page .course-card-wrapper .course-content {
   width: 60%;
   padding: 20px;
-  color: #1c1c1c;
 }
 
 .enrollment-page .course-card-wrapper .course-content .course-title {
   font-size: 2.4rem;
   font-weight: 800;
   margin-bottom: 18px;
+  color: var(--bg-primary);
 }
 
 .enrollment-page .course-card-wrapper .course-content .course-description {
   font-size: 1.1rem;
-  color: var(--bg-primary-dark);
+  color: var(--bg-primary);
   margin-bottom: 20px;
   max-width: 600px;
 }
@@ -50,42 +52,79 @@
   font-weight: bold;
 }
 
-.enrollment-page .course-card-wrapper .course-content .course-stats .stat-item .star {
+.enrollment-page
+  .course-card-wrapper
+  .course-content
+  .course-stats
+  .stat-item
+  .star {
   color: orange;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-right: 0.5rem;
 }
-
-.enrollment-page .course-card-wrapper .course-content .course-stats .stat-item .value {
+.enrollment-page
+  .course-card-wrapper
+  .course-content
+  .course-stats
+  .stat-item
+  .value {
   font-size: 1.5rem;
-  color: var(--bg-primary-dark);
+  color: var(--text-secondary);
 }
 
-.enrollment-page .course-card-wrapper .course-content .course-stats .stat-item .label {
+.enrollment-page.dark
+  .course-card-wrapper
+  .course-content
+  .course-stats
+  .stat-item
+  .value {
+  font-size: 1.5rem;
+  color: var(--text-title-dark);
+}
+
+.enrollment-page
+  .course-card-wrapper
+  .course-content
+  .course-stats
+  .stat-item
+  .label {
   font-size: 0.95rem;
   font-weight: normal;
-   color: var(--bg-primary-dark);
-
+  color: var(--bg-primary);
 }
 
 .enrollment-page .course-card-wrapper .course-content .subscribe-btn {
-  background-color: #6d28d9;
-  color: #fff;
+  background-color: var(--bg-primary);
+  color: var(--text-title);
   border: none;
   padding: 12px 24px;
   font-size: 1rem;
-  border-radius: 8px;
+  font-weight: 600;
+  border-radius: 20px;
   cursor: pointer;
   margin-bottom: 10px;
 }
 
-.enrollment-page .course-card-wrapper .course-content .subscribe-btn:hover {
+.enrollment-page.dark .course-card-wrapper .course-content .subscribe-btn {
+  background-color: #6d28d9;
+  color: #fff;
+  box-shadow: var(--box-shadow-dark);
+}
+
+.enrollment-page.dark
+  .course-card-wrapper
+  .course-content
+  .subscribe-btn:hover {
   background-color: #5b21b6;
+}
+.enrollment-page .course-card-wrapper .course-content .subscribe-btn:hover {
+  background-color: var(--text-title);
+  color: var(--bg-primary);
 }
 
 .enrollment-page .course-card-wrapper .course-content .enrolled {
   font-size: 0.9rem;
-  color: #222;
+  color: var(--bg-primary);
 }
 
 .enrollment-page .course-card-wrapper .course-image {
@@ -102,22 +141,27 @@
   object-fit: cover;
 }
 
-.enrollment-page .learning-section  {
+.enrollment-page .learning-section {
   padding: 40px 20px;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   color: #1c1c1c;
 }
 
-.enrollment-page .learning-section .section-title {
+.enrollment-page .learning-section .learning-section-title {
   font-size: 1.8rem;
   font-weight: bold;
-  margin: 20px 0;
+  margin: 25px 0;
+  color: var(--bg-primary-dark);
+}
+.enrollment-page.dark .learning-section .learning-section-title {
+  color: var(--bg-primary);
 }
 
 .enrollment-page .learning-section .learning-cards {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
 .enrollment-page .learning-section .learning-cards .learning-card {
@@ -125,32 +169,51 @@
   background-color: #fff;
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--box-shadow);
   position: relative;
   min-width: 280px;
 }
+.enrollment-page.dark .learning-section .learning-cards .learning-card {
+  background-color: #fff;
+  box-shadow: var(--box-shadow-dark);
+}
 
-.enrollment-page .learning-section .learning-cards .learning-card .learning-title {
+.enrollment-page
+  .learning-section
+  .learning-cards
+  .learning-card
+  .learning-title {
   font-size: 1.2rem;
   font-weight: 600;
 }
 
-.enrollment-page .learning-section .learning-cards .learning-card .learning-desc {
+.enrollment-page
+  .learning-section
+  .learning-cards
+  .learning-card
+  .learning-desc {
+  width: 91%;
   margin: 8px 0 16px;
   color: #444;
 }
 
-
 .enrollment-page .learning-section .learning-cards .learning-card .card-number {
   position: absolute;
   font-size: 5rem;
-  color: rgba(108, 40, 217, 0.14);
+  color: #ff5b8a;
   right: 16px;
   bottom: 8px;
   font-weight: bold;
 }
+.enrollment-page.dark
+  .learning-section
+  .learning-cards
+  .learning-card
+  .card-number {
+  color: #b74df5;
+}
 
-.enrollment-page .learning-section .skills-grid  {
+.enrollment-page .learning-section .skills-grid {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
@@ -182,6 +245,11 @@
   margin-bottom: 40px;
   color: #161616;
 }
+.enrollment-page.dark .testimonial-section .testimonial-heading {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--text-secondary);
+}
 
 .enrollment-page .testimonial-section .testimonial-cards {
   display: flex;
@@ -200,50 +268,122 @@
   max-width: 380px;
   position: relative;
   text-align: left;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.enrollment-page.dark
+  .testimonial-section
+  .testimonial-cards
+  .testimonial-card {
+  color: var(--bg-primary);
+  background: var(--card-background);
 }
 
-.enrollment-page .testimonial-section .testimonial-cards .testimonial-card .quote-mark {
+.enrollment-page
+  .testimonial-section
+  .testimonial-cards
+  .testimonial-card
+  .quote-mark {
   font-size: 4.5rem;
   width: 20px;
   height: 50px;
   color: #111;
   font-family: Georgia, serif;
 }
+.enrollment-page.dark
+  .testimonial-section
+  .testimonial-cards
+  .testimonial-card
+  .quote-mark {
+  font-size: 4.5rem;
+  width: 20px;
+  height: 50px;
+  color: var(--bg-primary);
+  font-family: Georgia, serif;
+}
 
-.enrollment-page .testimonial-section .testimonial-cards .testimonial-card .testimonial-text {
+.enrollment-page
+  .testimonial-section
+  .testimonial-cards
+  .testimonial-card
+  .testimonial-text {
   font-size: 1rem;
   margin: 12px 0 20px;
   height: 120px;
   padding: 10px 0;
 }
+.enrollment-page.dark
+  .testimonial-section
+  .testimonial-cards
+  .testimonial-card
+  .testimonial-text {
+  color: var(--text-secondary);
+}
 
-.enrollment-page .testimonial-section .testimonial-cards .testimonial-card .testimonial-user {
+.enrollment-page
+  .testimonial-section
+  .testimonial-cards
+  .testimonial-card
+  .testimonial-user {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.enrollment-page .testimonial-section .testimonial-cards .testimonial-card .testimonial-user .user-img {
+.enrollment-page
+  .testimonial-section
+  .testimonial-cards
+  .testimonial-card
+  .testimonial-user
+  .user-img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.enrollment-page .testimonial-section .testimonial-cards .testimonial-card .testimonial-user .subtext {
+.enrollment-page
+  .testimonial-section
+  .testimonial-cards
+  .testimonial-card
+  .testimonial-user
+  .subtext {
   font-size: 0.9rem;
   color: #666;
 }
-
+.enrollment-page.dark
+  .testimonial-section
+  .testimonial-cards
+  .testimonial-card
+  .testimonial-user
+  .subtext {
+  font-size: 0.9rem;
+  color: var(--text-secondary-dark);
+}
 
 /* Small Mobile (max-width: 480px) */
 @media screen and (max-width: 480px) {
+  .enrollment-page {
+    margin-top: 15vh;
+  }
+
+  .enrollment-page .course-card-wrapper {
+    flex-direction: column-reverse;
+    align-items: start;
+  }
+
+  .enrollment-page .course-card-wrapper .course-content {
+    width: 100%;
+    padding: 0;
+  }
+
+  .enrollment-page .course-card-wrapper .course-image {
+    width: 100%;
+  }
   .learning-cards {
     flex-direction: column;
   }
 
-  .skills-grid {
+  .enrollment-page .learning-section .skills-grid {
     flex-direction: column;
   }
 
@@ -290,4 +430,3 @@
     justify-content: space-between;
   }
 }
-

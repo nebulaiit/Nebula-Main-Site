@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 export default function CourseListPage() {
     const darkMode = useSelector((state) => state.darkMode.enabled);
 
-
     const courses = [
         {
             id: '1',

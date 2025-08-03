@@ -6,12 +6,12 @@ import { removeToast } from '../../redux/toastSlice';
 const ToastList = () => {
   const toasts = useSelector((state) => state.toast);
   const dispatch = useDispatch();
-      const darkMode = useSelector((state) => state.darkMode.enabled);
-  
+  const darkMode = useSelector((state) => state.darkMode.enabled);
+
 
   useEffect(() => {
     const timers = toasts.map((toast) =>
-      setTimeout(() => dispatch(removeToast(toast.id)), 3100)
+      setTimeout(() => dispatch(removeToast(toast.id)), 5000)
     );
     return () => timers.forEach((t) => clearTimeout(t));
   }, [toasts, dispatch]);

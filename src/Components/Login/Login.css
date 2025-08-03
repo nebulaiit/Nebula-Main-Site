@@ -17,17 +17,7 @@ html {
   overflow: hidden;
 }
 
-.login-container {
-  display: flex;
-  position: relative;
-  width: 900px;
-  max-width: 100%;
-  min-height: 550px;
-  margin: auto;
-  border-radius: 10px;
-}
-
-.login-image {
+.login-wrapper  .login-image {
   width: 50%;
   display: flex;
   justify-content: center;
@@ -35,7 +25,7 @@ html {
   padding: 60px;
 }
 
-.animated-img img {
+.login-wrapper  .animated-img img {
   width: 100%;
   max-width: 650px;
   object-fit: contain;
@@ -54,7 +44,7 @@ html {
   }
 }
 
-.form-layer {
+.login-wrapper .form-layer {
   width: 50%;
   position: relative;
   overflow: hidden;
@@ -65,7 +55,7 @@ html {
   padding: 60px 40px;
 }
 
-.login-form-layer {
+.login-wrapper .form-layer .login-form-layer {
   position: absolute;
   width: 100%;
   transition: all 0.5s ease;
@@ -74,14 +64,14 @@ html {
   pointer-events: none;
 }
 
-.login-form-layer.active {
+.login-wrapper .form-layer .login-form-layer.active {
   width: 80%;
   opacity: 1;
   transform: translateY(0);
   pointer-events: all;
 }
 
-.login-form-layer h2 {
+.login-wrapper .form-layer .login-form-layer  h2 {
   font-size: 28px;
   margin-bottom: 20px;
   color: var(--bg-primary-dark);
@@ -98,13 +88,13 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
+  font-size: 40px;
 }
 
 .login-wrapper.dark .login-form-layer h2 span {
-  background: var(--text-primary-dark);
+  background: var(--text-heading-dark);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 700;
 }
 
 
@@ -151,7 +141,6 @@ html {
   transition: background 0.3s ease;
   margin: 16px 0;
 }
-
 
 
 .options {

@@ -7,21 +7,23 @@ import Dashboard from "./Dashboard";
 import MyLists from './MyLists'
 import Cart from "./Cart";
 import { useSelector } from "react-redux";
+import MyProfile from "./MyProfile";
 
 
 const tabs = [
   { key: "dashboard", label: "Dashboard" },
+  { key: "profile", label: "My profile" },
   { key: "all", label: "All Courses" },
   // { key: "lists", label: "My Lists" },
   { key: "wishlist", label: "Wishlist" },
-  { key: "cart", label: "Your Cart" },
+  { key: "cart", label: "Cart" },
 ];
 
 const LearningDashboard = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [activeTab, setActiveTab] = useState("all");
-    const darkMode = useSelector((state) => state.darkMode.enabled);
+  const darkMode = useSelector((state) => state.darkMode.enabled);
 
 
   useEffect(() => {
@@ -38,6 +40,8 @@ const LearningDashboard = () => {
     switch (activeTab) {
       case "dashboard":
         return <Dashboard />;
+         case "profile":
+        return <MyProfile />;
       case "all":
         return <AllCourses />;
       // case "lists":
@@ -46,8 +50,9 @@ const LearningDashboard = () => {
         return <Wishlist />;
       case "cart":
         return <Cart />;
+     
       default:
-        return <AllCourses />;
+        return <Dashboard />;
     }
   };
 

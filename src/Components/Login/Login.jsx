@@ -15,6 +15,10 @@ import axios from 'axios';
 
 const Login = () => {
   const [view, setView] = useState('login');
+  const [verificationCode, setVerificationCode] = useState('');
+  const [tempUserEmail, setTempUserEmail] = useState('');
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.darkMode.enabled);
 
   const [loginData, setLoginData] = useState({
@@ -30,11 +34,7 @@ const Login = () => {
     phoneNumber: '',
   });
 
-  const [verificationCode, setVerificationCode] = useState('');
-  const [tempUserEmail, setTempUserEmail] = useState('');
 
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const handleLoginChange = (e) => {
     const { name, value } = e.target;
@@ -113,7 +113,7 @@ const Login = () => {
 
       const backendRes = await signUpUserWithGoogle(googleUserData);
       console.log('Google login response:', backendRes);
-      
+
       dispatch(setAuthData({ token: backendRes.token, userId: backendRes.userId }));
       dispatch(fetchUserDetails(backendRes.userId));
       dispatch(showToast({ message: 'Logged in with Google!', type: 'success' }));
