@@ -28,24 +28,13 @@ export default function CourseList() {
   const componentRefs = useRef({});
   const headingRef = useRef(null);
 
-  const iconMap = {
-    Python: { icon: 'python', type: 'fab' },
-    MySql: { icon: 'database', type: 'fas' },
-    Java: { icon: 'java', type: 'fab' },
-    'React.js': { icon: 'react', type: 'fab' },
-    HTML: { icon: 'html5', type: 'fab' },
-    CSS: { icon: 'css3', type: 'fab' },
-  };
 
   useEffect(() => {
     const fetchTutorialList = async () => {
       try {
         const response = await getAllTutorial();
-        const mappedCourses = response.map(course => {
-          const iconInfo = iconMap[course.tutorialName] || { icon: 'question', type: 'fas' };
-          return { ...course, icon: iconInfo.icon, type: iconInfo.type };
-        });
-        setCourses(mappedCourses);
+      
+        setCourses(response);
       } catch (error) {
         console.error('Error fetching documents:', error);
       }
@@ -58,33 +47,6 @@ export default function CourseList() {
     else delete refs.current[key];
   }, []);
 
-  const drawCurvedLine = (start, end, delay = 0) => {
-    if (!start || !end || !svgRef.current) return;
-
-    const svgBox = svgRef.current.getBoundingClientRect();
-    const startBox = start.getBoundingClientRect();
-    const endBox = end.getBoundingClientRect();
-
-    const startX = startBox.left + startBox.width / 2 - svgBox.left;
-    const startY = startBox.top + startBox.height - svgBox.top;
-    const endX = endBox.left + endBox.width / 2 - svgBox.left;
-    const endY = endBox.top - svgBox.top;
-
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttribute('d', `M${startX},${startY} C${startX},${startY + (endY - startY) * 0.6} ${endX},${endY - (endY - startY) * 0.6} ${endX},${endY}`);
-    path.setAttribute('class', 'fancy-line dynamic-line');
-
-    const length = path.getTotalLength();
-    path.style.strokeDasharray = `${length} ${length}`;
-    path.style.strokeDashoffset = length;
-
-    svgRef.current.appendChild(path);
-    void path.offsetWidth;
-
-    setTimeout(() => {
-      path.style.strokeDashoffset = 0;
-    }, delay);
-  };
 
   const drawLines = () => {
     const svg = svgRef.current;
@@ -94,18 +56,52 @@ export default function CourseList() {
     let delay = 0;
     const increment = 300;
 
+    const drawStraightLine = (fromEl, toEl, delay = 0, dashed = false) => {
+      if (!fromEl || !toEl) return;
+
+      const svgRect = svg.getBoundingClientRect();
+      const fromRect = fromEl.getBoundingClientRect();
+      const toRect = toEl.getBoundingClientRect();
+
+      const startX = fromRect.left + fromRect.width / 2 - svgRect.left;
+      const startY = fromRect.bottom - svgRect.top;
+
+      const endX = toRect.left + toRect.width / 2 - svgRect.left;
+      const endY = toRect.top - svgRect.top;
+
+      // Create vertical and horizontal segments
+      const midY = (startY + endY) / 2;
+
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+      line.setAttribute("points", `${startX},${startY} ${startX},${midY} ${endX},${midY} ${endX},${endY}`);
+      line.setAttribute("fill", "none");
+      line.setAttribute("stroke", "#ff4081"); // You can customize color
+      line.setAttribute("stroke-width", "3");
+      line.setAttribute("class", "dynamic-line");
+      if (dashed) line.setAttribute("stroke-dasharray", "6,6");
+
+      line.style.opacity = 0;
+      svg.appendChild(line);
+
+      setTimeout(() => {
+        line.style.transition = "opacity 0.3s ease";
+        line.style.opacity = 1;
+      }, delay);
+    };
+
     if (showSections && !section && buttonRef.current) {
       Object.keys(data).forEach(sec => {
-        drawCurvedLine(buttonRef.current, sectionRefs.current[sec], delay);
+        drawStraightLine(buttonRef.current, sectionRefs.current[sec], delay, false);
         delay += increment;
       });
     } else if (section && headingRef.current) {
       data[section].forEach((lang, i) => {
         const langEl = componentRefs.current[lang];
-        drawCurvedLine(headingRef.current, langEl, i * increment);
+        drawStraightLine(headingRef.current, langEl, i * increment, true);
       });
     }
   };
+
 
   useEffect(() => {
     const id = requestAnimationFrame(drawLines);
@@ -121,7 +117,7 @@ export default function CourseList() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const handleCourseClick = tutorialName => {
+  const handleCourseClick = (tutorialName) => {
     localStorage.setItem('selectedCourse', tutorialName);
     navigate(`/course/${tutorialName}`);
   };

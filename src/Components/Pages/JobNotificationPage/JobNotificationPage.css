@@ -12,14 +12,16 @@
 ========================= */
 .job-header {
   padding: 30px;
-  border: var(--border);
+  border: none;
+  background: linear-gradient(90deg, #ffffff, #f0f0f0);
   border-radius: var(--border-radius);
   text-align: center;
   margin-bottom: 30px;
 }
 
 .job-notification-wrapper.dark .job-header {
-  border: var(--border-dark);
+  background: var(--card-background);
+
 }
 
 .job-header h1 {
@@ -39,42 +41,62 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
+  padding-top: 15px;
 }
 
 .job-notification-wrapper .job-header .job-tabs .tab-buttons {
-  flex: 1 1 auto;
-  border: var(--border);
-  background: var(--bg-primary);
-  padding: 10px 24px;
-  border-radius: 10px;
+  min-width: 20%;
+  padding: 14px 45px;
   font-size: 1rem;
-  color: var(--text-title);
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 120px;
-  text-align: center;
+  background: var(--text-heading);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid transparent;
+  border-image: var(--text-heading);
+  border-radius: 50px;
+  box-shadow: var(--box-shadow);
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
 }
 
 .job-notification-wrapper.dark .job-header .job-tabs .tab-buttons {
-  border: var(--border-dark);
-  color: var(--text-title-dark);
-  background: var(--bg-primary-dark);
+
+  background:snow;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  box-shadow: var(--box-shadow-dark);
+
 }
 
 /* Active / Hover Tab Styling */
 .job-notification-wrapper .job-header .job-tabs .tab-buttons.active,
 .job-notification-wrapper .job-header .job-tabs .tab-buttons:hover {
-  background: linear-gradient(to right, #ff5b8a, #ff1f8e);
-  color: var(--bg-primary);
+  background: var(--text-heading);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
   border: none;
-}
+  transform: translateY(-10px);
+   box-shadow: 0 8px 20px rgba(232, 62, 141, 0.1), 0 -8px 20px #b74df531 inset;
 
+}
 .job-notification-wrapper.dark .job-header .job-tabs .tab-buttons.active,
 .job-notification-wrapper.dark .job-header .job-tabs .tab-buttons:hover {
-  background: linear-gradient(135deg, #a115f3 50%, #7710b3);
-  color: var(--bg-primary);
+  background: var(--text-heading-dark);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
   border: none;
+  transform: translateY(-10px);
+   box-shadow: 0 8px 20px rgba(232, 62, 141, 0.1), 0 -8px 20px #b74df531 inset;
 }
 
 /* ========================

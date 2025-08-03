@@ -244,115 +244,89 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .main-title {
-    font-size: 38px;
-  }
-
-  .card,
-  .component-card,
-  .sub-card {
-    min-width: 150px;
-    padding: 20px;
-  }
-
-  .react-card-specific {
-    max-width: 250px;
-    padding: 25px;
-  }
-}
-
-@media (max-width: 768px) {
-  .main-title {
-    font-size: 32px;
-    margin-bottom: 30px;
-  }
-
-  .webdev-btn {
-    padding: 14px 30px;
-    font-size: 16px;
-    margin-bottom: 40px;
-  }
-
-  .section-row,
-  .component-row,
-  .subcomponent-row {
-    gap: 20px;
-    margin-top: 40px;
-  }
-
-  .card,
-  .component-card,
-  .sub-card {
-    min-width: 140px;
-    padding: 18px;
-    font-size: 14px;
-  }
-
-  .card h3,
-  .component-card h4 {
-    font-size: 18px;
-  }
-
-  .sub-title,
-  .sub-sub-title {
-    font-size: 26px;
-    margin-top: 40px;
-  }
-
-  .react-card-specific {
-    max-width: 100%;
-    margin-left: 0;
-    margin-top: 20px;
-  }
-}
-
 @media (max-width: 480px) {
-  .main-title {
-    font-size: 26px;
-    margin-bottom: 25px;
+
+  .coures-wrapper{
+    margin: 28% 0;
+
+  }
+  .component-row,
+  .section-row {
+    /* flex-direction: column; */ 
+    align-items: center;
+  }
+
+  .component-card,
+  .card {
+    width: 90% !important;
+    max-width: 100%;
+    font-size: 14px;
   }
 
   .webdev-btn {
-    padding: 12px 25px;
+    width: 100%;
     font-size: 14px;
-    margin-bottom: 30px;
+    padding: 12px 20px;
   }
 
-  .section-row,
-  .component-row,
-  .subcomponent-row {
-    gap: 15px;
-    margin-top: 30px;
+  .sub-title {
+    font-size: 20px;
+    text-align: center;
   }
 
-  .card,
-  .component-card,
-  .sub-card {
-    min-width: 100%;
-    padding: 15px;
-    font-size: 13px;
-  }
-
-  .card h3,
-  .component-card h4 {
+  .icon-title h3 {
     font-size: 16px;
   }
+}
 
-  .sub-title,
-  .sub-sub-title {
-    font-size: 18px;
-    margin-top: 30px;
+/* Large Mobile / Small Tablet (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .component-row,
+  .section-row {
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
   }
 
-  .icon-title {
-    gap: 6px;
+  .component-card,
+  .card {
+    flex: 1 1 45%;
+    min-width: 150px;
+    max-width: 45%;
+    font-size: 15px;
   }
 
-  .react-card-specific {
-    width: 90%;
-    max-width: none;
-    padding: 15px;
-    margin-top: 15px;
+  .webdev-btn {
+    font-size: 15px;
+    padding: 14px 28px;
+  }
+
+  .sub-title {
+    font-size: 26px;
+    text-align: center;
+  }
+}
+
+/* Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .component-row,
+  .section-row {
+    gap: 25px;
+  }
+
+  .component-card,
+  .card {
+    flex: 1 1 30%;
+    min-width: 180px;
+    max-width: 30%;
+  }
+
+  .webdev-btn {
+    font-size: 16px;
+    padding: 15px 32px;
+  }
+
+  .sub-title {
+    font-size: 30px;
   }
 }

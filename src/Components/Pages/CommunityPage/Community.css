@@ -8,7 +8,7 @@
   margin-top: 25vh;
   transition: background 0.3s ease;
   min-height: 100vh;
-  width: 84%;
+  width: 85%;
 
 }
 
@@ -560,9 +560,6 @@
 }
 
 
-
-
-
 /* ===== MODERN 2025 STYLE ENHANCEMENTS ===== */
 
 .community-wrapper,
@@ -580,6 +577,7 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   animation: fadeSlideIn 0.6s ease-in-out;
+  padding:20px ;
 }
 
 .community-wrapper.dark .post-box,
@@ -702,7 +700,7 @@
 
   .community-wrapper .main-section,
   .community-wrapper .sidebar {
-    padding: 0;
+    padding: 10px;
   }
 
   .discussion-card {
