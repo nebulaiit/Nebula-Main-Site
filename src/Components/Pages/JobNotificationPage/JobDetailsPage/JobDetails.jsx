@@ -1,13 +1,40 @@
 // JobDetails.jsx
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './JobDetails.css';
 import { getJobById } from '../../../APIService/apiservice';
+import { useSelector } from 'react-redux';
+
+const dummyJob = {
+    id: "1",
+    companyLogoUrl: "https://via.placeholder.com/80x80.png?text=Logo",
+    companyName: "Nebula Tech Pvt. Ltd.",
+    jobTitle: "Full Stack Web Developer",
+    location: "Pune, India",
+    jobType: "Full-time",
+    experience: "2-4 years",
+    salaryRange: "₹10 LPA - ₹15 LPA",
+    education: "B.Tech/B.E. in Computer Science or related field",
+    remote: true,
+    postedDate: "2025-07-03",
+    lastDateToApply: "2025-07-20",
+    jobDescription:
+        "We are looking for a Full Stack Web Developer to build and maintain high-quality web applications. You will work closely with design and product teams to deliver user-friendly experiences.",
+    responsibilities: `- Develop frontend interfaces using React.js\n- Implement backend services using Spring Boot\n- Integrate RESTful APIs\n- Write clean and maintainable code\n- Participate in code reviews`,
+    qualifications: `- Bachelor's degree in Computer Science or related field\n- 2+ years of experience in web development\n- Strong problem-solving skills`,
+    benefits: `- Remote work flexibility\n- Health insurance\n- Paid time off\n- Professional development opportunities`,
+    requiredSkills: ["Java", "Spring Boot", "React.js", "REST APIs", "MySQL", "Git"],
+    contactEmail: "hr@nebula-tech.com",
+    contactPhone: "+91-9876543210"
+};
 
 
 const JobDetails = () => {
     const { id } = useParams();
-    const [job, setJob] = useState(null);
+    const [job, setJob] = useState(dummyJob);
+    const darkMode = useSelector((state) => state.darkMode.enabled);
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         const fetchJob = async () => {
@@ -21,12 +48,16 @@ const JobDetails = () => {
         fetchJob();
     }, [id]);
 
+    const handleApply = (id)=>{
+        navigate(`/apply/${id}`);
+    }
+
     if (!job) return <div>Loading job details...</div>;
 
     return (
 
         <>
-            <div className="job-details-wrapper">
+            <div className={`job-details-wrapper ${darkMode ? 'dark' : ''}`}>
                 <div className="job-details-container">
                     <div className="job-details-header">
                         <img src={job.companyLogoUrl} alt={job.companyName} className="company-logo" />
@@ -37,23 +68,23 @@ const JobDetails = () => {
                         </div>
                     </div>
                     <div className="info-grid">
-                        <div className="info-card">
+                        <div className="job-info-card">
                             <h4><span className="icon">💰</span> Salary:</h4>
                             <p>₹10 LPA - ₹15 LPA</p>
                         </div>
-                        <div className="info-card">
+                        <div className="job-info-card">
                             <h4><span className="icon">🎓</span> Education:</h4>
                             <p>B.Tech/B.E. in Computer Science or related field</p>
                         </div>
-                        <div className="info-card">
+                        <div className="job-info-card">
                             <h4><span className="icon">🌐</span> Remote:</h4>
                             <p>Yes</p>
                         </div>
-                        <div className="info-card">
+                        <div className="job-info-card">
                             <h4><span className="icon">📅</span> Posted On:</h4>
                             <p>2025-07-03</p>
                         </div>
-                        <div className="info-card">
+                        <div className="job-info-card">
                             <h4><span className="icon">⏰</span> Last Date to Apply:</h4>
                             <p>2025-07-20</p>
                         </div>
@@ -83,15 +114,11 @@ const JobDetails = () => {
                         </div>
                     </div>
                     <div className="apply-section">
-                        <a href={job.applyUrl} target="_blank" rel="noopener noreferrer">
-                            <button className="apply-btn">Apply Now</button>
-                        </a>
+                        <button className="apply-btn" onClick={()=>{handleApply(job.id)}}>Apply Now</button>
                         <p>📧 {job.contactEmail} | 📞 {job.contactPhone}</p>
                     </div>
                 </div>
-                <div className="related-job-container">
-                
-                </div>
+
             </div>
 
         </>

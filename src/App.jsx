@@ -3,17 +3,13 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './Components/Pages/Header/Header';
 import Home from './Components/Pages/Home/Home';
-
 import Login from './Components/Login/Login';
 import Enrollment from './LearningPathPytho/Enrollment';
 import PythonCourse from './Components/Pages/LearnNebula/PythonCourse';
 import CourseList from './Components/Pages/LearnNebula/CourseList';
 import WebsiteFooter from './Components/Pages/WebsiteFooter/WebsiteFooter';
 import JobNotificationPage from './Components/Pages/JobNotificationPage/JobNotificationPage';
-
 import PythonExamples from './Components/Pages/TutorialHome/Python/PythonExamples';
-
-//dashboard
 import LearningDashboard from "./Components/Pages/LearningDashboard/LearningDashboard";
 import ContactPage from './Components/Pages/ContactPage/ContactPage';
 import TutorialPage from './Components/Pages/TutorialPage/TutorialPage';
@@ -26,16 +22,14 @@ import BlogDetails from './Components/Pages/Blogs/BlogDetails';
 import CreateBlog from './Components/Pages/Blogs/CreateBlog';
 import Community from './Components/Pages/CommunityPage/Community';
 import JobDetails from './Components/Pages/JobNotificationPage/JobDetailsPage/JobDetails';
-
 import ToastList from './Components/Toast/ToastList';
-
 import CreateResume from './Components/Pages/JobNotificationPage/Resume/CreateResume/CreateResume';
 import ATSChecker from './Components/Pages/JobNotificationPage/Resume/Resume';
-
 import ForgotFlow from './Components/Login/ForgotFlow';
 import CourseListPage from './Components/Pages/Courses/CourseListPage';
 import DarkMode from './Components/DarkMode/DarkMode';
 import { useSelector } from 'react-redux';
+import ApplyJob from './Components/Pages/JobNotificationPage/ApplyJob/ApplyJob';
 
 function App() {
 
@@ -77,6 +71,7 @@ function App() {
         <Route path="/resume-checker" element={<ATSChecker />} />
         <Route path="/create-resume" element={<CreateResume />} />
         <Route path="/forgot-password" element={<ForgotFlow />} />
+        <Route path="/apply/:jobId" element={<ApplyJob />} />
 
 
       </Routes>
