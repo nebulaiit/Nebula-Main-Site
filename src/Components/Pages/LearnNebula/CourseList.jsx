@@ -1,3 +1,4 @@
+
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -12,28 +13,20 @@ library.add(faPython, faJs, faJava, faHtml5, faCss3, faDatabase, faReact);
 
 export default function CourseList() {
   const navigate = useNavigate();
+  const darkMode = useSelector((state) => state.darkMode.enabled);
+  const [courses, setCourses] = useState([]);
+  const [showSections, setShowSections] = useState(false);
+  const [section, setSection] = useState(null);
+
   const data = {
     Frontend: ['HTML', 'CSS', 'JavaScript', 'Angular', 'React'],
     Backend: ['NodeJS', 'Database', 'Java', 'Python', 'Ruby'],
   };
 
-  const [courses, setCourses] = useState([]);
-  const [section, setSection] = useState(null);
-  const [showSections, setShowSections] = useState(false);
-  const darkMode = useSelector((state) => state.darkMode.enabled);
-
-  const buttonRef = useRef(null);
-  const svgRef = useRef(null);
-  const sectionRefs = useRef({});
-  const componentRefs = useRef({});
-  const headingRef = useRef(null);
-
-
   useEffect(() => {
     const fetchTutorialList = async () => {
       try {
         const response = await getAllTutorial();
-      
         setCourses(response);
       } catch (error) {
         console.error('Error fetching documents:', error);
@@ -42,11 +35,52 @@ export default function CourseList() {
     fetchTutorialList();
   }, []);
 
+  const handleCourseClick = (tutorialName) => {
+    localStorage.setItem('selectedCourse', tutorialName);
+    navigate(`/course/${tutorialName}`);
+  };
+
+  const handleWebDevClick = () => {
+    setShowSections(true);
+    setSection(null);
+  };
+
+  const isMobile = window.innerWidth <= 768;
+
+  return (
+    <div className={`coures-wrapper ${darkMode ? 'dark' : ''}`}>
+      {isMobile ? (
+        <MobileLayout
+          data={data}
+          onNavigate={handleCourseClick}
+          darkMode={darkMode}
+        />
+      ) : (
+        <DesktopLayout
+          data={data}
+          navigate={navigate}
+          section={section}
+          setSection={setSection}
+          showSections={showSections}
+          setShowSections={setShowSections}
+          darkMode={darkMode}
+        />
+      )}
+    </div>
+  );
+}
+
+function DesktopLayout({ data, navigate, section, setSection, showSections, setShowSections, darkMode }) {
+  const buttonRef = useRef(null);
+  const svgRef = useRef(null);
+  const sectionRefs = useRef({});
+  const componentRefs = useRef({});
+  const headingRef = useRef(null);
+
   const setRef = useCallback((refs, key) => node => {
     if (node) refs.current[key] = node;
     else delete refs.current[key];
   }, []);
-
 
   const drawLines = () => {
     const svg = svgRef.current;
@@ -65,24 +99,20 @@ export default function CourseList() {
 
       const startX = fromRect.left + fromRect.width / 2 - svgRect.left;
       const startY = fromRect.bottom - svgRect.top;
-
       const endX = toRect.left + toRect.width / 2 - svgRect.left;
       const endY = toRect.top - svgRect.top;
-
-      // Create vertical and horizontal segments
       const midY = (startY + endY) / 2;
 
       const line = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
       line.setAttribute("points", `${startX},${startY} ${startX},${midY} ${endX},${midY} ${endX},${endY}`);
       line.setAttribute("fill", "none");
-      line.setAttribute("stroke", "#ff4081"); // You can customize color
+      line.setAttribute("stroke", "#ff4081");
       line.setAttribute("stroke-width", "3");
       line.setAttribute("class", "dynamic-line");
       if (dashed) line.setAttribute("stroke-dasharray", "6,6");
 
       line.style.opacity = 0;
       svg.appendChild(line);
-
       setTimeout(() => {
         line.style.transition = "opacity 0.3s ease";
         line.style.opacity = 1;
@@ -102,7 +132,6 @@ export default function CourseList() {
     }
   };
 
-
   useEffect(() => {
     const id = requestAnimationFrame(drawLines);
     return () => {
@@ -111,38 +140,15 @@ export default function CourseList() {
     };
   }, [section, showSections]);
 
-  useEffect(() => {
-    const handleResize = () => setSection(prev => prev);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const handleCourseClick = (tutorialName) => {
-    localStorage.setItem('selectedCourse', tutorialName);
-    navigate(`/course/${tutorialName}`);
-  };
-
-  const handleWebDevClick = () => {
-    setShowSections(true);
-    setSection(null);
-  };
-
   return (
-    <div className={`coures-wrapper ${darkMode ? 'dark' : ''}`}>
+    <>
       <div className="webdev-btn-wrapper">
-        <button ref={buttonRef} onClick={handleWebDevClick} className="webdev-btn">
+        <button ref={buttonRef} onClick={() => { setShowSections(true); setSection(null); }} className="webdev-btn">
           Web Development
         </button>
       </div>
 
-      <svg className="live-curve-svg" ref={svgRef}>
-        <defs>
-          <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#1565c0" />
-            <stop offset="100%" stopColor="#42a5f5" />
-          </linearGradient>
-        </defs>
-      </svg>
+      <svg className="live-curve-svg" ref={svgRef}></svg>
 
       {showSections && !section && (
         <div className="section-row fade-in">
@@ -150,11 +156,11 @@ export default function CourseList() {
             <div
               key={sec}
               ref={setRef(sectionRefs, sec)}
-              className="card "
+              className="card"
               style={{ animationDelay: `${i * 0.1}s` }}
               onClick={() => setSection(sec)}
             >
-              <div className="icon-title ">
+              <div className="icon-title">
                 {sec === 'Frontend' ? <FaCodeBranch size={22} /> : <FaServer size={22} />}
                 <h3>{sec}</h3>
               </div>
@@ -172,9 +178,9 @@ export default function CourseList() {
               <div
                 key={language}
                 ref={setRef(componentRefs, language)}
-                className="component-card "
+                className="component-card"
                 style={{ animationDelay: `${i * 0.1}s` }}
-                onClick={() => handleCourseClick(language)}
+                onClick={() => navigate(`/course/${language}`)}
               >
                 <h4>{language}</h4>
               </div>
@@ -182,6 +188,48 @@ export default function CourseList() {
           </div>
         </>
       )}
-    </div>
+    </>
+  );
+}
+
+function MobileLayout({ data, onNavigate, darkMode }) {
+  const [showSections, setShowSections] = useState(false);
+  const [expandedSection, setExpandedSection] = useState(null);
+
+  const toggleSection = (sec) => {
+    setExpandedSection(prev => (prev === sec ? null : sec));
+  };
+
+  return (
+    <>
+      <div className="webdev-btn-wrapper">
+        <button className="webdev-btn" onClick={() => setShowSections(true)}>
+          Web Development
+        </button>
+      </div>
+
+      {showSections && (
+        <div className="accordion-container">
+          {Object.keys(data).map((sec) => (
+            <div key={sec} className="accordion-item">
+              <div className="accordion-header" onClick={() => toggleSection(sec)}>
+                <div className="icon-title">
+                  {sec === 'Frontend' ? <FaCodeBranch size={20} /> : <FaServer size={20} />}
+                  <h3>{sec}</h3>
+                </div>
+                <span className={`arrow ${expandedSection === sec ? 'open' : ''}`}>▼</span>
+              </div>
+              <div className={`accordion-content ${expandedSection === sec ? 'show' : ''}`}>
+                {data[sec].map((topic) => (
+                  <div key={topic} className="sub-card" onClick={() => onNavigate(topic)}>
+                    {topic}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </>
   );
 }
