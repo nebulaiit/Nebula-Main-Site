@@ -1,0 +1,123 @@
+/* Container for the question card */
+.question-card {
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 700px;
+    text-align: center;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Question heading */
+.question-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* Question text */
+.question-card .question-text {
+    font-size: 1.1rem;
+    color: var(--bg-primary-dark);
+    margin-bottom: 20px;
+}
+.question-card.dark .question-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+/* Answer textarea */
+.question-card .answer-area {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 12px;
+    border:var(--border);
+    color: var(--bg-primary-dark);
+    resize: vertical;
+    min-height: 140px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.question-card.dark .answer-area {
+    border:var(--border-dark);    
+  background: rgba(0, 0, 0, 0.3);
+    color: var(--bg-primary);
+ 
+}
+
+.question-card .answer-area::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.question-card .answer-area:focus {
+    outline: none;
+    border-color: var(--text-title);
+    box-shadow: var(--box-shadow);
+}
+.question-card.dark .answer-area:focus {
+    border-color: var(--text-title-dark);
+    box-shadow: var(--box-shadow-dark);
+}
+
+/* Next button */
+.question-card button {
+    margin-top: 20px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color:var(--text-secondary);
+    background: var(--button-hover);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.question-card.dark button {
+
+    color:var(--text-secondary);
+    background: var(--button-dark);
+
+}
+
+.question-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(157, 78, 221, 0.4);
+}
+
+/* Responsive styles */
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .question-card {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+
+    .question-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .question-text {
+        font-size: 1rem;
+    }
+}
+
+/* Large Mobile / Small Tablet */
+@media (min-width: 481px) and (max-width: 767px) {
+    .question-card {
+        padding: 25px;
+    }
+
+    .question-card h3 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .question-card {
+        padding: 28px;
+    }
+}

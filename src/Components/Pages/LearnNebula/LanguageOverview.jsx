@@ -3,10 +3,11 @@ import "./LanguageOverview.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const LanguageOverview = ({ courseName }) => {
+const LanguageOverview = ({ tutorialData }) => {
   const [inView, setInView] = useState(false);
   const sectionRef = useRef(null);
   const darkMode = useSelector((state) => state.darkMode.enabled);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -51,14 +52,14 @@ const LanguageOverview = ({ courseName }) => {
 
   return (
     <div
-      className={`language-overview ${inView ? "in-view" : ""} ${
-        darkMode ? "dark" : ""
-      }`}
+      className={`language-overview ${inView ? "in-view" : ""} ${darkMode ? "dark" : ""
+        }`}
       ref={sectionRef}
     >
       {/* About Section */}
       <section className="overview-section">
-        <h2>💡 About {courseName}</h2>
+        <h2>💡 About {tutorialData?.name}</h2>
+
         <p>{language.briefHistory}</p>
         <div className="card-row">
           {[
@@ -142,7 +143,7 @@ const LanguageOverview = ({ courseName }) => {
             <ul>
               {language.communityLinks.map((link, i) => (
                 <li key={i}>
-                  <Link href={link.url} target="_blank" rel="noreferrer">
+                  <Link to={link.url} target="_blank" rel="noreferrer">
                     {link.name}
                   </Link>
                 </li>
@@ -154,7 +155,7 @@ const LanguageOverview = ({ courseName }) => {
             <ul>
               {language.projects.map((proj, i) => (
                 <li key={i}>
-                  <Link href={proj.url} target="_blank" rel="noreferrer">
+                  <Link to={proj.url} target="_blank" rel="noreferrer">
                     {proj.name}
                   </Link>
                 </li>

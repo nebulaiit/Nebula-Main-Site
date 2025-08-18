@@ -1,113 +1,181 @@
 /* ===== Apply Job Page ===== */
-
 .apply-job {
   width: 83%;
   margin: 12%;
   padding: 30px;
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-primary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.apply-job.dark {
+  background: var(--card-background);
+  box-shadow: var(--box-shadow-dark);
 }
 
+/* ===== Title ===== */
 .apply-job .apply-job-title {
   text-align: center;
-  font-size: 28px;
+  font-size: var(--heading-size);
   margin-bottom: 25px;
-  color: #333;
+  background: var(--text-title);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.apply-job.dark .apply-job-title {
+  text-align: center;
+  font-size: var(--heading-size);
+  background: var(--text-title-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ===== Form ===== */
-
 .apply-job .apply-job-form {
- padding: 20px;
+  padding: 20px;
 }
 
-/* ===== Field Wrapper ===== */
-.apply-job .apply-job-form .apply-job-box{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.apply-job .apply-job-form .apply-job-box3{
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-}
-
-.apply-job .apply-job-form .apply-job-box .apply-job-field {
-    width: 50%;
+/* ===== Field Wrappers ===== */
+.apply-job .apply-job-form .apply-job-box {
   display: flex;
-  flex-direction: column;
-  margin: 20px 0;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
+
+.apply-job .apply-job-form .apply-job-box3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+/* ===== Field ===== */
+.apply-job .apply-job-form .apply-job-box .apply-job-field,
 .apply-job .apply-job-form .apply-job-box3 .apply-job-field {
-    width: 50%;
+  width: 48%;
   display: flex;
   flex-direction: column;
   margin: 20px 0;
 }
-
 
 .apply-job .apply-job-form .apply-job-field .apply-job-label {
   font-weight: 600;
   margin-bottom: 6px;
-  color: #222;
+  color: var(--text-title);
+}
+.apply-job .apply-job-form .apply-job-field .apply-job-filelabel {
+  display: inline-block;
+  padding: 12px 20px;
+  /* background: var(--sub-card-background); */
+  border: var(--border);
+  border-radius: var(--border-radius);
+  color: var(--text-title);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 5%;
+  margin-bottom: 10px;
+}
+.apply-job.dark .apply-job-form .apply-job-field .apply-job-filelabel {
+
+  border: var(--border-dark);
+  border-radius: var(--border-radius);
+  color: var(--text-title-dark);
+
+}
+.apply-job.dark .apply-job-form .apply-job-field .apply-job-label {
+  color: var(--text-title-dark);
 }
 
-.apply-job .apply-job-form .apply-job-field .apply-job-input,
-.apply-job .apply-job-form .apply-job-field .apply-job-textarea {
-    width: 90%;
+/* ===== Input & Textarea ===== */
+.apply-job .apply-job-form .apply-job-input,
+.apply-job .apply-job-form .apply-job-textarea {
+  width: 100%;
   padding: 12px 14px;
   font-size: 15px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #ccc;
-  background-color: #f7f7f742;
-  transition: border-color 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.apply-job.dark .apply-job-form .apply-job-input,
+.apply-job.dark .apply-job-form .apply-job-textarea {
+  border: 1px solid #8928ca;
 }
 
-.apply-job .apply-job-form .apply-job-field  .apply-job-input:focus,
-.apply-job .apply-job-form .apply-job-field  .apply-job-textarea:focus {
-  border-color: #5c6bc0;
+.apply-job .apply-job-form .apply-job-input[type="file" i] {
+  display: none;
+}
+
+.apply-job .apply-job-form .apply-job-input:focus,
+.apply-job .apply-job-form .apply-job-textarea:focus {
+  border-color: var(--text-title);
   outline: none;
+  box-shadow: 0 0 0 3px rgba(232, 62, 140, 0.1);
+}
+.apply-job.dark .apply-job-form .apply-job-input:focus,
+.apply-job.dark .apply-job-form .apply-job-textarea:focus {
+  border-color: var(--text-title-dark);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(175, 62, 232, 0.1);
+}
+
+.apply-job .apply-job-form .apply-job-field .file-name{
+  margin-left: 15px;
 }
 
 /* ===== Messages ===== */
-
 .apply-job .apply-job-form .apply-job-error,
 .apply-job .apply-job-form .apply-job-success {
   padding: 10px 14px;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 14px;
+  font-weight: 500;
 }
 
 .apply-job .apply-job-form .apply-job-error {
-  background-color: #ffe6e6;
-  color: #d32f2f;
-  border: 1px solid #f5c2c7;
+  background-color: var(--color-error);
+  color: #fff;
+  border: 1px solid #ef4444;
 }
 
 .apply-job .apply-job-form .apply-job-success {
-  background-color: #e1f5e6;
-  color: #2e7d32;
-  border: 1px solid #a5d6a7;
+  background-color: var(--color-success);
+  color: #fff;
+  border: 1px solid #089163;
 }
 
 /* ===== Submit Button ===== */
-
 .apply-job .apply-job-form .apply-job-submit {
-    border: 1px solid #e83e8c;
-    background: #fff;
-    padding: 10px 15px;
-    border-radius: 51px;
-    font-size: 1.rem;
-    color: #e83e8c;
-    font-weight: 600;
-    cursor: pointer;
-    text-transform: capitalize;
-    transition: all 0.3s ease;
+  border: var(--border);
+  background: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  color: var(--text-title);
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+  box-shadow: var(--box-shadow);
+}
+.apply-job.dark .apply-job-form .apply-job-submit {
+  border: var(--border-dark);
+  color: var(--text-title-dark);
+  box-shadow: var(--box-shadow-dark);
 }
 
 .apply-job .apply-job-form .apply-job-submit:hover {
-  background-color: #3f51b5;
+  background: var(--text-title);
+  color: var(--bg-primary);
+  transform: scale(1.03);
+  border: none;
+}
+.apply-job.dark .apply-job-form .apply-job-submit:hover {
+  background: var(--text-title-dark);
+  color: var(--bg-primary);
+  transform: scale(1.03);
+  border: none;
 }

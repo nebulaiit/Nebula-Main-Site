@@ -1,5 +1,5 @@
 .siderbar-wrapper .sidebar {
-  width: 380px;
+  width: 350px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   /* background: #f9f9fb; */
   border-radius: 16px;
@@ -19,42 +19,7 @@
 
 }
 
-.siderbar-wrapper .sidebar .menu-card .menu-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 22px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #1e293b;
-  cursor: pointer;
-  background: #fff0f6;
-
-  transition: background 0.3s ease;
-}
-
-.siderbar-wrapper.dark  .sidebar .menu-card .menu-title{
-  background: var( --card-background);
-  color: var(--text-secondary);
-}
-
-
-.siderbar-wrapper .sidebar .menu-card .submenu {
-  padding: 14px 20px 20px 20px;
-  background-color: #fff;
-}
-
-.siderbar-wrapper .sidebar .menu-card .submenu ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.siderbar-wrapper .sidebar .menu-card .submenu ul li {
-  margin-bottom: 10px;
-}
-
-.topic-btn {
+.siderbar-wrapper .sidebar .menu-card .topic-btn {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -62,20 +27,20 @@
   color: #334155;
   background-color: #f9fafb;
   border: 1px solid #f0f0f0;
-  padding: 10px 14px;
+  padding: 20px 14px;
   border-radius: 10px;
   width: 100%;
   transition: all 0.3s ease;
   font-weight: 500;
 }
 
-.topic-btn:hover {
+.siderbar-wrapper .sidebar .menu-card .topic-btn:hover {
   background-color: #fdf2f8;
-  border-color: #f9a8d4;
+
   box-shadow: 0 6px 12px rgba(255, 105, 180, 0.1);
 }
 
-.topic-btn.active {
+.siderbar-wrapper .sidebar .menu-card .topic-btn.active {
   background-color: #ec4899;
   color: white;
   font-weight: 700;
@@ -83,14 +48,7 @@
   transform: scale(1.02);
 }
 
-.menu-title i {
-  font-size: 14px;
-  transition: transform 0.3s ease;
-}
 
-.menu-card.expanded .menu-title i {
-  transform: rotate(180deg);
-}
 /* ----------------------------
    Responsive Sidebar Styling
 ----------------------------- */

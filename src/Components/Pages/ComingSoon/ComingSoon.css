@@ -1,7 +1,7 @@
 .coming-soon-wrapper {
     width: 100%;
     min-height: 50vh;
-
+    margin-top: 12%;
     display: flex;
     justify-content: center;
     align-items: center;

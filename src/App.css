@@ -35,10 +35,6 @@
 
   --button-hover: linear-gradient(to right, #ff5b8a, #ff1f8e);
   --button-dark:linear-gradient(90deg, #8928ca, #b74df5);
-
-  --max-width-mobile:425px;
-  --max-width-tablet:768px;
-  --max-width-laptop:1024px;
 }
 
 

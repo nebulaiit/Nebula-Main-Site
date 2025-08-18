@@ -56,6 +56,19 @@ export const getUserDetails = async (id) => {
         throw error;
     }
 }
+export const getTutorialOverview = async (slug) => {
+
+    const url = `${API_BASE_URL}${API_URLs.GET_TUTORIAL_OVERVIEW}/${slug}`
+    console.log(url)
+    try {
+        const response = await axios.get(url)
+        console.log(response)
+        return response.data;
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
 export const getAllTutorial = async () => {
 
     const url = `${API_BASE_URL}${API_URLs.GET_TUTORIAL}`
@@ -65,6 +78,18 @@ export const getAllTutorial = async () => {
         const response = await axios.get(url)
         return response.data;
 
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
+export const getTutorialDetails = async (slug) => {
+
+    const url = `${API_BASE_URL}${API_URLs.GET_TUTORIAL_details}/${slug}`
+    console.log(url)
+    try {
+        const response = await axios.get(url)
+        return response.data;
     } catch (error) {
         console.error('Error:', error.response || error.message);
         throw error;
@@ -96,20 +121,6 @@ export const getCourseDetails = async (id) => {
         throw error;
     }
 }
-export const getHeadingList = async (tutorialName) => {
-
-    const url = `${API_BASE_URL}${API_URLs.GET_HEADING_LIST}/${tutorialName}`
-
-
-    try {
-        const response = await axios.get(url)
-        return response.data;
-
-    } catch (error) {
-        console.error('Error:', error.response || error.message);
-        throw error;
-    }
-}
 export const getContentList = async (urlSlug) => {
 
     const url = `${API_BASE_URL}${API_URLs.GET_CONTENT_BY_SLUG}/${urlSlug}`
@@ -127,6 +138,7 @@ export const getContentList = async (urlSlug) => {
 export const getTopics = async (id) => {
 
     const url = `${API_BASE_URL}${API_URLs.GET_TOPICS}/${id}`
+    console.log(url)
 
     try {
         const response = await axios.get(url)

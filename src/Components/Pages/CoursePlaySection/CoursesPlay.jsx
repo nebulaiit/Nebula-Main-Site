@@ -116,7 +116,7 @@ const tabContent = {
   }
 };
 
-const Courses = () => {
+const CoursesPlay = () => {
   const videoRef = useRef(null);
   const [playbackRate, setPlaybackRate] = useState(1);
   const [activeTab, setActiveTab] = useState("Overview");
@@ -188,4 +188,4 @@ const Courses = () => {
   );
 };
 
-export default Courses;
+export default CoursesPlay;

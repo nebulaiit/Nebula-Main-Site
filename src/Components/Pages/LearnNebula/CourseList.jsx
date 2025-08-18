@@ -14,26 +14,41 @@ library.add(faPython, faJs, faJava, faHtml5, faCss3, faDatabase, faReact);
 export default function CourseList() {
   const navigate = useNavigate();
   const darkMode = useSelector((state) => state.darkMode.enabled);
-  const [courses, setCourses] = useState([]);
   const [showSections, setShowSections] = useState(false);
   const [section, setSection] = useState(null);
 
-  const data = {
-    Frontend: ['HTML', 'CSS', 'JavaScript', 'Angular', 'React'],
-    Backend: ['NodeJS', 'Database', 'Java', 'Python', 'Ruby'],
-  };
+  const [data, setData] = useState({ Frontend: [], Backend: [] });
 
   useEffect(() => {
     const fetchTutorialList = async () => {
       try {
         const response = await getAllTutorial();
-        setCourses(response);
+
+        // Group by category
+        const groupedData = response.reduce(
+          (acc, item) => {
+            if (item.category === "Frontend") {
+              acc.Frontend.push(item);
+            } else if (item.category === "Backend") {
+              acc.Backend.push(item);
+            }
+            return acc;
+          },
+          { Frontend: [], Backend: [] }
+        );
+
+        setData(groupedData);
       } catch (error) {
-        console.error('Error fetching documents:', error);
+        console.error("Error fetching documents:", error);
       }
     };
+
     fetchTutorialList();
   }, []);
+
+
+  console.log(data)
+
 
   const handleCourseClick = (tutorialName) => {
     localStorage.setItem('selectedCourse', tutorialName);
@@ -177,12 +192,12 @@ function DesktopLayout({ data, navigate, section, setSection, showSections, setS
             {data[section].map((language, i) => (
               <div
                 key={language}
-                ref={setRef(componentRefs, language)}
+                ref={setRef(componentRefs, language.name)}
                 className="component-card"
                 style={{ animationDelay: `${i * 0.1}s` }}
-                onClick={() => navigate(`/course/${language}`)}
+                onClick={() => navigate(`/course/${language.slug}`)} // use slug for URL
               >
-                <h4>{language}</h4>
+                <h4>{language.name}</h4>
               </div>
             ))}
           </div>
