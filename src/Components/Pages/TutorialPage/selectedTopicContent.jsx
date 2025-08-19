@@ -12,8 +12,7 @@ export default function SelectedTopicContent({ contentBlocks }) {
       {contentBlocks && contentBlocks.length > 0 ? (
         contentBlocks.map((block) => (
           <div key={block.id} className="content-block">
-            {/* Title */}
-            {/* {<h2 className="content-heading">{block.title}</h2>} */}
+
 
             {/* Render contentHtml safely */}
             {block.contentHtml && (
