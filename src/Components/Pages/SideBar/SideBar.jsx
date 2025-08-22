@@ -6,14 +6,17 @@ function SideBar({ heading, selectedUrlSlug }) {
   const [activeSlug, setActiveSlug] = useState(null);
   const darkMode = useSelector((state) => state.darkMode.enabled);
 
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className={`siderbar-wrapper ${darkMode ? 'dark' : ''}`}>
-      <div className="sidebar">
-        {[...heading]
-          .sort((a, b) => a.orderIndex - b.orderIndex)
-          .map((item) => (
-            <div key={item.id} className="menu-card">
-     
+    <>
+      <div className={`siderbar-wrapper ${darkMode ? 'dark' : ''}`}>
+        <div className="sidebar">
+          {[...heading]
+            .sort((a, b) => a.orderIndex - b.orderIndex)
+            .map((item) => (
+              <div key={item.id} className="menu-card">
+
                 <button
                   className={`topic-btn ${activeSlug === item.slug ? 'active' : ''}`}
                   onClick={(e) => {
@@ -25,11 +28,29 @@ function SideBar({ heading, selectedUrlSlug }) {
                 >
                   {item.name}
                 </button>
-              
-            </div>
-          ))}
+
+              </div>
+            ))}
+        </div>
       </div>
-    </div>
+
+      <button
+        className={`sidebar-toggle ${isOpen ? "active" : ""}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? "<" : ">"}
+      </button >
+
+      <div
+        className={`sidebar-overlay ${isOpen ? "show" : ""}`}
+        onClick={() => setIsOpen(false)}
+      >
+        
+      </div>
+
+
+
+    </>
   );
 }
 

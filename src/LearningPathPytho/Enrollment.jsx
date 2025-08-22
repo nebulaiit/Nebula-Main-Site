@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Enrollment.css";
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import profile from "../Components/Images/profile-icon.jpg";
 import { showToast } from "../redux/toastSlice";
@@ -79,7 +79,7 @@ const Enrollment = () => {
       }
     };
     fetchCourseDetails();
-  }, []);
+  }, [id]);
 
 
   return (

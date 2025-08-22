@@ -40,20 +40,39 @@ export default function CreateBlog() {
         e.preventDefault();
 
         const formData = new FormData();
-        formData.append("blog", new Blob([JSON.stringify(newBlog)], { type: "application/json" }));
+        formData.append(
+            "blog",
+            new Blob([JSON.stringify(newBlog)], { type: "application/json" })
+        );
         formData.append("blogThumbnail", blogThumbnail);
 
         try {
             const response = await addBlogs(formData);
 
-            dispatch(showToast({ message: "✅ Blog submitted successfully!", type: "success" }));
+            if (response.status === 200) {
+                dispatch(
+                    showToast({ message: "✅ Blog submitted successfully!", type: "success" })
+                );
 
-            // Optionally reset form
-            setNewBlog({ blogTitle: '', category: '', author: '', content: '' });
-            setBlogThumbnail(null);
+                // Reset form
+                setNewBlog({ blogTitle: "", category: "", author: "", content: "" });
+                setBlogThumbnail(null);
+            } else {
+                dispatch(
+                    showToast({
+                        message: `⚠️ Blog submission failed! (Status: ${response.status})`,
+                        type: "error",
+                    })
+                );
+            }
         } catch (error) {
             console.error("Error submitting blog:", error);
-            alert("❌ Something went wrong!");
+            dispatch(
+                showToast({
+                    message: "❌ Something went wrong while submitting the blog!",
+                    type: "error",
+                })
+            );
         }
     };
 

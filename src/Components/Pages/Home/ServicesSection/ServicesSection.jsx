@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import './ServicesSection.css';
 
-import branding from "../../Images/branding.svg";
-import development from "../../Images/development.svg";
-import marketing from "../../Images/marketing.svg";
-import app from '../../Images/app.svg';
+import branding from "../../../Images/branding.svg";
+import development from "../../../Images/development.svg";
+import marketing from "../../../Images/marketing.svg";
+import app from '../../../Images/app.svg';
 import { useSelector } from 'react-redux';
 
 const services = [

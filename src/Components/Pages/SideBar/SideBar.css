@@ -48,6 +48,32 @@
   transform: scale(1.02);
 }
 
+/* Toggle Button (Half Circle) */
+.sidebar-toggle {
+  position: fixed;
+  top: 80px; /* just below header */
+  left: 0;
+  transform: translateX(-50%);
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 0 50% 50% 0;
+  width: 40px;
+  height: 60px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  box-shadow: 2px 4px 10px rgba(233, 30, 99, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
+  display:none;
+
+}
+
+
 
 /* ----------------------------
    Responsive Sidebar Styling
@@ -59,6 +85,7 @@
     width: 100%;
     border-radius: 0;
     padding: 0 10px;
+    display: none;
   }
 
   .siderbar-wrapper .sidebar .menu-card {
@@ -78,6 +105,9 @@
   .siderbar-wrapper .sidebar .menu-card .submenu {
     padding: 12px 16px 16px 16px;
   }
+  .sidebar-toggle{
+    display: block;
+  }
 }
 
 /* Large Mobile / Small Tablet (481px - 767px) */
@@ -86,6 +116,7 @@
     width: 100%;
     border-radius: 12px;
     padding: 0 16px;
+     display: none;
   }
 
   .topic-btn {
@@ -99,6 +130,10 @@
 
   .siderbar-wrapper .sidebar .menu-card .submenu {
     padding: 14px 18px 18px 18px;
+  }
+
+    .sidebar-toggle{
+    display: block;
   }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './LanguageHeader.css';
 import { useSelector } from 'react-redux';
 

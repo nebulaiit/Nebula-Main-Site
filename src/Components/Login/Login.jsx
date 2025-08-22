@@ -9,7 +9,6 @@ import { showToast } from '../../redux/toastSlice';
 import studentImg from '../Images/Logo/login.png';
 import { Link } from 'react-router-dom';
 import { useGoogleLogin } from '@react-oauth/google';
-import { jwtDecode } from 'jwt-decode';
 import { FcGoogle } from 'react-icons/fc';
 import axios from 'axios';
 
@@ -66,21 +65,36 @@ const Login = () => {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
+    console.log(signUpData)
     try {
-      await signUpUser(signUpData);
+      // const response = await signUpUser(signUpData);
 
-      if (signUpData.password !== 'google-oauth') {
-        setTempUserEmail(signUpData.email);
-        dispatch(showToast({ message: 'Signup successful! Check your email for the verification code.', type: 'info' }));
-        setView('verify');
+      if (response.status === 201) {
+        // ✅ Manual signup
+        if (signUpData.password !== 'google-oauth') {
+          setTempUserEmail(signUpData.email);
+          dispatch(showToast({
+            message: 'Signup successful! Check your email for the verification code.',
+            type: 'info'
+          }));
+          setView('verify');
+        }
       } else {
-        dispatch(showToast({ message: 'Google Signup successful!', type: 'success' }));
-        navigate('/');
+        // unexpected but safe fallback
+        dispatch(showToast({
+          message: 'Unexpected response from server.',
+          type: 'warning'
+        }));
       }
     } catch (error) {
-      dispatch(showToast({ message: error.message || 'Signup failed', type: 'error' }));
+      // If backend sent 400 → axios/fetch throws → handle here
+      dispatch(showToast({
+        message: error.response?.data?.message || 'Signup failed',
+        type: 'error'
+      }));
     }
   };
+
 
   const handleVerify = async (e) => {
     e.preventDefault();

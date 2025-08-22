@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { API_BASE_URL, API_URLs } from './constant';
-import MockInterview from '../Pages/MockInterview/MockInterview';
 
 
 //login api
@@ -302,7 +301,7 @@ export const getMockInterview = async (params) => {
 
     try {
         console.log(url, null, { params })
-        // const response = await axios.post(url, null, { params });
+        const response = await axios.post(url, null, { params });
         return response.data;
     } catch (error) {
         console.error("Error:", error.response || error.message);

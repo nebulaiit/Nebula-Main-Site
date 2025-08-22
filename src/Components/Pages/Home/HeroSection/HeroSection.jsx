@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './HeroSection.css';
-import student from '../../Images/HomePage/HomepageBg.png';
+import student from '../../../Images/HomePage/HomepageBg.png';
 import { useSelector } from 'react-redux';
 
 const HeroSection = () => {
@@ -9,27 +9,30 @@ const HeroSection = () => {
   const [hasAnimated, setHasAnimated] = useState(false); // ✅ new state
 
   useEffect(() => {
+    const node = heroRef.current; // ✅ store ref locally
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
-          heroRef.current.classList.add('in-view');
-          setHasAnimated(true); // ✅ lock it in
-          observer.unobserve(heroRef.current);
+          node.classList.add('in-view');
+          setHasAnimated(true);
+          observer.unobserve(node);
         }
       },
       { threshold: 0.4 }
     );
 
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
+    if (node) {
+      observer.observe(node);
     }
 
     return () => {
-      if (heroRef.current) {
-        observer.unobserve(heroRef.current);
+      if (node) {
+        observer.unobserve(node); // ✅ cleanup uses stable reference
       }
     };
   }, [hasAnimated]);
+
 
   return (
     <section

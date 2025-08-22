@@ -3,7 +3,7 @@
 import './Dropmenu.css';  
 
 import CloseIcon from '@mui/icons-material/Close';
-import { getAllTutorial, getTopics } from '../../APIService/apiservice';
+import { getAllTutorial, getTopics } from '../APIService/apiservice';
 
 export default function Dropmenu({ closeDropdown, activeMenu }) {
   const [tutorial, setTutorial] = useState([]);

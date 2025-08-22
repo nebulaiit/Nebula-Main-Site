@@ -47,17 +47,9 @@ export default function CourseList() {
   }, []);
 
 
-  console.log(data)
-
-
   const handleCourseClick = (tutorialName) => {
     localStorage.setItem('selectedCourse', tutorialName);
     navigate(`/course/${tutorialName}`);
-  };
-
-  const handleWebDevClick = () => {
-    setShowSections(true);
-    setSection(null);
   };
 
   const isMobile = window.innerWidth <= 768;

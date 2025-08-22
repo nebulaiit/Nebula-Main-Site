@@ -14,7 +14,6 @@ export default function Community() {
     const reactionTypes = ['👍', '❤️', '🔥', '💡'];
     const [post, setPost] = useState('');
     const [tags, setTags] = useState([]);
-    const [activeTab, setActiveTab] = useState('Post');
     const [posts, setPosts] = useState([]);
     const [tagsList, setTagsList] = useState(['study-group', 'share-insight', 'help-question']);
     const [showTagModal, setShowTagModal] = useState(false);

@@ -1,15 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Benefits.css";
-import std1 from "../../Images/HomePage/std1.jpeg";
-import std2 from "../../Images/HomePage/std2.jpeg";
-import benefit from "../../Images/HomePage/Benefit.png";
+import benefit from "../../../Images/HomePage/Benefit.png";
 import SchoolIcon from "@mui/icons-material/School";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import PeopleIcon from "@mui/icons-material/People";
 import { useSelector } from "react-redux";
 
 const Benefits = () => {
-  const img = [std1, std2, std1, std2];
   const darkMode = useSelector((state) => state.darkMode.enabled);
 
   const benefitsData = [

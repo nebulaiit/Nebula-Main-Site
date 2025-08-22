@@ -3,7 +3,7 @@ import "./MockInterview.css";
 import { useSelector } from "react-redux";
 import QuestionCard from "./QuestionCard";
 import InterviewResult from "./InterviewResult";
-import { getMockInterview } from "../../APIService/apiservice";
+import { getMockInterview } from "../../../APIService/apiservice";
 
 export default function MockInterview() {
   const darkMode = useSelector((state) => state.darkMode.enabled);

@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getAllCourse } from '../../APIService/apiservice';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToWishlist } from '../../../redux/wishlistSlice';
+import { addToCart } from '../../../redux/cartSlice';
 
 
 

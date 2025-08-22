@@ -3,6 +3,7 @@ import './Wishlist.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchWishlistThunk, removeFromWishlist } from '../../../redux/wishlistSlice';
 import { showToast } from '../../../redux/toastSlice';
+import { addToCart } from '../../../redux/cartSlice';
 
 
 const Wishlist = () => {

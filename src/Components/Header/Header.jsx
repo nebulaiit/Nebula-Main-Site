@@ -138,7 +138,7 @@ export default function Header({ variant = "default" }) {
                                                 <button className="dropdown-item" onClick={() => {
                                                     localStorage.clear();
                                                     setIsLoggedIn(false);
-                                                    setUserInfo(null);
+                                                   
                                                     navigate("/login");
                                                 }}>
                                                     <ExitToAppOutlinedIcon className="me-2" /> Logout
@@ -195,7 +195,7 @@ export default function Header({ variant = "default" }) {
                                             <button className="dropdown-item" onClick={() => {
                                                 localStorage.clear();
                                                 setIsLoggedIn(false);
-                                                setUserInfo(null);
+                                               
                                                 navigate("/login");
                                             }}>
                                                 <ExitToAppOutlinedIcon className="me-2" /> Logout

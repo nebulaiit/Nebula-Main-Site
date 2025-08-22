@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import SideBar from '../SideBar/SideBar';
 import './Tutorialpage.css';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import SelectedTopicContent from './selectedTopicContent';
 import { useSelector } from 'react-redux';
 import { getContentList, getTopics, getTutorialDetails } from '../../APIService/apiservice';
@@ -16,7 +16,7 @@ export default function TutorialPage() {
   const darkMode = useSelector((state) => state.darkMode.enabled);
 
   const id = tutorial?.id;
-  console.log(id)
+
 
   useEffect(() => {
 
@@ -35,7 +35,7 @@ export default function TutorialPage() {
   }, [courseName])
 
   useEffect(() => {
-  if (!tutorial?.id) return; // 🔒 guard clause
+  if (!id) return; // 🔒 guard clause
     const fetchTopicsList = async () => {
       try {
 
@@ -48,7 +48,7 @@ export default function TutorialPage() {
       }
     };
     fetchTopicsList();
-  }, [tutorial?.id])
+  }, [id])
 
   // Fetch topic content
   useEffect(() => {

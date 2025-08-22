@@ -1,4 +1,3 @@
-import MockInterview from "../Pages/MockInterview/MockInterview";
 
 export const API_URLs = {
     GET_LOGIN: "/auth/tutorial/login",
@@ -32,7 +31,8 @@ export const API_URLs = {
     Blog_Details:"/api/blogs/details",
 }
 
-export const API_BASE_URL = "http://localhost:8080";
+// export const API_BASE_URL = "http://localhost:8080";
+export const API_BASE_URL = "http://168.231.116.33:8080";
 
 
 

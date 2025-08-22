@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './BlogDetails.css'
 import profileImage from '../../Images/profile-icon.jpg'
 import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
-import { getBlogDetails, getBlogList } from '../../APIService/apiservice';
+import { getBlogDetails} from '../../APIService/apiservice';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from "react-markdown";
 
@@ -21,15 +21,13 @@ export default function BlogDetails() {
 
                 const response = await getBlogDetails(slug);
                 setBlogDetails(response);
-                console.log(response);
 
             } catch (error) {
                 console.error("Error fetching documents:", error);
             }
         };
         fetchBlogsDetails();
-    }, [])
-
+    }, [slug])
 
 
     return (

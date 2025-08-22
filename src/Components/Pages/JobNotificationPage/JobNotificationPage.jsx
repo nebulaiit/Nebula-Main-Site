@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import './JobNotificationPage.css';
 import JobCard from './JobCard';
 import ATSChecker from './Resume/Resume';
-import ComingSoon from '../ComingSoon/ComingSoon';
+import ComingSoon from '../../ComingSoon/ComingSoon';
 import { useSelector } from 'react-redux';
-import MockInterview from '../MockInterview/MockInterview';
+import MockInterView from './MockInterview/MockInterview'
 
 const tabs = [
   'NEW JOBS OPENINGS',
@@ -55,7 +55,7 @@ const JobNotification = () => {
         {activeTab === 'INTERVIEW PREP' && (
           <div className="job-card-list">
             {/* <ComingSoon/> */}
-            <MockInterview/>
+            <MockInterView/>
           </div>
         )}
        

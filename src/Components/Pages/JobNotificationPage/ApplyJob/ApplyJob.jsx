@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import './ApplyJob.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { showToast } from '../../../../redux/toastSlice';
 
 const ApplyJob = () => {
-  const { jobId } = useParams();
   const darkMode = useSelector((state) => state.darkMode.enabled);
   const dispatch = useDispatch();
   const [fileName, setFileName] = useState("No file chosen");
@@ -20,7 +18,7 @@ const ApplyJob = () => {
   });
 
   const [submitStatus, setSubmitStatus] = useState(null);
-  const [error, setError] = useState('');
+
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -29,7 +27,7 @@ const ApplyJob = () => {
       const file = files[0];
 
       if (file && file.type !== "application/pdf") {
-        setError("Please upload PDF files only.");
+        alert("Please upload PDF files only.");
         setFileName("No file chosen");
         setFormData({ ...formData, resume: null });
         return;
@@ -37,7 +35,7 @@ const ApplyJob = () => {
 
       setFormData({ ...formData, resume: file });
       setFileName(file ? file.name : "No file chosen");
-      setError("");
+      alert("");
     } else {
       setFormData({ ...formData, [name]: value });
     }
@@ -48,7 +46,7 @@ const ApplyJob = () => {
     e.preventDefault();
 
     if (!formData.resume) {
-      setError('Resume is required (PDF only).');
+      alert('Resume is required (PDF only).');
       return;
     }
 

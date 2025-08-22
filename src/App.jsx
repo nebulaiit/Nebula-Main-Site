@@ -1,19 +1,18 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from './Components/Pages/Header/Header';
+import Header from './Components/Header/Header';
 import Home from './Components/Pages/Home/Home';
 import Login from './Components/Login/Login';
 import Enrollment from './LearningPathPytho/Enrollment';
 import PythonCourse from './Components/Pages/LearnNebula/PythonCourse';
 import CourseList from './Components/Pages/LearnNebula/CourseList';
-import WebsiteFooter from './Components/Pages/WebsiteFooter/WebsiteFooter';
+import WebsiteFooter from './Components/WebsiteFooter/WebsiteFooter';
 import JobNotificationPage from './Components/Pages/JobNotificationPage/JobNotificationPage';
 import LearningDashboard from "./Components/Pages/LearningDashboard/LearningDashboard";
 import ContactPage from './Components/Pages/ContactPage/ContactPage';
 import TutorialPage from './Components/Pages/TutorialPage/TutorialPage';
 import Premium from './Components/Pages/Premium/Premium';
-import PaymentPage from './Components/Pages/PaymentPage/PaymentPage';
 import ThankYou from './Components/Pages/thankyou/thankyou';
 import Blog from './Components/Pages/Blogs/Blog';
 import BlogDetails from './Components/Pages/Blogs/BlogDetails';
@@ -28,7 +27,7 @@ import CourseListPage from './Components/Pages/Courses/CourseListPage';
 import DarkMode from './Components/DarkMode/DarkMode';
 import { useSelector } from 'react-redux';
 import ApplyJob from './Components/Pages/JobNotificationPage/ApplyJob/ApplyJob';
-import ComingSoon from './Components/Pages/ComingSoon/ComingSoon';
+import ComingSoon from './Components/ComingSoon/ComingSoon';
 import CoursesPlay from './Components/Pages/CoursePlaySection/CoursesPlay';
 
 function App() {
@@ -52,7 +51,6 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotFlow />} />
-        <Route path="/paymentPage" element={<PaymentPage />} />
         <Route path="/thankyou" element={<ThankYou />} />
 
         <Route path="/examples/:courseName" element={<ComingSoon />} />
