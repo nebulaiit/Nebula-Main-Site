@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './header.css';
-import logo from "../../Images/Logo/Logo.svg";
+import logo from "../Images/Logo/Logo.svg";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Drawer, IconButton } from '@mui/material';
-import profile from "../../Images/profile-icon.jpg";
+import profile from "../Images/profile-icon.jpg";
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import { useSelector } from 'react-redux';
