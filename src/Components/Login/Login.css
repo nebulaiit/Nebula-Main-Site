@@ -4,10 +4,16 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   font-size: 16px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
 .login-wrapper {
@@ -17,7 +23,8 @@ html {
   overflow: hidden;
 }
 
-.login-wrapper  .login-image {
+/* Image Section */
+.login-wrapper .login-image {
   width: 50%;
   display: flex;
   justify-content: center;
@@ -25,7 +32,7 @@ html {
   padding: 60px;
 }
 
-.login-wrapper  .animated-img img {
+.login-wrapper .animated-img img {
   width: 100%;
   max-width: 650px;
   object-fit: contain;
@@ -33,17 +40,11 @@ html {
 }
 
 @keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-15px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
 }
 
+/* Form Section */
 .login-wrapper .form-layer {
   width: 50%;
   position: relative;
@@ -71,16 +72,11 @@ html {
   pointer-events: all;
 }
 
-.login-wrapper .form-layer .login-form-layer  h2 {
+.login-wrapper .form-layer .login-form-layer h2 {
   font-size: 28px;
   margin-bottom: 20px;
   color: var(--bg-primary-dark);
   text-align: left;
-}
-
-.login-wrapper.dark .login-form-layer h2 {
-  color: var(--text-secondary);
-
 }
 
 .login-form-layer h2 span {
@@ -91,16 +87,8 @@ html {
   font-size: 40px;
 }
 
-.login-wrapper.dark .login-form-layer h2 span {
-  background: var(--text-heading-dark);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-
-
+/* Input Fields */
 .login-form-layer form {
-
   width: 80%;
   margin: 20px 0;
 }
@@ -126,6 +114,7 @@ html {
   box-shadow: 0 0 6px rgba(232, 62, 140, 0.2);
 }
 
+/* Button */
 .login-form-layer .login-btn {
   background: var(--text-heading);
   -webkit-background-clip: text;
@@ -133,7 +122,8 @@ html {
   border: 2px solid transparent;
   border-image: var(--text-primary);
   border-radius: 50px;
-  box-shadow: 0 8px 20px rgba(232, 62, 141, 0.41), 0 -8px 20px #b74df531 inset;
+  box-shadow: 0 8px 20px rgba(232, 62, 141, 0.41), 
+              0 -8px 20px #b74df531 inset;
   padding: 12px 40px;
   font-weight: 600;
   font-size: 15px;
@@ -142,11 +132,8 @@ html {
   margin: 16px 0;
 }
 
-
-.options {
-
-  margin-bottom: 14px;
-}
+/* Options */
+.options { margin-bottom: 14px; }
 
 .options a {
   font-size: 14px;
@@ -154,24 +141,9 @@ html {
   text-decoration: none;
 }
 
-.login-wrapper.dark .options a {
+.options a:hover { color: #e83e8c; }
 
-  color: var(--text-secondary);
-
-}
-
-.options a:hover {
-  color: #e83e8c;
-}
-
-.continue-option {
-  color: var(--bg-primary-dark);
-}
-
-.login-wrapper.dark .continue-option {
-  color: var(--bg-primary);
-}
-
+/* Social Login */
 .social-login {
   display: flex;
   gap: 14px;
@@ -193,28 +165,13 @@ html {
   transition: 0.2s ease-in-out;
 }
 
+.social-login .google-btn { color: #db4437; }
+.facebook { color: #3b5998; }
 
-
-.social-login .google-btn {
-  color: #db4437;
-    height: 40px;
-  width: 40px;
-}
-
-.facebook {
-  color: #3b5998;
-}
-
+/* Signup Link */
 .signup-link {
   font-size: 14px;
   color: var(--bg-primary-dark);
-
-}
-
-.login-wrapper.dark .signup-link {
-  font-size: 14px;
-  color: var(--bg-primary);
-
 }
 
 .signup-link span {
@@ -222,92 +179,115 @@ html {
   font-weight: 600;
   cursor: pointer;
 }
+.signup-link span:hover { text-decoration: underline; }
 
-.signup-link span:hover {
-  text-decoration: underline;
-}
+/* ===================== Responsive ===================== */
 
-/* Tablet and below (up to 768px) */
-@media (max-width: 768px) {
-  html {
-    font-size: 15px;
-  }
-
+/* Tablet (768px – 1023px) */
+@media (max-width: 1023px) {
   .login-wrapper {
     flex-direction: column;
     height: auto;
     min-height: 600px;
   }
-
-  .login-container {
-    flex-direction: column;
-    width: 95%;
-    margin: 30px auto;
-  }
-
-  .login-image,
-  .form-layer {
-    width: 100%;
-    height: auto;
+  .login-image, .form-layer {
+    width: 100% !important;
+    height: 180px;
     padding: 40px 20px;
+    margin-bottom: 20px;
   }
-
   .login-form-layer {
     position: relative;
     transform: none !important;
     opacity: 1 !important;
     pointer-events: all !important;
+
+    
+  }
+  .login-form-layer form { width: 100%; }
+  .login-form-layer input { width: 100%; }
+}
+/* Mobile (480px – 767px) */
+@media (max-width: 767px) {
+  .login-wrapper {
+    flex-direction: column;
+    height: 100vh; /* fill full height */
+    padding: 20px 10px;
   }
 
-  .login-form-layer form {
+  .login-image {
     width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 0;
+    margin-bottom: 100px; /* ✅ space between image and form */
+  }
+
+  .form-layer {
+    width: 100%;
+    flex: 2; /* ✅ takes more space below image */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .login-form-layer {
+    width: 100% !important;
+    max-width: 400px; /* keeps form neat */
+    margin: 0 auto;
+    margin-bottom: -150px;
+  }
+
+  .login-form-layer h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
   }
 
   .login-form-layer input {
     width: 100%;
-  }
-}
-
-/* Phones (<480px) */
-@media (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
-
-  .login-container {
-    width: 95%;
-    margin: 20px auto;
-  }
-
-  .login-image,
-  .form-layer {
-    padding: 30px 15px;
-  }
-
-  .animated-img img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .login-form-layer h2 {
-    font-size: 22px;
+    margin: 12px 0;
   }
 
   .login-btn {
-    padding: 10px 30px;
-    font-size: 14px;
-  }
-
-  .social-login button {
-    height: 36px;
-    width: 36px;
-    font-size: 16px;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 15px;
   }
 }
 
-/* Large screens (>1024px) */
-@media (min-width: 1024px) {
-  .login-container {
-    width: 80%;
+/* Mini Mobile (<480px) */
+@media (max-width: 480px) {
+  .login-wrapper {
+    padding: 15px 8px;
   }
+
+  .login-image {
+    margin-bottom: 25px; /* ✅ smaller but visible gap */
+  }
+
+  .login-form-layer {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .login-form-layer h2 {
+    font-size: 20px;
+  }
+
+  .login-btn {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+}
+
+/* Large Screens (>1200px) */
+@media (min-width: 1200px) {
+  .login-wrapper { max-width: 1200px; margin: 0 auto; }
+  .login-wrapper .login-image { padding: 80px; }
+  .login-wrapper .form-layer { padding: 80px 60px; }
 }
