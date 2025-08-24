@@ -16,7 +16,7 @@ export default function MockInterview() {
 
   const [started, setStarted] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [answers, setAnswers] = useState([]);
+  const [ ,setAnswers] = useState([]);
   const [inputAnswer, setInputAnswer] = useState("");
   const [questions, setQuestions] = useState([]);
   const [feedback, setFeedback] = useState("");
@@ -46,9 +46,9 @@ export default function MockInterview() {
       const params = { jobTitle, questionCount, difficulty, includeCoding };
       const response = await getMockInterview(params);
       // If backend gives questions separately
-      // setQuestions(response.questions);
-      // setFeedback(response.feedback);
-      // setModelAnswer(response.modelAnswers);
+      setQuestions(response.questions);
+      setFeedback(response.feedback);
+      setModelAnswer(response.modelAnswers);
 
       // For now use dummy:
       setQuestions(dummyQuestions.slice(0, questionCount));

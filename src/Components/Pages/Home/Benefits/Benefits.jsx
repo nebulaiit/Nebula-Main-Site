@@ -34,23 +34,25 @@ const Benefits = () => {
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.3,
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      setInView(entry.isIntersecting);
+    },
+    {
+      threshold: 0.3,
     }
+  );
 
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, []);
+  const currentSection = sectionRef.current; // ✅ capture ref value
+
+  if (currentSection) {
+    observer.observe(currentSection);
+  }
+
+  return () => {
+    if (currentSection) observer.unobserve(currentSection); // ✅ cleanup uses captured ref
+  };
+}, []);
 
   return (
     <div

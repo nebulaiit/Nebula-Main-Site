@@ -16,6 +16,7 @@ export default function CourseList() {
   const darkMode = useSelector((state) => state.darkMode.enabled);
   const [showSections, setShowSections] = useState(false);
   const [section, setSection] = useState(null);
+  
 
   const [data, setData] = useState({ Frontend: [], Backend: [] });
 
@@ -77,7 +78,7 @@ export default function CourseList() {
   );
 }
 
-function DesktopLayout({ data, navigate, section, setSection, showSections, setShowSections, darkMode }) {
+function DesktopLayout({ data, navigate, section, setSection, showSections, setShowSections }) {
   const buttonRef = useRef(null);
   const svgRef = useRef(null);
   const sectionRefs = useRef({});
@@ -89,7 +90,8 @@ function DesktopLayout({ data, navigate, section, setSection, showSections, setS
     else delete refs.current[key];
   }, []);
 
-  const drawLines = () => {
+  // ✅ wrap with useCallback so it's stable
+  const drawLines = useCallback(() => {
     const svg = svgRef.current;
     if (!svg) return;
 
@@ -137,15 +139,19 @@ function DesktopLayout({ data, navigate, section, setSection, showSections, setS
         drawStraightLine(headingRef.current, langEl, i * increment, true);
       });
     }
-  };
+  }, [showSections, section, data]); // 👈 dependencies
 
   useEffect(() => {
     const id = requestAnimationFrame(drawLines);
+
+    const svgEl = svgRef.current; // ✅ copy ref value
+
     return () => {
       cancelAnimationFrame(id);
-      svgRef.current?.querySelectorAll('.dynamic-line').forEach(path => path.remove());
+      svgEl?.querySelectorAll('.dynamic-line').forEach(path => path.remove());
     };
-  }, [section, showSections]);
+  }, [drawLines]); // ✅ safe now
+
 
   return (
     <>
@@ -199,7 +205,7 @@ function DesktopLayout({ data, navigate, section, setSection, showSections, setS
   );
 }
 
-function MobileLayout({ data, onNavigate, darkMode }) {
+function MobileLayout({ data, onNavigate }) {
   const [showSections, setShowSections] = useState(false);
   const [expandedSection, setExpandedSection] = useState(null);
 

@@ -41,14 +41,18 @@ useEffect(() => {
     { threshold: 0.2 }
   );
 
-  cardRefs.current.forEach((ref) => ref && observer.observe(ref));
-  if (titleRef.current) observer.observe(titleRef.current);
+  const currentCardRefs = [...cardRefs.current]; // ✅ snapshot array
+  const currentTitleRef = titleRef.current;      // ✅ snapshot single ref
+
+  currentCardRefs.forEach((ref) => ref && observer.observe(ref));
+  if (currentTitleRef) observer.observe(currentTitleRef);
 
   return () => {
-    cardRefs.current.forEach((ref) => ref && observer.unobserve(ref));
-    if (titleRef.current) observer.unobserve(titleRef.current);
+    currentCardRefs.forEach((ref) => ref && observer.unobserve(ref));
+    if (currentTitleRef) observer.unobserve(currentTitleRef);
   };
 }, []);
+
 
 
   return (

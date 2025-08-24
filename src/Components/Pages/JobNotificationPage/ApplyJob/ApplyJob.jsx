@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import './ApplyJob.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { showToast } from '../../../../redux/toastSlice';
@@ -17,7 +17,7 @@ const ApplyJob = () => {
     resume: null,
   });
 
-  const [submitStatus, setSubmitStatus] = useState(null);
+   const [, setSubmitStatus] = useState(null);
 
 
   const handleChange = (e) => {
@@ -65,7 +65,7 @@ const ApplyJob = () => {
       //   coverLetter: '',
       //   resume: null,
       // });
-    } catch (err) {
+    } catch  {
       setSubmitStatus(null);
       dispatch(showToast({ message: 'Error while Applying', type: 'error' }));
 

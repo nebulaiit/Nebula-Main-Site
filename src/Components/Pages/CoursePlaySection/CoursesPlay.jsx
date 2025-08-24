@@ -140,20 +140,22 @@ const CoursesPlay = () => {
 
   const changePlaybackRate = (rate) => setPlaybackRate(rate);
 
-  const toggleLesson = (sectionIndex, lessonIndex) => {
-    setSelectedLessons((prev) => {
-      const prevLessons = prev[sectionIndex] || new Set();
-      const newLessons = new Set();
-      newLessons.add(lessonIndex);
+ const toggleLesson = (sectionIndex, lessonIndex) => {
+  setSelectedLessons((prev) => {
+    const prevLessons = prev[sectionIndex] || new Set();
+    const newLessons = new Set(prevLessons); // use prevLessons here
+    newLessons.add(lessonIndex);
 
-      const newVideoSrc =
-        courseSections[sectionIndex].lessonVideos[lessonIndex] ||
-        `/src/Components/Pages/LearningDashboard/section${sectionIndex + 1}-lesson${lessonIndex + 1}.mp4`;
-      setCurrentVideoSrc(newVideoSrc);
+    const newVideoSrc =
+      courseSections[sectionIndex].lessonVideos[lessonIndex] ||
+      `/src/Components/Pages/LearningDashboard/section${sectionIndex + 1}-lesson${lessonIndex + 1}.mp4`;
 
-      return { ...prev, [sectionIndex]: newLessons };
-    });
-  };
+    setCurrentVideoSrc(newVideoSrc);
+
+    return { ...prev, [sectionIndex]: newLessons };
+  });
+};
+
 
   const handleSectionClick = (index) => {
     setExpandedSection((prev) => (prev === index ? null : index));

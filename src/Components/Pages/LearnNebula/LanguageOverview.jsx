@@ -10,24 +10,27 @@ const LanguageOverview = ({ tutorialData }) => {
 
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setInView(true);
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.2 }
+  );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+  const currentSection = sectionRef.current; // ✅ Store ref in variable
 
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, []);
+  if (currentSection) {
+    observer.observe(currentSection);
+  }
+
+  return () => {
+    if (currentSection) observer.unobserve(currentSection); // ✅ Use local variable
+  };
+}, []);
+
 
   const language = {
     name: "Python",

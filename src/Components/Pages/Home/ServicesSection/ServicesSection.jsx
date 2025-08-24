@@ -42,27 +42,30 @@ export default function ServicesSection() {
 
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-          } 
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    cardRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      cardRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
       });
-    };
-  }, []);
+    },
+    { threshold: 0.2 }
+  );
+
+  const currentRefs = [...cardRefs.current]; // ✅ copy refs snapshot
+
+  currentRefs.forEach((ref) => {
+    if (ref) observer.observe(ref);
+  });
+
+  return () => {
+    currentRefs.forEach((ref) => {
+      if (ref) observer.unobserve(ref); // ✅ cleanup uses the snapshot
+    });
+  };
+}, []);
+
 
   const handleMouseMove = (e, index) => {
     const card = cardRefs.current[index];

@@ -8,7 +8,7 @@ const MyProfile = () => {
     const darkMode = useSelector((state) => state.darkMode.enabled);
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
-    const user = useSelector((state) => state.user.user);
+    // const user = useSelector((state) => state.user.user);
 
 
     // Replace with actual user ID (e.g., from auth or router params)

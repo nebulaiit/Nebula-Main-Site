@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { loginUser, signUpUser, signUpUserWithGoogle } from '../APIService/apiservice';
+import { loginUser,  signUpUserWithGoogle,signUpUser } from '../APIService/apiservice';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -67,7 +67,7 @@ const Login = () => {
     e.preventDefault();
     console.log(signUpData)
     try {
-      // const response = await signUpUser(signUpData);
+       const response = await signUpUser(signUpData);
 
       if (response.status === 201) {
         // ✅ Manual signup

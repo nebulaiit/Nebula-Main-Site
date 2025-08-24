@@ -32,7 +32,7 @@ export default function Blog() {
         dots: false
     };
 
-    const [blogs, setBlogs] = useState([
+    const [blogs] = useState([
         {
             "id": "5567380f-76fe-4869-a355-009aea57b95f",
             "blogTitle": "Building Scalable Microservices with Spring Boot and Docker",
