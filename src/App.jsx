@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './Components/Header/Header';
 import Home from './Components/Pages/Home/Home';
-import Login from './Components/Login/Login';
 import Enrollment from './LearningPathPytho/Enrollment';
 import PythonCourse from './Components/Pages/LearnNebula/PythonCourse';
 import CourseList from './Components/Pages/LearnNebula/CourseList';
@@ -22,13 +21,14 @@ import JobDetails from './Components/Pages/JobNotificationPage/JobDetailsPage/Jo
 import ToastList from './Components/Toast/ToastList';
 import CreateResume from './Components/Pages/JobNotificationPage/Resume/CreateResume/CreateResume';
 import ATSChecker from './Components/Pages/JobNotificationPage/Resume/Resume';
-import ForgotFlow from './Components/Login/ForgotFlow';
+
 import CourseListPage from './Components/Pages/Courses/CourseListPage';
 import DarkMode from './Components/DarkMode/DarkMode';
 import { useSelector } from 'react-redux';
 import ApplyJob from './Components/Pages/JobNotificationPage/ApplyJob/ApplyJob';
 import ComingSoon from './Components/ComingSoon/ComingSoon';
 import CoursesPlay from './Components/Pages/CoursePlaySection/CoursesPlay';
+import AuthWrapper from './Components/Authentication/AuthWrapper';
 
 function App() {
 
@@ -49,8 +49,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/forgot-password" element={<ForgotFlow />} />
+        <Route path="/login" element={<AuthWrapper/>} />
+        {/* <Route path="/forgot-password" element={<ForgotFlow/>} /> */}
         <Route path="/thankyou" element={<ThankYou />} />
 
         <Route path="/examples/:courseName" element={<ComingSoon />} />

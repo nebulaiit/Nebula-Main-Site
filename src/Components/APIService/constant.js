@@ -4,6 +4,7 @@ export const API_URLs = {
     GET_SIGNUP: "/auth/tutorial/signup",
     GET_SIGNUP_WITHGOOGLE: "/auth/tutorial/google",
     Get_User_Details: "/auth/tutorial/user-details",
+    Verify_Code:"/auth/tutorial/verify",
     CONTACT:"/api/contact",
 
     GET_TUTORIAL:"/api/languages",
@@ -31,8 +32,8 @@ export const API_URLs = {
     Blog_Details:"/api/blogs/details",
 }
 
-// export const API_BASE_URL = "http://localhost:8080";
-export const API_BASE_URL = "http://168.231.116.33:8080";
+export const API_BASE_URL = "http://localhost:8080";
+// export const API_BASE_URL = "http://168.231.116.33:8080";
 
 
 

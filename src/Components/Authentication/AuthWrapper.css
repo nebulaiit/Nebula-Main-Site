@@ -1,0 +1,199 @@
+.auth-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.auth-wrapper.dark {
+  background: var(--card-background);
+}
+
+/* Image Section */
+.auth-wrapper .auth-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+}
+
+.auth-wrapper .animated-img img {
+  width: 100%;
+  max-width: 650px;
+  object-fit: contain;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.auth-wrapper .form-layer {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
+}
+
+.auth-wrapper .form-layer .login-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.login-wrapper .login-form-layer {
+  width: 100%;
+  transition: all 0.5s ease;
+  transform: translateY(30px);
+}
+
+.login-wrapper .form-layer .login-form-layer h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--bg-primary-dark);
+  text-align: left;
+}
+
+.login-form-layer h2 span {
+  background: var(--text-heading);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.login-form-layer form,
+.login-form-layer .verify-form {
+  width: 80%;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-layer input {
+  padding: 12px 18px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 14px;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 20px 0;
+}
+.login-form-layer input:focus {
+  outline: none;
+  background: #fff;
+  border-color: #e83e8c;
+  box-shadow: 0 0 6px rgba(232, 62, 140, 0.2);
+}
+
+.login-form-layer .verify-form .code-inputs {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+}
+
+.login-form-layer .verify-form .code-inputs  input {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.login-form-layer .verify-form .code-inputs  input:focus {
+  border: 2px solid #007bff;
+}
+
+.login-form-layer .login-btn {
+  width: 80%;
+  background: var(--text-heading);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid transparent;
+  border-image: var(--text-primary);
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(232, 62, 141, 0.41), 0 -8px 20px #b74df531 inset;
+  padding: 12px 40px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin: 16px 0;
+}
+
+.login-wrapper .login-form-layer .options {
+  margin-bottom: 14px;
+  width: 20%;
+}
+
+.login-wrapper .login-form-layer .options a {
+  font-size: 14px;
+  color: var(--bg-primary-dark);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login-wrapper .login-form-layer .options a:hover {
+  color: #e83e8c;
+}
+
+.login-wrapper .login-form-layer .social-login {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 16px;
+  justify-content: start;
+}
+
+.login-wrapper .login-form-layer .social-login button {
+  height: 40px;
+  width: 40px;
+  font-size: 18px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+}
+
+.login-wrapper .login-form-layer .social-login .google-btn {
+  color: #db4437;
+}
+.login-wrapper .login-form-layer .social-login .facebook {
+  color: #3b5998;
+}
+
+.login-wrapper .login-form-layer .signup-link {
+  font-size: 14px;
+  color: var(--bg-primary-dark);
+}
+
+.login-wrapper .login-form-layer .signup-link span {
+  color: #e83e8c;
+  font-weight: 600;
+  cursor: pointer;
+}
+.login-wrapper .login-form-layer .signup-link span:hover {
+  text-decoration: underline;
+}

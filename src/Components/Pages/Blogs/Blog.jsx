@@ -1,8 +1,6 @@
 import React, { useState} from 'react';
 import './Blog.css';
 import ReactImg from '../../Images/blog/ReactImg.png';
-import UiImg from '../../Images/blog/ui.avif';
-import WorkspaceImg from '../../Images/blog/Workspace.jpg';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import { useSelector } from 'react-redux';
