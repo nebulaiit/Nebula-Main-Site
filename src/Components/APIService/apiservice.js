@@ -39,7 +39,7 @@ export const verifyUserCode= async (body) =>{
         
     } catch (error) {
         console.error('Error:', error.response || error.message);
-        throw error;
+        throw error;
     }
 }
 export const signUpUserWithGoogle = async (body) => {

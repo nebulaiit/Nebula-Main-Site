@@ -5,8 +5,8 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Drawer, IconButton } from '@mui/material';
-import profile from "../Images/profile-icon.jpg";
-import ClickAwayListener from '@mui/material/ClickAwayListener';
+// import profile from "../Images/profile-icon.jpg";
+// import ClickAwayListener from '@mui/material/ClickAwayListener';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import { useSelector } from 'react-redux';
 import NewIcon from '@mui/icons-material/NewspaperOutlined';
@@ -17,7 +17,7 @@ import MenuBookIcon from '@mui/icons-material/MenuBookOutlined';
 
 export default function Header({ variant = "default" }) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false);
+    // const [menuOpen, setMenuOpen] = useState(false);
     const [drawerOpen, setDrawerOpen] = useState(false); // FIXED
     const navigate = useNavigate();
     const location = useLocation();
@@ -26,14 +26,14 @@ export default function Header({ variant = "default" }) {
 
     const hideElement = ["/login"].includes(location.pathname);
 
-    const handleClickAway = () => {
-        setMenuOpen(false);
-    };
+    // const handleClickAway = () => {
+    //     setMenuOpen(false);
+    // };
 
-    const handleDashboardClick = (section) => {
-        navigate(`/learning-dashboard?section=${section}`);
-        setMenuOpen(false);
-    };
+    // const handleDashboardClick = (section) => {
+    //     navigate(`/learning-dashboard?section=${section}`);
+    //     setMenuOpen(false);
+    // };
 
     const handleLogoClick = () => {
         navigate("/");
@@ -87,7 +87,7 @@ export default function Header({ variant = "default" }) {
                         <ul className='list list-inline my-0 d-flex align-items-center'>
 
                             <li><Button onClick={() => navigate("/tutorial")}>Tutorial</Button></li>
-                            <li><Button onClick={() => navigate("/course-list")}>Course</Button></li>
+                            {/* <li><Button onClick={() => navigate("/course-list")}>Course</Button></li> */}
                             <li><Button onClick={() => navigate("/career")}>Career</Button></li>
                             <li><Button onClick={() => navigate("/blog")}>Blog</Button></li>
                             <li><Button onClick={() => navigate("/community")}>Community</Button></li>
@@ -95,7 +95,7 @@ export default function Header({ variant = "default" }) {
                     </nav>
 
 
-                    <ul className='right-end-btn list list-inline my-0 d-none d-md-flex align-items-center'>
+                    <ul className='right-end-btn list list-inline my-0 me-5 d-none d-md-flex align-items-center'>
                         <li className='list-inline-item'>
                             <Link to="/contact">
                                 <Button className='phone-btn'>
@@ -108,7 +108,7 @@ export default function Header({ variant = "default" }) {
                                 Log In
                             </Button>
                         </li>
-                        <li className='list-inline-item ms-1'>
+                        {/* <li className='list-inline-item ms-1'>
                             <ClickAwayListener onClickAway={handleClickAway}>
                                 <div className="profile-dropdown">
                                     <button className="profile-btn" onClick={() => setMenuOpen(!menuOpen)}>
@@ -148,7 +148,7 @@ export default function Header({ variant = "default" }) {
                                     )}
                                 </div>
                             </ClickAwayListener>
-                        </li>
+                        </li> */}
 
                     </ul>
 
@@ -166,11 +166,11 @@ export default function Header({ variant = "default" }) {
                                 <div >
                                     <img src={logo} alt="Logo" />
                                 </div>
-                                <div>
+                                {/* <div>
                                     <button className="profile-btn" onClick={() => { handleDashboardClick("dashboard"), setDrawerOpen(false) }}>
                                         <img src={profile} alt="User" className="profile-img" />
                                     </button>
-                                </div>
+                                </div> */}
                             </div>
 
                             <div className="drawer-body">
@@ -179,7 +179,7 @@ export default function Header({ variant = "default" }) {
                                         <NewIcon />
                                         <Button onClick={() => { navigate("/tutorial"), setDrawerOpen(false) }}>Tutorial</Button>
                                     </li>
-                                    <li><MenuBookIcon /><Button onClick={() => { navigate("/course-list"), setDrawerOpen(false) }}>Course</Button></li>
+                                    {/* <li><MenuBookIcon /><Button onClick={() => { navigate("/course-list"), setDrawerOpen(false) }}>Course</Button></li> */}
                                     <li><SchoolIcon /><Button onClick={() => { navigate("/career"), setDrawerOpen(false) }}>Career</Button></li>
                                     <li><DescriptionIcon /><Button onClick={() => { navigate("/blog"), setDrawerOpen(false) }}>Blog</Button></li>
                                     <li><ForumIcon /><Button onClick={() => { navigate("/community"), setDrawerOpen(false) }}>Community</Button></li>
@@ -195,7 +195,7 @@ export default function Header({ variant = "default" }) {
                                             <button className="dropdown-item" onClick={() => {
                                                 localStorage.clear();
                                                 setIsLoggedIn(false);
-                                               
+
                                                 navigate("/login");
                                             }}>
                                                 <ExitToAppOutlinedIcon className="me-2" /> Logout

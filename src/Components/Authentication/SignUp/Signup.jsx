@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import { signUpUser } from "../../APIService/apiservice";
+import { signUpUser, signUpUserWithGoogle } from "../../APIService/apiservice";
 import { useDispatch, useSelector } from "react-redux";
 import { showToast } from "../../../redux/toastSlice";
 import { FcGoogle } from "react-icons/fc";
 import { useGoogleLogin } from "@react-oauth/google";
+import axios from "axios";
+import { setAuthData } from "../../../redux/authSlice";
+import { fetchUserDetails } from "../../../redux/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const Signup = ({ setView, setTempUserEmail }) => {
     const darkMode = useSelector((state) => state.darkMode.enabled);
-
+    const navigate = useNavigate();
     const [signUpData, setSignUpData] = useState({
         firstName: "", lastName: "", email: "", password: "", phoneNumber: ""
     });

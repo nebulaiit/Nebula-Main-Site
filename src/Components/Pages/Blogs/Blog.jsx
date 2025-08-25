@@ -12,8 +12,8 @@ export default function Blog() {
 
     const featured = [
         { title: "React Coding Setup", image: ReactImg },
-        { title: "React Coding Setup", image: WorkspaceImg },
-        { title: "React Coding Setup", image: UiImg },
+        { title: "React Coding Setup", image: ReactImg },
+        { title: "React Coding Setup", image: ReactImg },
 
     ];
 

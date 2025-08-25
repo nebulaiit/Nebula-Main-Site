@@ -21,7 +21,6 @@ import JobDetails from './Components/Pages/JobNotificationPage/JobDetailsPage/Jo
 import ToastList from './Components/Toast/ToastList';
 import CreateResume from './Components/Pages/JobNotificationPage/Resume/CreateResume/CreateResume';
 import ATSChecker from './Components/Pages/JobNotificationPage/Resume/Resume';
-
 import CourseListPage from './Components/Pages/Courses/CourseListPage';
 import DarkMode from './Components/DarkMode/DarkMode';
 import { useSelector } from 'react-redux';

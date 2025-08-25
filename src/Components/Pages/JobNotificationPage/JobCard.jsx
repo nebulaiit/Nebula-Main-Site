@@ -6,56 +6,56 @@ import { useSelector } from 'react-redux';
 
 
 const dummyJobs = [
-  {
-    id: 1,
-    jobTitle: "Frontend Developer",
-    companyName: "Nebula Technologies",
-    location: "Pune, Maharashtra",
-    jobType: "Full-time",
-    experience: "1-3 years",
-    salaryRange: "₹6 LPA - ₹10 LPA",
-    postedDate: "2025-08-01"
-  },
-  {
-    id: 2,
-    jobTitle: "Backend Developer",
-    companyName: "SkyNet Solutions",
-    location: "Bangalore, Karnataka",
-    jobType: "Remote",
-    experience: "2-5 years",
-    salaryRange: "₹10 LPA - ₹14 LPA",
-    postedDate: "2025-07-30"
-  },
-  {
-    id: 3,
-    jobTitle: "UI/UX Designer",
-    companyName: "PixelCraft",
-    location: "Hyderabad, Telangana",
-    jobType: "Part-time",
-    experience: "0-2 years",
-    salaryRange: "₹4 LPA - ₹6 LPA",
-    postedDate: "2025-07-28"
-  },
-  {
-    id: 4,
-    jobTitle: "Full Stack Developer",
-    companyName: "CodeOrbit",
-    location: "Remote",
-    jobType: "Contract",
-    experience: "3-6 years",
-    salaryRange: "₹12 LPA - ₹18 LPA",
-    postedDate: "2025-08-02"
-  },
-  {
-    id: 5,
-    jobTitle: "Digital Marketing Executive",
-    companyName: "BrandLabs",
-    location: "Mumbai, Maharashtra",
-    jobType: "Full-time",
-    experience: "1-3 years",
-    salaryRange: "₹5 LPA - ₹8 LPA",
-    postedDate: "2025-08-03"
-  },
+    {
+        id: 1,
+        jobTitle: "Frontend Developer",
+        companyName: "Nebula Technologies",
+        location: "Pune, Maharashtra",
+        jobType: "Full-time",
+        experience: "1-3 years",
+        salaryRange: "₹6 LPA - ₹10 LPA",
+        postedDate: "2025-08-01"
+    },
+    {
+        id: 2,
+        jobTitle: "Backend Developer",
+        companyName: "SkyNet Solutions",
+        location: "Bangalore, Karnataka",
+        jobType: "Remote",
+        experience: "2-5 years",
+        salaryRange: "₹10 LPA - ₹14 LPA",
+        postedDate: "2025-07-30"
+    },
+    {
+        id: 3,
+        jobTitle: "UI/UX Designer",
+        companyName: "PixelCraft",
+        location: "Hyderabad, Telangana",
+        jobType: "Part-time",
+        experience: "0-2 years",
+        salaryRange: "₹4 LPA - ₹6 LPA",
+        postedDate: "2025-07-28"
+    },
+    {
+        id: 4,
+        jobTitle: "Full Stack Developer",
+        companyName: "CodeOrbit",
+        location: "Remote",
+        jobType: "Contract",
+        experience: "3-6 years",
+        salaryRange: "₹12 LPA - ₹18 LPA",
+        postedDate: "2025-08-02"
+    },
+    {
+        id: 5,
+        jobTitle: "Digital Marketing Executive",
+        companyName: "BrandLabs",
+        location: "Mumbai, Maharashtra",
+        jobType: "Full-time",
+        experience: "1-3 years",
+        salaryRange: "₹5 LPA - ₹8 LPA",
+        postedDate: "2025-08-03"
+    },
 ];
 
 const JobCard = () => {
@@ -70,14 +70,15 @@ const JobCard = () => {
         salary: '',
     });
 
-    const darkMode = useSelector((state) => state.darkMode.enabled);    
+    const darkMode = useSelector((state) => state.darkMode.enabled);
 
     useEffect(() => {
         const fetchJobList = async () => {
             try {
                 const data = await getJobList();
-                setJobs(data);
-                setFilteredJobs(data);
+                console.log(data);
+                // setJobs(data);
+                // setFilteredJobs(data);
             } catch (error) {
                 console.error("Error fetching job:", error);
             }
@@ -133,37 +134,44 @@ const JobCard = () => {
                             <option key={exp} value={exp}>{exp}</option>
                         ))}
                     </select>
-                    <select name="salary" onChange={handleFilterChange} value={filters.salary}>
+                    <select name="salary" onChange={handleFilterChange} value={filters.salary || ""}>
                         <option value="">Min Salary</option>
-                        {[...new Set(jobs.map(job => parseInt(job.salaryRange)).sort((a, b) => a - b))].map((sal) => (
-                            <option key={sal} value={sal}>{`₹${sal}+`}</option>
+                        {[...new Set(
+                            jobs
+                                .map(job => parseInt(job.salaryRange))
+                                .filter(sal => !isNaN(sal))   // ✅ remove NaN values
+                                .sort((a, b) => a - b)
+                        )].map((sal) => (
+                            <option key={sal} value={sal}>
+                                {`₹${sal}+`}
+                            </option>
                         ))}
                     </select>
                 </div>
-           
-                    <div className="job-card-container">
-                        {filteredJobs.length === 0 ? (
-                            <p>No jobs found for the selected filters.</p>
-                        ) : (
-                            filteredJobs.map((job) => (
-                                <div className="job-card" key={job.id}>
-                                    <h2>{job.jobTitle}</h2>
-                                    <p className="company">{job.companyName}</p>
-                                    <p className="location">{job.location}</p>
-                                    <p>{job.jobType}</p>
-                                    <p>{job.experience}</p>
-                                    <p className="salary">💰 {job.salaryRange}</p>
-                                    <div className="job-footer">
-                                        <span>📅 Posted: {job.postedDate}</span>
-                                    </div>
-                                    <button className="view-btn" onClick={() => navigate(`/job-details/${job.id}`)}>
-                                        View Now
-                                    </button>
+
+                <div className="job-card-container">
+                    {filteredJobs.length === 0 ? (
+                        <p>No jobs found for the selected filters.</p>
+                    ) : (
+                        filteredJobs.map((job) => (
+                            <div className="job-card" key={job.id}>
+                                <h2>{job.jobTitle}</h2>
+                                <p className="company">{job.companyName}</p>
+                                <p className="location">{job.location}</p>
+                                <p>{job.jobType}</p>
+                                <p>{job.experience}</p>
+                                <p className="salary">💰 {job.salaryRange}</p>
+                                <div className="job-footer">
+                                    <span>📅 Posted: {job.postedDate}</span>
                                 </div>
-                            ))
-                        )}
-                    </div>
-              
+                                <button className="view-btn" onClick={() => navigate(`/job-details/${job.id}`)}>
+                                    View Now
+                                </button>
+                            </div>
+                        ))
+                    )}
+                </div>
+
             </div>
         </>
     );
