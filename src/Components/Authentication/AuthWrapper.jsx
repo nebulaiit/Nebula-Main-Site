@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import studentImg from '../Images/Logo/Login.png';
+import studentImg from '../Images/Logo/Login.webp';
 import './AuthWrapper.css'
 import LoginPage from './Login/LoginPage';
 import Signup from './SignUp/Signup';

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Benefits.css";
-import benefit from "../../../Images/HomePage/Benefit.png";
+import benefit from "../../../Images/HomePage/Benefit.webp";
 import SchoolIcon from "@mui/icons-material/School";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import PeopleIcon from "@mui/icons-material/People";

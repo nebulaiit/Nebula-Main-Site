@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './HeroSection.css';
-import student from '../../../Images/HomePage/HomepageBg.png';
+import student from '../../../Images/HomePage/HomepageBg.webp';
 import { useSelector } from 'react-redux';
 
 const HeroSection = () => {

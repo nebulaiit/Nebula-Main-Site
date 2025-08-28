@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import './Blog.css';
-import ReactImg from '../../Images/blog/ReactImg.png';
+import ReactImg from '../../Images/blog/ReactImg.webp';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import { useSelector } from 'react-redux';

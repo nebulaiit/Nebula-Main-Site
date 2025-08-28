@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './BlogDetails.css'
-import profileImage from '../../Images/profile-icon.jpg'
+import profileImage from '../../Images/profile-icon.webp'
 import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
 import { getBlogDetails} from '../../APIService/apiservice';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from "react-markdown";
-
-
 
 export default function BlogDetails() {
 

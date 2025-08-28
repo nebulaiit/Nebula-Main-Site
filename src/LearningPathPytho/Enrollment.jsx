@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./Enrollment.css";
 import {  useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import profile from "../Components/Images/profile-icon.jpg";
+import profile from "../Components/Images/profile-icon.webp";
 import { showToast } from "../redux/toastSlice";
 import { getCourseDetails } from "../Components/APIService/apiservice";
 
