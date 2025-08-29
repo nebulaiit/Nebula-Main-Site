@@ -13,8 +13,8 @@ export default function ReplyThread({ reply, postId, onReply, onReact }) {
     return (
         <div className="reply-thread">
             <div className="reply-content">
-                <p><strong>{reply.author}</strong> <span className="reply-time">· {reply.time}</span></p>
-                <p>{reply.content}</p>
+                <p className='m-0'><strong>{reply.author}</strong> <span className="reply-time">· {reply.time}</span></p>
+                <p className='m-0'>{reply.content}</p>
 
                 <div className="reply-actions">
                     {reactionTypes.map((emoji) => (

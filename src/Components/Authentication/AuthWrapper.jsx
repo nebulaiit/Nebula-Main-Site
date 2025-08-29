@@ -9,7 +9,7 @@ import Verify from './Verify/Verify';
 
 
 export default function AuthWrapper() {
-    const [view, setView] = useState("verify");
+    const [view, setView] = useState("login");
     const [tempUserEmail, setTempUserEmail] = useState("");
     const darkMode = useSelector((state) => state.darkMode.enabled);
 

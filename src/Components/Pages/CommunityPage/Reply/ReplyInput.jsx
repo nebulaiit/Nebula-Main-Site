@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 
 
-export default function ReplyInput({ onReply, isVisible, onToggle }) {
+export default function ReplyInput({ onReply, onToggle }) {
     const [reply, setReply] = useState('');
     const user = useSelector((state) => state.user.user);
 
@@ -25,22 +25,17 @@ export default function ReplyInput({ onReply, isVisible, onToggle }) {
 
     return (
         <div className="reply-input">
-            {!isVisible ? (
-                <button className="show-reply-btn" onClick={onToggle}>
-                    Reply
-                </button>
-            ) : (
-                <div className="reply-box">
-                    <input
-                        type="text"
-                        placeholder="Write a reply..."
-                        value={reply}
-                        onChange={(e) => setReply(e.target.value)}
-                    />
-                    <button className="me-3 mt-2" onClick={handleReplySubmit}>Reply</button>
-                    <button onClick={onToggle}>Cancel</button>
-                </div>
-            )}
+            <div className="reply-box">
+                <input
+                    type="text"
+                    placeholder="Write a reply..."
+                    value={reply}
+                    onChange={(e) => setReply(e.target.value)}
+                />
+                <button className="me-3 mt-2" onClick={handleReplySubmit}>Reply</button>
+                <button onClick={onToggle}>Cancel</button>
+            </div>
+
         </div>
     );
 }

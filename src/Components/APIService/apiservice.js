@@ -55,6 +55,19 @@ export const signUpUserWithGoogle = async (body) => {
         throw error;
     }
 };
+export const contactUs = async (body) => {
+
+    const url = `${API_BASE_URL}${API_URLs.CONTACT}`
+
+    try {
+        const response = await axios.post(url, body)
+        return response.data;
+
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
 export const getUserDetails = async (id) => {
 
     const url = `${API_BASE_URL}${API_URLs.Get_User_Details}/${id}`
@@ -68,6 +81,8 @@ export const getUserDetails = async (id) => {
         throw error;
     }
 }
+
+
 export const getTutorialOverview = async (slug) => {
 
     const url = `${API_BASE_URL}${API_URLs.GET_TUTORIAL_OVERVIEW}/${slug}`
@@ -107,32 +122,6 @@ export const getTutorialDetails = async (slug) => {
         throw error;
     }
 }
-export const getAllCourse = async (courseName) => {
-
-    const url = `${API_BASE_URL}${API_URLs.Get_Course_List}/${courseName}`
-
-
-    try {
-        const response = await axios.get(url)
-        return response.data;
-
-    } catch (error) {
-        console.error('Error:', error.response || error.message);
-        throw error;
-    }
-}
-export const getCourseDetails = async (id) => {
-
-    const url = `${API_BASE_URL}${API_URLs.Get_Course_Details}/${id}`
-    try {
-        const response = await axios.get(url)
-        return response.data;
-
-    } catch (error) {
-        console.error('Error:', error.response || error.message);
-        throw error;
-    }
-}
 export const getContentList = async (urlSlug) => {
 
     const url = `${API_BASE_URL}${API_URLs.GET_CONTENT_BY_SLUG}/${urlSlug}`
@@ -161,12 +150,15 @@ export const getTopics = async (id) => {
         throw error;
     }
 }
-export const contactUs = async (body) => {
 
-    const url = `${API_BASE_URL}${API_URLs.CONTACT}`
+
+export const getAllCourse = async (courseName) => {
+
+    const url = `${API_BASE_URL}${API_URLs.Get_Course_List}/${courseName}`
+
 
     try {
-        const response = await axios.post(url, body)
+        const response = await axios.get(url)
         return response.data;
 
     } catch (error) {
@@ -174,6 +166,20 @@ export const contactUs = async (body) => {
         throw error;
     }
 }
+export const getCourseDetails = async (id) => {
+
+    const url = `${API_BASE_URL}${API_URLs.Get_Course_Details}/${id}`
+    try {
+        const response = await axios.get(url)
+        return response.data;
+
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
+
+
 export const getBlogList = async () => {
 
     const url = `${API_BASE_URL}${API_URLs.Blog_List}`
@@ -217,6 +223,8 @@ export const addBlogs = async (formData) => {
         throw error;
     }
 };
+
+
 export const getAllPosts = async () => {
 
     const url = `${API_BASE_URL}${API_URLs.Get_All_posts}`
@@ -230,6 +238,33 @@ export const getAllPosts = async () => {
         throw error;
     }
 }
+export const createPost  = async (body,id) => {
+
+    const url = `${API_BASE_URL}${API_URLs.Create_Post}/${id}`
+
+    try {
+        const response = await axios.post(url,body)
+        return response.data;
+
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
+export const ReplyToPost = async (body) => {
+
+    const url = `${API_BASE_URL}${API_URLs.Reply_To_Post}`
+    try {
+        const response = await axios.post(url, body)
+        return response.data;
+
+    } catch (error) {
+        console.error('Error:', error.response || error.message);
+        throw error;
+    }
+}
+
+
 export const getJobById = async (id) => {
 
     const url = `${API_BASE_URL}${API_URLs.Get_Job_Details}/${id}`
@@ -295,19 +330,7 @@ export const deleteWishlistItem = async (wishlistItemId) => {
         throw error;
     }
 }
-export const ReplyToPost = async (id, body) => {
 
-    const url = `${API_BASE_URL}${API_URLs.Reply_To_Post}/${id}/${'replies'}`
-
-    try {
-        const response = await axios.get(url, body)
-        return response.data;
-
-    } catch (error) {
-        console.error('Error:', error.response || error.message);
-        throw error;
-    }
-}
 export const getMockInterview = async (params) => {
 
     const url = `${API_BASE_URL}${API_URLs.Mock_Interview}`

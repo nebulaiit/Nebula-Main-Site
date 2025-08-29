@@ -18,7 +18,7 @@ export const API_URLs = {
     
     Get_All_posts:"/api/community/all-posts",
     Create_Post:"/api/community/post",
-    Reply_To_Post:"/api/community/posts/",
+    Reply_To_Post:"/api/community/add-reply",
 
     WishList:'/api/wishlist',
     

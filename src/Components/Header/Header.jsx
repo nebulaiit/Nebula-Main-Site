@@ -78,7 +78,11 @@ export default function Header({ variant = "default" }) {
             {variant === "default" && !hideElement && (
                 <div className={`header container-fluid ${darkMode ? 'dark' : ''}`} id='header'>
                     <div className="images-wrapper" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
-                        <img src={logo} alt="Logo" />
+                        <img
+                            src={logo}
+                            alt="QubitroXLogo"
+                            loading="eager"               // Load immediately
+                            fetchpriority="high" />
                     </div>
 
 
