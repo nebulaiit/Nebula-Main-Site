@@ -82,7 +82,7 @@ export default function Header({ variant = "default" }) {
                             src={logo}
                             alt="QubitroXLogo"
                             loading="eager"               // Load immediately
-                            fetchpriority="high" />
+                            fetchPriority="high" />
                     </div>
 
 
