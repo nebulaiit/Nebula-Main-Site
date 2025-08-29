@@ -5,6 +5,7 @@ import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
 import { getBlogDetails} from '../../APIService/apiservice';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from "react-markdown";
+import LazyImage from '../../LazyImage';
 
 export default function BlogDetails() {
 
@@ -35,14 +36,14 @@ export default function BlogDetails() {
                     <div className="blog-content-container">
                         <h1>Understanding React Hooks</h1>
                         <div className="author-details">
-                            <img src={profileImage} alt="" />
+                            <LazyImage src={profileImage} alt="" />
                             <div className='author-contact'>
                                 <p><span>Author</span> - Prince Jha </p>
                                 <p>June 1, 2025</p>
                             </div>
                         </div>
                         <div className="blog-details-img-wrapper">
-                            <img src='https://blogger.googleusercontent.com/img/a/AVvXsEjvuwS9FlyUyPaq580F1th4KE9_X3VKaBRzEb2JHdymGPLow4U1okRHuSxtDdQdGZfBYoLz_rVJDKWyaB1whlPYhe59ALkm4TjUTJ9668-TsLFsdhJhsudmm2zY2azdvNVMbZOfOlCelfCv_m-JerPVO-hWC0ZJWrzQ-LZCRd8yrMkttnypFHg9IxQY=w382-h229-p-k-no-nu' alt="" />
+                            <LazyImage src='https://blogger.googleusercontent.com/img/a/AVvXsEjvuwS9FlyUyPaq580F1th4KE9_X3VKaBRzEb2JHdymGPLow4U1okRHuSxtDdQdGZfBYoLz_rVJDKWyaB1whlPYhe59ALkm4TjUTJ9668-TsLFsdhJhsudmm2zY2azdvNVMbZOfOlCelfCv_m-JerPVO-hWC0ZJWrzQ-LZCRd8yrMkttnypFHg9IxQY=w382-h229-p-k-no-nu' alt="" />
                         </div>
                         <div className="blog-content">
                             <ReactMarkdown>{blogDetails.content}</ReactMarkdown>
@@ -71,7 +72,7 @@ export default function BlogDetails() {
                     <div className="blog-user-comment-container">
                         <h3>Comments (3)</h3>
                         <div className="user-comment">
-                            <img src="https://source.unsplash.com/40x40/?face" alt="user" />
+                            <LazyImage src="https://source.unsplash.com/40x40/?face" alt="user" />
                             <div>
                                 <p className="comment-author">Ritika Sharma</p>
                                 <p className="comment-text">This blog clarified a lot about useEffect and useContext. Thanks!</p>
@@ -80,7 +81,7 @@ export default function BlogDetails() {
                         </div>
 
                         <div className="user-comment">
-                            <img src={`https://source.unsplash.com/41x41/?portrait`} alt="user" />
+                            <LazyImage src={`https://source.unsplash.com/41x41/?portrait`} alt="user" />
                             <div>
                                 <p className="comment-author">Nikhil Joshi</p>
                                 <p className="comment-text">Loved the breakdown on custom hooks!</p>
@@ -96,19 +97,7 @@ export default function BlogDetails() {
                             <button type="submit">Post Comment</button>
                         </form>
                     </div>
-
-
-
                 </div>
-                {/* <div className="blog-detials-sidebar-wrapper">
-                    <h2>Recent Blogs</h2>
-                    <ul className='recent-blogs-list'>
-                        <li className='recent-blog-item'>Understanding React Hooks</li>
-                        <li className='recent-blog-item'>JavaScript ES6 Features</li>
-                        <li className='recent-blog-item'>CSS Grid vs Flexbox</li>
-                        <li className='recent-blog-item'>Building Responsive Websites</li>
-                    </ul>
-                </div> */}
             </div>
         </>
     )

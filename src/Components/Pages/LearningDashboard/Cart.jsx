@@ -2,15 +2,13 @@ import React from 'react'
 import "./Cart.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromCart } from '../../../redux/cartSlice';
-
-
+import LazyImage from '../../LazyImage';
 
 const Cart = () => {
 
   const dispatch = useDispatch();
-  const cartCourses = useSelector((state) => state.cart.items); //
+  const cartCourses = useSelector((state) => state.cart.items);
   const darkMode = useSelector((state) => state.darkMode.enabled);
-
 
   const handleCheckout = (id) => alert(`Proceed to checkout with course ${id}`);
 
@@ -29,7 +27,7 @@ const Cart = () => {
           {cartCourses.map((course) => (
 
             <div className="cart-card" key={course.courseId}>
-              <img src={course.imageUrl} alt={course.title} className="course-image" />
+              <LazyImage src={course.imageUrl} alt={course.title} className="course-image" />
               <div className="course-info">
                 <h3>{course.title}</h3>
                 <p><strong>Instructor:</strong> {course.instructor}</p>

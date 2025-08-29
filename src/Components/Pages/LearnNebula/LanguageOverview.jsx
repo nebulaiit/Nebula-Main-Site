@@ -2,35 +2,34 @@ import React, { useEffect, useRef, useState } from "react";
 import "./LanguageOverview.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import LazyImage from '../../LazyImage';
 
 const LanguageOverview = ({ tutorialData }) => {
   const [inView, setInView] = useState(false);
   const sectionRef = useRef(null);
   const darkMode = useSelector((state) => state.darkMode.enabled);
 
-
   useEffect(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        setInView(true);
-        observer.disconnect();
-      }
-    },
-    { threshold: 0.2 }
-  );
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
 
-  const currentSection = sectionRef.current; // ✅ Store ref in variable
+    const currentSection = sectionRef.current;
 
-  if (currentSection) {
-    observer.observe(currentSection);
-  }
+    if (currentSection) {
+      observer.observe(currentSection);
+    }
 
-  return () => {
-    if (currentSection) observer.unobserve(currentSection); // ✅ Use local variable
-  };
-}, []);
-
+    return () => {
+      if (currentSection) observer.unobserve(currentSection);
+    };
+  }, []);
 
   const language = {
     name: "Python",
@@ -51,18 +50,24 @@ const LanguageOverview = ({ tutorialData }) => {
       { name: "Reddit", url: "https://reddit.com" },
     ],
     projects: [{ name: "Django Blog", url: "https://github.com/user/blog" }],
+    // Add an image property if you want to show a language image
+    image: "https://via.placeholder.com/400x180?text=Python+Logo"
   };
 
   return (
     <div
-      className={`language-overview ${inView ? "in-view" : ""} ${darkMode ? "dark" : ""
-        }`}
+      className={`language-overview ${inView ? "in-view" : ""} ${darkMode ? "dark" : ""}`}
       ref={sectionRef}
     >
       {/* About Section */}
       <section className="overview-section">
         <h2>💡 About {tutorialData?.name}</h2>
-
+        {/* Lazy loaded language image if available */}
+        {language.image && (
+          <div className="language-img-wrapper">
+            <LazyImage src={language.image} alt={language.name} style={{ maxWidth: 300, borderRadius: 12, margin: "0 auto 20px" }} />
+          </div>
+        )}
         <p>{language.briefHistory}</p>
         <div className="card-row">
           {[
@@ -85,7 +90,7 @@ const LanguageOverview = ({ tutorialData }) => {
                 ))}
               </ul>
             </div>
-          ))}{" "}
+          ))}
         </div>
       </section>
 

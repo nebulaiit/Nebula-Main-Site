@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './MyProfile.css';
 import { useSelector } from 'react-redux';
 import { getUserDetails } from '../../APIService/apiservice';
+import LazyImage from '../../LazyImage';
 
 const MyProfile = () => {
     const [show, setShow] = useState(false);
@@ -9,7 +10,6 @@ const MyProfile = () => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     // const user = useSelector((state) => state.user.user);
-
 
     // Replace with actual user ID (e.g., from auth or router params)
     const userId = '123'; // example static ID
@@ -45,7 +45,7 @@ const MyProfile = () => {
         <div className={`profile-container ${darkMode ? 'dark' : ''}`}>
             <div className="profile-wrapper">
                 <div className="profile-header">
-                    <img src="/path/to/avatar.jpg" alt="Avatar" className="avatar" />
+                    <LazyImage src="/path/to/avatar.jpg" alt="Avatar" className="avatar" />
                     <div className="profile-info">
                         <h2>{data.firstName} {data.lastName}</h2>
                     </div>

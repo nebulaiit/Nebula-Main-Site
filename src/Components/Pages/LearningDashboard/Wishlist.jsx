@@ -4,14 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchWishlistThunk, removeFromWishlist } from '../../../redux/wishlistSlice';
 import { showToast } from '../../../redux/toastSlice';
 import { addToCart } from '../../../redux/cartSlice';
-
+import LazyImage from '../../LazyImage';
 
 const Wishlist = () => {
   const dispatch = useDispatch();
   const { items, loading } = useSelector((state) => state.wishlist);
   const userId = useSelector((state) => state.auth.userId);
   const darkMode = useSelector((state) => state.darkMode.enabled);
-
 
   useEffect(() => {
     if (userId) {
@@ -41,7 +40,7 @@ const Wishlist = () => {
         <div className="course-list">
           {items.map((item) => (
             <div className="course-card" key={item.id}>
-              <img
+              <LazyImage
                 src={item.imageUrl}
                 alt={item.title}
                 className="course-image"

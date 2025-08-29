@@ -1,32 +1,31 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import './Blog.css';
 import ReactImg from '../../Images/blog/ReactImg.webp';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import { useSelector } from 'react-redux';
+import LazyImage from '../../LazyImage';
 
 export default function Blog() {
     const navigate = useNavigate();
     const darkMode = useSelector((state) => state.darkMode.enabled);
 
-
     const featured = [
         { title: "React Coding Setup", image: ReactImg },
         { title: "React Coding Setup", image: ReactImg },
         { title: "React Coding Setup", image: ReactImg },
-
     ];
 
     var settings = {
         infinite: true,
-        speed: 1000,              // Increased for a smooth fade
+        speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3000,      // Slightly slower for better visual engagement
-        cssEase: "ease-in-out",   // Smooth easing for transitions
-        fade: true,               // Optional: for a fading transition between images
-        arrows: false,            // Optional: hide arrows for clean design
+        autoplaySpeed: 3000,
+        cssEase: "ease-in-out",
+        fade: true,
+        arrows: false,
         dots: false
     };
 
@@ -114,7 +113,6 @@ export default function Blog() {
         }
     ]);
 
-
     const formatDate = (dateStr) => {
         const date = new Date(dateStr);
         return date.toLocaleDateString('en-US', {
@@ -124,8 +122,6 @@ export default function Blog() {
         });
     };
 
-
-
     return (
         <div className={`blog-container ${darkMode ? 'dark' : ''}`}>
 
@@ -133,12 +129,11 @@ export default function Blog() {
                 <Slider {...settings} >
                     {featured.map((image, index) => (
                         <div key={index} className="img-wrapper">
-                            <img src={image.image} className="detail-image" alt={`Slide ${index + 1}`} />
+                            <LazyImage src={image.image} className="detail-image" alt={`Slide ${index + 1}`} />
                         </div>
                     ))}
                 </Slider>
             </div>
-
 
             <div className="blog-card-wrapper">
                 <h1>Featured Blogs</h1>
@@ -170,7 +165,7 @@ export default function Blog() {
                         }
                     ].map((post, index) => (
                         <div key={index} className="featured-card-horizontal">
-                            <img src={post.image} alt={post.title} />
+                            <LazyImage src={post.image} alt={post.title} />
                             <div className="info">
                                 <p className="meta">
                                     {post.date} <span>/</span> {post.author.toUpperCase()}
@@ -187,7 +182,7 @@ export default function Blog() {
                 <div className="blog-cards">
                     {blogs.map((blog) => (
                         <div className="blog-card-items" key={blog.id} onClick={() => navigate(`/blog-details/${blog.slug}`)}>
-                            <img src={blog.blogThumbnail} alt={blog.blogTitle} />
+                            <LazyImage src={blog.blogThumbnail} alt={blog.blogTitle} />
                             <div className='user-details'>
                                 <p>{formatDate(blog.createdAt)}</p>
                                 <h5>Post By : {blog.author}</h5>
@@ -203,7 +198,7 @@ export default function Blog() {
                 <div className="blog-cards-grid">
                     {blogs.slice(0, 3).map((blog, index) => (
                         <div className={`blog-card  blog-card-${index + 1}`} key={blog.id} onClick={() => navigate(`/blog-details/${blog.slug}`)}>
-                            <img src={blog.blogThumbnail} alt={blog.blogTitle} />
+                            <LazyImage src={blog.blogThumbnail} alt={blog.blogTitle} />
                             <div className="user-details">
                                 <p>{formatDate(blog.createdAt)}</p>
                                 <h5>Post By: {blog.author}</h5>
@@ -219,13 +214,8 @@ export default function Blog() {
                             ✍️
                         </button>
                     </div>
-
-
                 </div>
-
             </div>
-
-            
         </div>
     );
 }

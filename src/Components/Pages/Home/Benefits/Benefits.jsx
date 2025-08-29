@@ -5,6 +5,7 @@ import SchoolIcon from "@mui/icons-material/School";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import PeopleIcon from "@mui/icons-material/People";
 import { useSelector } from "react-redux";
+import LazyImage from "../../../LazyImage";
 
 const Benefits = () => {
   const darkMode = useSelector((state) => state.darkMode.enabled);
@@ -34,32 +35,34 @@ const Benefits = () => {
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      setInView(entry.isIntersecting);
-    },
-    {
-      threshold: 0.3,
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting);
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    const currentSection = sectionRef.current;
+
+    if (currentSection) {
+      observer.observe(currentSection);
     }
-  );
 
-  const currentSection = sectionRef.current; // ✅ capture ref value
-
-  if (currentSection) {
-    observer.observe(currentSection);
-  }
-
-  return () => {
-    if (currentSection) observer.unobserve(currentSection); // ✅ cleanup uses captured ref
-  };
-}, []);
+    return () => {
+      if (currentSection) observer.unobserve(currentSection);
+    };
+  }, []);
 
   return (
     <div
-      className={`search-benefits-container ${inView ? "animate-benefits" : ""} ${darkMode ? "dark" : ""}`}ref={sectionRef} >
+      className={`search-benefits-container ${inView ? "animate-benefits" : ""} ${darkMode ? "dark" : ""}`}
+      ref={sectionRef}
+    >
       <div className="benefit-content">
         <div className="image-grid">
-          <img src={benefit} alt="" />
+          <LazyImage src={benefit} alt="Benefits" />
         </div>
 
         <div className="benefits-container">

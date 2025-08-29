@@ -3,6 +3,7 @@ import './CreateBlog.css';
 import { addBlogs } from '../../APIService/apiservice';
 import { useDispatch, useSelector } from 'react-redux';
 import { showToast } from '../../../redux/toastSlice';
+import LazyImage from '../../LazyImage';
 
 export default function CreateBlog() {
 
@@ -17,6 +18,7 @@ export default function CreateBlog() {
     });
 
     const [blogThumbnail, setBlogThumbnail] = useState(null);
+    const [previewUrl, setPreviewUrl] = useState(null);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -34,6 +36,7 @@ export default function CreateBlog() {
         }
 
         setBlogThumbnail(file);
+        setPreviewUrl(file ? URL.createObjectURL(file) : null);
     };
 
     const handleBlogSubmit = async (e) => {
@@ -57,6 +60,7 @@ export default function CreateBlog() {
                 // Reset form
                 setNewBlog({ blogTitle: "", category: "", author: "", content: "" });
                 setBlogThumbnail(null);
+                setPreviewUrl(null);
             } else {
                 dispatch(
                     showToast({
@@ -116,6 +120,12 @@ export default function CreateBlog() {
                         required
                     />
                 </div>
+
+                {previewUrl && (
+                    <div className="blog-thumbnail-preview">
+                        <LazyImage src={previewUrl} alt="Blog Thumbnail Preview" style={{ maxWidth: '200px', borderRadius: '10px', margin: '10px 0' }} />
+                    </div>
+                )}
 
                 <textarea
                     name="content"

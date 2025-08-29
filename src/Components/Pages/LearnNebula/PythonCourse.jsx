@@ -1,13 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './PythonCourse.css';
 import { useParams } from 'react-router-dom';
 import LanguageHeader from '../NewPage/LanguageHeader';
 import LanguageOverview from './LanguageOverview';
-import { useEffect } from 'react';
 import { getTutorialOverview } from '../../APIService/apiservice';
-import { useState } from 'react';
-
-
 
 const PythonCourse = () => {
   const { courseName } = useParams();
@@ -35,13 +31,12 @@ const PythonCourse = () => {
     fetchTutorialOverview();
   }, [courseName]);
 
-
   return (
     <>
       <div className='course-container-wraper'>
         <LanguageHeader tutorialName={tutorialName} />
+        {/* LanguageOverview will use LazyImage for any images inside */}
         <LanguageOverview tutorialData={tutorialData} />
-
       </div>
     </>
   );

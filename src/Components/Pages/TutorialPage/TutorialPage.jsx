@@ -6,77 +6,65 @@ import SelectedTopicContent from './selectedTopicContent';
 import { useSelector } from 'react-redux';
 import { getContentList, getTopics, getTutorialDetails } from '../../APIService/apiservice';
 
-
 export default function TutorialPage() {
   const { courseName } = useParams();
-  const [tutorial, setTutorial] = useState()
-  const [headings, setHeadings] = useState([])
+  const [tutorial, setTutorial] = useState();
+  const [headings, setHeadings] = useState([]);
   const [selectedUrlSlug, setSelectedUrlSlug] = useState(null);
-  const [selectedTopicContent, setSelectedTopicContent] = useState([])
+  const [selectedTopicContent, setSelectedTopicContent] = useState([]);
   const darkMode = useSelector((state) => state.darkMode.enabled);
 
   const id = tutorial?.id;
 
-
   useEffect(() => {
-
     const fetchTopicsList = async () => {
       try {
-
         const response = await getTutorialDetails(courseName);
-
         setTutorial(response);
-
       } catch (error) {
         console.error("Error fetching documents:", error);
       }
     };
     fetchTopicsList();
-  }, [courseName])
+  }, [courseName]);
 
   useEffect(() => {
-  if (!id) return; // 🔒 guard clause
+    if (!id) return;
     const fetchTopicsList = async () => {
       try {
-
         const response = await getTopics(id);
-        setHeadings(response)
+        setHeadings(response);
         console.log(response);
-
       } catch (error) {
         console.error("Error fetching documents:", error);
       }
     };
     fetchTopicsList();
-  }, [id])
+  }, [id]);
 
   // Fetch topic content
   useEffect(() => {
     if (selectedUrlSlug) {
       const fetchContent = async () => {
         try {
-          const response = await getContentList(selectedUrlSlug); // Fetch content based on the current slug
+          const response = await getContentList(selectedUrlSlug);
           setSelectedTopicContent(response);
           console.log(response);
-
         } catch (error) {
           console.error("Error fetching content:", error);
         }
       };
-
       fetchContent();
     }
-  }, [selectedUrlSlug])
+  }, [selectedUrlSlug]);
 
   // On topic click
-
 
   return (
     <div className={`tutorial-page-wrapper py-4 px-4  ${darkMode ? 'dark' : ''}`}>
       <SideBar heading={headings} selectedUrlSlug={setSelectedUrlSlug} />
-
+      {/* SelectedTopicContent already uses LazyImage for images */}
       <SelectedTopicContent contentBlocks={selectedTopicContent} />
-
     </div>
   );
 }

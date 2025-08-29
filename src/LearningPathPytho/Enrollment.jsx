@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import "./Enrollment.css";
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import profile from "../Components/Images/profile-icon.webp";
 import { showToast } from "../redux/toastSlice";
 import { getCourseDetails } from "../Components/APIService/apiservice";
+import LazyImage from "../Components/LazyImage";
 
 const Enrollment = () => {
 
@@ -111,7 +112,7 @@ const Enrollment = () => {
         </div>
 
         <div className="course-image">
-          <img src='' alt="Instructor" />
+          <LazyImage src='' alt="Instructor" />
         </div>
       </div>
 
@@ -149,10 +150,9 @@ const Enrollment = () => {
               <div className="quote-mark">“</div>
               <p className="testimonial-text">
                 {item.text}
-
               </p>
               <div className="testimonial-user">
-                <img src={item.image} alt={item.user} className="user-img" />
+                <LazyImage src={item.image} alt={item.user} className="user-img" />
                 <div>
                   <strong>{item.user}</strong>
                   <p className="subtext">{item.subtext}</p>
@@ -162,8 +162,6 @@ const Enrollment = () => {
           ))}
         </div>
       </section>
-
-
     </div>
   );
 };

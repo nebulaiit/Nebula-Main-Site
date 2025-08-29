@@ -2,14 +2,15 @@ import React, { useEffect, useRef, useState } from 'react';
 import './HeroSection.css';
 import student from '../../../Images/HomePage/HomepageBg.webp';
 import { useSelector } from 'react-redux';
+import LazyImage from '../../../LazyImage';
 
 const HeroSection = () => {
   const heroRef = useRef();
   const darkMode = useSelector((state) => state.darkMode.enabled);
-  const [hasAnimated, setHasAnimated] = useState(false); // ✅ new state
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    const node = heroRef.current; // ✅ store ref locally
+    const node = heroRef.current;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -28,11 +29,10 @@ const HeroSection = () => {
 
     return () => {
       if (node) {
-        observer.unobserve(node); // ✅ cleanup uses stable reference
+        observer.unobserve(node);
       }
     };
   }, [hasAnimated]);
-
 
   return (
     <section
@@ -49,7 +49,7 @@ const HeroSection = () => {
       </div>
       <div className="hero-image">
         <div className="tilt-wrapper">
-          <img src={student} alt="Student Hero" />
+          <LazyImage src={student} alt="Student Hero" />
         </div>
       </div>
     </section>

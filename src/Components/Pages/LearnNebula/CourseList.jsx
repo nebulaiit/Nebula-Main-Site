@@ -1,4 +1,3 @@
-
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -8,6 +7,7 @@ import { FaCodeBranch, FaServer } from 'react-icons/fa';
 import './CourseList.css';
 import { getAllTutorial } from '../../APIService/apiservice';
 import { useSelector } from 'react-redux';
+import LazyImage from '../../LazyImage';
 
 library.add(faPython, faJs, faJava, faHtml5, faCss3, faDatabase, faReact);
 
@@ -16,7 +16,6 @@ export default function CourseList() {
   const darkMode = useSelector((state) => state.darkMode.enabled);
   const [showSections, setShowSections] = useState(false);
   const [section, setSection] = useState(null);
-  
 
   const [data, setData] = useState({ Frontend: [], Backend: [] });
 
@@ -46,7 +45,6 @@ export default function CourseList() {
 
     fetchTutorialList();
   }, []);
-
 
   const handleCourseClick = (tutorialName) => {
     localStorage.setItem('selectedCourse', tutorialName);
@@ -135,7 +133,7 @@ function DesktopLayout({ data, navigate, section, setSection, showSections, setS
       });
     } else if (section && headingRef.current) {
       data[section].forEach((lang, i) => {
-        const langEl = componentRefs.current[lang];
+        const langEl = componentRefs.current[lang.name];
         drawStraightLine(headingRef.current, langEl, i * increment, true);
       });
     }
@@ -151,7 +149,6 @@ function DesktopLayout({ data, navigate, section, setSection, showSections, setS
       svgEl?.querySelectorAll('.dynamic-line').forEach(path => path.remove());
     };
   }, [drawLines]); // ✅ safe now
-
 
   return (
     <>
@@ -189,12 +186,16 @@ function DesktopLayout({ data, navigate, section, setSection, showSections, setS
           <div className="component-row fade-in">
             {data[section].map((language, i) => (
               <div
-                key={language}
+                key={language.name}
                 ref={setRef(componentRefs, language.name)}
                 className="component-card"
                 style={{ animationDelay: `${i * 0.1}s` }}
-                onClick={() => navigate(`/course/${language.slug}`)} // use slug for URL
+                onClick={() => navigate(`/course/${language.slug}`)}
               >
+                {/* Lazy loaded language image if available */}
+                {language.image && (
+                  <LazyImage src={language.image} alt={language.name} className="component-img" />
+                )}
                 <h4>{language.name}</h4>
               </div>
             ))}
@@ -234,8 +235,12 @@ function MobileLayout({ data, onNavigate }) {
               </div>
               <div className={`accordion-content ${expandedSection === sec ? 'show' : ''}`}>
                 {data[sec].map((topic) => (
-                  <div key={topic} className="sub-card" onClick={() => onNavigate(topic)}>
-                    {topic}
+                  <div key={topic.name} className="sub-card" onClick={() => onNavigate(topic.name)}>
+                    {/* Lazy loaded topic image if available */}
+                    {topic.image && (
+                      <LazyImage src={topic.image} alt={topic.name} className="component-img" />
+                    )}
+                    {topic.name}
                   </div>
                 ))}
               </div>

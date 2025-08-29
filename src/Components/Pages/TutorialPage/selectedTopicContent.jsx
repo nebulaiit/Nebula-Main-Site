@@ -1,6 +1,7 @@
 import React from 'react';
 import './selectedTopicContent.css';
 import { useSelector } from 'react-redux';
+import LazyImage from '../../LazyImage';
 
 export default function SelectedTopicContent({ contentBlocks }) {
   const darkMode = useSelector((state) => state.darkMode.enabled);
@@ -12,7 +13,6 @@ export default function SelectedTopicContent({ contentBlocks }) {
       {contentBlocks && contentBlocks.length > 0 ? (
         contentBlocks.map((block) => (
           <div key={block.id} className="content-block">
-
 
             {/* Render contentHtml safely */}
             {block.contentHtml && (
@@ -26,7 +26,7 @@ export default function SelectedTopicContent({ contentBlocks }) {
             {block.imageUrls && block.imageUrls.length > 0 && (
               <div className="content-images">
                 {block.imageUrls.map((url, i) => (
-                  <img
+                  <LazyImage
                     key={i}
                     src={url}
                     alt={`content-img-${i}`}

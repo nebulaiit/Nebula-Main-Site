@@ -2,7 +2,7 @@ import React from 'react'
 import CategorySection from './CategorySection';
 import './courseList.css';
 import { useSelector } from 'react-redux';
-
+import LazyImage from '../../LazyImage';
 
 export default function CourseListPage() {
     const darkMode = useSelector((state) => state.darkMode.enabled);
@@ -32,7 +32,6 @@ export default function CourseListPage() {
             price: 799,
             thumbnailUrl: 'https://via.placeholder.com/300x140'
         },
-  
         {
             id: '4',
             title: 'React & Tailwind Web App',
@@ -56,16 +55,15 @@ export default function CourseListPage() {
             grouped[course.category].push(course);
         }
     });
-    
+
+    // Pass LazyImage as a prop to CategorySection so it can be used for all images inside
     return (
         <>
             <div className={`course-list-wrapper ${darkMode ? 'dark' : ''}`}>
                 {Object.entries(grouped).map(([category, list]) => (
-                    list.length > 0 && <CategorySection key={category} title={category} courses={list} />
+                    list.length > 0 && <CategorySection key={category} title={category} courses={list} LazyImage={LazyImage} />
                 ))}
             </div>
-
-
         </>
     )
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import './LearnOnTheGo.css';
 import { FaPython, FaCuttlefish, FaJava, FaCode } from 'react-icons/fa';
 import logo from "../../Images/Logo/appstore.svg"
+import LazyImage from '../../LazyImage';
 
 const LearnOnTheGo = () => {
   return (
@@ -15,8 +16,8 @@ const LearnOnTheGo = () => {
           perfect for practicing during your commute or coffee break.
         </p>
         <div className="app-download-badges">
-          <img src= {logo} alt="Google Play" />
-          <img src= {logo} alt="App Store" />
+          <LazyImage src={logo} alt="Google Play" />
+          <LazyImage src={logo} alt="App Store" />
         </div>
       </div>
 
@@ -28,11 +29,8 @@ const LearnOnTheGo = () => {
         </div>
         <div className="app-card">
           <FaCuttlefish className="card-icon" />
-
           <h4>Learn C Programming App</h4>
-
           <h4>Learn C Nebula App</h4>
-
           <a href="#">Learn more →</a>
         </div>
         <div className="app-card">
