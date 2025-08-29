@@ -159,7 +159,7 @@ export default function Header({ variant = "default" }) {
 
                     <div className='d-md-none mobile-menu-icon'>
                         <IconButton onClick={() => setDrawerOpen(true)}>
-                            <MenuIcon fontSize="large" classList="menu-icon" />
+                            <MenuIcon fontSize="large" className="menu-icon" />
                         </IconButton>
                     </div>
 
