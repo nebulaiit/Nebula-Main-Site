@@ -13,7 +13,7 @@ import NewIcon from '@mui/icons-material/NewspaperOutlined';
 import ForumIcon from '@mui/icons-material/ForumOutlined';
 import SchoolIcon from '@mui/icons-material/SchoolOutlined';
 import DescriptionIcon from '@mui/icons-material/DescriptionOutlined';
-import MenuBookIcon from '@mui/icons-material/MenuBookOutlined';
+// import MenuBookIcon from '@mui/icons-material/MenuBookOutlined';
 
 export default function Header({ variant = "default" }) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -81,7 +81,9 @@ export default function Header({ variant = "default" }) {
                         <img
                             src={logo}
                             alt="QubitroXLogo"
-                            loading="eager"               // Load immediately
+                            loading="eager"
+                            width={180}          // 👈 set the real width
+                            height={60}          // 👈 set the real height           
                             fetchPriority="high" />
                     </div>
 

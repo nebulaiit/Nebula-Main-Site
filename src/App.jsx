@@ -62,10 +62,10 @@ function App() {
         <Route path="/progamming/:courseName" element={<TutorialPage />} />
 
         {/* Course Pages */}
-        <Route path="/course-list" element={<CourseListPage />} />
+        {/* <Route path="/course-list" element={<CourseListPage />} />
         <Route path="/learning-path/:id" element={<Enrollment />} />
         <Route path="/course-List/:courseName" element={<Premium />} />
-        <Route path="/courses" element={<CoursesPlay />} />
+        <Route path="/courses" element={<CoursesPlay />} /> */}
 
         {/* blogs Paths */}
         <Route path='/blog' element={<Blog />} />
@@ -83,7 +83,7 @@ function App() {
         <Route path="/apply/:jobId" element={<ApplyJob />} />
 
         {/* User Dashboard */}
-        <Route path="/learning-dashboard" element={<LearningDashboard />} />
+        {/* <Route path="/learning-dashboard" element={<LearningDashboard />} /> */}
 
       </Routes>
 

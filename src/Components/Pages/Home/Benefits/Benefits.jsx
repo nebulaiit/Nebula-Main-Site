@@ -37,7 +37,10 @@ const Benefits = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setInView(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setInView(true);   // ✅ Trigger animation
+          observer.unobserve(entry.target); // ✅ Stop observing after first trigger
+        }
       },
       {
         threshold: 0.3,
@@ -54,6 +57,7 @@ const Benefits = () => {
       if (currentSection) observer.unobserve(currentSection);
     };
   }, []);
+
 
   return (
     <div

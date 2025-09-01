@@ -206,8 +206,8 @@ export default function Community() {
                         <div className="header-row">
                             <h2>📣 Community</h2>
                         </div>
-                        {isLoggedIn ? (
-                            <>
+                        {/* {isLoggedIn ? (
+                            <> */}
                                 <textarea
                                     placeholder="Hey everyone! 🎉 Share your thoughts..."
                                     value={post}
@@ -227,10 +227,10 @@ export default function Community() {
                                     <button className="add-tag" onClick={() => setShowTagModal(true)}>+ Add Tags</button>
                                     <button className="submit-btn" onClick={handlePost}>Post</button>
                                 </div>
-                            </>
+                            {/* </>
                         ) : (
                             <p className="login-warning">🔒 Please login to create a post.</p>
-                        )}
+                        )} */}
                     </div>
 
                     {/* Post Feed */}
