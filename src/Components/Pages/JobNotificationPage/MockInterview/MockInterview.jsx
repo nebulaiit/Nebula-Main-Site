@@ -45,21 +45,22 @@ export default function MockInterview() {
     try {
       const params = { jobTitle, questionCount, difficulty, includeCoding };
       const response = await getMockInterview(params);
+      console.log(response)
       // If backend gives questions separately
-      setQuestions(response.questions);
-      setFeedback(response.feedback);
-      setModelAnswer(response.modelAnswers);
+      // setQuestions(response.questions);
+      // setFeedback(response.feedback);
+      // setModelAnswer(response.modelAnswers);
 
-      // For now use dummy:
-      setQuestions(dummyQuestions.slice(0, questionCount));
-      setFeedback(dummyFeedback);
-      setModelAnswer(dummyModelAnswer);
+      // // For now use dummy:
+      // setQuestions(dummyQuestions.slice(0, questionCount));
+      // setFeedback(dummyFeedback);
+      // setModelAnswer(dummyModelAnswer);
     } catch (error) {
       console.error("Error fetching questions:", error);
       alert("⚠️ Using fallback dummy questions.");
-      setQuestions(dummyQuestions.slice(0, questionCount));
-      setFeedback(dummyFeedback);
-      setModelAnswer(dummyModelAnswer);
+      // setQuestions(dummyQuestions.slice(0, questionCount));
+      // setFeedback(dummyFeedback);
+      // setModelAnswer(dummyModelAnswer);
     } finally {
       setLoading(false);
     }

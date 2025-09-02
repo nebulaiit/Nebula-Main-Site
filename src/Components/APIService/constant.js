@@ -22,7 +22,8 @@ export const API_URLs = {
 
     WishList:'/api/wishlist',
     
-    Mock_Interview:"/api/mock-interview",
+    Mock_Interview:"/api/interview/mock",
+    Ats_Score:"/api/ats-score",
 
     Get_Job_Details:"/api/jobs/job-details",
     Get_Job_list:"/api/jobs",
